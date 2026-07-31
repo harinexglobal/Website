@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-900: 7 20 38;
+    --navy-800: 10 25 47;
+    --navy-700: 11 37 69;
+    --azure-500: 0 102 204;
+    --emerald-500: 16 185 129;
+    --saffron-500: 232 130 30;
+    --ink: 30 41 59;
+    --surface: 248 250 252;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-emerald-500/25 text-navy-800;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-emerald-500 ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  .on-navy :focus-visible {
+    @apply ring-offset-navy-800;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+}
+
+@layer components {
+  /* ---------- Section rhythm ---------- */
+  .section {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+  .section-sm {
+    @apply py-12 md:py-16;
+  }
+
+  /* ---------- Eyebrow label ---------- */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-2xs font-semibold uppercase tracking-[0.18em];
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-6 bg-current opacity-50;
+  }
+
+  /* ---------- Headings ---------- */
+  .h-display {
+    @apply font-display text-4xl font-extrabold leading-[1.05] tracking-tightest sm:text-5xl lg:text-6xl;
+  }
+  .h-section {
+    @apply font-display text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-[2.75rem];
+  }
+  .h-card {
+    @apply font-display text-lg font-bold leading-snug tracking-tight;
+  }
+
+  /* ---------- Dark-navy surfaces ---------- */
+  .surface-navy {
+    @apply relative bg-navy-grad text-white;
+  }
+  .surface-navy::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 bg-grid-fade opacity-60;
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 78%);
+  }
+
+  /* ---------- Bridge rule (orange -> emerald) ---------- */
+  .bridge-rule {
+    @apply h-1 w-16 rounded-full bg-bridge-grad;
+  }
+
+  /* ---------- Capability / industry cards ---------- */
+  .card-base {
+    @apply relative rounded-xl border border-slate-200 bg-white p-6 shadow-card transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-slate-300 hover:shadow-card-lg;
+  }
+
+  /* ---------- Pill badge ---------- */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 transition-colors;
+  }
+  .pill-navy {
+    @apply border-white/15 bg-white/5 text-slate-200;
+  }
+
+  /* ---------- Prose defaults for long copy ---------- */
+  .copy {
+    @apply text-[0.975rem] leading-relaxed text-slate-600;
+  }
+  .copy-invert {
+    @apply text-[0.975rem] leading-relaxed text-slate-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .mask-fade-r {
+    mask-image: linear-gradient(to right, #000 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 80%, transparent);
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  /* Vertical writing for the zh-Hant accent labels */
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+/* Respect reduced-motion across the whole app */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
