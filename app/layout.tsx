@@ -24,14 +24,15 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinexglobal.com'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'HariNex Global — Technology Transfer & Cross-Border Advisory | Taiwan ↔ India',
+    default: 'HariNex Global — International Technology Transfer & Business Advisory',
     template: '%s | HariNex Global',
   },
   description:
-    'HariNex Global is a cross-border technology transfer, corporate trade advisory and specialised technical localisation firm bridging Taiwan, India and global markets.',
+    'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management. Headquartered in Taiwan, with representatives in India, South Korea and the United States.',
   keywords: [
     'technology transfer Taiwan India',
-    'cross-border advisory',
+    'international business advisory',
+    'cross-border technology commercialisation',
     'technical translation Traditional Chinese',
     'supplier sourcing Taiwan',
     'regulatory coordination TFDA CDSCO',
@@ -42,17 +43,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'HariNex Global',
-    title: 'HariNex Global — Technology Transfer & Cross-Border Advisory',
+    title: 'HariNex Global — International Technology Transfer & Business Advisory',
     description:
-      'The bilateral gateway for technology transfer, strategic sourcing and industrial execution between Taiwan, India and global markets.',
+      'Connecting innovation and trusted partnerships across the globe. Technology transfer, sourcing, localisation and project management, anchored in the Taiwan–India corridor.',
     locale: 'en_US',
     alternateLocale: ['zh_TW'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HariNex Global — Technology Transfer & Cross-Border Advisory',
+    title: 'HariNex Global — International Technology Transfer & Business Advisory',
     description:
-      'The bilateral gateway for technology transfer, strategic sourcing and industrial execution between Taiwan, India and global markets.',
+      'Connecting innovation and trusted partnerships across the globe. Technology transfer, sourcing, localisation and project management, anchored in the Taiwan–India corridor.',
   },
   robots: { index: true, follow: true },
 };

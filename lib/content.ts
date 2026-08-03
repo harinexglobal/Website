@@ -22,9 +22,9 @@ const en = {
     legalName: 'HariNex Global Co., Ltd.',
     legalNameAlt: '瀚瑞國際股份有限公司',
     tagline: 'Technology • Advisory • Global Commerce',
-    shortTagline: 'Connecting Taiwan, India & Global Innovation',
+    shortTagline: 'Connecting Innovation & Trusted Partnerships Worldwide',
     description:
-      'Cross-border technology transfer, corporate trade advisory and specialised technical localisation between Taiwan, India and global markets.',
+      'International technology transfer, corporate trade advisory and specialised technical localisation. Headquartered in Taiwan, with representatives in India, South Korea and the United States.',
   },
 
   common: {
@@ -55,13 +55,13 @@ const en = {
   },
 
   hero: {
-    badge: 'Taiwan ↔ India Bilateral Gateway',
-    title: 'Connecting Ideas. Building Partnerships. Commercialising Innovation.',
-    titleLines: ['Connecting Ideas.', 'Building Partnerships.', 'Commercialising Innovation.'],
+    badge: 'Taiwan · India · South Korea · United States',
+    title: 'Connecting Innovation and Trusted Partnerships Across the Globe',
+    titleLines: ['Connecting Innovation', 'and Trusted Partnerships', 'Across the Globe'],
     subtitle:
-      'The bilateral gateway for technology transfer, strategic sourcing, and industrial execution between Taiwan, India and global markets.',
-    primaryCta: 'Explore Capabilities',
-    secondaryCta: 'Schedule Technology Scouting',
+      'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management.',
+    primaryCta: 'Book a Free Consultation',
+    secondaryCta: 'Explore Our Services',
     taipei: 'Taipei',
     india: 'India Desk',
   },
@@ -76,16 +76,16 @@ const en = {
         detail: 'From specialty chemicals and biotech to semiconductors and green technology.',
       },
       {
-        value: '2',
+        value: '4',
         suffix: '',
         label: 'Markets, one team',
-        detail: 'A single accountable team operating across Taiwan and India.',
+        detail: 'Taiwan, India, South Korea and the United States — a single accountable team.',
       },
       {
         value: '',
         suffix: '',
-        label: 'Zero-bisphenol & green chemistry focus',
-        detail: 'BPA/BPS-free auxiliaries and sustainable formulation technology.',
+        label: 'Advanced Materials & Sustainable Solutions',
+        detail: 'Specialty chemicals, composites and sustainable formulation for regulated industries.',
       },
       {
         value: '',
@@ -96,18 +96,26 @@ const en = {
     ],
   },
 
-  about: {
-    eyebrow: 'The Bilateral Bridge',
-    heading: 'Taiwanese innovation, Indian opportunity — engineered into one working channel',
-    lead: 'HariNex Global was established to close the gap between where advanced technology is developed and where it can be built at scale.',
+  welcome: {
+    eyebrow: 'Welcome',
+    heading: 'Your Trusted Global Business Partner',
     body: [
-      'We are an international business and technology advisory firm helping organisations identify partners, evaluate technologies, coordinate projects and build collaborations that survive first contact with reality.',
-      'What makes the channel work is technical fluency on both ends. Technical evaluation is handled by an advisory board of practising scientists — Ph.D. chemists holding current industry positions in Taiwan and India, across drug development, CMC documentation, polymer and composite formulation, and pilot-scale technology transfer. Taiwan operations, legal representation and government liaison sit with founder Chia-Ling Shih.',
-      'We believe successful international business rests on three things: trust, technical understanding, and communication that survives translation. That is the whole of our method.',
+      'HariNex Global is an international business and technology advisory firm dedicated to helping companies establish meaningful partnerships worldwide.',
+      "We simplify international business by combining technical expertise, cultural understanding and global market knowledge. Whether you're looking for a technology partner, manufacturing supplier, research collaboration or digital transformation, we help you move projects from concept to execution.",
+    ],
+  },
+
+  about: {
+    eyebrow: 'About Us',
+    heading: 'Building Stronger Business Connections Worldwide',
+    lead: 'HariNex Global was established with a vision to bridge the gap between regional innovations and global opportunities.',
+    body: [
+      'Our team combines scientific knowledge, international project experience and business development expertise to help organisations identify partners, evaluate technologies, coordinate projects and build long-term collaborations.',
+      'We believe successful international business depends on trust, technical understanding and effective communication.',
     ],
     visionTitle: 'Our Vision',
     vision:
-      'To become the leading Taiwan–India technology and business bridge for innovation, manufacturing and international collaboration.',
+      'To become a leading global technology and business bridge for innovation, manufacturing and international collaboration.',
     missionTitle: 'Our Mission',
     mission:
       'To simplify cross-border business by providing trusted advisory services, technology partnerships, supplier networks and digital solutions that create long-term value.',
@@ -117,14 +125,13 @@ const en = {
     bridgeDestRole: 'Industrial scale-up, market entry, cost-competitive production',
     bridgeLabel: 'Technology Bridge',
     whyUs: {
-      heading: 'Why organisations work with us',
+      heading: 'Why Choose HariNex Global',
       items: [
-        { title: 'Technical expertise', body: 'Ph.D.-level scientific evaluation, not sales-led matchmaking.' },
-        { title: 'International experience', body: 'Careers built across Taiwanese and Indian research and industry.' },
-        { title: 'Taiwan local network', body: 'On-the-ground presence, language and legal representation in Taipei.' },
-        { title: 'India business network', body: 'Direct access to Indian manufacturing and life-science ecosystems.' },
-        { title: 'End-to-end project support', body: 'From first scouting call through to signed agreement and delivery.' },
-        { title: 'Professional translation', body: 'Technical 繁體中文 ⇄ English handled by people who understand the science.' },
+        { title: 'Technical expertise', body: 'Deep domain knowledge across high-tech and regulated sectors.' },
+        { title: 'International experience', body: 'Cross-border track record in technology and commercialisation.' },
+        { title: 'Global network', body: 'Extensive network of industrial, academic and business partners.' },
+        { title: 'End-to-end support', body: 'Comprehensive guidance from initial scoping through to execution.' },
+        { title: 'Multilingual capability', body: 'Seamless communication across languages and business cultures.' },
       ],
     },
   },
@@ -261,6 +268,24 @@ const en = {
         ],
         tags: ['COMPUTEX', 'BioAsia', 'TIMTOS', 'Interpretation'],
       },
+      {
+        id: 'project-management',
+        icon: 'clipboard',
+        title: 'International Project Management',
+        summary:
+          'One accountable owner for a project that spans several countries, languages and time zones.',
+        description:
+          'Cross-border projects fail in the gaps between parties, not inside them. We take the coordinating role — schedule, scope, documentation, escalation and the follow-through between meetings — so that a programme involving a Taiwanese supplier, an Indian plant and an American customer has a single owner rather than three parties each assuming someone else is handling it.',
+        deliverables: [
+          'Project planning & milestone tracking',
+          'Multi-party coordination across time zones',
+          'Documentation control & version management',
+          'Risk and escalation management',
+          'Progress reporting in both languages',
+          'Post-delivery review & handover',
+        ],
+        tags: ['Coordination', 'Milestones', 'Reporting', 'Handover'],
+      },
     ],
   },
 
@@ -381,8 +406,8 @@ const en = {
 
   leadership: {
     eyebrow: 'Leadership & Governance',
-    heading: 'Leadership & governance',
-    lead: 'Company leadership and legal representation sit in Taiwan. Technical direction comes from the advisory board below.',
+    heading: 'Leadership',
+    lead: 'Company leadership and legal representation sit in Taiwan, supported by an advisory board of practising scientists.',
     people: [
       {
         id: 'chia-ling-shih',
@@ -400,7 +425,32 @@ const en = {
           'R&D Chemist, ADC Division — Formosa Laboratories (台耀化學)',
           'Research Assistant, School of Pharmacy — National Taiwan University',
         ],
-        focus: ['Corporate governance', 'Taiwan legal representation', 'Government liaison', 'Process chemistry'],
+        focus: ['Corporate governance', 'Regional operations', 'Government liaison', 'Process chemistry'],
+      },
+      {
+        id: 'ganesh-kumar',
+        name: 'Dr. D. Ganesh Kumar',
+        nameLocal: '甘納緒 博士',
+        role: 'General Manager',
+        roleDetail: 'Technology commercialisation · Business development · Regulatory strategy',
+        location: 'Linkou, New Taipei City, Taiwan',
+        bio: 'General Manager of HariNex Global, leading technical evaluation, technology transfer and international collaboration. A Ph.D. medicinal chemist with over a decade of experience spanning drug discovery, product development, IND-enabling studies, CMC documentation and regulatory strategy in highly regulated environments.',
+        bioExtra:
+          'Currently Manager of New Drug Development at Bo Hui Biotech, leading drug R&D, clinical development and process optimisation. Previously a postdoctoral researcher at National Taiwan University and Chang Gung University, and a Research Associate at Syngene International (Biocon Group, India), where he scaled laboratory processes to kilogram pilot-plant production and supported CMC sections for IND applications. Author or co-author of nineteen peer-reviewed publications.',
+        creds: [
+          'Ph.D. Organic & Medicinal Chemistry — Kaohsiung Medical University, Taiwan',
+          'M.Sc. Chemistry — University of Madras, India',
+          'Manager, New Drug Development — Bo Hui Biotech Co., Ltd.',
+          'Postdoctoral Researcher — National Taiwan University & Chang Gung University',
+          'Research Associate — Syngene International (Biocon Group), India',
+        ],
+        focus: [
+          'Technology commercialisation',
+          'Business development',
+          'Technology transfer',
+          'Regulatory strategy',
+          'International collaboration',
+        ],
       },
     ],
   },
@@ -408,18 +458,9 @@ const en = {
   advisory: {
     eyebrow: 'Advisory Board',
     heading: 'Working scientists, not career consultants',
-    lead: 'Our advisers hold current industry positions in Taiwan and India. Technical due diligence is done by people who are still doing the work.',
+    lead: 'Our advisers hold current industry positions. Technical due diligence is done by people who are still doing the work.',
     currentRole: 'Current position',
     people: [
-      {
-        id: 'ganesh-kumar',
-        name: 'Dr. D. Ganesh Kumar',
-        nameLocal: '甘納緒 博士',
-        role: 'Manager, New Drug Development',
-        org: 'Bo Hui Biotech Co., Ltd.',
-        location: 'Linkou, New Taipei City, Taiwan',
-        focus: ['Technology transfer', 'Technical due diligence', 'Regulatory strategy', 'Commercialisation'],
-      },
       {
         id: 'ariraman-mathivathanan',
         name: 'Dr. Ariraman Mathivathanan',
@@ -428,6 +469,59 @@ const en = {
         org: 'Wendt India Ltd.',
         location: 'Hosur, Tamil Nadu, India',
         focus: ['Polymer & organic chemistry', 'Composites & formulation', 'Adhesives', 'Materials characterisation'],
+      },
+    ],
+  },
+
+  network: {
+    eyebrow: 'Global Network',
+    heading: 'One firm, four markets',
+    lead: 'Headquartered in Taiwan, with business development representatives on the ground in India, South Korea and the United States. Every market has someone who lives there, speaks the language and can visit a factory this week.',
+    hqLabel: 'Headquarters',
+    repLabel: 'Business Development Representative',
+    coreLabel: 'Core corridor',
+    coverageNote:
+      'The Taiwan–India corridor remains our core business and the majority of our work — it is where our own technical and operating experience runs deepest. Korea and the United States extend the same model into further markets. Representatives are the first point of contact for their region, while technical evaluation, contracting and delivery are run centrally from Taipei, so you get local access without a fragmented engagement.',
+    locations: [
+      {
+        id: 'taipei',
+        city: 'Taipei',
+        country: 'Taiwan',
+        role: 'Headquarters & legal entity',
+        type: 'hq',
+        core: true,
+        detail: 'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)',
+        focus: ['Technology sourcing', 'Supplier qualification', 'Contracting', 'Regulatory coordination'],
+      },
+      {
+        id: 'bangalore',
+        city: 'Bangalore',
+        country: 'India',
+        role: 'India Representative',
+        type: 'rep',
+        core: true,
+        detail: 'Business development & partner access across the Indian market',
+        focus: ['Market entry', 'Manufacturing partners', 'Life sciences', 'Site visits'],
+      },
+      {
+        id: 'seoul',
+        city: 'Seoul',
+        country: 'South Korea',
+        role: 'Korea Representative',
+        type: 'rep',
+        core: false,
+        detail: 'Business development & partner access across the Korean market',
+        focus: ['Market access', 'Electronics & materials', 'Partner sourcing', 'Trade missions'],
+      },
+      {
+        id: 'michigan',
+        city: 'Michigan',
+        country: 'United States',
+        role: 'USA Representative',
+        type: 'rep',
+        core: false,
+        detail: 'Business development & partner access across North America',
+        focus: ['North America entry', 'Advanced materials', 'Mobility & automotive', 'Distribution'],
       },
     ],
   },
@@ -490,10 +584,12 @@ const en = {
       service: 'Please select at least one service focus.',
       brief: 'Please describe your project in at least 20 characters.',
     },
-    infoHeading: 'Offices',
+    infoHeading: 'Offices & representatives',
     offices: [
       { city: 'Taipei, Taiwan', role: 'Headquarters & legal entity', detail: 'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)' },
-      { city: 'Chennai, India', role: 'India Desk', detail: 'Representative office — opening soon' },
+      { city: 'Bangalore, India', role: 'India Representative', detail: 'Business development & partner access' },
+      { city: 'Seoul, South Korea', role: 'Korea Representative', detail: 'Business development & partner access' },
+      { city: 'Michigan, United States', role: 'USA Representative', detail: 'Business development & partner access' },
     ],
     directHeading: 'Direct',
     emailLabel: 'Email',
@@ -558,9 +654,9 @@ const zh: Dict = {
     legalName: '瀚瑞國際股份有限公司',
     legalNameAlt: 'HariNex Global Co., Ltd.',
     tagline: '技術移轉 • 商務顧問 • 全球貿易',
-    shortTagline: '連結台灣、印度與全球創新',
+    shortTagline: '連結全球創新與值得信賴的夥伴關係',
     description:
-      '專注於台灣、印度與全球市場之間的跨境技術移轉、企業貿易顧問與專業技術在地化服務。',
+      '提供國際技術移轉、企業貿易顧問與專業技術在地化服務。總部設於台灣，並在印度、南韓與美國派駐代表。',
   },
 
   common: {
@@ -591,13 +687,13 @@ const zh: Dict = {
   },
 
   hero: {
-    badge: '台灣 ↔ 印度 雙向樞紐',
-    title: '連結創意．建立夥伴．實現創新價值',
-    titleLines: ['連結創意。', '建立夥伴。', '實現創新價值。'],
+    badge: '台灣 · 印度 · 南韓 · 美國',
+    title: '連結全球創新與值得信賴的夥伴關係',
+    titleLines: ['連結全球創新', '與值得信賴的', '夥伴關係'],
     subtitle:
-      '銜接台灣、印度與全球市場的雙向樞紐，提供技術移轉、策略採購與產業落地執行服務。',
-    primaryCta: '瀏覽服務能力',
-    secondaryCta: '預約技術媒合',
+      '瀚瑞國際協助企業透過技術移轉、商務顧問、供應商採購、技術翻譯、數位解決方案與國際專案管理，在全球市場建立連結、展開合作並持續成長。',
+    primaryCta: '預約免費諮詢',
+    secondaryCta: '瀏覽服務項目',
     taipei: '台北',
     india: '印度據點',
   },
@@ -612,16 +708,16 @@ const zh: Dict = {
         detail: '涵蓋特用化學、生技醫藥、半導體到綠色科技。',
       },
       {
-        value: '2',
+        value: '4',
         suffix: '',
-        label: '兩地市場，同一團隊',
-        detail: '由單一負責團隊橫跨台灣與印度執行專案。',
+        label: '四個市場，同一團隊',
+        detail: '台灣、印度、南韓與美國，由單一負責團隊統籌執行。',
       },
       {
         value: '',
         suffix: '',
-        label: '無雙酚與綠色化學專長',
-        detail: '不含 BPA/BPS 助劑與永續配方技術。',
+        label: '先進材料與永續解決方案',
+        detail: '特用化學、複合材料與永續配方，服務受管制產業。',
       },
       {
         value: '',
@@ -632,17 +728,25 @@ const zh: Dict = {
     ],
   },
 
-  about: {
-    eyebrow: '雙向橋樑',
-    heading: '台灣的創新，印度的機會，打造成一條可運作的通道',
-    lead: '瀚瑞國際成立的目的，是弭平「先進技術研發之地」與「能夠規模化生產之地」之間的落差。',
+  welcome: {
+    eyebrow: '歡迎',
+    heading: '值得信賴的全球商務夥伴',
     body: [
-      '我們是一家國際商務與技術顧問公司，協助企業尋找夥伴、評估技術、協調專案，並建立能夠禁得起實務考驗的合作關係。',
-      '這條通道之所以能運作，關鍵在於兩端都具備技術理解力。技術評估由一支現職科學家組成的顧問團隊負責——他們是目前任職於台灣與印度產業界的化學博士，專長涵蓋新藥開發、CMC 文件、高分子與複合材料配方，以及試量產技術移轉。台灣營運、法定代表與政府聯繫則由創辦人施佳玲負責。',
-      '我們相信成功的國際商務仰賴三件事：信任、技術上的相互理解，以及能夠跨越語言隔閡的溝通。這就是我們方法論的全部。',
+      '瀚瑞國際是一家國際商務與技術顧問公司，致力於協助企業在全球建立具實質意義的合作夥伴關係。',
+      '我們結合技術專業、文化理解與全球市場知識，讓國際商務變得單純。無論您需要的是技術夥伴、製造供應商、研究合作或數位轉型，我們都能協助專案從概念走向落地執行。',
+    ],
+  },
+
+  about: {
+    eyebrow: '關於我們',
+    heading: '在全球建立更穩固的商務連結',
+    lead: '瀚瑞國際成立的願景，是弭平區域創新與全球機會之間的落差。',
+    body: [
+      '我們的團隊結合科學知識、國際專案經驗與業務開發專業，協助組織尋找夥伴、評估技術、協調專案，並建立長期合作關係。',
+      '我們相信，成功的國際商務仰賴信任、技術上的相互理解，以及有效的溝通。',
     ],
     visionTitle: '我們的願景',
-    vision: '成為台灣與印度之間在創新、製造與國際合作領域最重要的技術與商務橋樑。',
+    vision: '成為創新、製造與國際合作領域中，全球領先的技術與商務橋樑。',
     missionTitle: '我們的使命',
     mission:
       '透過值得信賴的顧問服務、技術合作夥伴、供應商網絡與數位解決方案，簡化跨境商務並創造長期價值。',
@@ -652,14 +756,13 @@ const zh: Dict = {
     bridgeDestRole: '產業放大、市場進入、具成本競爭力的生產',
     bridgeLabel: '技術橋樑',
     whyUs: {
-      heading: '企業選擇我們的理由',
+      heading: '選擇瀚瑞國際的理由',
       items: [
-        { title: '技術專業', body: '具博士級科學評估能力，而非僅以業務導向進行媒合。' },
-        { title: '國際經驗', body: '職涯橫跨台灣與印度的研究機構與產業界。' },
-        { title: '台灣在地網絡', body: '在台北具備實地據點、語言能力與法定代表資格。' },
-        { title: '印度商務網絡', body: '直接對接印度製造業與生命科學生態系。' },
-        { title: '全程專案支援', body: '從初次媒合到簽約與交付，全程陪同。' },
-        { title: '專業技術翻譯', body: '繁體中文 ⇄ 英文，由真正理解技術內容的人員處理。' },
+        { title: '技術專業', body: '在高科技與受管制產業具備深厚的專業知識。' },
+        { title: '國際經驗', body: '在技術與商品化領域擁有跨境實務成績。' },
+        { title: '全球網絡', body: '擁有廣泛的產業、學術與商務夥伴網絡。' },
+        { title: '全程支援', body: '從初期範疇界定到落地執行，提供完整指引。' },
+        { title: '多語溝通能力', body: '跨越語言與商業文化的順暢溝通。' },
       ],
     },
   },
@@ -789,6 +892,23 @@ const zh: Dict = {
         ],
         tags: ['COMPUTEX', '亞洲生技大會', 'TIMTOS', '口譯'],
       },
+      {
+        id: 'project-management',
+        icon: 'clipboard',
+        title: '國際專案管理',
+        summary: '橫跨多國、多語言與多時區的專案，由單一窗口全權負責。',
+        description:
+          '跨境專案的失敗，往往發生在各方之間的縫隙，而非任何一方內部。我們承擔統籌角色，負責時程、範疇、文件、問題升級與會議之間的後續追蹤，讓一個同時牽涉台灣供應商、印度廠區與美國客戶的專案，有單一負責人，而不是三方各自以為別人會處理。',
+        deliverables: [
+          '專案規劃與里程碑追蹤',
+          '跨時區多方協調',
+          '文件管控與版本管理',
+          '風險與問題升級管理',
+          '雙語進度報告',
+          '交付後檢討與移交',
+        ],
+        tags: ['統籌協調', '里程碑', '進度報告', '移交'],
+      },
     ],
   },
 
@@ -909,8 +1029,8 @@ const zh: Dict = {
 
   leadership: {
     eyebrow: '經營團隊與治理',
-    heading: '經營團隊與治理',
-    lead: '公司經營與法定代表設於台灣；技術方向則由下方的顧問團隊提供。',
+    heading: '經營團隊',
+    lead: '公司經營與法定代表設於台灣，並由現職科學家組成的顧問團隊提供支援。',
     people: [
       {
         id: 'chia-ling-shih',
@@ -928,7 +1048,26 @@ const zh: Dict = {
           '台耀化學 ADC 部門 研發化學師',
           '國立臺灣大學 藥學院 研究助理',
         ],
-        focus: ['公司治理', '台灣法定代表', '政府聯繫', '製程化學'],
+        focus: ['公司治理', '區域營運', '政府聯繫', '製程化學'],
+      },
+      {
+        id: 'ganesh-kumar',
+        name: '甘納緒 博士',
+        nameLocal: 'Dr. D. Ganesh Kumar',
+        role: '總經理',
+        roleDetail: '技術商品化 · 業務開發 · 法規策略',
+        location: '台灣，新北市林口',
+        bio: '瀚瑞國際總經理，負責技術評估、技術移轉與國際合作。藥物化學博士，於藥物探索、產品開發、IND 前置研究、CMC 文件與高度受管制環境下的法規策略領域擁有十餘年經驗。',
+        bioExtra:
+          '現任博惠生技新藥開發經理，負責新藥研發、臨床開發與製程優化。曾任國立臺灣大學與長庚大學博士後研究員，並於印度 Syngene International（Biocon 集團）擔任研究員，負責將實驗室製程放大至公斤級試量產，並支援 IND 申請之 CMC 章節。發表或共同發表十九篇同儕審查論文。',
+        creds: [
+          '高雄醫學大學 有機暨藥物化學 博士',
+          '印度馬德拉斯大學 化學 碩士',
+          '博惠生技 新藥開發經理',
+          '國立臺灣大學、長庚大學 博士後研究員',
+          'Syngene International（Biocon 集團，印度）研究員',
+        ],
+        focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],
       },
     ],
   },
@@ -936,18 +1075,9 @@ const zh: Dict = {
   advisory: {
     eyebrow: '顧問團隊',
     heading: '現職科學家，而非職業顧問',
-    lead: '我們的顧問目前均任職於台灣與印度的產業界。技術實地查核，由仍在第一線執行工作的人負責。',
+    lead: '我們的顧問均為現職產業人士。技術實地查核，由仍在第一線執行工作的人負責。',
     currentRole: '現職',
     people: [
-      {
-        id: 'ganesh-kumar',
-        name: '甘納緒 博士',
-        nameLocal: 'Dr. D. Ganesh Kumar',
-        role: '新藥開發經理',
-        org: '博惠生技股份有限公司',
-        location: '台灣，新北市林口',
-        focus: ['技術移轉', '技術實地查核', '法規策略', '商品化'],
-      },
       {
         id: 'ariraman-mathivathanan',
         name: 'Dr. Ariraman Mathivathanan',
@@ -956,6 +1086,59 @@ const zh: Dict = {
         org: 'Wendt India Ltd.',
         location: '印度，坦米爾納杜邦，霍蘇爾',
         focus: ['高分子與有機化學', '複合材料與配方', '接著劑', '材料分析鑑定'],
+      },
+    ],
+  },
+
+  network: {
+    eyebrow: '全球網絡',
+    heading: '一家公司，四個市場',
+    lead: '總部設於台灣，並在印度、南韓與美國派駐業務開發代表。每個市場都有長駐當地、通曉語言、本週就能前往工廠實地拜訪的人。',
+    hqLabel: '總部',
+    repLabel: '業務開發代表',
+    coreLabel: '核心走廊',
+    coverageNote:
+      '台灣—印度走廊仍是我們的核心業務，也是業務量最大的一環——這是我們自身技術與營運經驗最深厚的領域。韓國與美國則是將同一套模式延伸至更多市場。各地代表是該區域的第一線窗口；技術評估、合約與交付則由台北總部統一執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口。',
+    locations: [
+      {
+        id: 'taipei',
+        city: '台北',
+        country: '台灣',
+        role: '總部與法人登記地',
+        type: 'hq',
+        core: true,
+        detail: '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）',
+        focus: ['技術發掘', '供應商資格認定', '合約簽訂', '法規協調'],
+      },
+      {
+        id: 'bangalore',
+        city: '班加羅爾',
+        country: '印度',
+        role: '印度代表',
+        type: 'rep',
+        core: true,
+        detail: '負責印度市場的業務開發與夥伴對接',
+        focus: ['市場進入', '製造夥伴', '生命科學', '實地訪廠'],
+      },
+      {
+        id: 'seoul',
+        city: '首爾',
+        country: '南韓',
+        role: '韓國代表',
+        type: 'rep',
+        core: false,
+        detail: '負責韓國市場的業務開發與夥伴對接',
+        focus: ['市場准入', '電子與材料', '夥伴發掘', '商務考察'],
+      },
+      {
+        id: 'michigan',
+        city: '密西根州',
+        country: '美國',
+        role: '美國代表',
+        type: 'rep',
+        core: false,
+        detail: '負責北美市場的業務開發與夥伴對接',
+        focus: ['北美市場進入', '先進材料', '移動與車輛產業', '通路布建'],
       },
     ],
   },
@@ -1011,10 +1194,12 @@ const zh: Dict = {
       service: '請至少選擇一項需求服務。',
       brief: '請以至少 20 個字元描述您的專案。',
     },
-    infoHeading: '據點',
+    infoHeading: '據點與代表',
     offices: [
       { city: '台灣 台北', role: '總部與法人登記地', detail: '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）' },
-      { city: '印度 清奈', role: '印度據點', detail: '代表處 — 即將設立' },
+      { city: '印度 班加羅爾', role: '印度代表', detail: '業務開發與夥伴對接' },
+      { city: '南韓 首爾', role: '韓國代表', detail: '業務開發與夥伴對接' },
+      { city: '美國 密西根州', role: '美國代表', detail: '業務開發與夥伴對接' },
     ],
     directHeading: '直接聯繫',
     emailLabel: '電子郵件',

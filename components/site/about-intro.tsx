@@ -8,8 +8,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { ROUTES } from '@/lib/content';
 
-export function AboutIntro() {
+/**
+ * `variant` picks which copy block to render: the homepage uses the shorter
+ * "Welcome" text, the About page uses the fuller About narrative.
+ */
+export function AboutIntro({ variant = 'about' }: { variant?: 'home' | 'about' }) {
   const { t } = useLang();
+  const copy =
+    variant === 'home'
+      ? { eyebrow: t.welcome.eyebrow, heading: t.welcome.heading, lead: undefined, body: t.welcome.body }
+      : { eyebrow: t.about.eyebrow, heading: t.about.heading, lead: t.about.lead, body: t.about.body };
 
   return (
     <section className="section" id="about">
@@ -35,10 +43,10 @@ export function AboutIntro() {
 
           {/* Narrative */}
           <div className="lg:col-span-7">
-            <SectionHeading eyebrow={t.about.eyebrow} heading={t.about.heading} lead={t.about.lead} />
+            <SectionHeading eyebrow={copy.eyebrow} heading={copy.heading} lead={copy.lead} />
 
             <Reveal delay={0.1} className="mt-6 space-y-4">
-              {t.about.body.map((p) => (
+              {copy.body.map((p) => (
                 <p key={p.slice(0, 24)} className="copy">
                   {p}
                 </p>

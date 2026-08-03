@@ -2,6 +2,7 @@
 
 import {
   Atom,
+  ClipboardList,
   Cpu,
   Dna,
   Factory,
@@ -26,6 +27,7 @@ const ICONS: Record<string, LucideIcon> = {
   monitor: Monitor,
   'shield-check': ShieldCheck,
   plane: Plane,
+  clipboard: ClipboardList,
   flask: FlaskConical,
   dna: Dna,
   stethoscope: Stethoscope,
