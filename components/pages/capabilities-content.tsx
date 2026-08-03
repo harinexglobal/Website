@@ -5,6 +5,7 @@ import { PageHero } from '@/components/site/page-hero';
 import { CapabilitiesTabs } from '@/components/site/capabilities-tabs';
 import { TranslationModule } from '@/components/site/translation-module';
 import { ProcessTimeline } from '@/components/site/process-timeline';
+import { Faq } from '@/components/site/faq';
 import { CtaBand } from '@/components/site/cta-band';
 
 export function CapabilitiesContent() {
@@ -23,6 +24,7 @@ export function CapabilitiesContent() {
       <CapabilitiesTabs showHeading={false} />
       <TranslationModule />
       <ProcessTimeline />
+      <Faq />
       <CtaBand />
     </>
   );

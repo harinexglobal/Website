@@ -548,6 +548,68 @@ const en = {
     ],
   },
 
+  faq: {
+    eyebrow: 'Common Questions',
+    heading: 'Questions we get asked before the first call',
+    lead: 'If your question is not here, ask it directly — we answer plainly rather than routing you to a brochure.',
+    items: [
+      {
+        q: 'Do you sign an NDA before any technical disclosure?',
+        a: 'Yes, and we prefer to. We will sign your NDA or provide a mutual one before you share any technical detail. Nothing technical is discussed with a third party until an agreement is in place.',
+      },
+      {
+        q: 'Who owns the intellectual property in a technology transfer?',
+        a: 'The licensor does, unless the agreement says otherwise. Our role is to structure the transfer so ownership, field of use, territory and improvement rights are explicit before anything is signed. We coordinate with qualified IP counsel on the drafting itself — we are not a law firm.',
+      },
+      {
+        q: 'Can you provide translations for regulatory submissions?',
+        a: 'We produce technical translations between Traditional Chinese and English for regulatory documentation, including CMC sections, technical files and safety data sheets. Where a submission requires certification or notarisation, we coordinate that separately — tell us the receiving authority and we will confirm what is needed.',
+      },
+      {
+        q: 'How do you charge?',
+        a: 'Consultation and advisory work is quoted as a fixed fee against a defined scope. Sourcing and transfer projects are milestone-based. Ongoing support is a monthly retainer. Every engagement is quoted in writing before it starts, and scope changes are quoted separately rather than appearing on an invoice.',
+      },
+      {
+        q: 'Do you work outside Taiwan and India?',
+        a: 'Yes. The Taiwan–India corridor is our core business and where our own experience runs deepest, but we have business development representatives in South Korea and the United States and can support projects into those markets under the same model.',
+      },
+      {
+        q: 'What happens if a supplier fails your evaluation?',
+        a: 'We tell you, with the evidence, and move to the next candidate. We are paid for the evaluation, not for placing a particular supplier, so there is no incentive to pass a factory that should not pass.',
+      },
+      {
+        q: 'How quickly can you arrange a factory visit?',
+        a: 'For a shortlisted Taiwanese supplier, typically within two to three weeks including scheduling and preparation. Indian site visits are coordinated through our Bangalore representative. We prepare a briefing pack and provide interpretation for the visit itself.',
+      },
+      {
+        q: 'Are you a law firm or a licensed financial adviser?',
+        a: 'No. We provide advisory, coordination and localisation services. We do not give legal, tax, investment or accounting advice, and we coordinate with appropriately qualified professionals where a matter requires it.',
+      },
+    ],
+  },
+
+  quickForm: {
+    heading: 'Ask about this service',
+    lead: 'A short message is enough to start. We reply to qualified enquiries within two working days.',
+    name: 'Your name',
+    email: 'Work email',
+    message: 'What do you need?',
+    messagePh: 'A sentence or two about the technology, market or problem.',
+    submit: 'Send enquiry',
+    submitting: 'Sending…',
+    success: 'Thank you — your enquiry has been received.',
+    errorName: 'Please enter your name.',
+    errorEmail: 'Please enter a valid email address.',
+    errorMessage: 'Please add a little more detail (at least 10 characters).',
+  },
+
+  capabilityPage: {
+    backToAll: 'All capabilities',
+    overview: 'Overview',
+    relatedHeading: 'Other capabilities',
+    talkHeading: 'Talk to us about this',
+  },
+
   contact: {
     eyebrow: 'Project Inquiry',
     heading: 'Start a conversation',
@@ -1170,6 +1232,68 @@ const zh: Dict = {
       { id: 'trade-opportunities', category: '貿易', title: '台印貿易機會', excerpt: '兩個經濟體的互補優勢，在哪些地方創造出真正的切入點。' },
       { id: 'localisation', category: '在地化', title: '國際企業的網站在地化', excerpt: '為何逐字翻譯必然失敗，以及真正到位的雙語形象需要什麼。' },
     ],
+  },
+
+  faq: {
+    eyebrow: '常見問題',
+    heading: '第一次通話前，客戶最常問我們的問題',
+    lead: '若這裡沒有您的問題，歡迎直接詢問——我們會據實回答，而不是把您導向一份型錄。',
+    items: [
+      {
+        q: '在進行任何技術揭露之前，貴公司會簽署保密協議嗎？',
+        a: '會，而且我們主動建議這麼做。在您分享任何技術細節之前，我們可以簽署貴公司的保密協議，或提供雙方互簽的版本。在協議完成之前，我們不會與任何第三方討論技術內容。',
+      },
+      {
+        q: '技術移轉中的智慧財產權歸屬於誰？',
+        a: '除非協議另有約定，否則歸屬於授權方。我們的角色是在簽署之前，把所有權、使用範圍、地域與改良技術的權利明確界定清楚。文件的實際撰擬則與具資格的智財律師協同進行——本公司並非律師事務所。',
+      },
+      {
+        q: '貴公司能提供法規送件所需的翻譯嗎？',
+        a: '我們提供繁體中文與英文之間的法規文件技術翻譯，包括 CMC 章節、技術文件與安全資料表。若送件需要認證或公證，我們會另行協調；請告知受理機關，我們會確認所需文件。',
+      },
+      {
+        q: '貴公司如何收費？',
+        a: '顧問與諮詢工作依明確範疇報價，採固定費用；採購與技術移轉專案採里程碑計費；持續性支援則為月費制。每一項委任都會在開始前提供書面報價，範疇如有變動亦會另行報價，不會直接出現在帳單上。',
+      },
+      {
+        q: '台灣與印度以外的市場，貴公司也承接嗎？',
+        a: '是的。台灣—印度走廊是我們的核心業務，也是我們經驗最深厚的領域；同時我們在南韓與美國設有業務開發代表，可依相同模式支援進入這些市場的專案。',
+      },
+      {
+        q: '如果供應商未通過貴公司的評估，會如何處理？',
+        a: '我們會據實告知並提供評估佐證，接著評估下一個候選對象。我們的報酬來自評估工作本身，而非促成特定供應商，因此沒有讓不合格工廠過關的誘因。',
+      },
+      {
+        q: '安排訪廠需要多久？',
+        a: '已列入候選名單的台灣供應商，通常在兩到三週內可完成安排與前置準備。印度的實地拜訪則由班加羅爾代表協調。我們會準備行前簡報資料，並於拜訪當日提供口譯。',
+      },
+      {
+        q: '貴公司是律師事務所或持照財務顧問嗎？',
+        a: '不是。我們提供顧問、協調與在地化服務，不提供法律、稅務、投資或會計意見；若事項有此需要，我們會與具備適當資格的專業人士協同辦理。',
+      },
+    ],
+  },
+
+  quickForm: {
+    heading: '詢問這項服務',
+    lead: '簡短訊息即可開始。我們會在兩個工作天內回覆有效諮詢。',
+    name: '您的姓名',
+    email: '公司電子郵件',
+    message: '您需要什麼協助？',
+    messagePh: '請用一兩句話說明相關技術、目標市場或您想解決的問題。',
+    submit: '送出諮詢',
+    submitting: '傳送中…',
+    success: '感謝您，我們已收到您的諮詢。',
+    errorName: '請輸入您的姓名。',
+    errorEmail: '請輸入有效的電子郵件地址。',
+    errorMessage: '請再補充一些細節（至少 10 個字元）。',
+  },
+
+  capabilityPage: {
+    backToAll: '所有服務能力',
+    overview: '服務概述',
+    relatedHeading: '其他服務能力',
+    talkHeading: '與我們討論這項服務',
   },
 
   contact: {

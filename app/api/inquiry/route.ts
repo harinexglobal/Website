@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { inquirySchema } from '@/lib/inquiry-schema';
+import { inquirySchema, quickInquirySchema } from '@/lib/inquiry-schema';
 
 /**
  * Project inquiry endpoint.
@@ -18,17 +18,27 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'invalid-json' }, { status: 400 });
   }
 
-  const parsed = inquirySchema.safeParse(body);
+  // Two shapes are accepted: the full /contact form, and the three-field
+  // short form embedded on capability pages.
+  const full = inquirySchema.safeParse(body);
+  const quick = full.success ? null : quickInquirySchema.safeParse(body);
 
-  if (!parsed.success) {
+  if (!full.success && !quick?.success) {
+    // Report against whichever shape the payload most resembles.
+    const err = quick && 'error' in quick ? quick.error : full.error;
     return NextResponse.json(
       {
         ok: false,
         error: 'validation',
-        issues: parsed.error.issues.map((i) => ({ path: i.path.join('.'), key: i.message })),
+        issues: err.issues.map((i) => ({ path: i.path.join('.'), key: i.message })),
       },
       { status: 422 },
     );
+  }
+
+  const parsed = full.success ? full : quick!;
+  if (!parsed.success) {
+    return NextResponse.json({ ok: false, error: 'validation' }, { status: 422 });
   }
 
   // Honeypot tripped — accept silently so bots get no signal.
@@ -39,12 +49,14 @@ export async function POST(request: Request) {
   const hasMailProvider = Boolean(process.env.RESEND_API_KEY || process.env.SMTP_URL);
 
   if (!hasMailProvider) {
+    const d = parsed.data;
     console.info('[inquiry] received (no mail provider configured):', {
-      name: parsed.data.name,
-      company: parsed.data.company,
-      email: parsed.data.email,
-      region: parsed.data.region,
-      services: parsed.data.services,
+      kind: 'company' in d ? 'full' : 'quick',
+      name: d.name,
+      email: d.email,
+      ...('company' in d
+        ? { company: d.company, region: d.region, services: d.services }
+        : { source: d.source }),
     });
     return NextResponse.json({ ok: true, delivered: false });
   }

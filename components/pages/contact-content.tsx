@@ -4,6 +4,7 @@ import { Building2, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { ContactForm } from '@/components/site/contact-form';
+import { Faq } from '@/components/site/faq';
 import { Reveal } from '@/components/ui/reveal';
 import { CONTACT } from '@/lib/content';
 
@@ -115,6 +116,10 @@ export function ContactContent() {
           </div>
         </div>
       </section>
+
+      <div className="border-t border-slate-200 bg-slate-50">
+        <Faq />
+      </div>
     </>
   );
 }

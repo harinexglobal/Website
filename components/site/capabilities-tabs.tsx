@@ -151,8 +151,12 @@ export function CapabilitiesTabs({ showHeading = true }: { showHeading?: boolean
                       {tag}
                     </span>
                   ))}
-                  <ButtonLink href={ROUTES.contact} variant="link" className="ml-auto text-sm font-semibold">
-                    {t.common.requestConsultation}
+                  <ButtonLink
+                    href={`${ROUTES.capabilities}/${current.id}`}
+                    variant="link"
+                    className="ml-auto text-sm font-semibold"
+                  >
+                    {t.common.learnMore}
                     <ArrowRight className="h-3.5 w-3.5" />
                   </ButtonLink>
                 </div>
