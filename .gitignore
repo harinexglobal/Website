@@ -12,3 +12,12 @@ yarn-error.log*
 next-env.d.ts
 .vercel
 *.tsbuildinfo
+
+# Private material — deliberately kept out of this repo because it is public.
+# These files still live in the working directory; they are just not tracked.
+#   - personal photographs, not corporate artwork
+#   - internal strategy notes
+Images/Hari.png
+Images/logo 2.png
+website content.docx
+~$*.docx
