@@ -4,6 +4,7 @@ import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { AboutIntro, WhyUsGrid } from '@/components/site/about-intro';
 import { TeamSection } from '@/components/site/team-section';
+import { AdvisoryBoard } from '@/components/site/advisory-board';
 import { ProcessTimeline } from '@/components/site/process-timeline';
 import { CtaBand } from '@/components/site/cta-band';
 
@@ -23,6 +24,7 @@ export function AboutContent() {
       <AboutIntro />
       <WhyUsGrid />
       <TeamSection />
+      <AdvisoryBoard />
       <ProcessTimeline />
       <CtaBand />
     </>

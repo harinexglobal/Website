@@ -102,7 +102,7 @@ const en = {
     lead: 'HariNex Global was established to close the gap between where advanced technology is developed and where it can be built at scale.',
     body: [
       'We are an international business and technology advisory firm helping organisations identify partners, evaluate technologies, coordinate projects and build collaborations that survive first contact with reality.',
-      'What makes the channel work is technical fluency on both ends. Our technical evaluation is led by Dr. D. Ganesh Kumar, a Ph.D. medicinal chemist with more than a decade across drug development, CMC documentation and pilot-scale technology transfer. Taiwan operations, legal representation and government liaison sit with founder Chia-Ling Shih.',
+      'What makes the channel work is technical fluency on both ends. Technical evaluation is handled by an advisory board of practising scientists — Ph.D. chemists holding current industry positions in Taiwan and India, across drug development, CMC documentation, polymer and composite formulation, and pilot-scale technology transfer. Taiwan operations, legal representation and government liaison sit with founder Chia-Ling Shih.',
       'We believe successful international business rests on three things: trust, technical understanding, and communication that survives translation. That is the whole of our method.',
     ],
     visionTitle: 'Our Vision',
@@ -381,8 +381,8 @@ const en = {
 
   leadership: {
     eyebrow: 'Leadership & Governance',
-    heading: 'Bilateral leadership',
-    lead: 'A Taiwan-based legal and operational lead, paired with technical direction from a working research scientist.',
+    heading: 'Leadership & governance',
+    lead: 'Company leadership and legal representation sit in Taiwan. Technical direction comes from the advisory board below.',
     people: [
       {
         id: 'chia-ling-shih',
@@ -402,24 +402,32 @@ const en = {
         ],
         focus: ['Corporate governance', 'Taiwan legal representation', 'Government liaison', 'Process chemistry'],
       },
+    ],
+  },
+
+  advisory: {
+    eyebrow: 'Advisory Board',
+    heading: 'Working scientists, not career consultants',
+    lead: 'Our advisers hold current industry positions in Taiwan and India. Technical due diligence is done by people who are still doing the work.',
+    currentRole: 'Current position',
+    people: [
       {
         id: 'ganesh-kumar',
         name: 'Dr. D. Ganesh Kumar',
         nameLocal: '甘納緒 博士',
-        role: 'General Manager & Technical Lead',
-        roleDetail: 'R&D evaluation · Technical due diligence · Market execution',
+        role: 'Manager, New Drug Development',
+        org: 'Bo Hui Biotech Co., Ltd.',
         location: 'Linkou, New Taipei City, Taiwan',
-        bio: 'General Manager of HariNex Global, leading technical evaluation, technology transfer and market execution. A Ph.D. medicinal chemist with over a decade of experience spanning drug discovery, product development, IND-enabling studies, CMC documentation and regulatory strategy in highly regulated environments.',
-        bioExtra:
-          'Currently Manager of New Drug Development at Bo Hui Biotech, leading drug R&D, clinical development and process optimisation. Previously a postdoctoral researcher at National Taiwan University and Chang Gung University, and a Research Associate at Syngene International (Biocon Group, India), where he scaled laboratory processes to kilogram pilot-plant production and supported CMC sections for IND applications. Author or co-author of nineteen peer-reviewed publications.',
-        creds: [
-          'Ph.D. Organic & Medicinal Chemistry — Kaohsiung Medical University, Taiwan',
-          'M.Sc. Chemistry — University of Madras, India',
-          'Manager, New Drug Development — Bo Hui Biotech Co., Ltd.',
-          'Postdoctoral Researcher — National Taiwan University & Chang Gung University',
-          'Research Associate — Syngene International (Biocon Group), India',
-        ],
         focus: ['Technology transfer', 'Technical due diligence', 'Regulatory strategy', 'Commercialisation'],
+      },
+      {
+        id: 'ariraman-mathivathanan',
+        name: 'Dr. Ariraman Mathivathanan',
+        nameLocal: '',
+        role: 'R&D Research Analyst (Manager Grade)',
+        org: 'Wendt India Ltd.',
+        location: 'Hosur, Tamil Nadu, India',
+        focus: ['Polymer & organic chemistry', 'Composites & formulation', 'Adhesives', 'Materials characterisation'],
       },
     ],
   },
@@ -630,7 +638,7 @@ const zh: Dict = {
     lead: '瀚瑞國際成立的目的，是弭平「先進技術研發之地」與「能夠規模化生產之地」之間的落差。',
     body: [
       '我們是一家國際商務與技術顧問公司，協助企業尋找夥伴、評估技術、協調專案，並建立能夠禁得起實務考驗的合作關係。',
-      '這條通道之所以能運作，關鍵在於兩端都具備技術理解力。技術評估由甘納緒博士主導，他是藥物化學博士，在新藥開發、CMC 文件與試量產技術移轉領域擁有十餘年經驗。台灣營運、法定代表與政府聯繫則由創辦人施佳玲負責。',
+      '這條通道之所以能運作，關鍵在於兩端都具備技術理解力。技術評估由一支現職科學家組成的顧問團隊負責——他們是目前任職於台灣與印度產業界的化學博士，專長涵蓋新藥開發、CMC 文件、高分子與複合材料配方，以及試量產技術移轉。台灣營運、法定代表與政府聯繫則由創辦人施佳玲負責。',
       '我們相信成功的國際商務仰賴三件事：信任、技術上的相互理解，以及能夠跨越語言隔閡的溝通。這就是我們方法論的全部。',
     ],
     visionTitle: '我們的願景',
@@ -901,8 +909,8 @@ const zh: Dict = {
 
   leadership: {
     eyebrow: '經營團隊與治理',
-    heading: '雙邊領導團隊',
-    lead: '由台灣在地的法務與營運負責人，搭配現職研究科學家提供技術指導。',
+    heading: '經營團隊與治理',
+    lead: '公司經營與法定代表設於台灣；技術方向則由下方的顧問團隊提供。',
     people: [
       {
         id: 'chia-ling-shih',
@@ -922,24 +930,32 @@ const zh: Dict = {
         ],
         focus: ['公司治理', '台灣法定代表', '政府聯繫', '製程化學'],
       },
+    ],
+  },
+
+  advisory: {
+    eyebrow: '顧問團隊',
+    heading: '現職科學家，而非職業顧問',
+    lead: '我們的顧問目前均任職於台灣與印度的產業界。技術實地查核，由仍在第一線執行工作的人負責。',
+    currentRole: '現職',
+    people: [
       {
         id: 'ganesh-kumar',
         name: '甘納緒 博士',
         nameLocal: 'Dr. D. Ganesh Kumar',
-        role: '總經理暨技術長',
-        roleDetail: '研發評估 · 技術實地查核 · 市場執行',
+        role: '新藥開發經理',
+        org: '博惠生技股份有限公司',
         location: '台灣，新北市林口',
-        bio: '瀚瑞國際總經理，負責技術評估、技術移轉與市場執行。藥物化學博士，於藥物探索、產品開發、IND 前置研究、CMC 文件與高度受管制環境下的法規策略領域擁有十餘年經驗。',
-        bioExtra:
-          '現任博惠生技新藥開發經理，負責新藥研發、臨床開發與製程優化。曾任國立臺灣大學與長庚大學博士後研究員，並於印度 Syngene International（Biocon 集團）擔任研究員，負責將實驗室製程放大至公斤級試量產，並支援 IND 申請之 CMC 章節。發表或共同發表十九篇同儕審查論文。',
-        creds: [
-          '高雄醫學大學 有機暨藥物化學 博士',
-          '印度馬德拉斯大學 化學 碩士',
-          '博惠生技 新藥開發經理',
-          '國立臺灣大學、長庚大學 博士後研究員',
-          'Syngene International（Biocon 集團，印度）研究員',
-        ],
         focus: ['技術移轉', '技術實地查核', '法規策略', '商品化'],
+      },
+      {
+        id: 'ariraman-mathivathanan',
+        name: 'Dr. Ariraman Mathivathanan',
+        nameLocal: '',
+        role: '研發研究分析師（經理級）',
+        org: 'Wendt India Ltd.',
+        location: '印度，坦米爾納杜邦，霍蘇爾',
+        focus: ['高分子與有機化學', '複合材料與配方', '接著劑', '材料分析鑑定'],
       },
     ],
   },

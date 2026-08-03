@@ -18,7 +18,14 @@ export function TeamSection() {
           className="mb-12"
         />
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        {/* A single leader shouldn't stretch across a two-column grid */}
+        <div
+          className={
+            t.leadership.people.length > 1
+              ? 'grid gap-6 lg:grid-cols-2'
+              : 'grid max-w-2xl gap-6'
+          }
+        >
           {t.leadership.people.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.1} as="article">
               <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">

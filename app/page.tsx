@@ -7,6 +7,7 @@ import { TranslationModule } from '@/components/site/translation-module';
 import { HomeBanner } from '@/components/site/home-banner';
 import { ProcessTimeline } from '@/components/site/process-timeline';
 import { TeamSection } from '@/components/site/team-section';
+import { AdvisoryBoard } from '@/components/site/advisory-board';
 import { CtaBand } from '@/components/site/cta-band';
 
 export default function HomePage() {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <HomeBanner />
       <ProcessTimeline />
       <TeamSection />
+      <AdvisoryBoard />
       <CtaBand />
     </>
   );
