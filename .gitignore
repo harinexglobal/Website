@@ -21,3 +21,6 @@ Images/Hari.png
 Images/logo 2.png
 website content.docx
 ~$*.docx
+
+# Local Netlify folder
+.netlify
