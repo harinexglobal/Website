@@ -1,16 +1,26 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, CalendarCheck, MapPin } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { ButtonLink } from '@/components/ui/button';
-import { BLUR } from '@/lib/blur';
 import { ROUTES } from '@/lib/content';
 
 export function Hero() {
   const { t } = useLang();
   const reduce = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Belt and braces: the `autoplay` attribute is enough in most browsers for a
+  // muted inline video, but some block it depending on data-saver settings or
+  // when the element mounts. A rejected play() is fine — the poster stays.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v || reduce) return;
+    v.play().catch(() => {});
+  }, [reduce]);
 
   const rise = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 22 },
@@ -20,27 +30,44 @@ export function Hero() {
 
   return (
     <section className="on-navy relative isolate overflow-hidden bg-navy-900">
-      {/* Artwork */}
+      {/* Background: looping video, or its poster frame when motion is reduced */}
       <div className="absolute inset-0 -z-20">
-        <Image
-          src="/brand/hero.webp"
-          alt=""
-          fill
-          priority
-          placeholder="blur"
-          blurDataURL={BLUR.hero}
-          sizes="100vw"
-          className="object-cover object-[62%_center] sm:object-center"
-        />
+        {reduce ? (
+          <Image
+            src="/brand/hero-poster.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[62%_center] sm:object-center"
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/brand/hero-poster.webp"
+            aria-hidden="true"
+            tabIndex={-1}
+            className="h-full w-full object-cover object-[62%_center] sm:object-center"
+          >
+            <source src="/brand/hero.webm" type="video/webm" />
+            <source src="/brand/hero.mp4" type="video/mp4" />
+          </video>
+        )}
       </div>
 
-      {/* Navy scrim — the artwork is busy on the left (Taipei 101, bridge), so the
-          headline gets a dedicated gradient rather than relying on the photo. */}
+      {/* Navy scrim. Heavier than the still-image version was: a video's
+          brightness shifts frame to frame, so contrast has to hold at its
+          lightest moment, not its average. */}
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/30 lg:via-navy-900/70 lg:to-transparent"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/97 via-navy-900/88 to-navy-900/55 lg:via-navy-900/80 lg:to-navy-900/25"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 -z-10 bg-navy-900/25 sm:bg-transparent" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-navy-900/35 sm:bg-navy-900/20" aria-hidden="true" />
       {/* Blend into the navy stats bar below */}
       <div
         className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-navy-900 to-transparent"
