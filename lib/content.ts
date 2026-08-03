@@ -295,11 +295,18 @@ const en = {
     lead: 'We concentrate where our scientific background is a genuine advantage rather than a claim on a slide.',
     items: [
       {
+        id: 'bp-free',
+        icon: 'test-tube',
+        title: 'Non-Bisphenol (BPA/BPS-Free) Technology',
+        body: 'BPA- and BPS-free textile auxiliaries and functional finishes — licensed, transferred and scaled for mills and brands facing tightening restricted-substance requirements.',
+        pills: ['BPA-free', 'BPS-free', 'Textile auxiliaries', 'ZDHC Level 3', 'RSL compliance'],
+      },
+      {
         id: 'chemicals',
         icon: 'flask',
-        title: 'Specialty & Green Chemicals',
-        body: 'Non-bisphenol (BPA/BPS-free) textile auxiliaries, functional finishes, sustainable formulation and process chemistry.',
-        pills: ['BP-free auxiliaries', 'Functional finishes', 'Textile chemicals', 'Green chemistry'],
+        title: 'Specialty & Advanced Materials',
+        body: 'Functional finishes, composites, adhesives, sustainable formulation and industrial process chemistry.',
+        pills: ['Functional finishes', 'Composites & adhesives', 'Textile chemicals', 'Sustainable formulation'],
       },
       {
         id: 'biotech',
@@ -918,11 +925,18 @@ const zh: Dict = {
     lead: '我們專注於科學背景能構成真正優勢的領域，而非僅是簡報上的宣稱。',
     items: [
       {
+        id: 'bp-free',
+        icon: 'test-tube',
+        title: '無雙酚（BPA/BPS-Free）技術',
+        body: '不含 BPA 與 BPS 的紡織助劑與機能性後整理技術，為面臨限用物質規範日益嚴格的紡織廠與品牌提供授權、移轉與量產放大。',
+        pills: ['無 BPA', '無 BPS', '紡織助劑', 'ZDHC Level 3', 'RSL 合規'],
+      },
+      {
         id: 'chemicals',
         icon: 'flask',
-        title: '特用化學與綠色化學',
-        body: '不含雙酚（BPA/BPS-free）之紡織助劑、機能性後整理、永續配方與製程化學。',
-        pills: ['無雙酚助劑', '機能性後整理', '紡織化學品', '綠色化學'],
+        title: '特用化學與先進材料',
+        body: '機能性後整理、複合材料、接著劑、永續配方與工業用製程化學。',
+        pills: ['機能性後整理', '複合材料與接著劑', '紡織化學品', '永續配方'],
       },
       {
         id: 'biotech',

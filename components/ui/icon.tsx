@@ -15,6 +15,7 @@ import {
   Plane,
   ShieldCheck,
   Stethoscope,
+  TestTubes,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -29,6 +30,7 @@ const ICONS: Record<string, LucideIcon> = {
   plane: Plane,
   clipboard: ClipboardList,
   flask: FlaskConical,
+  'test-tube': TestTubes,
   dna: Dna,
   stethoscope: Stethoscope,
   cpu: Cpu,
