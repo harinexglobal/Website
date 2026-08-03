@@ -1,8 +1,8 @@
 {
-  "name": "harinext-global",
+  "name": "harinex-global",
   "version": "1.0.0",
   "private": true,
-  "description": "Corporate website for HariNext Global Co., Ltd. (瀚瑞國際股份有限公司)",
+  "description": "Corporate website for HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)",
   "scripts": {
     "dev": "next dev -p 3210",
     "build": "next build",

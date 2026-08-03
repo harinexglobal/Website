@@ -84,7 +84,7 @@ export function Navbar() {
             />
             <span className="flex flex-col leading-none">
               <span className="font-display text-lg font-extrabold tracking-tight text-forest-600">
-                Hari<span className="text-saffron-500">Next</span>{' '}
+                Hari<span className="text-saffron-500">Nex</span>{' '}
                 <span className="text-forest-600">Global</span>
               </span>
               <span className="mt-1 hidden text-[0.62rem] font-medium uppercase tracking-[0.14em] text-slate-500 sm:block">
@@ -203,7 +203,7 @@ export function Navbar() {
           >
             <div className="container flex h-20 items-center justify-between">
               <span className="font-display text-lg font-extrabold text-forest-600">
-                Hari<span className="text-saffron-500">Next</span> Global
+                Hari<span className="text-saffron-500">Nex</span> Global
               </span>
               <button
                 type="button"

@@ -278,7 +278,7 @@ export function ContactForm() {
                     inquiry reaches us, please also send it directly.
                   </p>
                   <ButtonLink
-                    href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Project inquiry — HariNext Global')}`}
+                    href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Project inquiry — HariNex Global')}`}
                     variant="outline"
                     size="sm"
                     className="mt-3"

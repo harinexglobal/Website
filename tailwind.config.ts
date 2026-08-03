@@ -55,7 +55,7 @@ const config: Config = {
           800: '#065F46',
           900: '#064E3B',
         },
-        /* Brand orange, taken from the HariNext logo */
+        /* Brand orange, taken from the HariNex logo */
         saffron: {
           50: '#FFF6EB',
           100: '#FFE8CC',
@@ -68,7 +68,7 @@ const config: Config = {
           800: '#7A3E0F',
           900: '#5C2F0D',
         },
-        /* Brand deep green, taken from the HariNext logo wordmark */
+        /* Brand deep green, taken from the HariNex logo wordmark */
         forest: {
           500: '#2E7D32',
           600: '#1B5E20',

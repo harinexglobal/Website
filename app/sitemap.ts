@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinextglobal.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinexglobal.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['', '/about', '/capabilities', '/industries', '/why-taiwan-india', '/insights', '/contact'];

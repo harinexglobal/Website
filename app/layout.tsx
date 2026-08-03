@@ -19,30 +19,30 @@ const mono = JetBrains_Mono({
   weight: ['400', '500'],
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinextglobal.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinexglobal.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'HariNext Global — Technology Transfer & Cross-Border Advisory | Taiwan ↔ India',
-    template: '%s | HariNext Global',
+    default: 'HariNex Global — Technology Transfer & Cross-Border Advisory | Taiwan ↔ India',
+    template: '%s | HariNex Global',
   },
   description:
-    'HariNext Global is a cross-border technology transfer, corporate trade advisory and specialised technical localisation firm bridging Taiwan, India and global markets.',
+    'HariNex Global is a cross-border technology transfer, corporate trade advisory and specialised technical localisation firm bridging Taiwan, India and global markets.',
   keywords: [
     'technology transfer Taiwan India',
     'cross-border advisory',
     'technical translation Traditional Chinese',
     'supplier sourcing Taiwan',
     'regulatory coordination TFDA CDSCO',
-    'HariNext Global',
+    'HariNex Global',
     '瀚瑞國際',
   ],
-  authors: [{ name: 'HariNext Global Co., Ltd.' }],
+  authors: [{ name: 'HariNex Global Co., Ltd.' }],
   openGraph: {
     type: 'website',
-    siteName: 'HariNext Global',
-    title: 'HariNext Global — Technology Transfer & Cross-Border Advisory',
+    siteName: 'HariNex Global',
+    title: 'HariNex Global — Technology Transfer & Cross-Border Advisory',
     description:
       'The bilateral gateway for technology transfer, strategic sourcing and industrial execution between Taiwan, India and global markets.',
     locale: 'en_US',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HariNext Global — Technology Transfer & Cross-Border Advisory',
+    title: 'HariNex Global — Technology Transfer & Cross-Border Advisory',
     description:
       'The bilateral gateway for technology transfer, strategic sourcing and industrial execution between Taiwan, India and global markets.',
   },

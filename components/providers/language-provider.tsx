@@ -11,7 +11,7 @@ import {
 } from 'react';
 import { dictionaries, type Dict, type Lang } from '@/lib/content';
 
-const STORAGE_KEY = 'harinext.lang';
+const STORAGE_KEY = 'harinex.lang';
 
 type LanguageContextValue = {
   lang: Lang;

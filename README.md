@@ -1,6 +1,6 @@
-# HariNext Global — Corporate Website
+# HariNex Global — Corporate Website
 
-Official website for **HariNext Global Co., Ltd. (瀚瑞國際股份有限公司)** — cross-border technology
+Official website for **HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)** — cross-border technology
 transfer, corporate trade advisory and specialised technical localisation between Taiwan, India and
 global markets.
 
@@ -87,14 +87,14 @@ Email, phone and office locations are in the `CONTACT` constant at the bottom of
 
 > ⚠️ **The phone number `+886 987 654 321` was taken from the supplied design mockup and
 > looks like a placeholder.** Replace it with the real company number before launch.
-> The email `info@harinextglobal.com` came from the same mockup — confirm it is live.
+> The email `info@harinexglobal.com` came from the same mockup — confirm it is live.
 
 ---
 
 ## Bilingual behaviour
 
 - Toggle in the navbar: **EN | 繁中**
-- Choice persists in `localStorage` under `harinext.lang`
+- Choice persists in `localStorage` under `harinex.lang`
 - `<html lang>` updates to `en` / `zh-Hant-TW` for screen readers and search engines
 
 This is a client-side dictionary swap, not route-based i18n. If you later want
@@ -155,12 +155,12 @@ The detection logic is already in place; only the send call is missing.
 ### 1. Push to GitHub
 
 ```bash
-git remote add origin https://github.com/ganechem002-commits/harinext-global.git
+git remote add origin https://github.com/ganechem002-commits/harinex-global.git
 git push -u origin main
 ```
 
 Create the repository first at <https://github.com/new> (owner
-`ganechem002-commits`, name `harinext-global`). A private repo is recommended to
+`ganechem002-commits`, name `harinex-global`). A private repo is recommended to
 start; flip it public whenever you like.
 
 ### 2. Deploy to Netlify
@@ -208,3 +208,25 @@ These are deliberate and need a decision from the business, not a code change:
    them. They need real content before launch, particularly for a firm handling
    client technical documents.
 5. **Chennai office** is described as "opening soon" — update when it is real.
+6. **The logo artwork still spells the old name.** `Images/logo.png` (and the
+   `public/brand/logo-full.png` generated from it) contain a raster wordmark reading
+   "HariNext Global". The site is unaffected — the navbar and footer use
+   `logo-mark.png`, which is the squirrel symbol only, and render the wordmark as live
+   text — but `logo-full.png` is stale and should not be used until the logo is
+   redrawn. Once you have a new logo file, drop it in as `Images/logo.png` and re-run
+   `node scripts/prepare-logo.mjs`.
+
+## Naming decisions taken without confirmation
+
+The rename from "HariNext" to "HariNex" was applied as a straight token change, which
+made these two calls. Both are one-line reversals:
+
+- **Full name is "HariNex Global"**, and the legal entity "HariNex Global Co., Ltd.".
+  To drop "Global" entirely, edit `site.name` / `site.legalName` in `lib/content.ts`
+  and the three wordmarks in `navbar.tsx` / `footer.tsx`.
+- **Domain and email moved to `harinexglobal.com`** (`info@harinexglobal.com`),
+  matching the new spelling. These were placeholders taken from the design mockup and
+  were never verified. Set `NEXT_PUBLIC_SITE_URL` and `CONTACT.email` to whatever
+  domain is actually registered.
+- The Chinese registered name **瀚瑞國際股份有限公司 is unchanged** — the Latin
+  spelling does not affect it.

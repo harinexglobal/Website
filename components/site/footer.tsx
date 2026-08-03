@@ -22,7 +22,7 @@ export function Footer() {
                 <Image src="/brand/logo-mark.png" alt="" width={400} height={374} className="h-7 w-auto" />
               </span>
               <span className="font-display text-lg font-extrabold tracking-tight text-white">
-                Hari<span className="text-saffron-400">Next</span> Global
+                Hari<span className="text-saffron-400">Nex</span> Global
               </span>
             </Link>
 

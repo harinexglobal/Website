@@ -18,8 +18,8 @@ export type Lang = 'en' | 'zh';
 
 const en = {
   site: {
-    name: 'HariNext Global',
-    legalName: 'HariNext Global Co., Ltd.',
+    name: 'HariNex Global',
+    legalName: 'HariNex Global Co., Ltd.',
     legalNameAlt: '瀚瑞國際股份有限公司',
     tagline: 'Technology • Advisory • Global Commerce',
     shortTagline: 'Connecting Taiwan, India & Global Innovation',
@@ -99,7 +99,7 @@ const en = {
   about: {
     eyebrow: 'The Bilateral Bridge',
     heading: 'Taiwanese innovation, Indian opportunity — engineered into one working channel',
-    lead: 'HariNext Global was established to close the gap between where advanced technology is developed and where it can be built at scale.',
+    lead: 'HariNex Global was established to close the gap between where advanced technology is developed and where it can be built at scale.',
     body: [
       'We are an international business and technology advisory firm helping organisations identify partners, evaluate technologies, coordinate projects and build collaborations that survive first contact with reality.',
       'What makes the channel work is technical fluency on both ends. Our technical evaluation is led by Dr. D. Ganesh Kumar, a Ph.D. medicinal chemist with more than a decade across drug development, CMC documentation and pilot-scale technology transfer. Taiwan operations, legal representation and government liaison sit with founder Chia-Ling Shih.',
@@ -391,7 +391,7 @@ const en = {
         role: 'Founder & Chairperson',
         roleDetail: 'Responsible Person for Taiwan operations · Government & legal liaison',
         location: 'New Taipei City, Taiwan',
-        bio: 'Founder of HariNext Global and the company\'s legal representative in Taiwan, with responsibility for corporate governance, government liaison and local operations. A synthetic and medicinal chemist by training, with hands-on experience across small-molecule organic synthesis, PET radiochemistry and API/ADC process development.',
+        bio: 'Founder of HariNex Global and the company\'s legal representative in Taiwan, with responsibility for corporate governance, government liaison and local operations. A synthetic and medicinal chemist by training, with hands-on experience across small-molecule organic synthesis, PET radiochemistry and API/ADC process development.',
         bioExtra:
           'Currently delivering small-molecule and linker–payload synthesis for antibody-drug conjugate programmes at a global cGMP CDMO, applying continuous-flow (Advanced Flow Reactor) and tangential-flow filtration technologies with full structural characterisation by NMR, MS, HPLC and LC-MS. Co-author of three peer-reviewed papers, two of them in ACS journals.',
         creds: [
@@ -409,7 +409,7 @@ const en = {
         role: 'General Manager & Technical Lead',
         roleDetail: 'R&D evaluation · Technical due diligence · Market execution',
         location: 'Linkou, New Taipei City, Taiwan',
-        bio: 'General Manager of HariNext Global, leading technical evaluation, technology transfer and market execution. A Ph.D. medicinal chemist with over a decade of experience spanning drug discovery, product development, IND-enabling studies, CMC documentation and regulatory strategy in highly regulated environments.',
+        bio: 'General Manager of HariNex Global, leading technical evaluation, technology transfer and market execution. A Ph.D. medicinal chemist with over a decade of experience spanning drug discovery, product development, IND-enabling studies, CMC documentation and regulatory strategy in highly regulated environments.',
         bioExtra:
           'Currently Manager of New Drug Development at Bo Hui Biotech, leading drug R&D, clinical development and process optimisation. Previously a postdoctoral researcher at National Taiwan University and Chang Gung University, and a Research Associate at Syngene International (Biocon Group, India), where he scaled laboratory processes to kilogram pilot-plant production and supported CMC sections for IND applications. Author or co-author of nineteen peer-reviewed publications.',
         creds: [
@@ -484,7 +484,7 @@ const en = {
     },
     infoHeading: 'Offices',
     offices: [
-      { city: 'Taipei, Taiwan', role: 'Headquarters & legal entity', detail: 'HariNext Global Co., Ltd. (瀚瑞國際股份有限公司)' },
+      { city: 'Taipei, Taiwan', role: 'Headquarters & legal entity', detail: 'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)' },
       { city: 'Chennai, India', role: 'India Desk', detail: 'Representative office — opening soon' },
     ],
     directHeading: 'Direct',
@@ -510,7 +510,7 @@ const en = {
     disclaimer: 'Disclaimer',
     rights: 'All rights reserved.',
     disclaimerBody:
-      'HariNext Global provides advisory, coordination and localisation services. We are not a law firm, and we do not provide legal, tax, investment or accounting advice. Regulatory submissions are coordinated with appropriately qualified professionals.',
+      'HariNex Global provides advisory, coordination and localisation services. We are not a law firm, and we do not provide legal, tax, investment or accounting advice. Regulatory submissions are coordinated with appropriately qualified professionals.',
   },
 
   cta: {
@@ -541,9 +541,9 @@ export type Dict = DeepMutable<typeof en>;
 
 const zh: Dict = {
   site: {
-    name: 'HariNext Global',
+    name: 'HariNex Global',
     legalName: '瀚瑞國際股份有限公司',
-    legalNameAlt: 'HariNext Global Co., Ltd.',
+    legalNameAlt: 'HariNex Global Co., Ltd.',
     tagline: '技術移轉 • 商務顧問 • 全球貿易',
     shortTagline: '連結台灣、印度與全球創新',
     description:
@@ -992,7 +992,7 @@ const zh: Dict = {
     },
     infoHeading: '據點',
     offices: [
-      { city: '台灣 台北', role: '總部與法人登記地', detail: '瀚瑞國際股份有限公司（HariNext Global Co., Ltd.）' },
+      { city: '台灣 台北', role: '總部與法人登記地', detail: '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）' },
       { city: '印度 清奈', role: '印度據點', detail: '代表處 — 即將設立' },
     ],
     directHeading: '直接聯繫',
@@ -1043,7 +1043,7 @@ export const dictionaries: Record<Lang, Dict> = {
    the site goes to production.
 -------------------------------------------------------------------*/
 export const CONTACT = {
-  email: 'info@harinextglobal.com',
+  email: 'info@harinexglobal.com',
   phone: '+886 987 654 321',
   phoneHref: '+886987654321',
   taipei: 'Taipei, Taiwan',
