@@ -17,6 +17,8 @@ export function ContactContent() {
         eyebrow={t.contact.eyebrow}
         title={t.contact.heading}
         lead={t.contact.lead}
+        image="contact"
+        imagePosition="center 40%"
       />
 
       <section className="section">

@@ -9,8 +9,14 @@ import path from 'node:path';
 
 const OUT = path.resolve('public/brand');
 
+// `q` is tuned per image: the photo-real composites carry far more high-frequency
+// detail than the flat illustrations, so they need a lower quality to land in the
+// same weight class. The hero is the LCP element and is kept under ~130 KB.
 const JOBS = [
-  { src: 'Images/hero image.png', name: 'hero', width: 2200 },
+  { src: 'Images/hero image 3.png', name: 'hero', width: 1920, q: 68 },
+  { src: 'Images/hero image.png', name: 'taipei-green', width: 1800 },
+  { src: 'Images/hero image 2.png', name: 'trade-routes', width: 1800, q: 70 },
+  { src: 'Images/contact us.png', name: 'contact', width: 1800, q: 72 },
   { src: 'Images/2.png', name: 'about', width: 1800 },
   { src: 'Images/3.png', name: 'bridge', width: 1800 },
   { src: 'Images/ChatGPT Image Jul 31, 2026, 04_54_52 PM.png', name: 'india-growth', width: 1800 },
@@ -28,7 +34,7 @@ async function main() {
 
     await sharp(src)
       .resize({ width: job.width, withoutEnlargement: true })
-      .webp({ quality: 80, effort: 5 })
+      .webp({ quality: job.q ?? 80, effort: 6 })
       .toFile(path.join(OUT, `${job.name}.webp`));
 
     const blur = await sharp(src).resize(16).webp({ quality: 35 }).toBuffer();

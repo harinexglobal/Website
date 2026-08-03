@@ -17,7 +17,7 @@ export function BridgeContent() {
         eyebrow={t.bridge.eyebrow}
         title={t.bridge.heading}
         lead={t.bridge.lead}
-        image="bridge"
+        image="trade-routes"
         imagePosition="center 45%"
       />
       <WhyTaiwanIndia />

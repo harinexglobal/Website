@@ -9,7 +9,7 @@ export function HomeBanner() {
 
   return (
     <ImageBanner
-      image="india-growth"
+      image="taipei-green"
       eyebrow={t.bridge.eyebrow}
       heading={t.bridge.heading}
       body={t.bridge.lead}

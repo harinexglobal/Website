@@ -19,7 +19,7 @@ export function Hero() {
   });
 
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="on-navy relative isolate overflow-hidden bg-navy-900">
       {/* Artwork */}
       <div className="absolute inset-0 -z-20">
         <Image
@@ -30,17 +30,20 @@ export function Hero() {
           placeholder="blur"
           blurDataURL={BLUR.hero}
           sizes="100vw"
-          className="object-cover object-[68%_center] lg:object-center"
+          className="object-cover object-[62%_center] sm:object-center"
         />
       </div>
 
-      {/* Legibility wash — keeps the right-hand skyline visible */}
+      {/* Navy scrim — the artwork is busy on the left (Taipei 101, bridge), so the
+          headline gets a dedicated gradient rather than relying on the photo. */}
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-white via-white/90 to-white/10 lg:from-white/95 lg:via-white/70 lg:to-transparent"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/30 lg:via-navy-900/70 lg:to-transparent"
         aria-hidden="true"
       />
+      <div className="absolute inset-0 -z-10 bg-navy-900/25 sm:bg-transparent" aria-hidden="true" />
+      {/* Blend into the navy stats bar below */}
       <div
-        className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-white to-transparent"
+        className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-navy-900 to-transparent"
         aria-hidden="true"
       />
 
@@ -49,21 +52,21 @@ export function Hero() {
           <div className="max-w-2xl">
             {/* Badge */}
             <motion.div {...rise(0.05)}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-600/25 bg-white/80 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 shadow-sm backdrop-blur-sm">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-sm">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-600" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 </span>
                 {t.hero.badge}
               </span>
             </motion.div>
 
             {/* Headline */}
-            <h1 className="mt-6 font-display text-[2.1rem] font-extrabold leading-[1.08] tracking-tightest text-navy-800 sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="mt-6 font-display text-[2.1rem] font-extrabold leading-[1.08] tracking-tightest text-white sm:text-5xl lg:text-[3.4rem]">
               {t.hero.titleLines.map((line, i) => (
                 <motion.span key={line} className="block" {...rise(0.12 + i * 0.09)}>
                   {i === 2 ? (
-                    <span className="bg-gradient-to-r from-saffron-500 to-emerald-600 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-saffron-400 to-emerald-400 bg-clip-text text-transparent">
                       {line}
                     </span>
                   ) : (
@@ -75,7 +78,7 @@ export function Hero() {
 
             {/* Subtitle */}
             <motion.p
-              className="mt-6 max-w-xl text-base leading-relaxed text-slate-700 sm:text-lg"
+              className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
               {...rise(0.42)}
             >
               {t.hero.subtitle}
@@ -87,7 +90,7 @@ export function Hero() {
                 {t.hero.primaryCta}
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>
-              <ButtonLink href={`${ROUTES.contact}#inquiry`} variant="outline" size="lg">
+              <ButtonLink href={`${ROUTES.contact}#inquiry`} variant="ghostLight" size="lg">
                 <CalendarCheck className="h-4 w-4" />
                 {t.hero.secondaryCta}
               </ButtonLink>
@@ -148,7 +151,7 @@ function Node({ label, tone }: { label: string; tone: 'saffron' | 'emerald' }) {
         <span className={`absolute inline-flex h-full w-full rounded-full ${ring} opacity-30 animate-pulse-node`} />
         <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${ring}`} />
       </span>
-      <span className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.12em] text-navy-700">
+      <span className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.12em] text-white">
         <MapPin className="h-3 w-3 text-slate-400" aria-hidden="true" />
         {label}
       </span>
