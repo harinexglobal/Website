@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { CONTACT, ROUTES } from '@/lib/content';
 
@@ -106,6 +106,20 @@ export function Footer() {
                 >
                   <Phone className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.75} />
                   {CONTACT.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2.5 text-sm text-slate-400 transition-colors hover:text-emerald-400"
+                >
+                  <MessageCircle className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.75} />
+                  <span>
+                    {t.contact.whatsappLabel}
+                    <span className="block text-xs text-slate-500">{CONTACT.phone}</span>
+                  </span>
                 </a>
               </li>
               {t.contact.offices.map((o) => (

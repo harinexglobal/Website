@@ -488,6 +488,11 @@ const en = {
       { city: 'Chennai, India', role: 'India Desk', detail: 'Representative office — opening soon' },
     ],
     directHeading: 'Direct',
+    emailLabel: 'Email',
+    mobileLabel: 'Mobile',
+    whatsappLabel: 'WhatsApp',
+    whatsappCta: 'Message us on WhatsApp',
+    sameLineNote: 'Mobile and WhatsApp are the same number.',
     responseNote: 'We aim to respond to qualified inquiries within two working days.',
   },
 
@@ -996,6 +1001,11 @@ const zh: Dict = {
       { city: '印度 清奈', role: '印度據點', detail: '代表處 — 即將設立' },
     ],
     directHeading: '直接聯繫',
+    emailLabel: '電子郵件',
+    mobileLabel: '行動電話',
+    whatsappLabel: 'WhatsApp',
+    whatsappCta: '透過 WhatsApp 與我們聯繫',
+    sameLineNote: '行動電話與 WhatsApp 為同一號碼。',
     responseNote: '我們力求於兩個工作天內回覆有效諮詢。',
   },
 
@@ -1037,15 +1047,16 @@ export const dictionaries: Record<Lang, Dict> = {
 };
 
 /* ------------------------------------------------------------------
-   Contact details.
-   NOTE: phone number and email are taken from the supplied homepage
-   mockup (Images/1.png). Replace with the live company details before
-   the site goes to production.
+   Contact details. Confirmed by the company 2026-08-03.
+   Mobile and WhatsApp are the same line.
 -------------------------------------------------------------------*/
 export const CONTACT = {
-  email: 'info@harinexglobal.com',
-  phone: '+886 987 654 321',
-  phoneHref: '+886987654321',
+  email: 'harinexglobal@gmail.com',
+  phone: '+886 974 025 045',
+  phoneHref: '+886974025045',
+  /* wa.me requires the number with no '+', spaces or dashes. */
+  whatsapp: '886974025045',
+  whatsappUrl: 'https://wa.me/886974025045',
   taipei: 'Taipei, Taiwan',
   india: 'Chennai, India',
   linkedin: '#',

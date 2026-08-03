@@ -1,6 +1,6 @@
 'use client';
 
-import { Building2, Mail, MapPin, Phone } from 'lucide-react';
+import { Building2, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { ContactForm } from '@/components/site/contact-form';
@@ -61,8 +61,13 @@ export function ContactContent() {
                           href={`mailto:${CONTACT.email}`}
                           className="flex items-center gap-3 text-sm font-medium text-navy-800 transition-colors hover:text-emerald-700"
                         >
-                          <Mail className="h-4 w-4 text-slate-400" strokeWidth={1.75} />
-                          {CONTACT.email}
+                          <Mail className="h-4 w-4 shrink-0 text-slate-400" strokeWidth={1.75} />
+                          <span>
+                            {CONTACT.email}
+                            <span className="block text-xs font-normal text-slate-500">
+                              {t.contact.emailLabel}
+                            </span>
+                          </span>
                         </a>
                       </li>
                       <li>
@@ -70,8 +75,29 @@ export function ContactContent() {
                           href={`tel:${CONTACT.phoneHref}`}
                           className="flex items-center gap-3 text-sm font-medium text-navy-800 transition-colors hover:text-emerald-700"
                         >
-                          <Phone className="h-4 w-4 text-slate-400" strokeWidth={1.75} />
-                          {CONTACT.phone}
+                          <Phone className="h-4 w-4 shrink-0 text-slate-400" strokeWidth={1.75} />
+                          <span>
+                            {CONTACT.phone}
+                            <span className="block text-xs font-normal text-slate-500">
+                              {t.contact.mobileLabel}
+                            </span>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={CONTACT.whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-sm font-medium text-navy-800 transition-colors hover:text-emerald-700"
+                        >
+                          <MessageCircle className="h-4 w-4 shrink-0 text-slate-400" strokeWidth={1.75} />
+                          <span>
+                            {CONTACT.phone}
+                            <span className="block text-xs font-normal text-slate-500">
+                              {t.contact.whatsappLabel}
+                            </span>
+                          </span>
                         </a>
                       </li>
                       <li className="flex items-start gap-3 text-sm text-slate-600">

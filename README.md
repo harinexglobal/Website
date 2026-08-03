@@ -85,9 +85,17 @@ To change a heading, find it in `en` and change the matching key in `zh`.
 Email, phone and office locations are in the `CONTACT` constant at the bottom of
 `lib/content.ts`.
 
-> ⚠️ **The phone number `+886 987 654 321` was taken from the supplied design mockup and
-> looks like a placeholder.** Replace it with the real company number before launch.
-> The email `info@harinexglobal.com` came from the same mockup — confirm it is live.
+Current values, confirmed by the company on 2026-08-03:
+
+| Field | Value |
+|---|---|
+| Email | `harinexglobal@gmail.com` |
+| Mobile | `+886 974 025 045` |
+| WhatsApp | same number — `https://wa.me/886974025045` |
+
+`whatsapp` / `whatsappUrl` are stored separately from `phone` because `wa.me` requires
+the number with no `+`, spaces or dashes, while `tel:` and the display string want the
+formatted version.
 
 ---
 
@@ -200,8 +208,7 @@ immutable caching for `/brand/*`.
 
 These are deliberate and need a decision from the business, not a code change:
 
-1. **Contact phone number** is a mockup placeholder — see above.
-2. **Insight articles** are titles and excerpts only; each card shows
+1. **Insight articles** are titles and excerpts only; each card shows
    "Article coming soon". Article bodies need writing.
 3. **LinkedIn URL** in `CONTACT.linkedin` is `#` — set the real profile.
 4. **Privacy Policy / Terms / Disclaimer** are footer labels without pages behind
@@ -224,9 +231,9 @@ made these two calls. Both are one-line reversals:
 - **Full name is "HariNex Global"**, and the legal entity "HariNex Global Co., Ltd.".
   To drop "Global" entirely, edit `site.name` / `site.legalName` in `lib/content.ts`
   and the three wordmarks in `navbar.tsx` / `footer.tsx`.
-- **Domain and email moved to `harinexglobal.com`** (`info@harinexglobal.com`),
-  matching the new spelling. These were placeholders taken from the design mockup and
-  were never verified. Set `NEXT_PUBLIC_SITE_URL` and `CONTACT.email` to whatever
-  domain is actually registered.
+- **The canonical URL defaults to `harinexglobal.com`**, matching the new spelling.
+  This is still unverified — it came from the design mockup. Set `NEXT_PUBLIC_SITE_URL`
+  to whatever domain is actually registered. (The contact *email* is now settled:
+  `harinexglobal@gmail.com`, confirmed by the company.)
 - The Chinese registered name **瀚瑞國際股份有限公司 is unchanged** — the Latin
   spelling does not affect it.
