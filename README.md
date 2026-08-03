@@ -204,6 +204,30 @@ immutable caching for `/brand/*`.
 
 ---
 
+## Legal pages
+
+`/privacy`, `/terms` and `/disclaimer` are served from `lib/legal.ts` (kept separate
+from `content.ts` because they are long and change on their own schedule). Both
+languages, same type-safety rule: a key added to one must exist in the other.
+
+They were written to describe **what this website actually does** — the exact contact
+form fields, the `harinex.lang` value in localStorage, the absence of tracking cookies
+or analytics, the hosting arrangement. That accuracy is the point; a generic template
+would misdescribe the site.
+
+> ⚠️ **These are drafts, not vetted legal documents.** Have them reviewed by a
+> qualified lawyer in Taiwan before the company relies on them. Points that most
+> need a professional eye:
+> - the governing-law and jurisdiction clause (currently ROC law, Taipei District Court)
+> - whether the PDPA rights wording matches your actual data-handling practice
+> - whether the limitation of liability is enforceable as drafted
+> - the disclaimer's regulatory paragraph, which states plainly that referring to
+>   TFDA / CDSCO / ISO 13485 / REACH / ZDHC is **not** a claim to hold any
+>   certification under them — confirm that reflects your position
+
+If any factual detail changes — analytics added, a mail provider configured, a real
+India office opened — the privacy policy needs updating to match.
+
 ## Known gaps
 
 These are deliberate and need a decision from the business, not a code change:
@@ -211,7 +235,7 @@ These are deliberate and need a decision from the business, not a code change:
 1. **Insight articles** are titles and excerpts only; each card shows
    "Article coming soon". Article bodies need writing.
 3. **LinkedIn URL** in `CONTACT.linkedin` is `#` — set the real profile.
-4. **Privacy Policy / Terms / Disclaimer** are footer labels without pages behind
+4. ~~Privacy Policy / Terms / Disclaimer~~ — done, see above. Still needs a lawyer's
    them. They need real content before launch, particularly for a firm handling
    client technical documents.
 5. **Chennai office** is described as "opening soon" — update when it is real.

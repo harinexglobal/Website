@@ -146,9 +146,18 @@ export function Footer() {
             © {year} {t.site.legalName}. {t.footer.rights}
           </p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
-            {[t.footer.privacy, t.footer.terms, t.footer.disclaimer].map((l) => (
-              <li key={l}>
-                <span className="text-xs text-slate-500 transition-colors hover:text-slate-300">{l}</span>
+            {[
+              { href: '/privacy', label: t.footer.privacy },
+              { href: '/terms', label: t.footer.terms },
+              { href: '/disclaimer', label: t.footer.disclaimer },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="text-xs text-slate-500 transition-colors hover:text-emerald-400"
+                >
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
