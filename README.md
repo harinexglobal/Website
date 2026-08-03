@@ -160,36 +160,45 @@ The detection logic is already in place; only the send call is missing.
 
 ## Deploying
 
-### 1. Push to GitHub
+Both are already set up.
+
+| | |
+|---|---|
+| Repository | <https://github.com/harinexglobal/Website> — branch `main`, public |
+| Netlify project | `harinexglobal` (id `41881161-5805-4db3-870a-7a7f26875abe`) |
+| Live site | <https://harinexglobal.netlify.app> |
+
+### Deploying a change
 
 ```bash
-git remote add origin https://github.com/ganechem002-commits/harinex-global.git
-git push -u origin main
-```
-
-Create the repository first at <https://github.com/new> (owner
-`ganechem002-commits`, name `harinex-global`). A private repo is recommended to
-start; flip it public whenever you like.
-
-### 2. Deploy to Netlify
-
-Easiest route — connect the repo:
-
-1. <https://app.netlify.com/teams/ganechem002/projects> → **Add new project → Import an existing project**
-2. Pick the GitHub repo. Netlify reads `netlify.toml`, so build command and publish
-   directory are already correct.
-3. Add environment variable `NEXT_PUBLIC_SITE_URL` = your final domain.
-
-Or from the CLI:
-
-```bash
-npx netlify-cli login
-npx netlify-cli init      # links this folder to a Netlify project
 npx netlify-cli deploy --build --prod
 ```
 
-`netlify.toml` already sets Node 22, the Next.js runtime plugin, security headers and
-immutable caching for `/brand/*`.
+The folder is already linked (`.netlify/`, gitignored) and `NEXT_PUBLIC_SITE_URL`
+is set in the Netlify environment.
+
+`netlify.toml` sets Node 22, the Next.js runtime plugin and immutable caching for
+`/brand/*`. Security headers are set in `next.config.mjs`, **not** `netlify.toml` —
+HTML is served by the Next server handler function, which does not inherit
+`netlify.toml` headers. Static assets still take their caching from `netlify.toml`.
+
+### Continuous deployment
+
+Not yet connected. To make every push to `main` deploy automatically, link the repo
+in the Netlify UI — it requires installing the Netlify GitHub App, which cannot be
+done from the CLI:
+
+1. <https://app.netlify.com/projects/harinexglobal/configuration/deploys>
+2. **Continuous deployment → Link repository → GitHub**, authorise, pick
+   `harinexglobal/Website`, branch `main`
+3. Leave build command and publish directory alone — `netlify.toml` supplies them
+
+### Site visibility
+
+New Netlify accounts default to SSO protection, which makes the site return **401**
+to the public. It was turned off on 2026-08-03 (`sso_login: false`). If the site ever
+starts returning 401 again, check **Site configuration → Access & security → Visitor
+access**.
 
 ---
 
