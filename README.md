@@ -92,6 +92,14 @@ Current values, confirmed by the company on 2026-08-03:
 | Email | `harinexglobal@gmail.com` |
 | Mobile | `+886 974 025 045` |
 | WhatsApp | same number — `https://wa.me/886974025045` |
+| Head office | 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.) |
+| India branch | No 6, 3rd Floor, 5th Main, 1st Cross, Tata Nagar, Bengaluru 560092, Karnataka |
+
+> The head office is in **Taoyuan City**, not Taipei. Early drafts said "Taipei"
+> because that is what the supplied design mockup showed; it was never a real
+> address. Corrected across the site, the legal pages and the jurisdiction clause
+> on 2026-08-04. The two leadership profiles still say "New Taipei City" — that is
+> where those individuals are based and is unrelated to the office.
 
 `whatsapp` / `whatsappUrl` are stored separately from `phone` because `wa.me` requires
 the number with no `+`, spaces or dashes, while `tel:` and the display string want the
@@ -227,7 +235,7 @@ would misdescribe the site.
 > ⚠️ **These are drafts, not vetted legal documents.** Have them reviewed by a
 > qualified lawyer in Taiwan before the company relies on them. Points that most
 > need a professional eye:
-> - the governing-law and jurisdiction clause (currently ROC law, Taipei District Court)
+> - the governing-law and jurisdiction clause (currently ROC law, Taoyuan District Court)
 > - whether the PDPA rights wording matches your actual data-handling practice
 > - whether the limitation of liability is enforceable as drafted
 > - the disclaimer's regulatory paragraph, which states plainly that referring to

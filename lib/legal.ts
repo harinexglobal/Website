@@ -29,7 +29,7 @@ const en = {
       {
         h: 'Who we are',
         p: [
-          'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司) is the data controller for personal data collected through this website. Our registered office is in Taipei, Taiwan.',
+          'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司) is the data controller for personal data collected through this website. Our registered office is at 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.)',
           'You can reach us at harinexglobal@gmail.com for any question about this policy or about data we hold.',
         ],
       },
@@ -116,7 +116,7 @@ const en = {
       {
         h: 'Who these terms are with',
         p: [
-          'This website is operated by HariNex Global Co., Ltd. (瀚瑞國際股份有限公司), a company registered in Taiwan with its office in Taipei.',
+          'This website is operated by HariNex Global Co., Ltd. (瀚瑞國際股份有限公司), a company registered in Taiwan with its office at 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.)',
         ],
       },
       {
@@ -168,7 +168,7 @@ const en = {
       {
         h: 'Governing law',
         p: [
-          'These terms are governed by the laws of the Republic of China (Taiwan). The Taipei District Court shall be the court of first instance for any dispute arising from them, without prejudice to any mandatory consumer protection rights you may have where you live.',
+          'These terms are governed by the laws of the Republic of China (Taiwan). The Taoyuan District Court shall be the court of first instance for any dispute arising from them, without prejudice to any mandatory consumer protection rights you may have where you live.',
         ],
       },
       {
@@ -260,7 +260,7 @@ const zh: LegalDict = {
       {
         h: '我們是誰',
         p: [
-          '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）為透過本網站所蒐集個人資料之管理者，登記營業處所位於台灣台北。',
+          '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）為透過本網站所蒐集個人資料之管理者，登記營業處所為333004 台灣 桃園市龜山區文化七路10號3樓。',
           '如對本政策或我們所持有的資料有任何疑問，可透過 harinexglobal@gmail.com 與我們聯繫。',
         ],
       },
@@ -342,7 +342,7 @@ const zh: LegalDict = {
     sections: [
       {
         h: '契約相對人',
-        p: ['本網站由瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）營運，該公司登記於台灣，營業處所位於台北。'],
+        p: ['本網站由瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）營運，該公司登記於台灣，營業處所為333004 台灣 桃園市龜山區文化七路10號3樓。'],
       },
       {
         h: '網站使用',
@@ -389,7 +389,7 @@ const zh: LegalDict = {
       {
         h: '準據法',
         p: [
-          '本條款以中華民國（台灣）法律為準據法。因本條款所生之爭議，以台灣台北地方法院為第一審管轄法院；但不影響您依所在地強行規定所享有之消費者保護權利。',
+          '本條款以中華民國（台灣）法律為準據法。因本條款所生之爭議，以台灣桃園地方法院為第一審管轄法院；但不影響您依所在地強行規定所享有之消費者保護權利。',
         ],
       },
       {

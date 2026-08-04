@@ -63,7 +63,7 @@ const en = {
       'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management.',
     primaryCta: 'Book a Free Consultation',
     secondaryCta: 'Explore Our Services',
-    taipei: 'Taipei',
+    taipei: 'Taoyuan',
     india: 'India Desk',
   },
 
@@ -454,7 +454,7 @@ const en = {
     contactLabel: 'Contact',
     openRoleLabel: 'Appointment in progress',
     openRoleBody:
-      'We are finalising the appointment for this market. In the meantime, enquiries are handled directly from Taipei.',
+      'We are finalising the appointment for this market. In the meantime, enquiries are handled directly from the Taiwan head office.',
   },
 
   regional: {
@@ -534,17 +534,17 @@ const en = {
     repLabel: 'Business Development Representative',
     coreLabel: 'Core corridor',
     coverageNote:
-      'The Taiwan–India corridor remains our core business and the majority of our work — it is where our own technical and operating experience runs deepest. Korea and the United States extend the same model into further markets. Representatives are the first point of contact for their region, while technical evaluation, contracting and delivery are run centrally from Taipei, so you get local access without a fragmented engagement.',
+      'The Taiwan–India corridor remains our core business and the majority of our work — it is where our own technical and operating experience runs deepest. Korea and the United States extend the same model into further markets. Representatives are the first point of contact for their region, while technical evaluation, contracting and delivery are run centrally from the Taiwan head office, so you get local access without a fragmented engagement.',
     locations: [
       {
         id: 'taipei',
-        city: 'Taipei',
+        city: 'Taoyuan',
         country: 'Taiwan',
         role: 'Headquarters & legal entity',
         type: 'hq',
         core: true,
         detail: 'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)',
-        address: 'Taipei, Taiwan',
+        address: '3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.)',
         focus: ['Technology sourcing', 'Supplier qualification', 'Contracting', 'Regulatory coordination'],
       },
       {
@@ -706,9 +706,9 @@ const en = {
     infoHeading: 'Offices & representatives',
     offices: [
       {
-        city: 'Taipei, Taiwan',
+        city: 'Taoyuan City, Taiwan',
         role: 'Headquarters & legal entity',
-        detail: 'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司)',
+        detail: '3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004',
       },
       {
         city: 'Bengaluru, India',
@@ -830,7 +830,7 @@ const zh: Dict = {
       '瀚瑞國際協助企業透過技術移轉、商務顧問、供應商採購、技術翻譯、數位解決方案與國際專案管理，在全球市場建立連結、展開合作並持續成長。',
     primaryCta: '預約免費諮詢',
     secondaryCta: '瀏覽服務項目',
-    taipei: '台北',
+    taipei: '桃園',
     india: '印度據點',
   },
 
@@ -1205,7 +1205,7 @@ const zh: Dict = {
     advisoryTier: '顧問團隊',
     contactLabel: '聯絡方式',
     openRoleLabel: '人選確認中',
-    openRoleBody: '本市場的人選正在確認中。在此之前，相關諮詢由台北總部直接處理。',
+    openRoleBody: '本市場的人選正在確認中。在此之前，相關諮詢由台灣總部直接處理。',
   },
 
   regional: {
@@ -1275,17 +1275,17 @@ const zh: Dict = {
     repLabel: '業務開發代表',
     coreLabel: '核心走廊',
     coverageNote:
-      '台灣—印度走廊仍是我們的核心業務，也是業務量最大的一環——這是我們自身技術與營運經驗最深厚的領域。韓國與美國則是將同一套模式延伸至更多市場。各地代表是該區域的第一線窗口；技術評估、合約與交付則由台北總部統一執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口。',
+      '台灣—印度走廊仍是我們的核心業務，也是業務量最大的一環——這是我們自身技術與營運經驗最深厚的領域。韓國與美國則是將同一套模式延伸至更多市場。各地代表是該區域的第一線窗口；技術評估、合約與交付則由台灣總部統一執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口。',
     locations: [
       {
         id: 'taipei',
-        city: '台北',
+        city: '桃園',
         country: '台灣',
         role: '總部與法人登記地',
         type: 'hq',
         core: true,
         detail: '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）',
-        address: '台灣 台北',
+        address: '333004 台灣 桃園市龜山區文化七路10號3樓',
         focus: ['技術發掘', '供應商資格認定', '合約簽訂', '法規協調'],
       },
       {
@@ -1440,9 +1440,9 @@ const zh: Dict = {
     infoHeading: '據點與代表',
     offices: [
       {
-        city: '台灣 台北',
+        city: '台灣 桃園市',
         role: '總部與法人登記地',
-        detail: '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）',
+        detail: '333004 桃園市龜山區文化七路10號3樓',
       },
       {
         city: '印度 班加羅爾',
@@ -1517,7 +1517,7 @@ export const CONTACT = {
   /* wa.me requires the number with no '+', spaces or dashes. */
   whatsapp: '886974025045',
   whatsappUrl: 'https://wa.me/886974025045',
-  taipei: 'Taipei, Taiwan',
+  taipei: 'Taoyuan City, Taiwan',
   india: 'Chennai, India',
   linkedin: '#',
 } as const;
