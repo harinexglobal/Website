@@ -25,7 +25,11 @@ website content.docx
 # CVs and résumés — these carry home addresses, personal phone numbers and
 # private email. Source material only; never publish. Processed headshots that
 # belong on the site live in public/brand/team/ instead.
-Team/
+#
+# The leading slash anchors this to the repository root. Without it, and because
+# Windows sets core.ignorecase=true, the pattern also swallowed
+# public/brand/team/ and silently kept every headshot out of the repo.
+/Team/
 *.pdf
 *.docx
 
