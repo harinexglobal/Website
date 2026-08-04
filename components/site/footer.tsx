@@ -70,6 +70,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: ROUTES.about, label: t.nav.about },
+                { href: ROUTES.team, label: t.nav.team },
                 { href: ROUTES.industries, label: t.nav.industries },
                 { href: ROUTES.bridge, label: t.nav.bridge },
                 { href: ROUTES.insights, label: t.nav.insights },

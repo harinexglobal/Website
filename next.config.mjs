@@ -14,6 +14,15 @@ const nextConfig = {
    * survived on `/`. Next applies these to its own responses, so they land on
    * every page.
    */
+  /**
+   * /why-taiwan-india was renamed to /markets when the firm's positioning widened
+   * beyond the bilateral corridor. Permanent redirect so the old URL keeps working
+   * and any accumulated ranking transfers rather than 404ing.
+   */
+  async redirects() {
+    return [{ source: '/why-taiwan-india', destination: '/markets', permanent: true }];
+  },
+
   async headers() {
     return [
       {

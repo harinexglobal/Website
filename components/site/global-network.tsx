@@ -70,6 +70,12 @@ export function GlobalNetwork() {
                   <p className="mt-4 text-sm font-semibold text-white">{loc.role}</p>
                   <p className="mt-1.5 text-[0.82rem] leading-relaxed text-slate-400">{loc.detail}</p>
 
+                  {loc.address && loc.address.includes(',') && (
+                    <p className="mt-2.5 border-l border-white/15 pl-3 text-[0.78rem] leading-relaxed text-slate-500">
+                      {loc.address}
+                    </p>
+                  )}
+
                   <ul className="mt-5 flex flex-wrap gap-1.5">
                     {loc.focus.map((f) => (
                       <li key={f} className="pill pill-navy text-[0.68rem]">

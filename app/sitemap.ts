@@ -4,7 +4,16 @@ import { dictionaries } from '@/lib/content';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinexglobal.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/about', '/capabilities', '/industries', '/why-taiwan-india', '/insights', '/contact'];
+  const routes = [
+    '',
+    '/about',
+    '/about/team',
+    '/capabilities',
+    '/industries',
+    '/markets',
+    '/insights',
+    '/contact',
+  ];
   const capabilityRoutes = dictionaries.en.capabilities.items.map((c) => `/capabilities/${c.id}`);
   const legalRoutes = ['/privacy', '/terms', '/disclaimer'];
   const now = new Date();

@@ -53,6 +53,7 @@ export function Navbar() {
 
   const links = [
     { href: ROUTES.about, label: t.nav.about },
+    { href: ROUTES.team, label: t.nav.team },
     { href: ROUTES.capabilities, label: t.nav.capabilities, hasMenu: true },
     { href: ROUTES.industries, label: t.nav.industries },
     { href: ROUTES.bridge, label: t.nav.bridge },
