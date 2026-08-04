@@ -182,6 +182,14 @@ Both are already set up.
 npx netlify-cli deploy --build --prod
 ```
 
+> ⚠️ **Deploys are metered.** The account is on a credit plan (300 per billing
+> cycle). Batch your changes and deploy **once** when they are settled — not
+> after every edit. `npm run build`, `npm run typecheck`, `npm run lint` and
+> `git push` are all free; only the deploy costs.
+>
+> For the same reason, continuous deployment is deliberately **not** connected:
+> every push to `main` would trigger a build, and pushes are frequent.
+
 The folder is already linked (`.netlify/`, gitignored) and `NEXT_PUBLIC_SITE_URL`
 is set in the Netlify environment.
 
