@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { TeamContent } from '@/components/pages/team-content';
 
 export const metadata: Metadata = {
-  title: 'Our Team — Leadership, Regional Directors & Advisory Board',
+  title: 'Our Team — Leadership, Global Team & Advisory Board',
   description:
-    'The people behind HariNex Global: company leadership in Taiwan, regional directors in India and North America, and an advisory board of practising scientists.',
+    'The people behind HariNex Global: company leadership in Taiwan, a global team across India, South Korea and North America, and a chief advisor leading technical evaluation.',
   alternates: { canonical: '/about/team' },
 };
 

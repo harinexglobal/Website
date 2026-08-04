@@ -415,7 +415,7 @@ const en = {
   leadership: {
     eyebrow: 'Leadership & Governance',
     heading: 'Leadership',
-    lead: 'Company leadership and legal representation sit in Taiwan, supported by regional directors and an advisory board of practising scientists.',
+    lead: 'Company leadership and legal representation sit in Taiwan, supported by a global team across four markets and a chief advisor on technical matters.',
     people: [
       {
         id: 'chia-ling-shih',
@@ -426,30 +426,15 @@ const en = {
         photo: '/brand/team/chia-ling-shih.webp',
         focus: ['Corporate governance', 'Regional operations', 'Government liaison', 'Process chemistry'],
       },
-      {
-        id: 'ganesh-kumar',
-        name: 'Dr. D. Ganesh Kumar',
-        nameLocal: '甘納緒 博士',
-        role: 'General Manager',
-        location: 'New Taipei City, Taiwan',
-        photo: '/brand/team/ganesh-kumar.webp',
-        focus: [
-          'Technology commercialisation',
-          'Business development',
-          'Technology transfer',
-          'Regulatory strategy',
-          'International collaboration',
-        ],
-      },
     ],
   },
 
   team: {
     eyebrow: 'Our Team',
     heading: 'The people who actually do the work',
-    lead: 'Three tiers, and we are explicit about which is which: the officers of the company, the directors who represent it in each market, and the advisers who carry out technical evaluation.',
+    lead: 'Three tiers, and we are explicit about which is which: the officers of the company, the global team who represent it in each market and discipline, and the chief advisor who leads technical evaluation.',
     leadershipTier: 'Leadership',
-    regionalTier: 'Regional Directors',
+    regionalTier: 'Global Team',
     advisoryTier: 'Advisory Board',
     contactLabel: 'Contact',
     openRoleLabel: 'Appointment in progress',
@@ -458,9 +443,9 @@ const en = {
   },
 
   regional: {
-    eyebrow: 'Regional Directors',
+    eyebrow: 'Global Team',
     heading: 'Someone on the ground in each market',
-    lead: 'A regional director is the first point of contact for their market and can be in front of a counterparty in person, not on a call at an inconvenient hour.',
+    lead: 'Each member of the global team is the first point of contact for their market or discipline, and can be in front of a counterparty in person rather than on a call at an inconvenient hour.',
     people: [
       {
         id: 'vinay-g',
@@ -505,23 +490,45 @@ const en = {
           'Analytical characterisation',
         ],
       },
+      {
+        id: 'ariraman-mathivathanan',
+        name: 'Dr. Ariraman Mathivathanan',
+        role: 'Technical Specialist — Materials & Polymers',
+        location: 'Hosur, Tamil Nadu, India',
+        photo: '/brand/team/ariraman-mathivathanan.webp',
+        email: '',
+        phone: '',
+        phoneHref: '',
+        focus: [
+          'Polymer & organic chemistry',
+          'Composites & formulation',
+          'Adhesives',
+          'Materials characterisation',
+        ],
+      },
     ],
   },
 
   advisory: {
     eyebrow: 'Advisory Board',
     heading: 'Working scientists, not career consultants',
-    lead: 'Our advisers hold current industry positions. Technical due diligence is done by people who are still doing the work.',
+    lead: 'Technical direction and due diligence are led by a working scientist, so a technology is judged on its data rather than its pitch.',
     currentRole: 'Current position',
     people: [
       {
-        id: 'ariraman-mathivathanan',
-        name: 'Dr. Ariraman Mathivathanan',
-        nameLocal: '',
-        role: 'Technical Adviser — Materials & Polymers',
-        location: 'Hosur, Tamil Nadu, India',
-        photo: '/brand/team/ariraman-mathivathanan.webp',
-        focus: ['Polymer & organic chemistry', 'Composites & formulation', 'Adhesives', 'Materials characterisation'],
+        id: 'ganesh-kumar',
+        name: 'Dr. D. Ganesh Kumar',
+        nameLocal: '甘納緒 博士',
+        role: 'Chief Advisor',
+        location: 'New Taipei City, Taiwan',
+        photo: '/brand/team/ganesh-kumar.webp',
+        focus: [
+          'Technology commercialisation',
+          'Business development',
+          'Technology transfer',
+          'Regulatory strategy',
+          'International collaboration',
+        ],
       },
     ],
   },
@@ -1173,7 +1180,7 @@ const zh: Dict = {
   leadership: {
     eyebrow: '經營團隊與治理',
     heading: '經營團隊',
-    lead: '公司經營與法定代表設於台灣，並由各區域負責人與現職科學家組成的顧問團隊提供支援。',
+    lead: '公司經營與法定代表設於台灣，並由橫跨四個市場的全球團隊，以及技術事務首席顧問提供支援。',
     people: [
       {
         id: 'chia-ling-shih',
@@ -1184,24 +1191,15 @@ const zh: Dict = {
         photo: '/brand/team/chia-ling-shih.webp',
         focus: ['公司治理', '區域營運', '政府聯繫', '製程化學'],
       },
-      {
-        id: 'ganesh-kumar',
-        name: '甘納緒 博士',
-        nameLocal: 'Dr. D. Ganesh Kumar',
-        role: '總經理',
-        location: '台灣，新北市',
-        photo: '/brand/team/ganesh-kumar.webp',
-        focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],
-      },
     ],
   },
 
   team: {
     eyebrow: '團隊成員',
     heading: '實際執行工作的人',
-    lead: '三個層級，我們明確區分：公司的經營幹部、代表公司在各市場的區域負責人，以及執行技術評估的顧問。',
+    lead: '三個層級，我們明確區分：公司的經營幹部、代表公司在各市場與各專業領域的全球團隊，以及主導技術評估的首席顧問。',
     leadershipTier: '經營團隊',
-    regionalTier: '區域負責人',
+    regionalTier: '全球團隊',
     advisoryTier: '顧問團隊',
     contactLabel: '聯絡方式',
     openRoleLabel: '人選確認中',
@@ -1209,9 +1207,9 @@ const zh: Dict = {
   },
 
   regional: {
-    eyebrow: '區域負責人',
+    eyebrow: '全球團隊',
     heading: '每個市場都有在地負責人',
-    lead: '區域負責人是該市場的第一線窗口，能夠親自與對方當面會談，而不是在不方便的時段透過電話溝通。',
+    lead: '全球團隊的每位成員都是該市場或該專業領域的第一線窗口，能夠親自與對方當面會談，而不是在不方便的時段透過電話溝通。',
     people: [
       {
         id: 'vinay-g',
@@ -1246,23 +1244,34 @@ const zh: Dict = {
         phoneHref: '',
         focus: ['電子與 OLED 材料', '原料藥與精細化學品', '催化與製程開發', '分析鑑定'],
       },
+      {
+        id: 'ariraman-mathivathanan',
+        name: 'Dr. Ariraman Mathivathanan',
+        role: '技術專家 — 材料與高分子',
+        location: '印度，坦米爾納杜邦，霍蘇爾',
+        photo: '/brand/team/ariraman-mathivathanan.webp',
+        email: '',
+        phone: '',
+        phoneHref: '',
+        focus: ['高分子與有機化學', '複合材料與配方', '接著劑', '材料分析鑑定'],
+      },
     ],
   },
 
   advisory: {
     eyebrow: '顧問團隊',
     heading: '現職科學家，而非職業顧問',
-    lead: '我們的顧問均為現職產業人士。技術實地查核，由仍在第一線執行工作的人負責。',
+    lead: '技術方向與實地查核由現職科學家主導，讓技術依據數據被評估，而非依據簡報。',
     currentRole: '現職',
     people: [
       {
-        id: 'ariraman-mathivathanan',
-        name: 'Dr. Ariraman Mathivathanan',
-        nameLocal: '',
-        role: '技術顧問 — 材料與高分子',
-        location: '印度，坦米爾納杜邦，霍蘇爾',
-        photo: '/brand/team/ariraman-mathivathanan.webp',
-        focus: ['高分子與有機化學', '複合材料與配方', '接著劑', '材料分析鑑定'],
+        id: 'ganesh-kumar',
+        name: '甘納緒 博士',
+        nameLocal: 'Dr. D. Ganesh Kumar',
+        role: '首席顧問',
+        location: '台灣，新北市',
+        photo: '/brand/team/ganesh-kumar.webp',
+        focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],
       },
     ],
   },
