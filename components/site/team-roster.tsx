@@ -104,13 +104,13 @@ function PersonCard({
         <span className={cn('absolute inset-x-0 top-0 h-0.5', bar)} aria-hidden="true" />
 
         {person.photo ? (
-          <span className="mb-4 block h-16 w-16 overflow-hidden rounded-xl ring-1 ring-slate-200">
+          <span className="mb-4 block h-24 w-24 overflow-hidden rounded-2xl ring-1 ring-slate-200">
             <Image
               src={person.photo}
               alt={person.name}
-              width={400}
-              height={400}
-              sizes="64px"
+              width={480}
+              height={480}
+              sizes="96px"
               className="h-full w-full object-cover"
             />
           </span>
@@ -118,7 +118,7 @@ function PersonCard({
           <span
             aria-hidden="true"
             className={cn(
-              'mb-4 flex h-16 w-16 items-center justify-center rounded-xl font-display text-lg font-extrabold ring-1',
+              'mb-4 flex h-24 w-24 items-center justify-center rounded-2xl font-display text-2xl font-extrabold ring-1',
               ring,
             )}
           >

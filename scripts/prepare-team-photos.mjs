@@ -15,7 +15,11 @@ const OUT = path.resolve('public/brand/team');
 mkdirSync(OUT, { recursive: true });
 
 const PHOTOS = [
+  { src: 'Team/photos/Chia Ling Shih.png', name: 'chia-ling-shih' },
+  { src: 'Team/photos/Dr. Ganesh Kumar.png', name: 'ganesh-kumar' },
+  { src: 'Team/photos/VADIVALAGAN Chithravel.png', name: 'vadivalagan-chithravel' },
   { src: 'Team/photos/naveen.png', name: 'kanagaraj-naveen' },
+  { src: 'Team/photos/Dr. ARIRAMAN MATHIVATHANAN.png', name: 'ariraman-mathivathanan' },
 ];
 
 for (const p of PHOTOS) {
@@ -28,8 +32,8 @@ for (const p of PHOTOS) {
   // Square crop biased to the top — headshots put the face above centre, so a
   // straight centre crop cuts the forehead.
   await sharp(src)
-    .resize(400, 400, { fit: 'cover', position: 'top' })
-    .webp({ quality: 86, effort: 6 })
+    .resize(480, 480, { fit: 'cover', position: 'top' })
+    .webp({ quality: 84, effort: 6 })
     .toFile(path.join(OUT, `${p.name}.webp`));
 
   const meta = await sharp(path.join(OUT, `${p.name}.webp`)).metadata();
