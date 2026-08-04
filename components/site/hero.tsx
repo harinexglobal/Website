@@ -75,7 +75,9 @@ export function Hero() {
       />
 
       <div className="container relative">
-        <div className="flex min-h-[38rem] flex-col justify-center py-28 lg:min-h-[44rem] lg:py-32">
+        {/* pt clears the header, which is taller than the main bar alone
+            because of the utility strip above it. */}
+        <div className="flex min-h-[38rem] flex-col justify-center pb-28 pt-36 lg:min-h-[44rem] lg:pb-32 lg:pt-40">
           <div className="max-w-2xl">
             {/* Badge */}
             <motion.div {...rise(0.05)}>

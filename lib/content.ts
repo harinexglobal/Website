@@ -122,8 +122,9 @@ const en = {
       'To simplify cross-border business by providing trusted advisory services, technology partnerships, supplier networks and digital solutions that create long-term value.',
     bridgeOrigin: 'Taiwan',
     bridgeOriginRole: 'R&D, technology origin, precision manufacturing',
-    bridgeDest: 'India',
-    bridgeDestRole: 'Industrial scale-up, market entry, cost-competitive production',
+    bridgeDest: 'Destination markets',
+    bridgeDestRole:
+      'Industrial scale-up, market entry and distribution. India is the core corridor and the majority of our work; South Korea and North America run the same model.',
     bridgeLabel: 'Technology Bridge',
     whyUs: {
       heading: 'Why Choose HariNex Global',
@@ -885,8 +886,9 @@ const zh: Dict = {
       '透過值得信賴的顧問服務、技術合作夥伴、供應商網絡與數位解決方案，簡化跨境商務並創造長期價值。',
     bridgeOrigin: '台灣',
     bridgeOriginRole: '研發、技術源頭、精密製造',
-    bridgeDest: '印度',
-    bridgeDestRole: '產業放大、市場進入、具成本競爭力的生產',
+    bridgeDest: '目標市場',
+    bridgeDestRole:
+      '產業放大、市場進入與通路布建。印度為核心走廊，也是業務量最大的一環；南韓與北美則採行相同模式。',
     bridgeLabel: '技術橋樑',
     whyUs: {
       heading: '選擇瀚瑞國際的理由',

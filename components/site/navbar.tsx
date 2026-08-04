@@ -69,11 +69,32 @@ export function Navbar() {
         'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         scrolled
           ? 'border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md'
-          : 'border-b border-transparent bg-white/80 backdrop-blur-sm',
+          : 'border-b border-transparent bg-white/90 backdrop-blur-sm',
       )}
     >
+      {/* Utility strip. Social icons and the language toggle live here rather
+          than in the main bar — with six nav links plus a dropdown there was
+          not enough room, and everything wrapped onto two lines. Collapses on
+          scroll so the header stays compact. */}
+      <div
+        className={cn(
+          'hidden overflow-hidden bg-navy-800 transition-all duration-300 md:block',
+          scrolled ? 'h-0 opacity-0' : 'h-9 opacity-100',
+        )}
+      >
+        <div className="container flex h-9 items-center justify-between gap-6">
+          <p className="truncate text-2xs font-medium uppercase tracking-[0.16em] text-slate-400">
+            {t.site.tagline}
+          </p>
+          <div className="flex shrink-0 items-center gap-3">
+            <SocialLinks variant="dark" />
+            <LanguageSwitcher lang={lang} setLang={setLang} tone="dark" />
+          </div>
+        </div>
+      </div>
+
       <div className="container">
-        <div className={cn('flex items-center justify-between gap-4 transition-all', scrolled ? 'h-16' : 'h-20')}>
+        <div className={cn('flex items-center justify-between gap-6 transition-all', scrolled ? 'h-16' : 'h-[4.5rem]')}>
           {/* Logo */}
           <Link href={ROUTES.home} className="flex shrink-0 items-center gap-2.5" aria-label={t.site.name}>
             <Image
@@ -84,14 +105,8 @@ export function Navbar() {
               priority
               className={cn('w-auto transition-all', scrolled ? 'h-8' : 'h-10')}
             />
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-lg font-extrabold tracking-tight text-forest-600">
-                Hari<span className="text-saffron-500">Nex</span>{' '}
-                <span className="text-forest-600">Global</span>
-              </span>
-              <span className="mt-1 hidden text-[0.62rem] font-medium uppercase tracking-[0.14em] text-slate-500 sm:block">
-                {t.site.tagline}
-              </span>
+            <span className="font-display text-lg font-extrabold leading-none tracking-tight text-forest-600">
+              Hari<span className="text-saffron-500">Nex</span> Global
             </span>
           </Link>
 
@@ -108,7 +123,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     className={cn(
-                      'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                      'flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors',
                       isActive(link.href)
                         ? 'text-navy-800'
                         : 'text-slate-600 hover:text-navy-800',
@@ -162,7 +177,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    'whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors',
                     isActive(link.href) ? 'text-navy-800' : 'text-slate-600 hover:text-navy-800',
                   )}
                 >
@@ -172,16 +187,18 @@ export function Navbar() {
             )}
           </nav>
 
-          {/* Right cluster */}
-          <div className="flex items-center gap-2">
-            {/* Hidden below xl: the nav already carries six links plus a
-                dropdown, and the icons would wrap at mid desktop widths.
-                They still appear in the mobile drawer and the footer. */}
-            <SocialLinks className="mr-1 hidden xl:flex" />
+          {/* Right cluster. Social + language live in the utility strip above
+              on md and up; below that they are in the mobile drawer. */}
+          <div className="flex shrink-0 items-center gap-2">
+            <div className="md:hidden">
+              <LanguageSwitcher lang={lang} setLang={setLang} />
+            </div>
 
-            <LanguageSwitcher lang={lang} setLang={setLang} />
-
-            <ButtonLink href={ROUTES.contact} size="sm" className="hidden sm:inline-flex">
+            <ButtonLink
+              href={ROUTES.contact}
+              size="sm"
+              className="hidden whitespace-nowrap sm:inline-flex"
+            >
               {t.common.requestConsultation}
             </ButtonLink>
 
@@ -276,36 +293,39 @@ export function Navbar() {
 function LanguageSwitcher({
   lang,
   setLang,
+  tone = 'light',
 }: {
   lang: 'en' | 'zh';
   setLang: (l: 'en' | 'zh') => void;
+  tone?: 'light' | 'dark';
 }) {
+  const dark = tone === 'dark';
+
+  const btn = (active: boolean) =>
+    cn(
+      'whitespace-nowrap rounded px-2 py-0.5 transition-colors',
+      active
+        ? dark
+          ? 'bg-white/15 text-white'
+          : 'bg-navy-800 text-white'
+        : dark
+          ? 'text-slate-400 hover:text-white'
+          : 'text-slate-500 hover:text-navy-800',
+    );
+
   return (
     <div
-      className="flex items-center rounded-lg border border-slate-300 p-0.5 text-xs font-semibold"
+      className={cn(
+        'flex shrink-0 items-center gap-0.5 rounded-md p-0.5 text-xs font-semibold',
+        dark ? 'border border-white/15' : 'border border-slate-300',
+      )}
       role="group"
       aria-label="Language"
     >
-      <button
-        type="button"
-        onClick={() => setLang('en')}
-        aria-pressed={lang === 'en'}
-        className={cn(
-          'rounded-md px-2 py-1.5 transition-colors',
-          lang === 'en' ? 'bg-navy-800 text-white' : 'text-slate-500 hover:text-navy-800',
-        )}
-      >
+      <button type="button" onClick={() => setLang('en')} aria-pressed={lang === 'en'} className={btn(lang === 'en')}>
         EN
       </button>
-      <button
-        type="button"
-        onClick={() => setLang('zh')}
-        aria-pressed={lang === 'zh'}
-        className={cn(
-          'rounded-md px-2 py-1.5 transition-colors',
-          lang === 'zh' ? 'bg-navy-800 text-white' : 'text-slate-500 hover:text-navy-800',
-        )}
-      >
+      <button type="button" onClick={() => setLang('zh')} aria-pressed={lang === 'zh'} className={btn(lang === 'zh')}>
         繁中
       </button>
     </div>
