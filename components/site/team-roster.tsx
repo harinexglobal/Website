@@ -32,11 +32,35 @@ type Person = {
 export function TeamRoster() {
   const { t } = useLang();
 
-  const tiers: { key: string; label: string; people: Person[]; tone: 'navy' | 'saffron' | 'emerald' }[] = [
-    { key: 'leadership', label: t.team.leadershipTier, people: t.leadership.people, tone: 'navy' },
-    { key: 'regional', label: t.team.regionalTier, people: t.regional.people, tone: 'saffron' },
-    { key: 'advisory', label: t.team.advisoryTier, people: t.advisory.people, tone: 'emerald' },
-  ];
+  type Tier = {
+    key: string;
+    label: string;
+    heading: string;
+    lead: string;
+    people: Person[];
+    tone: 'navy' | 'saffron' | 'emerald';
+  };
+
+  // Tiers with no members are dropped, so removing everyone from a tier
+  // removes its heading too rather than leaving an empty section.
+  const tiers: Tier[] = ([
+    {
+      key: 'leadership',
+      label: t.team.leadershipTier,
+      heading: t.leadership.heading,
+      lead: t.leadership.lead,
+      people: t.leadership.people,
+      tone: 'navy',
+    },
+    {
+      key: 'regional',
+      label: t.team.regionalTier,
+      heading: t.regional.heading,
+      lead: t.regional.lead,
+      people: t.regional.people,
+      tone: 'saffron',
+    },
+  ] as Tier[]).filter((tier) => tier.people.length > 0);
 
   return (
     <>
@@ -49,20 +73,8 @@ export function TeamRoster() {
           <div className="container">
             <SectionHeading
               eyebrow={tier.label}
-              heading={
-                tier.key === 'leadership'
-                  ? t.leadership.heading
-                  : tier.key === 'regional'
-                    ? t.regional.heading
-                    : t.advisory.heading
-              }
-              lead={
-                tier.key === 'leadership'
-                  ? t.leadership.lead
-                  : tier.key === 'regional'
-                    ? t.regional.lead
-                    : t.advisory.lead
-              }
+              heading={tier.heading}
+              lead={tier.lead}
               className="mb-10"
             />
 

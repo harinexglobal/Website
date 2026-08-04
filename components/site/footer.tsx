@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { SocialLinks } from '@/components/ui/social-links';
 import { useLang } from '@/components/providers/language-provider';
 import { CONTACT, ROUTES } from '@/lib/content';
 
@@ -34,13 +35,7 @@ export function Footer() {
               {t.site.legalNameAlt}
             </p>
 
-            <a
-              href={CONTACT.linkedin}
-              className="mt-5 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 text-slate-300 transition-colors hover:border-emerald-400/40 hover:text-emerald-400"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
+            <SocialLinks variant="dark" size="md" className="mt-5" />
           </div>
 
           {/* Capabilities */}

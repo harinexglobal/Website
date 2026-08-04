@@ -41,7 +41,7 @@ export function AboutContent() {
 function TeamTeaser() {
   const { t } = useLang();
   const count =
-    t.leadership.people.length + t.regional.people.length + t.advisory.people.length;
+    t.leadership.people.length + t.regional.people.length;
 
   return (
     <section className="section-sm pb-16 md:pb-20">

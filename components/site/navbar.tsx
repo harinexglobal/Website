@@ -9,6 +9,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { ButtonLink } from '@/components/ui/button';
 import { ContentIcon } from '@/components/ui/icon';
+import { SocialLinks } from '@/components/ui/social-links';
 import { ROUTES } from '@/lib/content';
 import { cn } from '@/lib/utils';
 
@@ -173,6 +174,11 @@ export function Navbar() {
 
           {/* Right cluster */}
           <div className="flex items-center gap-2">
+            {/* Hidden below xl: the nav already carries six links plus a
+                dropdown, and the icons would wrap at mid desktop widths.
+                They still appear in the mobile drawer and the footer. */}
+            <SocialLinks className="mr-1 hidden xl:flex" />
+
             <LanguageSwitcher lang={lang} setLang={setLang} />
 
             <ButtonLink href={ROUTES.contact} size="sm" className="hidden sm:inline-flex">
@@ -257,6 +263,8 @@ export function Navbar() {
               <ButtonLink href={ROUTES.contact} size="lg" className="mt-6 w-full">
                 {t.common.requestConsultation}
               </ButtonLink>
+
+              <SocialLinks size="md" className="mt-6 justify-center pb-4" />
             </nav>
           </motion.div>
         )}

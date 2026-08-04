@@ -415,7 +415,7 @@ const en = {
   leadership: {
     eyebrow: 'Leadership & Governance',
     heading: 'Leadership',
-    lead: 'Company leadership and legal representation sit in Taiwan, supported by a global team across four markets and a chief advisor on technical matters.',
+    lead: 'Company leadership and legal representation sit in Taiwan, with technical direction from a chief advisor who is a working scientist.',
     people: [
       {
         id: 'chia-ling-shih',
@@ -426,16 +426,30 @@ const en = {
         photo: '/brand/team/chia-ling-shih.webp',
         focus: ['Corporate governance', 'Regional operations', 'Government liaison', 'Process chemistry'],
       },
+      {
+        id: 'ganesh-kumar',
+        name: 'Dr. D. Ganesh Kumar',
+        nameLocal: '甘納緒 博士',
+        role: 'Chief Advisor',
+        location: 'New Taipei City, Taiwan',
+        photo: '/brand/team/ganesh-kumar.webp',
+        focus: [
+          'Technology commercialisation',
+          'Business development',
+          'Technology transfer',
+          'Regulatory strategy',
+          'International collaboration',
+        ],
+      },
     ],
   },
 
   team: {
     eyebrow: 'Our Team',
     heading: 'The people who actually do the work',
-    lead: 'Three tiers, and we are explicit about which is which: the officers of the company, the global team who represent it in each market and discipline, and the chief advisor who leads technical evaluation.',
+    lead: 'Two tiers, and we are explicit about which is which: the officers of the company, and the global team who represent it in each market and discipline.',
     leadershipTier: 'Leadership',
     regionalTier: 'Global Team',
-    advisoryTier: 'Advisory Board',
     contactLabel: 'Contact',
     openRoleLabel: 'Appointment in progress',
     openRoleBody:
@@ -504,30 +518,6 @@ const en = {
           'Composites & formulation',
           'Adhesives',
           'Materials characterisation',
-        ],
-      },
-    ],
-  },
-
-  advisory: {
-    eyebrow: 'Advisory Board',
-    heading: 'Working scientists, not career consultants',
-    lead: 'Technical direction and due diligence are led by a working scientist, so a technology is judged on its data rather than its pitch.',
-    currentRole: 'Current position',
-    people: [
-      {
-        id: 'ganesh-kumar',
-        name: 'Dr. D. Ganesh Kumar',
-        nameLocal: '甘納緒 博士',
-        role: 'Chief Advisor',
-        location: 'New Taipei City, Taiwan',
-        photo: '/brand/team/ganesh-kumar.webp',
-        focus: [
-          'Technology commercialisation',
-          'Business development',
-          'Technology transfer',
-          'Regulatory strategy',
-          'International collaboration',
         ],
       },
     ],
@@ -1180,7 +1170,7 @@ const zh: Dict = {
   leadership: {
     eyebrow: '經營團隊與治理',
     heading: '經營團隊',
-    lead: '公司經營與法定代表設於台灣，並由橫跨四個市場的全球團隊，以及技術事務首席顧問提供支援。',
+    lead: '公司經營與法定代表設於台灣，技術方向則由具現職科學家背景的首席顧問提供。',
     people: [
       {
         id: 'chia-ling-shih',
@@ -1191,16 +1181,24 @@ const zh: Dict = {
         photo: '/brand/team/chia-ling-shih.webp',
         focus: ['公司治理', '區域營運', '政府聯繫', '製程化學'],
       },
+      {
+        id: 'ganesh-kumar',
+        name: '甘納緒 博士',
+        nameLocal: 'Dr. D. Ganesh Kumar',
+        role: '首席顧問',
+        location: '台灣，新北市',
+        photo: '/brand/team/ganesh-kumar.webp',
+        focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],
+      },
     ],
   },
 
   team: {
     eyebrow: '團隊成員',
     heading: '實際執行工作的人',
-    lead: '三個層級，我們明確區分：公司的經營幹部、代表公司在各市場與各專業領域的全球團隊，以及主導技術評估的首席顧問。',
+    lead: '兩個層級，我們明確區分：公司的經營幹部，以及代表公司在各市場與各專業領域的全球團隊。',
     leadershipTier: '經營團隊',
     regionalTier: '全球團隊',
-    advisoryTier: '顧問團隊',
     contactLabel: '聯絡方式',
     openRoleLabel: '人選確認中',
     openRoleBody: '本市場的人選正在確認中。在此之前，相關諮詢由台灣總部直接處理。',
@@ -1254,24 +1252,6 @@ const zh: Dict = {
         phone: '',
         phoneHref: '',
         focus: ['高分子與有機化學', '複合材料與配方', '接著劑', '材料分析鑑定'],
-      },
-    ],
-  },
-
-  advisory: {
-    eyebrow: '顧問團隊',
-    heading: '現職科學家，而非職業顧問',
-    lead: '技術方向與實地查核由現職科學家主導，讓技術依據數據被評估，而非依據簡報。',
-    currentRole: '現職',
-    people: [
-      {
-        id: 'ganesh-kumar',
-        name: '甘納緒 博士',
-        nameLocal: 'Dr. D. Ganesh Kumar',
-        role: '首席顧問',
-        location: '台灣，新北市',
-        photo: '/brand/team/ganesh-kumar.webp',
-        focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],
       },
     ],
   },
@@ -1530,6 +1510,22 @@ export const CONTACT = {
   india: 'Chennai, India',
   linkedin: '#',
 } as const;
+
+/* ------------------------------------------------------------------
+   Social profiles. An empty href hides the icon entirely, so a profile
+   that does not exist yet simply does not render — LinkedIn is waiting
+   on a company page URL.
+-------------------------------------------------------------------*/
+export const SOCIAL = [
+  {
+    id: 'facebook',
+    label: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=61592438056685',
+  },
+  { id: 'x', label: 'X', href: 'https://x.com/HariNexGlobal' },
+  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/harinexglobal/' },
+  { id: 'linkedin', label: 'LinkedIn', href: '' },
+] as const;
 
 export const ROUTES = {
   home: '/',
