@@ -2,16 +2,13 @@
 
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
-import { TeamSection } from '@/components/site/team-section';
-import { RegionalTeam } from '@/components/site/regional-team';
-import { AdvisoryBoard } from '@/components/site/advisory-board';
+import { TeamRoster } from '@/components/site/team-roster';
 import { GlobalNetwork } from '@/components/site/global-network';
 import { CtaBand } from '@/components/site/cta-band';
 
 /**
- * /about/team — the full roster in three explicit tiers: officers of the
- * company, regional directors who represent it in each market, and the
- * advisory board that carries out technical evaluation.
+ * /about/team — the full roster. Every member of the company lives here and
+ * nowhere else, so there is a single place to keep up to date.
  */
 export function TeamContent() {
   const { t } = useLang();
@@ -27,9 +24,7 @@ export function TeamContent() {
         imagePosition="center 35%"
       />
 
-      <TeamSection />
-      <RegionalTeam />
-      <AdvisoryBoard />
+      <TeamRoster />
       <GlobalNetwork />
       <CtaBand />
     </>

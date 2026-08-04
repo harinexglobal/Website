@@ -22,5 +22,12 @@ Images/logo 2.png
 website content.docx
 ~$*.docx
 
+# CVs and résumés — these carry home addresses, personal phone numbers and
+# private email. Source material only; never publish. Processed headshots that
+# belong on the site live in public/brand/team/ instead.
+Team/
+*.pdf
+*.docx
+
 # Local Netlify folder
 .netlify
