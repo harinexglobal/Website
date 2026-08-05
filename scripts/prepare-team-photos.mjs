@@ -21,6 +21,9 @@ const PHOTOS = [
   { src: 'Team/photos/naveen.png', name: 'kanagaraj-naveen' },
   { src: 'Team/photos/Dr. ARIRAMAN MATHIVATHANAN.png', name: 'ariraman-mathivathanan' },
   { src: 'Images/Team members/Morris s.s. Ma.jpg', name: 'morris-ma' },
+  // Landscape shot with the subject well off-centre, so 'top' would frame him
+  // badly — attention picks the salient region instead.
+  { src: 'Team/Viney G.jpeg', name: 'vinay-g', position: 'attention' },
 ];
 
 for (const p of PHOTOS) {
@@ -33,7 +36,10 @@ for (const p of PHOTOS) {
   // Square crop biased to the top — headshots put the face above centre, so a
   // straight centre crop cuts the forehead.
   await sharp(src)
-    .resize(480, 480, { fit: 'cover', position: 'top' })
+    .resize(480, 480, {
+      fit: 'cover',
+      position: p.position === 'attention' ? sharp.strategy.attention : 'top',
+    })
     .webp({ quality: 84, effort: 6 })
     .toFile(path.join(OUT, `${p.name}.webp`));
 

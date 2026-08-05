@@ -481,7 +481,7 @@ const en = {
         name: 'Vinay G',
         role: 'Managing Director — India Branch',
         location: 'Bengaluru, Karnataka, India',
-        photo: '',
+        photo: '/brand/team/vinay-g.webp',
         email: '', // TODO: India branch address pending — see README
         phone: '+91 99642 76103',
         phoneHref: '+919964276103',
@@ -1239,7 +1239,7 @@ const zh: Dict = {
         name: 'Vinay G',
         role: '印度分公司 總經理',
         location: '印度 卡納塔卡邦 班加羅爾',
-        photo: '',
+        photo: '/brand/team/vinay-g.webp',
         email: '', // TODO: India branch address pending — see README
         phone: '+91 99642 76103',
         phoneHref: '+919964276103',
