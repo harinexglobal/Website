@@ -434,12 +434,7 @@ const en = {
         role: 'Managing Partner — Taiwan Operations',
         location: 'Kaohsiung, Taiwan',
         photo: '/brand/team/morris-ma.webp',
-        focus: [
-          'Membrane materials (PBI & MOF)',
-          'Water electrolysis',
-          'Materials characterisation',
-          'Project & safety management',
-        ],
+        focus: ['Taiwan operations', 'Supplier qualification', 'Factory & safety audits', 'Advanced materials', 'Green technology'],
       },
       {
         id: 'ganesh-kumar',
@@ -496,12 +491,7 @@ const en = {
         email: '',
         phone: '',
         phoneHref: '',
-        focus: [
-          'Translational oncology',
-          'Extracellular vesicles',
-          'Molecular diagnostics',
-          'Biomarker discovery',
-        ],
+        focus: ['North America market entry', 'Life sciences partnerships', 'Technology scouting', 'Research collaboration'],
       },
       {
         id: 'kanagaraj-naveen',
@@ -512,12 +502,7 @@ const en = {
         email: '',
         phone: '',
         phoneHref: '',
-        focus: [
-          'Electronic & OLED materials',
-          'API & fine chemicals',
-          'Catalysis & process development',
-          'Analytical characterisation',
-        ],
+        focus: ['Korea market access', 'Electronics & materials sourcing', 'Technical due diligence', 'Process scale-up'],
       },
       {
         id: 'ariraman-mathivathanan',
@@ -528,12 +513,7 @@ const en = {
         email: '',
         phone: '',
         phoneHref: '',
-        focus: [
-          'Polymer & organic chemistry',
-          'Composites & formulation',
-          'Adhesives',
-          'Materials characterisation',
-        ],
+        focus: ['Specialty chemicals sourcing', 'Textile & coating technology', 'Formulation due diligence', 'Technology transfer support'],
       },
     ],
   },
@@ -1204,7 +1184,7 @@ const zh: Dict = {
         role: '管理合夥人 — 台灣營運',
         location: '台灣，高雄',
         photo: '/brand/team/morris-ma.webp',
-        focus: ['薄膜材料（PBI 與 MOF）', '水電解', '材料分析鑑定', '專案與安全管理'],
+        focus: ['台灣營運', '供應商資格認定', '工廠與工安稽核', '先進材料', '綠色科技'],
       },
       {
         id: 'ganesh-kumar',
@@ -1254,7 +1234,7 @@ const zh: Dict = {
         email: '',
         phone: '',
         phoneHref: '',
-        focus: ['轉譯腫瘤學', '胞外囊泡', '分子診斷', '生物標記發掘'],
+        focus: ['北美市場進入', '生命科學合作', '技術發掘', '研究合作'],
       },
       {
         id: 'kanagaraj-naveen',
@@ -1265,7 +1245,7 @@ const zh: Dict = {
         email: '',
         phone: '',
         phoneHref: '',
-        focus: ['電子與 OLED 材料', '原料藥與精細化學品', '催化與製程開發', '分析鑑定'],
+        focus: ['韓國市場准入', '電子與材料採購', '技術實地查核', '製程放大'],
       },
       {
         id: 'ariraman-mathivathanan',
@@ -1276,7 +1256,7 @@ const zh: Dict = {
         email: '',
         phone: '',
         phoneHref: '',
-        focus: ['高分子與有機化學', '複合材料與配方', '接著劑', '材料分析鑑定'],
+        focus: ['特用化學採購', '紡織與塗層技術', '配方實地查核', '技術移轉支援'],
       },
     ],
   },
