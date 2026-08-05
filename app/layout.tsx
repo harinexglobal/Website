@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import { LanguageProvider } from '@/components/providers/language-provider';
 import { Navbar } from '@/components/site/navbar';
 import { Footer } from '@/components/site/footer';
+import { ChatWidget } from '@/components/site/chat-widget';
+import { CookieNotice } from '@/components/site/cookie-notice';
 import './globals.css';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -79,6 +81,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main id="main">{children}</main>
           <Footer />
+          <ChatWidget />
+          <CookieNotice />
         </LanguageProvider>
       </body>
     </html>

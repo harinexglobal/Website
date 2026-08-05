@@ -736,6 +736,18 @@ const en = {
     cta: 'Introduce yourself',
   },
 
+  cookies: {
+    title: 'Storage on this site',
+    body: 'We do not use advertising or analytics cookies, and we do not track you across other websites. Two things are kept in your browser, and nothing is sent to us:',
+    items: [
+      'Your language choice (English or 繁體中文), so pages remember it',
+      'This acknowledgement, so the notice does not reappear',
+    ],
+    accept: 'Accept',
+    decline: 'Decline',
+    policy: 'Privacy Policy',
+  },
+
   footer: {
     blurb: 'Connecting Taiwan and India through technology, innovation and trusted partnerships.',
     capabilitiesHeading: 'Capabilities',
@@ -1470,6 +1482,15 @@ const zh: Dict = {
     lead: '我們與橫跨兩地市場的專業人才網絡協同合作。',
     roles: ['技術顧問', '商務顧問', '筆譯與口譯人員', '網站開發人員', '產業專家'],
     cta: '自我介紹',
+  },
+
+  cookies: {
+    title: '本網站的瀏覽器儲存',
+    body: '本網站不使用廣告或分析用 Cookie，也不會跨網站追蹤您。僅有兩項資料存放於您的瀏覽器，且不會傳送給我們：',
+    items: ['您選擇的語言（English 或繁體中文），供頁面之間記憶使用', '本則告知的確認狀態，以免重複顯示'],
+    accept: '接受',
+    decline: '拒絕',
+    policy: '隱私權政策',
   },
 
   footer: {
