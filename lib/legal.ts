@@ -17,7 +17,7 @@ export type LegalDoc = { title: string; intro: string; sections: LegalSection[] 
 
 const en = {
   updatedLabel: 'Last updated',
-  updated: '3 August 2026',
+  updated: '5 August 2026',
   backToHome: 'Back to home',
   contactLine: 'Questions about this page? Write to',
 
@@ -67,7 +67,8 @@ const en = {
       {
         h: 'International transfers',
         p: [
-          'We are based in Taiwan and work with representatives in India, South Korea and the United States. Our hosting provider operates a global content delivery network, so data may be processed in countries outside your own.',
+          'We are based in Taiwan and work with colleagues and representatives in India, South Korea and the United States. Our hosting provider operates a global content delivery network, so data may be processed in countries outside your own.',
+          'Cross-border transfer of personal data by a non-public agency is permitted under Article 21 of the Personal Data Protection Act unless the competent authority has imposed a restriction on the relevant category of transfer. We monitor for any such restriction and will comply with it if one applies to us.',
           'Where personal data is transferred internationally, we take reasonable steps to ensure it remains protected to a standard consistent with this policy.',
         ],
       },
@@ -79,11 +80,21 @@ const en = {
         ],
       },
       {
+        h: 'Statutory notice under the Personal Data Protection Act',
+        p: [
+          'This section gives the notice required by Article 8 of Taiwan’s Personal Data Protection Act (個人資料保護法).',
+          'Collecting party: HariNex Global Co., Ltd. Purposes of collection: customer and client management and service; contractual, pre-contractual and other legal relationships; provision of the advisory, sourcing and localisation services described on this website; and business operation consistent with our registered scope. Categories of data: identification and contact particulars, employment details you choose to provide, and the content of your enquiry.',
+          'Period of use: for as long as the purpose subsists, and thereafter for as long as required by applicable retention obligations. Area of use: Taiwan and the territories in which we or our service providers operate. Recipients: HariNex Global and the processors described in this policy. Method of use: automated and non-automated processing consistent with the purposes above.',
+          'Providing your data is voluntary. If you choose not to provide it, or provide it incompletely, we may be unable to respond to your enquiry or perform an engagement — but no other consequence follows.',
+        ],
+      },
+      {
         h: 'Your rights',
         p: [
-          'Under Taiwan’s Personal Data Protection Act you may ask us to confirm what personal data we hold about you, to give you a copy, to correct or supplement it, to stop collecting, processing or using it, and to delete it.',
-          'If you are in a jurisdiction with additional rights — for example the EU or the United Kingdom — you may also have the right to object to processing, to restrict it, to data portability, and to complain to your local supervisory authority.',
-          'To exercise any of these, write to harinexglobal@gmail.com. We will respond within the period required by applicable law.',
+          'Article 3 of the Personal Data Protection Act gives you five rights in respect of your personal data, and those rights may not be waived or restricted in advance by contract. You may: enquire about and review your data; request a copy; request correction or supplementation; request that we cease collecting, processing or using it; and request deletion.',
+          'Where we use your data for marketing, you may ask us to stop at any time and we will do so without charge.',
+          'If you are in a jurisdiction that confers additional rights — for example the EU or the United Kingdom — you may also have the right to object to processing, to restrict it, to data portability, and to lodge a complaint with your local supervisory authority.',
+          'To exercise any of these, write to harinexglobal@gmail.com. We will respond within the period required by applicable law, and will not charge you except where the law permits a fee for producing copies.',
         ],
       },
       {
@@ -162,13 +173,15 @@ const en = {
         h: 'Limitation of liability',
         p: [
           'To the fullest extent permitted by law, we are not liable for any loss of profit, business, contracts, goodwill, data or anticipated savings arising from your use of, or reliance on, this website.',
-          'Nothing in these terms limits liability that cannot lawfully be limited, including liability for fraud or for death or personal injury caused by negligence.',
+          'This limitation does not apply to liability arising from our intentional misconduct or gross negligence, to liability for death or personal injury caused by negligence, or to any other liability that may not lawfully be excluded. Under Article 247-1 of the Civil Code, a term in a standard-form contract that is manifestly unfair to the other party is void; nothing here is intended to operate as such a term, and if any provision were held to be one, it is to be read down to the extent necessary rather than relied upon.',
         ],
       },
       {
-        h: 'Governing law',
+        h: 'Governing law and jurisdiction',
         p: [
-          'These terms are governed by the laws of the Republic of China (Taiwan). The Taoyuan District Court shall be the court of first instance for any dispute arising from them, without prejudice to any mandatory consumer protection rights you may have where you live.',
+          'These terms are governed by the laws of the Republic of China (Taiwan).',
+          'Subject to the following paragraph, the parties agree that the Taiwan Taoyuan District Court shall be the court of first instance for any dispute arising from these terms or from use of this website.',
+          'If you are a consumer within the meaning of the Consumer Protection Act (消費者保護法), that agreement does not deprive you of any jurisdiction the Act reserves to you, nor of any other mandatory right the Act confers. Nothing in these terms restricts a right that the law does not permit us to restrict.',
         ],
       },
       {
@@ -196,6 +209,7 @@ const en = {
         h: 'We are not a law firm or a licensed financial adviser',
         p: [
           'We provide advisory, coordination, sourcing and localisation services. We do not provide legal, tax, accounting, investment or securities advice, and nothing on this site should be read as such.',
+          'Specifically: we are not attorneys and do not practise law within the meaning of the Attorney Regulation Act (律師法); we are not certified public accountants within the meaning of the Certified Public Accountant Act (會計師法); and we are not a securities investment consulting enterprise within the meaning of the Securities Investment Trust and Consulting Act (證券投資信託及顧問法). We do not hold ourselves out as any of these.',
           'Where a matter requires those services, we coordinate with appropriately qualified and licensed professionals, and we will tell you when that is necessary.',
         ],
       },
@@ -248,7 +262,7 @@ export type LegalDict = DeepMutable<typeof en>;
 
 const zh: LegalDict = {
   updatedLabel: '最後更新',
-  updated: '2026 年 8 月 3 日',
+  updated: '2026 年 8 月 5 日',
   backToHome: '返回首頁',
   contactLine: '對本頁內容有疑問嗎？請來信',
 
@@ -298,7 +312,8 @@ const zh: LegalDict = {
       {
         h: '國際傳輸',
         p: [
-          '我們設立於台灣，並在印度、南韓與美國設有代表。我們的主機供應商採用全球內容傳遞網路，因此資料可能於您所在國家以外的地區處理。',
+          '我們設立於台灣，並在印度、南韓與美國設有同仁及代表。我們的主機供應商採用全球內容傳遞網路，因此資料可能於您所在國家以外的地區處理。',
+          '依個人資料保護法第 21 條，非公務機關為國際傳輸個人資料，除中央目的事業主管機關就特定類型之傳輸另有限制外，得予進行。本公司持續注意是否有相關限制，若有適用於本公司者，將依限制辦理。',
           '個人資料涉及跨國傳輸時，我們會採取合理措施，確保其保護程度與本政策一致。',
         ],
       },
@@ -310,11 +325,21 @@ const zh: LegalDict = {
         ],
       },
       {
+        h: '個人資料保護法之告知事項',
+        p: [
+          '本節依個人資料保護法第 8 條規定為告知。',
+          '蒐集之機構：瀚瑞國際股份有限公司。蒐集之特定目的：消費者、客戶管理與服務；契約、類似契約或其他法律關係事務；提供本網站所載之顧問、採購與在地化服務；以及與本公司登記營業項目相符之業務經營。個人資料之類別：辨識與聯絡資料、您自願提供之任職資訊，以及您諮詢內容本身。',
+          '利用之期間：於特定目的存續期間內，以及其後依相關法令所定應保存之期間。利用之地區：台灣，以及本公司或本公司服務供應商營運所在之地區。利用之對象：本公司及本政策所述之受託處理者。利用之方式：以符合上述目的之自動化或非自動化方式處理及利用。',
+          '您得自由選擇是否提供個人資料。若您選擇不提供或提供不完全，本公司可能無法回覆您的諮詢或履行委任事項；除此之外，不會對您產生其他權益影響。',
+        ],
+      },
+      {
         h: '您的權利',
         p: [
-          '依據台灣個人資料保護法，您得向我們請求查詢或閱覽您的個人資料、請求提供複製本、請求補充或更正、請求停止蒐集處理或利用，以及請求刪除。',
-          '若您所在地區另賦予其他權利（例如歐盟或英國），您可能另享有反對處理、限制處理、資料可攜，以及向當地監管機關申訴之權利。',
-          '欲行使上述任一權利，請來信 harinexglobal@gmail.com。我們將於適用法律所定期間內回覆。',
+          '個人資料保護法第 3 條賦予您就個人資料享有五項權利，且該等權利不得預先以契約拋棄或限制。您得：查詢或請求閱覽；請求製給複製本；請求補充或更正；請求停止蒐集、處理或利用；以及請求刪除。',
+          '本公司如將您的個人資料用於行銷，您得隨時表示拒絕接受，本公司將免費停止利用。',
+          '若您所在法域另賦予其他權利（例如歐盟或英國），您可能另享有反對處理、限制處理、資料可攜，以及向當地監管機關申訴之權利。',
+          '欲行使上述任一權利，請來信 harinexglobal@gmail.com。我們將於適用法律所定期間內回覆；除法律允許就製給複製本收取必要成本外，不另收費。',
         ],
       },
       {
@@ -383,13 +408,15 @@ const zh: LegalDict = {
         h: '責任限制',
         p: [
           '在法律允許的最大範圍內，就您使用本網站或信賴其內容所生之利潤、業務、契約、商譽、資料或預期節省之損失，我們不負賠償責任。',
-          '本條款不限制依法不得限制之責任，包括詐欺，或因過失致人死亡或身體傷害之責任。',
+          '本項限制不適用於因本公司故意或重大過失所生之責任、因過失致人死亡或身體傷害之責任，或其他依法不得免除之責任。依民法第 247 條之 1 規定，定型化契約中按其情形顯失公平之約定無效；本條款無意作為該等約定，如任一條項經認定屬之，應於必要範圍內限縮解釋，而非逕予援用。',
         ],
       },
       {
-        h: '準據法',
+        h: '準據法與管轄',
         p: [
-          '本條款以中華民國（台灣）法律為準據法。因本條款所生之爭議，以台灣桃園地方法院為第一審管轄法院；但不影響您依所在地強行規定所享有之消費者保護權利。',
+          '本條款以中華民國（台灣）法律為準據法。',
+          '於次項規定之範圍內，雙方合意以台灣桃園地方法院為因本條款或因使用本網站所生爭議之第一審管轄法院。',
+          '若您係消費者保護法所稱之消費者，前項合意不影響該法為您保留之管轄利益，亦不影響該法賦予您之其他強制性權利。本條款不限制任何依法不得由本公司限制之權利。',
         ],
       },
       {
@@ -415,6 +442,7 @@ const zh: LegalDict = {
         h: '我們並非律師事務所或持照財務顧問',
         p: [
           '我們提供顧問、協調、採購與在地化服務，不提供法律、稅務、會計、投資或證券意見；本網站任何內容均不得被解讀為上述意見。',
+          '具體而言：本公司並非律師，亦不從事律師法所稱之律師業務；本公司並非會計師法所稱之會計師；本公司亦非證券投資信託及顧問法所稱之證券投資顧問事業。本公司不以上述任一身分對外表彰。',
           '若事項需要上述服務，我們會與具備適當資格及執照的專業人士協同辦理，並於必要時主動告知。',
         ],
       },
