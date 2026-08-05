@@ -98,15 +98,15 @@ export function Navbar() {
           {/* Logo */}
           <Link href={ROUTES.home} className="flex shrink-0 items-center gap-2.5" aria-label={t.site.name}>
             <Image
-              src="/brand/globe-mark.png"
+              src="/brand/logo-mark.png"
               alt=""
               width={400}
-              height={341}
+              height={374}
               priority
               className={cn('w-auto transition-all', scrolled ? 'h-8' : 'h-10')}
             />
-            <span className="font-display text-lg font-extrabold leading-none tracking-tight text-navy-700">
-              HariNex <span className="text-saffron-500">Global</span>
+            <span className="font-display text-lg font-extrabold leading-none tracking-tight text-forest-600">
+              Hari<span className="text-saffron-500">Nex</span> Global
             </span>
           </Link>
 
@@ -226,8 +226,8 @@ export function Navbar() {
             className="fixed inset-0 top-0 z-50 bg-white lg:hidden"
           >
             <div className="container flex h-20 items-center justify-between">
-              <span className="font-display text-lg font-extrabold text-navy-700">
-                HariNex <span className="text-saffron-500">Global</span>
+              <span className="font-display text-lg font-extrabold text-forest-600">
+                Hari<span className="text-saffron-500">Nex</span> Global
               </span>
               <button
                 type="button"

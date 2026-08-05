@@ -20,10 +20,10 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Link href={ROUTES.home} className="inline-flex items-center gap-2.5">
               <span className="rounded-lg bg-white p-1.5">
-                <Image src="/brand/globe-mark.png" alt="" width={400} height={341} className="h-7 w-auto" />
+                <Image src="/brand/logo-mark.png" alt="" width={400} height={374} className="h-7 w-auto" />
               </span>
               <span className="font-display text-lg font-extrabold tracking-tight text-white">
-                HariNex <span className="text-saffron-400">Global</span>
+                Hari<span className="text-saffron-400">Nex</span> Global
               </span>
             </Link>
 
