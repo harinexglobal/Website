@@ -20,6 +20,7 @@ const PHOTOS = [
   { src: 'Team/photos/VADIVALAGAN Chithravel.png', name: 'vadivalagan-chithravel' },
   { src: 'Team/photos/naveen.png', name: 'kanagaraj-naveen' },
   { src: 'Team/photos/Dr. ARIRAMAN MATHIVATHANAN.png', name: 'ariraman-mathivathanan' },
+  { src: 'Images/Team members/Morris s.s. Ma.jpg', name: 'morris-ma' },
 ];
 
 for (const p of PHOTOS) {

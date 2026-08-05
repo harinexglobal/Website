@@ -428,6 +428,20 @@ const en = {
         focus: ['Corporate governance', 'Regional operations', 'Government liaison', 'Process chemistry'],
       },
       {
+        id: 'morris-ma',
+        name: 'Morris S.S. Ma',
+        nameLocal: '馬士軒',
+        role: 'Managing Partner — Taiwan Operations',
+        location: 'Kaohsiung, Taiwan',
+        photo: '/brand/team/morris-ma.webp',
+        focus: [
+          'Membrane materials (PBI & MOF)',
+          'Water electrolysis',
+          'Materials characterisation',
+          'Project & safety management',
+        ],
+      },
+      {
         id: 'ganesh-kumar',
         name: 'Dr. D. Ganesh Kumar',
         nameLocal: '甘納緒 博士',
@@ -1182,6 +1196,15 @@ const zh: Dict = {
         location: '台灣，新北市',
         photo: '/brand/team/chia-ling-shih.webp',
         focus: ['公司治理', '區域營運', '政府聯繫', '製程化學'],
+      },
+      {
+        id: 'morris-ma',
+        name: '馬士軒',
+        nameLocal: 'Morris S.S. Ma',
+        role: '管理合夥人 — 台灣營運',
+        location: '台灣，高雄',
+        photo: '/brand/team/morris-ma.webp',
+        focus: ['薄膜材料（PBI 與 MOF）', '水電解', '材料分析鑑定', '專案與安全管理'],
       },
       {
         id: 'ganesh-kumar',
