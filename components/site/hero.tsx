@@ -125,9 +125,13 @@ export function Hero() {
               </ButtonLink>
             </motion.div>
 
-            {/* Bilateral connector */}
+            {/* Flow connector */}
             <motion.div className="mt-12" {...rise(0.62)}>
-              <BilateralConnector taipei={t.hero.taipei} india={t.hero.india} />
+              <FlowConnector
+                from={t.hero.flowFrom}
+                via={t.hero.flowVia}
+                to={t.hero.flowTo}
+              />
             </motion.div>
           </div>
         </div>
@@ -136,44 +140,65 @@ export function Hero() {
   );
 }
 
-/** Animated Taipei ↔ India link — the "bridge" motif in miniature. */
-function BilateralConnector({ taipei, india }: { taipei: string; india: string }) {
+/**
+ * India → Taiwan → Global, as a three-stage flow. Wraps to two rows on narrow
+ * screens rather than shrinking the arcs to illegibility.
+ */
+function FlowConnector({ from, via, to }: { from: string; via: string; to: string }) {
   return (
-    <div className="flex items-center gap-3 sm:gap-4">
-      <Node label={taipei} tone="saffron" />
-
-      <svg
-        viewBox="0 0 160 40"
-        className="h-10 w-24 shrink-0 sm:w-36"
-        fill="none"
-        aria-hidden="true"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M2 30 Q80 -2 158 30"
-          stroke="url(#bridgeStroke)"
-          strokeWidth="1.5"
-          strokeDasharray="5 5"
-          className="animate-dash-flow"
-        />
-        <circle r="2.5" fill="#10B981">
-          <animateMotion dur="3.2s" repeatCount="indefinite" path="M2 30 Q80 -2 158 30" />
-        </circle>
-        <defs>
-          <linearGradient id="bridgeStroke" x1="0" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#E8821E" />
-            <stop offset="1" stopColor="#10B981" />
-          </linearGradient>
-        </defs>
-      </svg>
-
-      <Node label={india} tone="emerald" />
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
+      <Node label={from} tone="saffron" />
+      <Arc id="arc-a" from="#E8821E" to="#10B981" />
+      <Node label={via} tone="emerald" />
+      <Arc id="arc-b" from="#10B981" to="#CBD5E1" delay="1.6s" />
+      <Node label={to} tone="slate" />
     </div>
   );
 }
 
-function Node({ label, tone }: { label: string; tone: 'saffron' | 'emerald' }) {
-  const ring = tone === 'saffron' ? 'bg-saffron-500' : 'bg-emerald-500';
+function Arc({
+  id,
+  from,
+  to,
+  delay = '0s',
+}: {
+  id: string;
+  from: string;
+  to: string;
+  delay?: string;
+}) {
+  const path = 'M2 30 Q60 -2 118 30';
+  return (
+    <svg
+      viewBox="0 0 120 40"
+      className="h-10 w-16 shrink-0 sm:w-24"
+      fill="none"
+      aria-hidden="true"
+      preserveAspectRatio="none"
+    >
+      <path
+        d={path}
+        stroke={`url(#${id})`}
+        strokeWidth="1.5"
+        strokeDasharray="5 5"
+        className="animate-dash-flow"
+      />
+      <circle r="2.5" fill={to}>
+        <animateMotion dur="3.2s" begin={delay} repeatCount="indefinite" path={path} />
+      </circle>
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stopColor={from} />
+          <stop offset="1" stopColor={to} />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+function Node({ label, tone }: { label: string; tone: 'saffron' | 'emerald' | 'slate' }) {
+  const ring =
+    tone === 'saffron' ? 'bg-saffron-500' : tone === 'emerald' ? 'bg-emerald-500' : 'bg-slate-300';
   return (
     <div className="flex items-center gap-2">
       <span className="relative flex h-2.5 w-2.5 shrink-0">
