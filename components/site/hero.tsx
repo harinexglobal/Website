@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, CalendarCheck, MapPin } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Globe2, MapPin } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { ButtonLink } from '@/components/ui/button';
 import { ROUTES } from '@/lib/content';
@@ -127,11 +127,7 @@ export function Hero() {
 
             {/* Flow connector */}
             <motion.div className="mt-12" {...rise(0.62)}>
-              <FlowConnector
-                from={t.hero.flowFrom}
-                via={t.hero.flowVia}
-                to={t.hero.flowTo}
-              />
+              <FlowConnector from={t.hero.flowVia} to={t.hero.flowTo} />
             </motion.div>
           </div>
         </div>
@@ -140,38 +136,23 @@ export function Hero() {
   );
 }
 
-/**
- * India → Taiwan → Global, as a three-stage flow. Wraps to two rows on narrow
- * screens rather than shrinking the arcs to illegibility.
- */
-function FlowConnector({ from, via, to }: { from: string; via: string; to: string }) {
+/** Taiwan → Global, with the arc long enough to read as reach rather than a hop. */
+function FlowConnector({ from, to }: { from: string; to: string }) {
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
       <Node label={from} tone="saffron" />
       <Arc id="arc-a" from="#E8821E" to="#10B981" />
-      <Node label={via} tone="emerald" />
-      <Arc id="arc-b" from="#10B981" to="#CBD5E1" delay="1.6s" />
-      <Node label={to} tone="slate" />
+      <Node label={to} tone="emerald" icon="globe" />
     </div>
   );
 }
 
-function Arc({
-  id,
-  from,
-  to,
-  delay = '0s',
-}: {
-  id: string;
-  from: string;
-  to: string;
-  delay?: string;
-}) {
-  const path = 'M2 30 Q60 -2 118 30';
+function Arc({ id, from, to }: { id: string; from: string; to: string }) {
+  const path = 'M2 30 Q80 -2 158 30';
   return (
     <svg
-      viewBox="0 0 120 40"
-      className="h-10 w-16 shrink-0 sm:w-24"
+      viewBox="0 0 160 40"
+      className="h-10 w-24 shrink-0 sm:w-36"
       fill="none"
       aria-hidden="true"
       preserveAspectRatio="none"
@@ -184,10 +165,10 @@ function Arc({
         className="animate-dash-flow"
       />
       <circle r="2.5" fill={to}>
-        <animateMotion dur="3.2s" begin={delay} repeatCount="indefinite" path={path} />
+        <animateMotion dur="3.2s" repeatCount="indefinite" path={path} />
       </circle>
       <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+        <linearGradient id={id} x1="0" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
           <stop stopColor={from} />
           <stop offset="1" stopColor={to} />
         </linearGradient>
@@ -196,9 +177,19 @@ function Arc({
   );
 }
 
-function Node({ label, tone }: { label: string; tone: 'saffron' | 'emerald' | 'slate' }) {
+function Node({
+  label,
+  tone,
+  icon = 'pin',
+}: {
+  label: string;
+  tone: 'saffron' | 'emerald' | 'slate';
+  icon?: 'pin' | 'globe';
+}) {
   const ring =
     tone === 'saffron' ? 'bg-saffron-500' : tone === 'emerald' ? 'bg-emerald-500' : 'bg-slate-300';
+  const Glyph = icon === 'globe' ? Globe2 : MapPin;
+
   return (
     <div className="flex items-center gap-2">
       <span className="relative flex h-2.5 w-2.5 shrink-0">
@@ -206,7 +197,7 @@ function Node({ label, tone }: { label: string; tone: 'saffron' | 'emerald' | 's
         <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${ring}`} />
       </span>
       <span className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.12em] text-white">
-        <MapPin className="h-3 w-3 text-slate-400" aria-hidden="true" />
+        <Glyph className="h-3 w-3 text-slate-400" aria-hidden="true" />
         {label}
       </span>
     </div>

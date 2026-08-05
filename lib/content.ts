@@ -63,8 +63,7 @@ const en = {
       'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management.',
     primaryCta: 'Book a Free Consultation',
     secondaryCta: 'Explore Our Services',
-    /* Hero flow connector: India -> Taiwan -> Global */
-    flowFrom: 'India',
+    /* Hero flow connector: Taiwan -> Global */
     flowVia: 'Taiwan',
     flowTo: 'Global',
   },
@@ -824,7 +823,6 @@ const zh: Dict = {
       '瀚瑞國際協助企業透過技術移轉、商務顧問、供應商採購、技術翻譯、數位解決方案與國際專案管理，在全球市場建立連結、展開合作並持續成長。',
     primaryCta: '預約免費諮詢',
     secondaryCta: '瀏覽服務項目',
-    flowFrom: '印度',
     flowVia: '台灣',
     flowTo: '全球',
   },
