@@ -23,7 +23,7 @@ const PHOTOS = [
   { src: 'Images/Team members/Morris s.s. Ma.jpg', name: 'morris-ma' },
   // Landscape shot with the subject well off-centre, so 'top' would frame him
   // badly — attention picks the salient region instead.
-  { src: 'Team/Viney G.jpeg', name: 'vinay-g', position: 'attention' },
+  { src: 'Team/Viney G.jpeg', name: 'viney-g', position: 'attention' },
 ];
 
 for (const p of PHOTOS) {

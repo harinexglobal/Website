@@ -477,11 +477,11 @@ const en = {
     lead: 'Each member of the global team is the first point of contact for their market or discipline, and can be in front of a counterparty in person rather than on a call at an inconvenient hour.',
     people: [
       {
-        id: 'vinay-g',
-        name: 'Vinay G',
+        id: 'viney-g',
+        name: 'Viney G',
         role: 'Managing Director — India Branch',
         location: 'Bengaluru, Karnataka, India',
-        photo: '/brand/team/vinay-g.webp',
+        photo: '/brand/team/viney-g.webp',
         email: '', // TODO: India branch address pending — see README
         phone: '+91 99642 76103',
         phoneHref: '+919964276103',
@@ -1235,11 +1235,11 @@ const zh: Dict = {
     lead: '全球團隊的每位成員都是該市場或該專業領域的第一線窗口，能夠親自與對方當面會談，而不是在不方便的時段透過電話溝通。',
     people: [
       {
-        id: 'vinay-g',
-        name: 'Vinay G',
+        id: 'viney-g',
+        name: 'Viney G',
         role: '印度分公司 總經理',
         location: '印度 卡納塔卡邦 班加羅爾',
-        photo: '/brand/team/vinay-g.webp',
+        photo: '/brand/team/viney-g.webp',
         email: '', // TODO: India branch address pending — see README
         phone: '+91 99642 76103',
         phoneHref: '+919964276103',
@@ -1542,6 +1542,7 @@ export const CONTACT = {
    on a company page URL.
 -------------------------------------------------------------------*/
 export const SOCIAL = [
+  { id: 'whatsapp', label: 'WhatsApp', href: CONTACT.whatsappUrl },
   {
     id: 'facebook',
     label: 'Facebook',
