@@ -24,6 +24,10 @@ const PHOTOS = [
   // Landscape shot with the subject well off-centre, so 'top' would frame him
   // badly — attention picks the salient region instead.
   { src: 'Team/Viney G.jpeg', name: 'viney-g', position: 'attention' },
+  { src: 'Team/photos/Dr. Sivarasan Ganesan.png', name: 'sivarasan-ganesan' },
+  { src: 'Team/photos/Dr. Manas Chakraborty.png', name: 'manas-chakraborty' },
+  { src: 'Team/photos/Purusothaman Manogaran.png', name: 'purusothaman-manogaran' },
+  { src: 'Team/photos/Dr. MUTHU KUMAR THANGAVEL.png', name: 'muthu-kumar-thangavel' },
 ];
 
 for (const p of PHOTOS) {
