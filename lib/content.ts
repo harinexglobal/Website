@@ -78,10 +78,10 @@ const en = {
         detail: 'From specialty chemicals and biotech to semiconductors and green technology.',
       },
       {
-        value: '7',
+        value: '4',
         suffix: '',
         label: 'Markets, one team',
-        detail: 'Taiwan, India, South Korea, the United States, Germany, Singapore and Australia — a single accountable team.',
+        detail: 'Taiwan, India, South Korea and the United States — a single accountable team.',
       },
       {
         value: '',
@@ -375,7 +375,7 @@ const en = {
   bridge: {
     eyebrow: 'Global Markets',
     heading: 'Where we operate, and why',
-    lead: 'We work across seven markets. Taiwan–India is the core corridor and the majority of our work — the pages below explain why those two economies fit together, and where Korea, North America, Germany, Singapore and Australia extend the same model.',
+    lead: 'We work across four markets. Taiwan–India is the core corridor and the majority of our work — the pages below explain why those two economies fit together, and where Korea and North America extend the same model.',
     taiwanTitle: 'Why Taiwan',
     taiwanLead: "One of Asia's leading innovation hubs.",
     taiwanPoints: [
@@ -417,7 +417,7 @@ const en = {
   leadership: {
     eyebrow: 'Leadership & Governance',
     heading: 'Leadership',
-    lead: 'Company leadership and legal representation sit in Taiwan, alongside the managing director who runs the India branch and a chief advisor who is a working scientist.',
+    lead: 'Company leadership and legal representation sit in Taiwan, alongside the India branch, project delivery, and a chief advisor who is a working scientist.',
     people: [
       {
         id: 'chia-ling-shih',
@@ -475,6 +475,19 @@ const en = {
         phone: '+91 99642 76103',
         phoneHref: '+919964276103',
         focus: ['India market entry', 'Manufacturing partners', 'Supplier qualification', 'Site visits'],
+      },
+      {
+        id: 'lenin-nachimuthu',
+        name: 'Lenin Nachimuthu',
+        role: 'Project Management Lead — India Branch',
+        location: 'Vellore, India',
+        photo: '/brand/team/lenin-nachimuthu.webp',
+        focus: [
+          'Sample validation gates',
+          'Vendor risk mitigation plans',
+          'Entity setup tracking',
+          'SLA integration schedules',
+        ],
       },
     ],
   },
@@ -573,13 +586,13 @@ const en = {
 
   network: {
     eyebrow: 'Global Network',
-    heading: 'One firm, seven markets',
-    lead: 'Headquartered in Taiwan, with a branch office in India and business development partners on the ground in South Korea, the United States, Germany, Singapore and Australia. Every market has someone who lives there, speaks the language and can visit a factory this week.',
+    heading: 'One firm, four markets',
+    lead: 'Headquartered in Taiwan, with business development representatives on the ground in India, South Korea and the United States. Every market has someone who lives there, speaks the language and can visit a factory this week.',
     hqLabel: 'Headquarters',
     repLabel: 'Business Development Representative',
     coreLabel: 'Core corridor',
     coverageNote:
-      'The Taiwan–India corridor remains our core business and the majority of our work — it is where our own technical and operating experience runs deepest. Korea, the United States, Germany, Singapore and Australia extend the same model into further markets. Representatives are the first point of contact for their region, while technical evaluation, contracting and delivery are run centrally from the Taiwan head office, so you get local access without a fragmented engagement.',
+      'The Taiwan–India corridor remains our core business and the majority of our work — it is where our own technical and operating experience runs deepest. Korea and the United States extend the same model into further markets. Representatives are the first point of contact for their region, while technical evaluation, contracting and delivery are run centrally from the Taiwan head office, so you get local access without a fragmented engagement.',
     locations: [
       {
         id: 'taipei',
@@ -624,39 +637,6 @@ const en = {
         detail: 'Business development and partner access across the Korean market',
         address: '',
         focus: ['Market access', 'Electronics & materials', 'Partner sourcing', 'Trade missions'],
-      },
-      {
-        id: 'germany',
-        city: 'Karlsruhe',
-        country: 'Germany',
-        role: 'Germany Business Development',
-        type: 'rep',
-        core: false,
-        detail: 'Business development and research links across the EU',
-        address: '',
-        focus: ['Germany market access', 'EU research collaboration', 'Advanced materials', 'Technology scouting'],
-      },
-      {
-        id: 'singapore',
-        city: 'Singapore',
-        country: 'Singapore',
-        role: 'Singapore Business Development',
-        type: 'rep',
-        core: false,
-        detail: 'Business development and partner access across ASEAN',
-        address: '',
-        focus: ['Singapore market access', 'ASEAN partnerships', 'Industrial & automation', 'Supplier qualification'],
-      },
-      {
-        id: 'australia',
-        city: 'Australia',
-        country: 'Australia',
-        role: 'Australia Business Development',
-        type: 'rep',
-        core: false,
-        detail: 'Business development and life sciences partner access',
-        address: '',
-        focus: ['Australia market entry', 'Life sciences partnerships', 'Pharmaceutical development', 'Technology scouting'],
       },
     ],
   },
@@ -934,10 +914,10 @@ const zh: Dict = {
         detail: '涵蓋特用化學、生技醫藥、半導體到綠色科技。',
       },
       {
-        value: '7',
+        value: '4',
         suffix: '',
-        label: '七個市場，同一團隊',
-        detail: '台灣、印度、南韓、美國、德國、新加坡與澳洲，由單一負責團隊統籌執行。',
+        label: '四個市場，同一團隊',
+        detail: '台灣、印度、南韓與美國，由單一負責團隊統籌執行。',
       },
       {
         value: '',
@@ -1222,7 +1202,7 @@ const zh: Dict = {
   bridge: {
     eyebrow: '全球市場',
     heading: '我們在哪裡營運，以及為什麼',
-    lead: '我們橫跨七個市場。台灣—印度是核心走廊，也是業務量最大的一環；以下說明這兩個經濟體為何互補，以及韓國、北美、德國、新加坡與澳洲如何延伸同一套模式。',
+    lead: '我們橫跨四個市場。台灣—印度是核心走廊，也是業務量最大的一環；以下說明這兩個經濟體為何互補，以及韓國與北美如何延伸同一套模式。',
     taiwanTitle: '為什麼是台灣',
     taiwanLead: '亞洲最重要的創新樞紐之一。',
     taiwanPoints: [
@@ -1264,7 +1244,7 @@ const zh: Dict = {
   leadership: {
     eyebrow: '經營團隊與治理',
     heading: '經營團隊',
-    lead: '公司經營與法定代表設於台灣，並包含主持印度分公司的總經理，以及具現職科學家背景的首席顧問。',
+    lead: '公司經營與法定代表設於台灣，並涵蓋印度分公司、專案交付，以及具現職科學家背景的首席顧問。',
     people: [
       {
         id: 'chia-ling-shih',
@@ -1311,6 +1291,14 @@ const zh: Dict = {
         phone: '+91 99642 76103',
         phoneHref: '+919964276103',
         focus: ['印度市場進入', '製造夥伴', '供應商資格認定', '實地訪廠'],
+      },
+      {
+        id: 'lenin-nachimuthu',
+        name: 'Lenin Nachimuthu',
+        role: '專案管理主管 — 印度分公司',
+        location: '印度，維洛爾',
+        photo: '/brand/team/lenin-nachimuthu.webp',
+        focus: ['樣品驗證關卡', '供應商風險緩解計畫', '法人設立進度追蹤', 'SLA 整合時程'],
       },
     ],
   },
@@ -1393,13 +1381,13 @@ const zh: Dict = {
 
   network: {
     eyebrow: '全球網絡',
-    heading: '一家公司，七個市場',
-    lead: '總部設於台灣，於印度設有分公司，並在南韓、美國、德國、新加坡與澳洲派駐業務開發夥伴。每個市場都有長駐當地、通曉語言、本週就能前往工廠實地拜訪的人。',
+    heading: '一家公司，四個市場',
+    lead: '總部設於台灣，並在印度、南韓與美國派駐業務開發代表。每個市場都有長駐當地、通曉語言、本週就能前往工廠實地拜訪的人。',
     hqLabel: '總部',
     repLabel: '業務開發代表',
     coreLabel: '核心走廊',
     coverageNote:
-      '台灣—印度走廊仍是我們的核心業務，也是業務量最大的一環——這是我們自身技術與營運經驗最深厚的領域。韓國、美國、德國、新加坡與澳洲則是將同一套模式延伸至更多市場。各地代表是該區域的第一線窗口；技術評估、合約與交付則由台灣總部統一執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口。',
+      '台灣—印度走廊仍是我們的核心業務，也是業務量最大的一環——這是我們自身技術與營運經驗最深厚的領域。韓國與美國則是將同一套模式延伸至更多市場。各地代表是該區域的第一線窗口；技術評估、合約與交付則由台灣總部統一執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口。',
     locations: [
       {
         id: 'taipei',
@@ -1444,39 +1432,6 @@ const zh: Dict = {
         detail: '負責韓國市場的業務開發與夥伴對接',
         address: '',
         focus: ['市場准入', '電子與材料', '夥伴發掘', '商務考察'],
-      },
-      {
-        id: 'germany',
-        city: '卡爾斯魯厄',
-        country: '德國',
-        role: '德國業務開發',
-        type: 'rep',
-        core: false,
-        detail: '負責德國市場的業務開發與歐盟研究連結',
-        address: '',
-        focus: ['德國市場准入', '歐盟研究合作', '先進材料', '技術發掘'],
-      },
-      {
-        id: 'singapore',
-        city: '新加坡',
-        country: '新加坡',
-        role: '新加坡業務開發',
-        type: 'rep',
-        core: false,
-        detail: '負責東協市場的業務開發與夥伴對接',
-        address: '',
-        focus: ['新加坡市場准入', '東協夥伴關係', '工業與自動化', '供應商資格認定'],
-      },
-      {
-        id: 'australia',
-        city: '澳洲',
-        country: '澳洲',
-        role: '澳洲業務開發',
-        type: 'rep',
-        core: false,
-        detail: '負責澳洲市場的業務開發與生命科學夥伴對接',
-        address: '',
-        focus: ['澳洲市場進入', '生命科學合作', '製藥開發', '技術發掘'],
       },
     ],
   },
