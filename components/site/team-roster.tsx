@@ -117,18 +117,19 @@ function PersonCard({
       <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-card-lg">
         <span className={cn('absolute inset-x-0 top-0 z-10 h-0.5', bar)} aria-hidden="true" />
 
-        {/* Full-bleed square portrait. The sources are square, so this crops
-            nothing — the size is controlled by how narrow the column is, not
-            by cutting into the frame. */}
+        {/* Full-bleed portrait, 4:3 rather than square so it sits shorter in
+            the card. The sources are square and already cropped face-high, so
+            object-top takes the difference off the bottom — shoulders, not
+            heads. */}
         {person.photo ? (
-          <span className="relative block aspect-square w-full overflow-hidden bg-slate-100">
+          <span className="relative block aspect-[4/3] w-full overflow-hidden bg-slate-100">
             <Image
               src={person.photo}
               alt={person.name}
               width={800}
               height={800}
               sizes="(min-width: 1280px) 23vw, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
             />
             <span
               aria-hidden="true"
@@ -139,7 +140,7 @@ function PersonCard({
           <span
             aria-hidden="true"
             className={cn(
-              'flex aspect-square w-full items-center justify-center font-display text-5xl font-extrabold',
+              'flex aspect-[4/3] w-full items-center justify-center font-display text-5xl font-extrabold',
               ring,
             )}
           >
