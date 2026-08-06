@@ -41,11 +41,11 @@ for (const p of PHOTOS) {
   // Square crop biased to the top — headshots put the face above centre, so a
   // straight centre crop cuts the forehead.
   await sharp(src)
-    .resize(480, 480, {
+    .resize(800, 800, {
       fit: 'cover',
       position: p.position === 'attention' ? sharp.strategy.attention : 'top',
     })
-    .webp({ quality: 84, effort: 6 })
+    .webp({ quality: 82, effort: 6 })
     .toFile(path.join(OUT, `${p.name}.webp`));
 
   const meta = await sharp(path.join(OUT, `${p.name}.webp`)).metadata();

@@ -140,6 +140,43 @@
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Cinematic hero
+   The wordmark is SVG <text> used as a mask, so it stays real text — the plate
+   it cuts out of is what scales away during the reveal.
+--------------------------------------------------------------------------- */
+.cine-type {
+  /* Sized in viewBox units (the SVG is 0 0 100 100, sliced to cover). */
+  font-size: 15px;
+  font-family: var(--font-grotesk), 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.045em; /* em, not px: -8px collapses the glyphs on a phone */
+  fill: #000;
+}
+
+/* The mask group is what scales; keep it on the compositor. */
+[data-cine='cut'] {
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  /* Two long words need more of the narrow viewport to read as a wordmark. */
+  .cine-type {
+    font-size: 19px;
+  }
+}
+
+@keyframes cine-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+  to {
+    transform: translate3d(14px, -22px, 0);
+    opacity: 0.9;
+  }
+}
+
 /* Respect reduced-motion across the whole app */
 @media (prefers-reduced-motion: reduce) {
   html {

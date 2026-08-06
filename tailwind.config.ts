@@ -79,6 +79,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         display: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        grotesk: ['var(--font-grotesk)', 'Space Grotesk', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize: {

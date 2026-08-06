@@ -15,7 +15,7 @@ import { useLang } from '@/components/providers/language-provider';
 type Route = {
   id: string;
   d: string;
-  /** Emphasised: the Taiwan–India corridor is the core business. */
+  /** Emphasised: an office rather than a resident partner. */
   core?: boolean;
   dur: number;
   delay: number;

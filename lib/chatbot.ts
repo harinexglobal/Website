@@ -132,7 +132,7 @@ const en: ChatPack = {
       id: 'offices',
       keywords: ['office', 'offices', 'located', 'location', 'where are you', 'address', 'based', 'taiwan', 'india', 'korea', 'usa', 'america', 'branch'],
       answer:
-        'Our head office is in Taoyuan City, Taiwan, at 3F, No. 10, Wenhua 7th Rd., Guishan District. We have a branch office in Bengaluru, India, and business development representatives in Michigan, United States and Seoul, South Korea.',
+        'Our head office is in Taoyuan City, Taiwan, at 3F, No. 10, Wenhua 7th Rd., Guishan District. We have a branch office in Bengaluru, India, and business development partners in South Korea, the United States, Germany, Singapore and Australia.',
       link: { href: '/markets', label: 'Global markets' },
       followUps: ['Who is on the team?', 'Ask us directly'],
     },
@@ -199,7 +199,7 @@ const en: ChatPack = {
       id: 'outside-markets',
       keywords: ['outside', 'other countries', 'europe', 'japan', 'vietnam', 'elsewhere', 'only taiwan', 'other market'],
       answer:
-        'The Taiwan–India corridor is our core business and where our own experience runs deepest, but we have representatives in South Korea and the United States and can support projects into those markets under the same model. Ask about anywhere else and we will tell you honestly whether we can help.',
+        'Seven markets: Taiwan, India, South Korea, the United States, Germany, Singapore and Australia. Each has a partner who lives there, and every engagement runs to the same model from the Taiwan head office. Ask about anywhere else and we will tell you honestly whether we can help.',
       link: { href: '/markets', label: 'Global markets' },
       followUps: ['Where are your offices?', 'Ask us directly'],
     },
@@ -303,7 +303,7 @@ const zh: ChatPack = {
       id: 'offices',
       keywords: ['據點', '辦公室', '地址', '在哪', '位置', '分公司', '台灣', '印度', '韓國', '美國'],
       answer:
-        '總部位於台灣桃園市龜山區文化七路 10 號 3 樓。印度班加羅爾設有分公司，並在美國密西根州與南韓首爾派駐業務開發代表。',
+        '總部位於台灣桃園市龜山區文化七路 10 號 3 樓。印度班加羅爾設有分公司，並在南韓、美國、德國、新加坡與澳洲派駐業務開發夥伴。',
       link: { href: '/markets', label: '全球市場' },
       followUps: ['團隊有哪些人？', '直接詢問我們'],
     },
@@ -370,7 +370,7 @@ const zh: ChatPack = {
       id: 'outside-markets',
       keywords: ['其他國家', '歐洲', '日本', '越南', '別的市場', '只有台灣'],
       answer:
-        '台灣—印度走廊是我們的核心業務，也是經驗最深厚的領域；同時我們在南韓與美國設有代表，可依相同模式支援進入這些市場的專案。若是其他地區，請直接詢問，我們會據實告知能否協助。',
+        '共七個市場：台灣、印度、南韓、美國、德國、新加坡與澳洲。每個市場都有常駐當地的夥伴，所有委任皆由台灣總部依同一套模式執行。若是其他地區，請直接詢問，我們會據實告知能否協助。',
       link: { href: '/markets', label: '全球市場' },
       followUps: ['據點在哪裡？', '直接詢問我們'],
     },

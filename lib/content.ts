@@ -56,7 +56,7 @@ const en = {
   },
 
   hero: {
-    badge: 'Taiwan · India · South Korea · United States',
+    badge: 'Headquartered in Taiwan · Operating worldwide',
     title: 'Connecting Innovation and Trusted Partnerships Across the Globe',
     titleLines: ['Connecting Innovation', 'and Trusted Partnerships', 'Across the Globe'],
     subtitle:
@@ -78,10 +78,10 @@ const en = {
         detail: 'From specialty chemicals and biotech to semiconductors and green technology.',
       },
       {
-        value: '4',
+        value: '7',
         suffix: '',
         label: 'Markets, one team',
-        detail: 'Taiwan, India, South Korea and the United States — a single accountable team.',
+        detail: 'Taiwan, India, South Korea, the United States, Germany, Singapore and Australia — a single accountable team.',
       },
       {
         value: '',
@@ -125,7 +125,7 @@ const en = {
     bridgeOriginRole: 'R&D, technology origin, precision manufacturing',
     bridgeDest: 'Destination markets',
     bridgeDestRole:
-      'Industrial scale-up, market entry and distribution. India is the core corridor and the majority of our work; South Korea and North America run the same model.',
+      'Industrial scale-up, market entry and distribution, run to the same model in every market we operate in.',
     bridgeLabel: 'Technology Bridge',
     whyUs: {
       heading: 'Why Choose HariNex Global',
@@ -151,7 +151,7 @@ const en = {
         summary:
           'Moving proven technology from the lab bench into licensed, scaled industrial production.',
         description:
-          'We scout, evaluate and structure the transfer of commercially viable technology between Taiwanese and Indian organisations. That includes non-bisphenol (BPA/BPS-free) textile chemical licensing, biotech intellectual property, pilot-plant scale-up protocols and joint development agreements. Technical due diligence is performed by chemists, so a technology is assessed on its data rather than its pitch deck.',
+          'We scout, evaluate and structure the transfer of commercially viable technology between organisations in different markets. That includes non-bisphenol (BPA/BPS-free) textile chemical licensing, biotech intellectual property, pilot-plant scale-up protocols and joint development agreements. Technical due diligence is performed by chemists, so a technology is assessed on its data rather than its pitch deck.',
         deliverables: [
           'Technology scouting & landscape mapping',
           'Licensing structure and negotiation support',
@@ -185,7 +185,7 @@ const en = {
         icon: 'factory',
         title: 'Strategic Supplier Sourcing',
         summary:
-          'Qualified manufacturing partners across Taiwan and India, verified in person.',
+          'Qualified manufacturing partners across our markets, verified in person.',
         description:
           'Finding a supplier is easy; qualifying one is not. We identify candidate factories, run structured evaluations against your technical specification, visit sites, assess quality systems and support commercial negotiation. Particular depth in Taiwanese specialty machinery, cleanroom equipment, pharmaceutical inputs and automation systems.',
         deliverables: [
@@ -375,7 +375,7 @@ const en = {
   bridge: {
     eyebrow: 'Global Markets',
     heading: 'Where we operate, and why',
-    lead: 'We work across four markets. Taiwan–India is the core corridor and the majority of our work — the pages below explain why those two economies fit together, and where Korea and North America extend the same model.',
+    lead: 'Taiwan is our home and our anchor. From it we run the same model into seven markets across Asia, Europe, North America and Oceania — each with someone on the ground who lives there.',
     taiwanTitle: 'Why Taiwan',
     taiwanLead: "One of Asia's leading innovation hubs.",
     taiwanPoints: [
@@ -386,18 +386,18 @@ const en = {
       'Mature global export capability',
       'Highly skilled technical workforce',
     ],
-    indiaTitle: 'Why India',
-    indiaLead: "One of the world's fastest-growing markets.",
+    indiaTitle: 'Why go global from Taiwan',
+    indiaLead: 'A dense industrial base is only worth what it can reach.',
     indiaPoints: [
-      'Large and expanding manufacturing base',
-      'Rapidly growing healthcare and pharma sector',
-      'Major infrastructure investment underway',
-      'Competitive production economics',
-      'Deep engineering talent pool',
-      'Substantial domestic demand',
+      'Seven markets, each with a resident partner',
+      'Asia, Europe, North America and Oceania',
+      'Local language and local business culture',
+      'Site visits without a long-haul wait',
+      'One accountable team, not a referral chain',
+      'Technical evaluation run centrally from Taiwan',
     ],
     closing:
-      'What is usually missing is not opportunity but a counterparty who understands both the technology and both business cultures well enough to keep a project moving. That is the role we play.',
+      'What is usually missing is not opportunity but a counterparty who understands both the technology and the business cultures involved well enough to keep a project moving. That is the role we play.',
   },
 
   process: {
@@ -406,7 +406,7 @@ const en = {
     lead: 'Six stages, each with a defined output. You always know what has been done and what happens next.',
     steps: [
       { n: '01', title: 'Understand your business needs', body: 'A working session on objectives, constraints, technical requirements and the commercial outcome the project is judged against.' },
-      { n: '02', title: 'Identify partners', body: 'Structured scouting across our Taiwanese and Indian networks, producing a shortlist rather than a directory.' },
+      { n: '02', title: 'Identify partners', body: 'Structured scouting across our global network, producing a shortlist rather than a directory.' },
       { n: '03', title: 'Evaluate opportunities', body: 'Technical and commercial due diligence — capability, quality systems, IP position and financial standing.' },
       { n: '04', title: 'Coordinate meetings', body: 'Introductions, site visits and negotiations, with professional interpretation and prepared briefing material.' },
       { n: '05', title: 'Negotiate & execute', body: 'Support through term sheets, licensing structures, supply agreements and the documentation that makes them operable.' },
@@ -586,13 +586,13 @@ const en = {
 
   network: {
     eyebrow: 'Global Network',
-    heading: 'One firm, four markets',
-    lead: 'Headquartered in Taiwan, with business development representatives on the ground in India, South Korea and the United States. Every market has someone who lives there, speaks the language and can visit a factory this week.',
+    heading: 'One firm, seven markets',
+    lead: 'Headquartered in Taiwan, with a branch office in India and business development partners on the ground in South Korea, the United States, Germany, Singapore and Australia. Every market has someone who lives there, speaks the language and can visit a factory this week.',
     hqLabel: 'Headquarters',
     repLabel: 'Business Development Representative',
-    coreLabel: 'Core corridor',
+    coreLabel: 'Office',
     coverageNote:
-      'The Taiwan–India corridor remains our core business and the majority of our work — it is where our own technical and operating experience runs deepest. Korea and the United States extend the same model into further markets. Representatives are the first point of contact for their region, while technical evaluation, contracting and delivery are run centrally from the Taiwan head office, so you get local access without a fragmented engagement.',
+      'Taiwan is the head office and the legal entity, with a branch in India. Everywhere else, a resident partner is the first point of contact for their region. Technical evaluation, contracting and delivery are run centrally from Taiwan, so you get local access without a fragmented engagement — one team accountable for the whole project, wherever it runs.',
     locations: [
       {
         id: 'taipei',
@@ -638,20 +638,53 @@ const en = {
         address: '',
         focus: ['Market access', 'Electronics & materials', 'Partner sourcing', 'Trade missions'],
       },
+      {
+        id: 'germany',
+        city: 'Karlsruhe',
+        country: 'Germany',
+        role: 'Germany Business Development',
+        type: 'rep',
+        core: false,
+        detail: 'Business development and research links across the EU',
+        address: '',
+        focus: ['Germany market access', 'EU research collaboration', 'Advanced materials', 'Technology scouting'],
+      },
+      {
+        id: 'singapore',
+        city: 'Singapore',
+        country: 'Singapore',
+        role: 'Singapore Business Development',
+        type: 'rep',
+        core: false,
+        detail: 'Business development and partner access across ASEAN',
+        address: '',
+        focus: ['Singapore market access', 'ASEAN partnerships', 'Industrial & automation', 'Supplier qualification'],
+      },
+      {
+        id: 'australia',
+        city: 'Australia',
+        country: 'Australia',
+        role: 'Australia Business Development',
+        type: 'rep',
+        core: false,
+        detail: 'Business development and life sciences partner access',
+        address: '',
+        focus: ['Australia market entry', 'Life sciences partnerships', 'Pharmaceutical development', 'Technology scouting'],
+      },
     ],
   },
 
   insights: {
     eyebrow: 'Case Studies & Insights',
-    heading: 'Perspectives on the Taiwan–India corridor',
+    heading: 'Perspectives on cross-border technology transfer',
     lead: 'Practical notes on cross-border technology, sourcing and compliance.',
     comingSoon: 'Article coming soon',
     items: [
-      { id: 'taiwan-india', category: 'Market entry', title: 'Why Taiwanese companies should explore India', excerpt: 'The commercial logic behind the corridor, and the operational realities that decide whether an entry works.' },
+      { id: 'taiwan-outward', category: 'Market entry', title: 'Why Taiwanese companies should look outward', excerpt: 'The commercial logic behind exporting capability, and the operational realities that decide whether an entry works.' },
       { id: 'tech-transfer', category: 'Technology transfer', title: 'Technology transfer best practices', excerpt: 'What separates a transfer that reaches production from one that stalls at pilot scale.' },
       { id: 'supplier-checklist', category: 'Sourcing', title: 'Supplier qualification checklist', excerpt: 'The structured evaluation we run before recommending any manufacturing partner.' },
       { id: 'doing-business-taiwan', category: 'Market entry', title: 'Doing business in Taiwan', excerpt: 'Company structures, regulatory posture and the cultural conventions that matter in practice.' },
-      { id: 'trade-opportunities', category: 'Trade', title: 'Taiwan–India trade opportunities', excerpt: 'Where the complementary strengths of the two economies create genuine openings.' },
+      { id: 'trade-opportunities', category: 'Trade', title: 'Taiwan–global trade opportunities', excerpt: "Where Taiwan's industrial strengths meet genuine demand in the markets we cover." },
       { id: 'localisation', category: 'Localisation', title: 'Website localisation for international companies', excerpt: 'Why literal translation fails, and what a properly localised bilingual presence requires.' },
     ],
   },
@@ -678,8 +711,8 @@ const en = {
         a: 'Consultation and advisory work is quoted as a fixed fee against a defined scope. Sourcing and transfer projects are milestone-based. Ongoing support is a monthly retainer. Every engagement is quoted in writing before it starts, and scope changes are quoted separately rather than appearing on an invoice.',
       },
       {
-        q: 'Do you work outside Taiwan and India?',
-        a: 'Yes. The Taiwan–India corridor is our core business and where our own experience runs deepest, but we have business development representatives in South Korea and the United States and can support projects into those markets under the same model.',
+        q: 'Which markets do you work in?',
+        a: 'Seven: Taiwan, India, South Korea, the United States, Germany, Singapore and Australia. Each has a partner who lives there, and every engagement is run to the same model from the Taiwan head office. Ask about anywhere else and we will tell you honestly whether we can help.',
       },
       {
         q: 'What happens if a supplier fails your evaluation?',
@@ -814,7 +847,7 @@ const en = {
   },
 
   footer: {
-    blurb: 'Connecting Taiwan and India through technology, innovation and trusted partnerships.',
+    blurb: 'Connecting Taiwan with the world through technology, innovation and trusted partnerships.',
     capabilitiesHeading: 'Capabilities',
     companyHeading: 'Company',
     contactHeading: 'Contact',
@@ -893,7 +926,7 @@ const zh: Dict = {
   },
 
   hero: {
-    badge: '台灣 · 印度 · 南韓 · 美國',
+    badge: '總部設於台灣 · 服務遍及全球',
     title: '連結全球創新與值得信賴的夥伴關係',
     titleLines: ['連結全球創新', '與值得信賴的', '夥伴關係'],
     subtitle:
@@ -914,10 +947,10 @@ const zh: Dict = {
         detail: '涵蓋特用化學、生技醫藥、半導體到綠色科技。',
       },
       {
-        value: '4',
+        value: '7',
         suffix: '',
-        label: '四個市場，同一團隊',
-        detail: '台灣、印度、南韓與美國，由單一負責團隊統籌執行。',
+        label: '七個市場，同一團隊',
+        detail: '台灣、印度、南韓、美國、德國、新加坡與澳洲，由單一負責團隊統籌執行。',
       },
       {
         value: '',
@@ -960,7 +993,7 @@ const zh: Dict = {
     bridgeOriginRole: '研發、技術源頭、精密製造',
     bridgeDest: '目標市場',
     bridgeDestRole:
-      '產業放大、市場進入與通路布建。印度為核心走廊，也是業務量最大的一環；南韓與北美則採行相同模式。',
+      '產業放大、市場進入與通路布建；在我們營運的每一個市場，皆採行相同模式。',
     bridgeLabel: '技術橋樑',
     whyUs: {
       heading: '選擇瀚瑞國際的理由',
@@ -985,7 +1018,7 @@ const zh: Dict = {
         title: '技術移轉與商品化',
         summary: '將已驗證的技術，從實驗室推進到具授權基礎的規模化工業生產。',
         description:
-          '我們負責發掘、評估並建構台灣與印度組織之間具商業可行性的技術移轉，包括不含雙酚（BPA/BPS-free）的紡織化學品授權、生技智慧財產、試量產放大流程與共同開發協議。技術實地查核由化學專業人員執行，因此技術是依據數據被評估，而非依據簡報。',
+          '我們負責發掘、評估並建構跨市場組織之間具商業可行性的技術移轉，包括不含雙酚（BPA/BPS-free）的紡織化學品授權、生技智慧財產、試量產放大流程與共同開發協議。技術實地查核由化學專業人員執行，因此技術是依據數據被評估，而非依據簡報。',
         deliverables: [
           '技術發掘與技術地圖分析',
           '授權架構規劃與談判支援',
@@ -1017,7 +1050,7 @@ const zh: Dict = {
         id: 'supplier-sourcing',
         icon: 'factory',
         title: '策略性供應商採購',
-        summary: '橫跨台灣與印度、且經實地驗證的合格製造夥伴。',
+        summary: '橫跨我們各市場、且經實地驗證的合格製造夥伴。',
         description:
           '找到供應商並不難，難的是完成資格認定。我們負責篩選候選工廠、依貴公司技術規格進行結構化評估、實地訪廠、評估品質系統，並支援商務談判。在台灣特用機械、無塵室設備、製藥原料與自動化系統領域具備深度。',
         deliverables: [
@@ -1202,7 +1235,7 @@ const zh: Dict = {
   bridge: {
     eyebrow: '全球市場',
     heading: '我們在哪裡營運，以及為什麼',
-    lead: '我們橫跨四個市場。台灣—印度是核心走廊，也是業務量最大的一環；以下說明這兩個經濟體為何互補，以及韓國與北美如何延伸同一套模式。',
+    lead: '台灣是我們的根據地與支點。我們以台灣為起點，將同一套模式推展至橫跨亞洲、歐洲、北美與大洋洲的七個市場，每一個市場都有常駐當地的夥伴。',
     taiwanTitle: '為什麼是台灣',
     taiwanLead: '亞洲最重要的創新樞紐之一。',
     taiwanPoints: [
@@ -1213,15 +1246,15 @@ const zh: Dict = {
       '成熟的全球出口能力',
       '高度熟練的技術人力',
     ],
-    indiaTitle: '為什麼是印度',
-    indiaLead: '全球成長最快速的市場之一。',
+    indiaTitle: '為什麼從台灣走向全球',
+    indiaLead: '深厚的產業基礎，價值取決於它能觸及多遠。',
     indiaPoints: [
-      '龐大且持續擴張的製造基礎',
-      '快速成長的醫療與製藥產業',
-      '大規模基礎建設投資進行中',
-      '具競爭力的生產成本結構',
-      '深厚的工程人才庫',
-      '可觀的內需市場規模',
+      '七個市場，各有常駐夥伴',
+      '橫跨亞洲、歐洲、北美與大洋洲',
+      '在地語言與在地商業文化',
+      '實地訪廠無須長途等待',
+      '同一支負責團隊，而非轉介鏈',
+      '技術評估由台灣統一執行',
     ],
     closing:
       '真正欠缺的通常不是機會，而是一個同時理解技術與兩地商業文化、足以推動專案持續前進的對口。這正是我們扮演的角色。',
@@ -1233,7 +1266,7 @@ const zh: Dict = {
     lead: '六個階段，每階段皆有明確產出。您隨時清楚已完成什麼、下一步是什麼。',
     steps: [
       { n: '01', title: '了解您的業務需求', body: '就目標、限制條件、技術需求與此專案最終被檢視的商業成果進行工作會議。' },
-      { n: '02', title: '發掘合作夥伴', body: '在台灣與印度網絡中進行結構化搜尋，產出的是精選名單而非通訊錄。' },
+      { n: '02', title: '發掘合作夥伴', body: '在我們的全球網絡中進行結構化搜尋，產出的是精選名單而非通訊錄。' },
       { n: '03', title: '評估機會', body: '技術與商務實地查核，涵蓋能力、品質系統、智財地位與財務狀況。' },
       { n: '04', title: '安排會議', body: '引薦、實地參訪與談判，並提供專業口譯與事前準備的簡報資料。' },
       { n: '05', title: '談判與執行', body: '協助處理條件書、授權架構、供應協議，以及使其得以實際運作的文件。' },
@@ -1381,13 +1414,13 @@ const zh: Dict = {
 
   network: {
     eyebrow: '全球網絡',
-    heading: '一家公司，四個市場',
-    lead: '總部設於台灣，並在印度、南韓與美國派駐業務開發代表。每個市場都有長駐當地、通曉語言、本週就能前往工廠實地拜訪的人。',
+    heading: '一家公司，七個市場',
+    lead: '總部設於台灣，於印度設有分公司，並在南韓、美國、德國、新加坡與澳洲派駐業務開發夥伴。每個市場都有長駐當地、通曉語言、本週就能前往工廠實地拜訪的人。',
     hqLabel: '總部',
     repLabel: '業務開發代表',
-    coreLabel: '核心走廊',
+    coreLabel: '據點',
     coverageNote:
-      '台灣—印度走廊仍是我們的核心業務，也是業務量最大的一環——這是我們自身技術與營運經驗最深厚的領域。韓國與美國則是將同一套模式延伸至更多市場。各地代表是該區域的第一線窗口；技術評估、合約與交付則由台灣總部統一執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口。',
+      '台灣是總部所在與法律主體，印度設有分公司。其餘地區皆由常駐當地的夥伴擔任該區域的第一線窗口。技術評估、合約與交付統一由台灣執行，讓您在獲得在地服務的同時，不必面對分散的專案窗口——無論專案在何處進行，都由同一支團隊負責到底。',
     locations: [
       {
         id: 'taipei',
@@ -1433,20 +1466,53 @@ const zh: Dict = {
         address: '',
         focus: ['市場准入', '電子與材料', '夥伴發掘', '商務考察'],
       },
+      {
+        id: 'germany',
+        city: '卡爾斯魯厄',
+        country: '德國',
+        role: '德國業務開發',
+        type: 'rep',
+        core: false,
+        detail: '負責德國市場的業務開發與歐盟研究連結',
+        address: '',
+        focus: ['德國市場准入', '歐盟研究合作', '先進材料', '技術發掘'],
+      },
+      {
+        id: 'singapore',
+        city: '新加坡',
+        country: '新加坡',
+        role: '新加坡業務開發',
+        type: 'rep',
+        core: false,
+        detail: '負責東協市場的業務開發與夥伴對接',
+        address: '',
+        focus: ['新加坡市場准入', '東協夥伴關係', '工業與自動化', '供應商資格認定'],
+      },
+      {
+        id: 'australia',
+        city: '澳洲',
+        country: '澳洲',
+        role: '澳洲業務開發',
+        type: 'rep',
+        core: false,
+        detail: '負責澳洲市場的業務開發與生命科學夥伴對接',
+        address: '',
+        focus: ['澳洲市場進入', '生命科學合作', '製藥開發', '技術發掘'],
+      },
     ],
   },
 
   insights: {
     eyebrow: '案例與洞察',
-    heading: '台印走廊的觀察與觀點',
+    heading: '跨境技術移轉的觀察與觀點',
     lead: '關於跨境技術、採購與法規合規的實務筆記。',
     comingSoon: '文章即將上線',
     items: [
-      { id: 'taiwan-india', category: '市場進入', title: '台灣企業為何應該布局印度', excerpt: '這條走廊背後的商業邏輯，以及決定市場進入成敗的營運現實。' },
+      { id: 'taiwan-outward', category: '市場進入', title: '台灣企業為何應該向外布局', excerpt: '輸出自身能力背後的商業邏輯，以及決定市場進入成敗的營運現實。' },
       { id: 'tech-transfer', category: '技術移轉', title: '技術移轉最佳實務', excerpt: '能推進到量產的技術移轉，與停滯在試量產階段者，差別何在。' },
       { id: 'supplier-checklist', category: '供應鏈', title: '供應商資格認定檢核表', excerpt: '在推薦任何製造夥伴之前，我們所執行的結構化評估流程。' },
       { id: 'doing-business-taiwan', category: '市場進入', title: '在台灣經商', excerpt: '公司架構、法規態勢，以及實務上真正重要的文化慣例。' },
-      { id: 'trade-opportunities', category: '貿易', title: '台印貿易機會', excerpt: '兩個經濟體的互補優勢，在哪些地方創造出真正的切入點。' },
+      { id: 'trade-opportunities', category: '貿易', title: '台灣與全球的貿易機會', excerpt: '台灣的產業優勢，在我們所涵蓋的市場中與真實需求交會之處。' },
       { id: 'localisation', category: '在地化', title: '國際企業的網站在地化', excerpt: '為何逐字翻譯必然失敗，以及真正到位的雙語形象需要什麼。' },
     ],
   },
@@ -1473,8 +1539,8 @@ const zh: Dict = {
         a: '顧問與諮詢工作依明確範疇報價，採固定費用；採購與技術移轉專案採里程碑計費；持續性支援則為月費制。每一項委任都會在開始前提供書面報價，範疇如有變動亦會另行報價，不會直接出現在帳單上。',
       },
       {
-        q: '台灣與印度以外的市場，貴公司也承接嗎？',
-        a: '是的。台灣—印度走廊是我們的核心業務，也是我們經驗最深厚的領域；同時我們在南韓與美國設有業務開發代表，可依相同模式支援進入這些市場的專案。',
+        q: '貴公司服務哪些市場？',
+        a: '共七個：台灣、印度、南韓、美國、德國、新加坡與澳洲。每個市場都有常駐當地的夥伴，所有委任皆由台灣總部依同一套模式執行。若是其他地區，請直接詢問，我們會據實告知能否協助。',
       },
       {
         q: '如果供應商未通過貴公司的評估，會如何處理？',
@@ -1599,7 +1665,7 @@ const zh: Dict = {
   },
 
   footer: {
-    blurb: '以技術、創新與值得信賴的夥伴關係，連結台灣與印度。',
+    blurb: '以技術、創新與值得信賴的夥伴關係，連結台灣與世界。',
     capabilitiesHeading: '服務能力',
     companyHeading: '公司',
     contactHeading: '聯絡方式',

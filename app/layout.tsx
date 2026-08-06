@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import { LanguageProvider } from '@/components/providers/language-provider';
 import { Navbar } from '@/components/site/navbar';
 import { Footer } from '@/components/site/footer';
@@ -12,6 +12,14 @@ const jakarta = Plus_Jakarta_Sans({
   display: 'swap',
   variable: '--font-jakarta',
   weight: ['400', '500', '600', '700', '800'],
+});
+
+// Display face for the cinematic wordmark only — the body face stays Jakarta.
+const grotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-grotesk',
+  weight: ['500', '700'],
 });
 
 const mono = JetBrains_Mono({
@@ -32,7 +40,7 @@ export const metadata: Metadata = {
   description:
     'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management. Headquartered in Taiwan, with representatives in India, South Korea and the United States.',
   keywords: [
-    'technology transfer Taiwan India',
+    'international technology transfer',
     'international business advisory',
     'cross-border technology commercialisation',
     'technical translation Traditional Chinese',
@@ -47,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'HariNex Global',
     title: 'HariNex Global — International Technology Transfer & Business Advisory',
     description:
-      'Connecting innovation and trusted partnerships across the globe. Technology transfer, sourcing, localisation and project management, anchored in the Taiwan–India corridor.',
+      'Connecting innovation and trusted partnerships across the globe. Technology transfer, sourcing, localisation and project management, run from Taiwan into seven markets.',
     locale: 'en_US',
     alternateLocale: ['zh_TW'],
   },
@@ -55,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HariNex Global — International Technology Transfer & Business Advisory',
     description:
-      'Connecting innovation and trusted partnerships across the globe. Technology transfer, sourcing, localisation and project management, anchored in the Taiwan–India corridor.',
+      'Connecting innovation and trusted partnerships across the globe. Technology transfer, sourcing, localisation and project management, run from Taiwan into seven markets.',
   },
   robots: { index: true, follow: true },
 };
@@ -68,7 +76,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${mono.variable}`}>
+    <html lang="en" className={`${jakarta.variable} ${grotesk.variable} ${mono.variable}`}>
       <body className="min-h-dvh bg-white font-sans">
         <LanguageProvider>
           <a

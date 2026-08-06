@@ -64,6 +64,7 @@ export function Navbar() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
+    <>
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-300',
@@ -215,6 +216,8 @@ export function Navbar() {
         </div>
       </div>
 
+    </header>
+
       {/* Mobile sheet */}
       <AnimatePresence>
         {mobileOpen && (
@@ -223,7 +226,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-0 z-50 bg-white lg:hidden"
+            className="fixed inset-0 z-[60] overflow-hidden bg-white lg:hidden"
           >
             <div className="container flex h-20 items-center justify-between">
               <span className="font-display text-lg font-extrabold text-forest-600">
@@ -239,7 +242,10 @@ export function Navbar() {
               </button>
             </div>
 
-            <nav className="container flex h-[calc(100dvh-5rem)] flex-col overflow-y-auto pb-8" aria-label="Mobile">
+            <nav
+              className="container flex h-[calc(100dvh-5rem)] flex-col overflow-y-auto overscroll-contain bg-white pb-8"
+              aria-label="Mobile"
+            >
               <Link
                 href={ROUTES.home}
                 className="border-b border-slate-100 py-4 font-display text-2xl font-bold text-navy-800"
@@ -286,7 +292,7 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
 

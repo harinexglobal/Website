@@ -1,4 +1,4 @@
-import { Hero } from '@/components/site/hero';
+import { CinematicHero } from '@/components/site/cinematic/cinematic-hero';
 import { StatsBar } from '@/components/site/stats-bar';
 import { AboutIntro, WhyUsGrid } from '@/components/site/about-intro';
 import { CapabilitiesTabs } from '@/components/site/capabilities-tabs';
@@ -12,7 +12,7 @@ import { CtaBand } from '@/components/site/cta-band';
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <CinematicHero />
       <StatsBar />
       <AboutIntro variant="home" />
       <WhyUsGrid />
