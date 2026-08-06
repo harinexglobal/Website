@@ -674,6 +674,36 @@ const en = {
     ],
   },
 
+  engagements: {
+    eyebrow: 'Selected Engagements',
+    heading: 'Work we are running now',
+    lead: 'Two mandates currently in progress. Both run in the direction the model is built for: a specific technical or commercial requirement on one side, matched to a counterparty we have verified on the other.',
+    statusLabel: 'In progress',
+    sectorLabel: 'Sector',
+    items: [
+      {
+        id: 'd2p-biosolutions',
+        client: 'D2P Biosolutions',
+        clientMeta: 'Bengaluru, India',
+        sector: 'Biotech & life sciences',
+        from: 'Taiwan',
+        to: 'India',
+        title: 'Monoclonal antibody sourcing from Taiwan',
+        body: 'Identifying and qualifying Taiwanese suppliers of monoclonal antibodies against the client’s technical specification, then structuring the supply arrangement — supplier evaluation, sample validation and the documentation the shipment has to travel with.',
+      },
+      {
+        id: 'algafit-nutrition',
+        client: 'Algafit Nutrition Private Limited',
+        clientMeta: 'India',
+        sector: 'Food & agricultural exports',
+        from: 'India',
+        to: 'Taiwan',
+        title: 'Taiwanese buyers for organic dry fruit exports',
+        body: 'Buyer identification and introduction in Taiwan for organic dry fruit exports — mapping importers and distributors, making the approach in the local language, and supporting the commercial conversation through to terms.',
+      },
+    ],
+  },
+
   insights: {
     eyebrow: 'Case Studies & Insights',
     heading: 'Perspectives on cross-border technology transfer',
@@ -1498,6 +1528,36 @@ const zh: Dict = {
         detail: '負責澳洲市場的業務開發與生命科學夥伴對接',
         address: '',
         focus: ['澳洲市場進入', '生命科學合作', '製藥開發', '技術發掘'],
+      },
+    ],
+  },
+
+  engagements: {
+    eyebrow: '精選委任案例',
+    heading: '我們正在執行的專案',
+    lead: '目前有兩件進行中的委任。兩者都循著本公司模式所設計的方向推進：一端是明確的技術或商務需求，另一端則是經我們實地查核的合作對象。',
+    statusLabel: '進行中',
+    sectorLabel: '產業',
+    items: [
+      {
+        id: 'd2p-biosolutions',
+        client: 'D2P Biosolutions',
+        clientMeta: '印度，班加羅爾',
+        sector: '生技與生命科學',
+        from: '台灣',
+        to: '印度',
+        title: '自台灣採購單株抗體',
+        body: '依客戶技術規格發掘並評估台灣的單株抗體供應商，進而建構供應架構——包含供應商評估、樣品驗證，以及貨物出運所須隨附的文件。',
+      },
+      {
+        id: 'algafit-nutrition',
+        client: 'Algafit Nutrition Private Limited',
+        clientMeta: '印度',
+        sector: '食品與農產出口',
+        from: '印度',
+        to: '台灣',
+        title: '為有機乾果出口尋找台灣買主',
+        body: '為有機乾果出口在台灣進行買主發掘與引薦——盤點進口商與通路商、以在地語言進行接觸，並支援商務洽談直至議定條件。',
       },
     ],
   },
