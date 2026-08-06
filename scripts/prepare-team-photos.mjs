@@ -21,9 +21,7 @@ const PHOTOS = [
   { src: 'Team/photos/naveen.png', name: 'kanagaraj-naveen' },
   { src: 'Team/photos/Dr. ARIRAMAN MATHIVATHANAN.png', name: 'ariraman-mathivathanan' },
   { src: 'Images/Team members/Morris s.s. Ma.jpg', name: 'morris-ma' },
-  // Landscape shot with the subject well off-centre, so 'top' would frame him
-  // badly — attention picks the salient region instead.
-  { src: 'Team/Viney G.jpeg', name: 'viney-g', position: 'attention' },
+  { src: 'Team/Viney G.jpeg', name: 'viney-g' },
   { src: 'Team/photos/Dr. Sivarasan Ganesan.png', name: 'sivarasan-ganesan' },
   { src: 'Team/photos/Dr. Manas Chakraborty.png', name: 'manas-chakraborty' },
   { src: 'Team/photos/Purusothaman Manogaran.png', name: 'purusothaman-manogaran' },
@@ -38,13 +36,16 @@ for (const p of PHOTOS) {
     continue;
   }
 
-  // Square crop biased to the top — headshots put the face above centre, so a
-  // straight centre crop cuts the forehead.
+  // Square, not landscape. Several sources are passport photos where the face
+  // already fills the frame — a 4:3 landscape box has to remove a quarter of
+  // the height, which cut two faces off at the eyes. Portraits get portrait
+  // framing; the cards control size by column width instead.
+  //
+  // 'attention' picks the salient region per photo rather than assuming the
+  // face sits at the top: sources range from passport crops to landscape
+  // snapshots, and a fixed rule mis-frames one or the other.
   await sharp(src)
-    .resize(800, 800, {
-      fit: 'cover',
-      position: p.position === 'attention' ? sharp.strategy.attention : 'top',
-    })
+    .resize(800, 800, { fit: 'cover', position: sharp.strategy.attention })
     .webp({ quality: 82, effort: 6 })
     .toFile(path.join(OUT, `${p.name}.webp`));
 
