@@ -78,9 +78,9 @@ export function TeamRoster() {
               className="mb-10"
             />
 
-            {/* Five columns from xl. Column width is the only size control —
-                cropping the portrait to fit a smaller box cuts faces. */}
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+            {/* Four across at most. Five fitted but read as crowded, and the
+                longer role titles started wrapping hard. */}
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {tier.people.map((p, i) => (
                 <PersonCard key={p.id} person={p} tone={tier.tone} delay={i * 0.08} />
               ))}
@@ -126,7 +126,7 @@ function PersonCard({
               alt={person.name}
               width={800}
               height={800}
-              sizes="(min-width: 1280px) 18vw, (min-width: 1024px) 23vw, (min-width: 640px) 45vw, 90vw"
+              sizes="(min-width: 1280px) 23vw, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
             <span
