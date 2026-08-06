@@ -51,8 +51,8 @@ type ChatPack = {
 const en: ChatPack = {
   ui: {
     launcher: 'Ask a question',
-    title: 'HariNex assistant',
-    subtitle: 'Answers drawn from this site',
+    title: 'Hari AI',
+    subtitle: 'Assistant for HariNex Global',
     greeting:
       'Hello. I can answer questions about our services, industries, offices and how we work. What would you like to know?',
     placeholder: 'Type your question…',
@@ -233,8 +233,8 @@ const en: ChatPack = {
 const zh: ChatPack = {
   ui: {
     launcher: '線上諮詢',
-    title: '瀚瑞智能客服',
-    subtitle: '回覆內容取自本網站',
+    title: 'Hari AI',
+    subtitle: '瀚瑞國際智能助理',
     greeting: '您好。我可以回答關於本公司服務、產業領域、據點與合作方式的問題。請問您想了解什麼？',
     placeholder: '請輸入您的問題…',
     send: '送出',
