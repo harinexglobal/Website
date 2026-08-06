@@ -417,7 +417,7 @@ const en = {
   leadership: {
     eyebrow: 'Leadership & Governance',
     heading: 'Leadership',
-    lead: 'Company leadership and legal representation sit in Taiwan, alongside the India branch and project delivery.',
+    lead: 'Company leadership and legal representation sit in Taiwan, alongside the India branch, project delivery, and a chief advisor who is a working scientist.',
     people: [
       {
         id: 'chia-ling-shih',
@@ -454,7 +454,7 @@ const en = {
         id: 'ganesh-kumar',
         name: 'Dr. D. Ganesh Kumar',
         nameLocal: '甘納緒 博士',
-        role: 'Vice Chairman',
+        role: 'Chief Advisor',
         location: 'New Taipei City, Taiwan',
         photo: '/brand/team/ganesh-kumar.webp',
         focus: [
@@ -1244,7 +1244,7 @@ const zh: Dict = {
   leadership: {
     eyebrow: '經營團隊與治理',
     heading: '經營團隊',
-    lead: '公司經營與法定代表設於台灣，並涵蓋印度分公司與專案交付。',
+    lead: '公司經營與法定代表設於台灣，並涵蓋印度分公司、專案交付，以及具現職科學家背景的首席顧問。',
     people: [
       {
         id: 'chia-ling-shih',
@@ -1276,7 +1276,7 @@ const zh: Dict = {
         id: 'ganesh-kumar',
         name: '甘納緒 博士',
         nameLocal: 'Dr. D. Ganesh Kumar',
-        role: '副董事長',
+        role: '首席顧問',
         location: '台灣，新北市',
         photo: '/brand/team/ganesh-kumar.webp',
         focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],

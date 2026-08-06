@@ -140,7 +140,7 @@ const en: ChatPack = {
       id: 'team',
       keywords: ['team', 'who works', 'people', 'staff', 'founder', 'director', 'leadership', 'partner', 'advisor', 'adviser'],
       answer:
-        'Leadership sits in Taiwan and India — Chia-Ling Shih as Founder and Chairman, Dr. Sivarasan Ganesan as Group CEO and Managing Partner, Dr. D. Ganesh Kumar as Vice Chairman, Morris S.S. Ma on Taiwan operations, and the India branch managing director and project management lead. The global team represents South Korea, North America, Germany, Singapore and Australia, plus a technical specialist in materials and polymers.',
+        'Leadership sits in Taiwan and India — Chia-Ling Shih as Founder and Chairman, Dr. Sivarasan Ganesan as Group CEO and Managing Partner, Dr. D. Ganesh Kumar as Chief Advisor, Morris S.S. Ma on Taiwan operations, and the India branch managing director and project management lead. The global team represents South Korea, North America, Germany, Singapore and Australia, plus a technical specialist in materials and polymers.',
       link: { href: '/about/team', label: 'Meet the team' },
       followUps: ['Where are your offices?', 'What services do you offer?'],
     },
@@ -311,7 +311,7 @@ const zh: ChatPack = {
       id: 'team',
       keywords: ['團隊', '成員', '人員', '創辦人', '總經理', '負責人', '顧問', '合夥人'],
       answer:
-        '經營團隊分布於台灣與印度——施佳玲擔任創辦人暨董事長、Dr. Sivarasan Ganesan 擔任集團執行長暨管理合夥人、甘納緒博士擔任副董事長、馬士軒負責台灣營運，另有印度分公司總經理與專案管理主管。全球團隊代表南韓、北美、德國、新加坡與澳洲，另有材料與高分子領域的技術專家。',
+        '經營團隊分布於台灣與印度——施佳玲擔任創辦人暨董事長、Dr. Sivarasan Ganesan 擔任集團執行長暨管理合夥人、甘納緒博士擔任首席顧問、馬士軒負責台灣營運，另有印度分公司總經理與專案管理主管。全球團隊代表南韓、北美、德國、新加坡與澳洲，另有材料與高分子領域的技術專家。',
       link: { href: '/about/team', label: '認識團隊' },
       followUps: ['據點在哪裡？', '你們提供哪些服務？'],
     },
