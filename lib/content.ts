@@ -1783,7 +1783,10 @@ export const SOCIAL = [
   },
   { id: 'x', label: 'X', href: 'https://x.com/HariNexGlobal' },
   { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/harinexglobal/' },
-  { id: 'linkedin', label: 'LinkedIn', href: '' },
+  // Public company page. The admin dashboard URL supplied
+  // (/company/143089961/admin/dashboard/) is not usable here — it sends anyone
+  // who is not an administrator of the page to a login wall.
+  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/143089961/' },
 ] as const;
 
 export const ROUTES = {

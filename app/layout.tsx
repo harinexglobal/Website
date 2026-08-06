@@ -5,6 +5,7 @@ import { Navbar } from '@/components/site/navbar';
 import { Footer } from '@/components/site/footer';
 import { ChatWidget } from '@/components/site/chat-widget';
 import { CookieNotice } from '@/components/site/cookie-notice';
+import { CONTACT, SOCIAL } from '@/lib/content';
 import './globals.css';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -74,10 +75,51 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+/**
+ * Organization structured data.
+ *
+ * `sameAs` is what actually ties the LinkedIn, Facebook, X and Instagram
+ * profiles to this company in Google's eyes — a link in the footer alone does
+ * not establish that. Built from the SOCIAL list so a profile added there is
+ * declared here too, and entries with no URL yet are dropped rather than
+ * emitted empty.
+ */
+function organizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'HariNex Global Co., Ltd.',
+    alternateName: '瀚瑞國際股份有限公司',
+    url: SITE_URL,
+    logo: `${SITE_URL}/brand/logo-full.png`,
+    description:
+      'Cross-border technology transfer, trade advisory and technical localisation. Headquartered in Taiwan, operating across seven markets.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3F, No. 10, Wenhua 7th Rd., Guishan Dist.',
+      addressLocality: 'Taoyuan City',
+      postalCode: '333004',
+      addressCountry: 'TW',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: CONTACT.email,
+      telephone: CONTACT.phone,
+      availableLanguage: ['en', 'zh-Hant'],
+    },
+    sameAs: SOCIAL.filter((s) => s.href && s.id !== 'whatsapp').map((s) => s.href),
+  };
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${grotesk.variable} ${mono.variable}`}>
       <body className="min-h-dvh bg-white font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+        />
         <LanguageProvider>
           <a
             href="#main"
