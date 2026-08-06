@@ -78,7 +78,9 @@ export function TeamRoster() {
               className="mb-10"
             />
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Four columns from xl. This is what shrinks the portrait — a
+                narrower column, rather than a crop that would cut heads. */}
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {tier.people.map((p, i) => (
                 <PersonCard key={p.id} person={p} tone={tier.tone} delay={i * 0.08} />
               ))}
@@ -115,33 +117,37 @@ function PersonCard({
       <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-card-lg">
         <span className={cn('absolute inset-x-0 top-0 z-10 h-0.5', bar)} aria-hidden="true" />
 
-        {/* Contained portrait rather than full-bleed. A full-width square
-            dominated the card; a 4:3 crop of a square source would have cut
-            the tops of heads. 144px keeps the whole frame and still reads as a
-            portrait rather than a thumbnail. */}
-        <div className="flex flex-1 flex-col p-5">
-          {person.photo ? (
-            <span className="mb-4 block h-36 w-36 overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200">
-              <Image
-                src={person.photo}
-                alt={person.name}
-                width={800}
-                height={800}
-                sizes="144px"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-              />
-            </span>
-          ) : (
+        {/* Full-bleed square portrait. The sources are square, so this crops
+            nothing — the size is controlled by how narrow the column is, not
+            by cutting into the frame. */}
+        {person.photo ? (
+          <span className="relative block aspect-square w-full overflow-hidden bg-slate-100">
+            <Image
+              src={person.photo}
+              alt={person.name}
+              width={800}
+              height={800}
+              sizes="(min-width: 1280px) 23vw, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            />
             <span
               aria-hidden="true"
-              className={cn(
-                'mb-4 flex h-36 w-36 items-center justify-center rounded-2xl font-display text-4xl font-extrabold ring-1',
-                ring,
-              )}
-            >
-              {initials(person.name)}
-            </span>
-          )}
+              className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white/80 to-transparent"
+            />
+          </span>
+        ) : (
+          <span
+            aria-hidden="true"
+            className={cn(
+              'flex aspect-square w-full items-center justify-center font-display text-5xl font-extrabold',
+              ring,
+            )}
+          >
+            {initials(person.name)}
+          </span>
+        )}
+
+        <div className="flex flex-1 flex-col p-5">
 
           <h3 className="font-display text-lg font-bold leading-tight tracking-tight text-navy-800">
             {person.name}

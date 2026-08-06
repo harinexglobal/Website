@@ -4,7 +4,7 @@ import { TeamContent } from '@/components/pages/team-content';
 export const metadata: Metadata = {
   title: 'Our Team — Leadership & Global Team',
   description:
-    'The people behind HariNex Global: company leadership in Taiwan, a global team across India, South Korea and North America, and a chief advisor leading technical evaluation.',
+    'The people behind HariNex Global: company leadership in Taiwan and India, and a global team across South Korea, North America, Germany, Singapore and Australia.',
   alternates: { canonical: '/about/team' },
 };
 
