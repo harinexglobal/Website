@@ -1,9 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
+import { ROUTES } from '@/lib/content';
 
 /**
  * Current mandates.
@@ -76,6 +78,18 @@ export function Engagements() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.25}>
+          <div className="mt-8 text-center">
+            <Link
+              href={ROUTES.collaborators}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 transition-colors hover:text-emerald-800"
+            >
+              {t.collaborators.heading}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

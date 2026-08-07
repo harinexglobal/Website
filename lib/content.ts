@@ -704,6 +704,37 @@ const en = {
     ],
   },
 
+  collaborators: {
+    eyebrow: 'Collaborators',
+    heading: 'Organisations we work with',
+    lead: 'The companies currently working with us, and what each engagement involves. The list is short because it is real rather than illustrative — every name here is a live piece of work.',
+    marketLabel: 'Market',
+    sectorLabel: 'Sector',
+    workLabel: 'Engagement',
+    statusLabel: 'In progress',
+    note: 'We do not list outcomes until there are outcomes to list, and we do not name an organisation without asking first.',
+    items: [
+      {
+        id: 'algafit-nutrition',
+        name: 'Algafit Nutrition Private Limited',
+        country: 'India',
+        sector: 'Food & agricultural exports',
+        from: 'India',
+        to: 'Taiwan',
+        work: 'Buyer identification and introduction in Taiwan for organic dry fruit exports — mapping importers and distributors, making the approach in the local language, and supporting the commercial conversation through to terms.',
+      },
+      {
+        id: 'd2p-biosolutions',
+        name: 'D2P Biosolutions',
+        country: 'India',
+        sector: 'Biotech & life sciences',
+        from: 'Taiwan',
+        to: 'India',
+        work: 'Identifying and qualifying Taiwanese suppliers of monoclonal antibodies against the client’s technical specification, then structuring the supply arrangement — supplier evaluation, sample validation and the documentation the shipment has to travel with.',
+      },
+    ],
+  },
+
   insights: {
     eyebrow: 'Case Studies & Insights',
     heading: 'Perspectives on cross-border technology transfer',
@@ -1562,6 +1593,37 @@ const zh: Dict = {
     ],
   },
 
+  collaborators: {
+    eyebrow: '合作夥伴',
+    heading: '與我們合作的企業',
+    lead: '目前與我們合作的企業，以及各項委任的具體內容。名單簡短，是因為它真實而非示意——此處每一個名稱都是進行中的實際工作。',
+    marketLabel: '市場',
+    sectorLabel: '產業',
+    workLabel: '委任內容',
+    statusLabel: '進行中',
+    note: '在尚未產生成果之前，我們不會列出成果；未事先徵詢同意，我們也不會具名任何一家企業。',
+    items: [
+      {
+        id: 'algafit-nutrition',
+        name: 'Algafit Nutrition Private Limited',
+        country: '印度',
+        sector: '食品與農產出口',
+        from: '印度',
+        to: '台灣',
+        work: '為有機乾果出口在台灣進行買主發掘與引薦——盤點進口商與通路商、以在地語言進行接觸，並支援商務洽談直至議定條件。',
+      },
+      {
+        id: 'd2p-biosolutions',
+        name: 'D2P Biosolutions',
+        country: '印度',
+        sector: '生技與生命科學',
+        from: '台灣',
+        to: '印度',
+        work: '依客戶技術規格發掘並評估台灣的單株抗體供應商，進而建構供應架構——包含供應商評估、樣品驗證，以及貨物出運所須隨附的文件。',
+      },
+    ],
+  },
+
   insights: {
     eyebrow: '案例與洞察',
     heading: '跨境技術移轉的觀察與觀點',
@@ -1795,6 +1857,7 @@ export const ROUTES = {
   capabilities: '/capabilities',
   industries: '/industries',
   bridge: '/markets',
+  collaborators: '/markets/collaborators',
   team: '/about/team',
   insights: '/insights',
   contact: '/contact',
