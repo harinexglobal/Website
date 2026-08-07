@@ -15,13 +15,17 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { feature } from 'topojson-client';
 
 const WIDTH = 900;
-const HEIGHT = 420;
 
 // Antarctica is a projection artefact at the bottom of every equirectangular
 // map and adds nothing here — clipping the far south also lets the useful
 // latitudes fill more of the frame.
 const LAT_TOP = 84;
-const LAT_BOTTOM = -58;
+const LAT_BOTTOM = -56;
+
+// Derived, never hand-set. Equirectangular is only undistorted when degrees
+// per pixel match on both axes; a fixed height silently stretched the map
+// vertically by 18%, which is what made the northern landmasses look squashed.
+const HEIGHT = Math.round((WIDTH * (LAT_TOP - LAT_BOTTOM)) / 360);
 
 /** Equirectangular. Shared with network-map.tsx — keep the two in step. */
 function project([lon, lat]) {
