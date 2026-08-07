@@ -147,22 +147,46 @@ clone does not need to run them.
 
 ## Wiring up the contact form
 
-`POST /api/inquiry` **validates** every submission server-side against the same Zod
-schema the browser uses, and has a honeypot field for bots. It does **not** yet send
-email.
+`POST /api/inquiry` validates every submission server-side against the same Zod schema
+the browser uses, screens bots with a honeypot, and delivers by email. Delivery lives
+in `lib/mail.ts`; the route only decides what to do with the result.
 
-Until a provider is configured the route returns `{ ok: true, delivered: false }`, and
-the success modal shows the visitor a `mailto:` fallback so no inquiry is silently
-lost.
+With no provider configured the route still returns `{ ok: true, delivered: false }`
+and the success modal shows a `mailto:` fallback — so an inquiry is never silently
+lost, whether the cause is missing configuration or a provider outage.
 
-To enable real delivery:
+### Gmail (works today, no domain needed)
 
-1. Set `RESEND_API_KEY` (or `SMTP_URL`) and `INQUIRY_TO` in your environment —
-   in Netlify: **Site configuration → Environment variables**.
-2. In `app/api/inquiry/route.ts`, replace the `TODO` with the provider call and
-   return `delivered: true`.
+1. Turn on 2-Step Verification on the Google account.
+2. Create an App Password at <https://myaccount.google.com/apppasswords>. A normal
+   account password will **not** authenticate.
+3. Set one variable, removing the spaces Google puts in the 16-character password and
+   URL-encoding the `@` in the address as `%40`:
 
-The detection logic is already in place; only the send call is missing.
+   ```
+   SMTP_URL=smtps://harinexglobal%40gmail.com:abcdefghijklmnop@smtp.gmail.com:465
+   ```
+
+In Netlify that goes in **Site configuration → Environment variables**. Nothing else is
+required: `INQUIRY_TO` defaults to `CONTACT.email` in `lib/content.ts`, and the From
+address defaults to the authenticated mailbox because Gmail rewrites it to that anyway.
+
+### Moving to company mail later
+
+Set `INQUIRY_TO` to the new address. That is the whole change — no code edit.
+
+Once a domain is verified with Resend, set `RESEND_API_KEY` and `INQUIRY_FROM` and
+remove `SMTP_URL`. `SMTP_URL` takes precedence while both are present.
+
+### Testing delivery locally
+
+```bash
+npx maildev --smtp 1025 --web 1080
+```
+
+Point `SMTP_URL` at `smtp://user:pass@127.0.0.1:1025`, submit the form, and read the
+message at <http://localhost:1080>. Any SMTP server works — but a hand-rolled socket
+listener is not worth the afternoon it costs, as this repo's history records.
 
 ---
 
