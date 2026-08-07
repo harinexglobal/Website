@@ -2,7 +2,6 @@
 
 import { ArrowRight } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
-import { BridgeDiagram } from '@/components/site/bridge-diagram';
 import { ButtonLink } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -22,26 +21,9 @@ export function AboutIntro({ variant = 'about' }: { variant?: 'home' | 'about' }
   return (
     <section className="section" id="about">
       <div className="container">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Diagram */}
-          <div className="lg:col-span-5">
-            <Reveal>
-              <BridgeDiagram />
-            </Reveal>
-
-            <Reveal delay={0.12} className="mt-5 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <p className="eyebrow mb-2.5 text-saffron-600">{t.about.visionTitle}</p>
-                <p className="text-sm leading-relaxed text-slate-700">{t.about.vision}</p>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <p className="eyebrow mb-2.5 text-emerald-700">{t.about.missionTitle}</p>
-                <p className="text-sm leading-relaxed text-slate-700">{t.about.mission}</p>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Narrative */}
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          {/* Narrative leads now that the bridge diagram has its own full-width
+              section — the copy no longer has to share the fold with a widget. */}
           <div className="lg:col-span-7">
             <SectionHeading eyebrow={copy.eyebrow} heading={copy.heading} lead={copy.lead} />
 
@@ -58,6 +40,22 @@ export function AboutIntro({ variant = 'about' }: { variant?: 'home' | 'about' }
                 {t.common.learnMore}
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>
+            </Reveal>
+          </div>
+
+          {/* Vision & mission */}
+          <div className="lg:col-span-5">
+            <Reveal className="space-y-4">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <span aria-hidden="true" className="absolute inset-y-0 left-0 w-0.5 bg-saffron-500" />
+                <p className="eyebrow mb-3 text-saffron-600">{t.about.visionTitle}</p>
+                <p className="text-[0.95rem] leading-relaxed text-slate-700">{t.about.vision}</p>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <span aria-hidden="true" className="absolute inset-y-0 left-0 w-0.5 bg-emerald-500" />
+                <p className="eyebrow mb-3 text-emerald-700">{t.about.missionTitle}</p>
+                <p className="text-[0.95rem] leading-relaxed text-slate-700">{t.about.mission}</p>
+              </div>
             </Reveal>
           </div>
         </div>

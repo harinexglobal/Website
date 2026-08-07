@@ -127,6 +127,14 @@ const en = {
     bridgeDestRole:
       'Industrial scale-up, market entry and distribution, run to the same model in every market we operate in.',
     bridgeLabel: 'Technology Bridge',
+    bridgeHeading: 'One origin. Seven markets. One accountable team.',
+    bridgeLead:
+      'Taiwan is where the technology, the manufacturing capacity and the contracting entity sit. Everywhere else is a destination market with a resident partner. Select a market to see who is there and what they cover.',
+    bridgeRoleLabel: 'On the ground',
+    bridgeFocusLabel: 'What this market covers',
+    bridgeHint: 'Select a market',
+    bridgeOriginTag: 'Origin',
+    bridgeDestTag: 'Destination',
     whyUs: {
       heading: 'Why Choose HariNex Global',
       items: [
@@ -1056,6 +1064,14 @@ const zh: Dict = {
     bridgeDestRole:
       '產業放大、市場進入與通路布建；在我們營運的每一個市場，皆採行相同模式。',
     bridgeLabel: '技術橋樑',
+    bridgeHeading: '一個源頭、七個市場、一個負責到底的團隊。',
+    bridgeLead:
+      '技術、製造產能與簽約主體都在台灣，其他每一個市場則由當地常駐夥伴負責。點選市場即可查看當地負責人與其涵蓋範圍。',
+    bridgeRoleLabel: '當地據點',
+    bridgeFocusLabel: '該市場涵蓋範圍',
+    bridgeHint: '請選擇市場',
+    bridgeOriginTag: '源頭',
+    bridgeDestTag: '目標市場',
     whyUs: {
       heading: '選擇瀚瑞國際的理由',
       items: [
