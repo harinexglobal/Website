@@ -3,6 +3,7 @@
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { InsightsGrid } from '@/components/site/insights-grid';
+import { BridgeCorridor } from '@/components/site/bridge-corridor';
 import { CtaBand } from '@/components/site/cta-band';
 import { Reveal } from '@/components/ui/reveal';
 import { ButtonLink } from '@/components/ui/button';
@@ -21,6 +22,12 @@ export function InsightsContent() {
       />
 
       <InsightsGrid showHeading={false} />
+
+      {/* Sits below the articles on purpose: this page exists to get people
+          into the writing, and a pinned 2.6-viewport section above the grid
+          would put a scroll wall between the reader and the thing they came
+          for. */}
+      <BridgeCorridor />
 
       {/* Careers */}
       <section className="section-sm pb-20">

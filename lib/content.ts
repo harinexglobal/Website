@@ -135,6 +135,13 @@ const en = {
     bridgeHint: 'Select a market',
     bridgeOriginTag: 'Origin',
     bridgeDestTag: 'Destination',
+    corridorHeading: 'What actually crosses the bridge',
+    corridorLead:
+      'Not freight — a process. Scroll to follow an engagement from the Taiwan side through to a signed, supported relationship in a destination market.',
+    corridorStageLabel: 'Stage',
+    corridorOfLabel: 'of',
+    corridorHint: 'Scroll to advance',
+    corridorMarketsLabel: 'Destination markets',
     whyUs: {
       heading: 'Why Choose HariNex Global',
       items: [
@@ -1072,6 +1079,13 @@ const zh: Dict = {
     bridgeHint: '請選擇市場',
     bridgeOriginTag: '源頭',
     bridgeDestTag: '目標市場',
+    corridorHeading: '這座橋樑實際運送的是什麼',
+    corridorLead:
+      '運送的不是貨物，而是一套流程。向下捲動，即可跟隨一件委託案從台灣端一路走到目標市場中已簽約並持續支援的合作關係。',
+    corridorStageLabel: '階段',
+    corridorOfLabel: '／共',
+    corridorHint: '捲動以前進',
+    corridorMarketsLabel: '目標市場',
     whyUs: {
       heading: '選擇瀚瑞國際的理由',
       items: [
