@@ -118,12 +118,19 @@ export function TechnologyBridge() {
             </div>
           </div>
 
-          {/* Corridor — the only moving part, and it points somewhere */}
-          <div
-            className="relative hidden items-center justify-center lg:col-span-1 lg:flex"
-            aria-hidden="true"
-          >
-            <svg viewBox="0 0 8 200" className="h-full w-full" fill="none" preserveAspectRatio="none">
+          {/* Corridor — the only moving part, and it points somewhere.
+              Absolutely positioned on purpose: a viewBox of 8x200 with
+              preserveAspectRatio="none" has a 1:25 intrinsic ratio, so an
+              in-flow `h-full w-full` SVG resolves its height from its own width
+              and drags the grid row to ~2000px. Out of flow, the row is sized by
+              the two cards and this just fills whatever they leave. */}
+          <div className="relative hidden lg:col-span-1 lg:block" aria-hidden="true">
+            <svg
+              viewBox="0 0 8 200"
+              className="absolute inset-0 h-full w-full"
+              fill="none"
+              preserveAspectRatio="none"
+            >
               <defs>
                 <linearGradient id="tb-flow" x1="4" y1="0" x2="4" y2="200" gradientUnits="userSpaceOnUse">
                   <stop stopColor="#E8821E" />
@@ -260,7 +267,12 @@ export function TechnologyBridge() {
                   >
                     {m.country}
                   </span>
-                  <span className="mt-0.5 block truncate text-xs text-slate-500">{m.city}</span>
+                  {/* Singapore and Australia carry the country as their city,
+                      so the second line is dropped rather than repeated — same
+                      collapse the network map does. */}
+                  {m.city !== m.country && (
+                    <span className="mt-0.5 block truncate text-xs text-slate-500">{m.city}</span>
+                  )}
                 </button>
               );
             })}
