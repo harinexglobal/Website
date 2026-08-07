@@ -48,11 +48,13 @@ export function BridgeCorridor() {
   const steps = t.process.steps;
 
   /* Transforms are declared here, at the top level. The carrier travels the
-     deck; the counter is a plain index derived from the same value. */
-  const carrierX = useTransform(progress, [0.08, 0.92], ['0%', '100%']);
-  const carrierGlow = useTransform(progress, [0, 0.5, 1], [0.5, 1, 0.5]);
-  const originDim = useTransform(progress, [0.05, 0.55], [1, 0.55]);
-  const destLift = useTransform(progress, [0.45, 0.95], [0.55, 1]);
+     deck; the counter is a plain index derived from the same value.
+     Opacity never drops below 0.85 — a marker that fades out mid-span reads as
+     broken rather than atmospheric. */
+  const carrierX = useTransform(progress, [0.06, 0.94], ['0%', '100%']);
+  const trailWidth = useTransform(progress, [0.06, 0.94], ['0%', '100%']);
+  const originDim = useTransform(progress, [0.05, 0.55], [1, 0.7]);
+  const destLift = useTransform(progress, [0.4, 0.9], [0.7, 1]);
 
   if (!hub) return null;
 
@@ -78,8 +80,14 @@ export function BridgeCorridor() {
               <span className="inline-flex items-center rounded-full bg-saffron-500/15 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-saffron-300">
                 {t.about.bridgeOriginTag}
               </span>
-              <span className="mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-saffron-300 ring-1 ring-saffron-400/25">
-                <Building2 className="h-5 w-5" strokeWidth={1.75} />
+              <span className="relative mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-saffron-500/25 text-saffron-200 ring-1 ring-saffron-400/50 shadow-[0_0_24px_-4px_rgba(232,130,30,0.8)]">
+                {!reduce && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 animate-halo-pulse rounded-xl bg-saffron-400/40"
+                  />
+                )}
+                <Building2 className="relative h-5 w-5" strokeWidth={2} />
               </span>
               <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-white">
                 {hub.country}
@@ -128,29 +136,70 @@ export function BridgeCorridor() {
                   <path d="M250 4 Q375 26 500 4" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
                 </svg>
 
-                <div className="relative h-1 w-full rounded-full bg-bridge-grad opacity-40" />
-
-                {/* Carrier */}
-                <motion.div
-                  style={reduce ? undefined : { left: carrierX, opacity: carrierGlow }}
-                  className="absolute -top-3 z-10 -translate-x-1/2"
-                >
-                  <span className="flex items-center gap-1.5 rounded-lg border border-emerald-400/40 bg-navy-900 px-2.5 py-1.5 text-emerald-300 shadow-glow">
-                    <PackageCheck className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
-                    <ProgressReadout
-                      progress={progress}
-                      steps={steps.length}
-                      stageLabel={t.about.corridorStageLabel}
-                      ofLabel={t.about.corridorOfLabel}
+                {/* Deck rail — full strength, with a light running it on a CSS
+                    loop so the bridge is alive whether or not anyone scrolls */}
+                <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                  <div className="absolute inset-0 rounded-full bg-bridge-grad opacity-70" />
+                  {/* Travelled portion burns brighter than the rest */}
+                  <motion.div
+                    style={reduce ? { width: '100%' } : { width: trailWidth }}
+                    className="absolute inset-y-0 left-0 rounded-full bg-bridge-grad shadow-[0_0_18px_2px_rgba(16,185,129,0.55)]"
+                  />
+                  {!reduce && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-y-0 left-0 w-20 animate-beam-sweep rounded-full bg-gradient-to-r from-transparent via-white to-transparent opacity-80 blur-[1px]"
                     />
-                  </span>
+                  )}
+                </div>
+
+                {/* Carrier.
+                    Positioning and centring are split across two elements on
+                    purpose: `left` is animated by Motion on the outer node while
+                    Tailwind's -translate-x-1/2 sits on the inner one, so the two
+                    never contend for the same `transform`. */}
+                <motion.div
+                  style={reduce ? { left: '50%' } : { left: carrierX }}
+                  className="absolute -top-4 z-20"
+                >
+                  <div className="relative -translate-x-1/2">
+                    {/* Halo */}
+                    {!reduce && (
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 animate-halo-pulse rounded-xl bg-emerald-400/40 blur-md"
+                      />
+                    )}
+                    <span className="relative flex items-center gap-2 rounded-xl border border-emerald-300/60 bg-gradient-to-r from-emerald-500 to-emerald-400 px-3 py-2 font-semibold text-navy-950 shadow-[0_0_28px_-2px_rgba(16,185,129,0.9)]">
+                      <PackageCheck className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
+                      <ProgressReadout
+                        progress={progress}
+                        steps={steps.length}
+                        stageLabel={t.about.corridorStageLabel}
+                        ofLabel={t.about.corridorOfLabel}
+                      />
+                    </span>
+                    {/* Sparks lifting off the deck as it passes */}
+                    {!reduce &&
+                      [0, 1, 2].map((i) => (
+                        <span
+                          key={i}
+                          aria-hidden="true"
+                          className="absolute -bottom-1 left-1/2 h-1 w-1 animate-spark-rise rounded-full bg-emerald-200"
+                          style={{
+                            marginLeft: `${(i - 1) * 9}px`,
+                            animationDelay: `${i * 0.45}s`,
+                          }}
+                        />
+                      ))}
+                  </div>
                 </motion.div>
 
                 {/* Pillars */}
-                <div className="mt-1 flex justify-around opacity-25" aria-hidden="true">
-                  <span className="h-8 w-2 rounded-b bg-gradient-to-b from-slate-400 to-transparent" />
-                  <span className="h-11 w-2.5 rounded-b bg-gradient-to-b from-slate-400 to-transparent" />
-                  <span className="h-8 w-2 rounded-b bg-gradient-to-b from-slate-400 to-transparent" />
+                <div className="mt-1 flex justify-around opacity-30" aria-hidden="true">
+                  <span className="h-8 w-2 rounded-b bg-gradient-to-b from-slate-300 to-transparent" />
+                  <span className="h-11 w-2.5 rounded-b bg-gradient-to-b from-slate-300 to-transparent" />
+                  <span className="h-8 w-2 rounded-b bg-gradient-to-b from-slate-300 to-transparent" />
                 </div>
               </div>
 
@@ -167,8 +216,14 @@ export function BridgeCorridor() {
               <span className="inline-flex items-center rounded-full bg-emerald-500/15 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-emerald-300">
                 {t.about.bridgeDestTag}
               </span>
-              <span className="mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-emerald-300 ring-1 ring-emerald-400/25">
-                <Globe className="h-5 w-5" strokeWidth={1.75} />
+              <span className="relative mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/25 text-emerald-200 ring-1 ring-emerald-400/50 shadow-[0_0_24px_-4px_rgba(16,185,129,0.8)]">
+                {!reduce && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 animate-halo-pulse rounded-xl bg-emerald-400/40"
+                  />
+                )}
+                <Globe className="relative h-5 w-5" strokeWidth={2} />
               </span>
               <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-white">
                 {t.about.corridorMarketsLabel}
@@ -243,19 +298,42 @@ function StageChip({
 }) {
   const start = (index / total) * 0.85;
   const end = start + 0.12;
-  const opacity = useTransform(progress, [start, end], [0.25, 1]);
-  const y = useTransform(progress, [start, end], [8, 0]);
+
+  /* Floor of 0.4, not 0.25 — a stage that has not been reached yet should still
+     be legible, otherwise the row reads as half-broken on first sight. */
+  const opacity = useTransform(progress, [start, end], [0.4, 1]);
+  const y = useTransform(progress, [start, end], [10, 0]);
+  const scale = useTransform(progress, [start, end, end + 0.06], [0.96, 1.05, 1]);
+  const border = useTransform(
+    progress,
+    [start, end],
+    ['rgba(255,255,255,0.10)', 'rgba(52,211,153,0.65)'],
+  );
+  const glow = useTransform(
+    progress,
+    [start, end],
+    ['0 0 0px rgba(16,185,129,0)', '0 0 24px -4px rgba(16,185,129,0.75)'],
+  );
+  const bg = useTransform(
+    progress,
+    [start, end],
+    ['rgba(255,255,255,0.04)', 'rgba(16,185,129,0.13)'],
+  );
 
   return (
     <motion.div
-      style={reduce ? undefined : { opacity, y }}
+      style={
+        reduce
+          ? undefined
+          : { opacity, y, scale, borderColor: border, boxShadow: glow, backgroundColor: bg }
+      }
       className={cn(
         'rounded-xl border border-white/10 bg-white/[0.04] p-3',
         reduce && 'opacity-100',
       )}
     >
-      <span className="font-display text-xs font-extrabold text-emerald-400">{n}</span>
-      <p className="mt-1.5 text-[0.72rem] font-medium leading-snug text-slate-300">{title}</p>
+      <span className="font-display text-xs font-extrabold text-emerald-300">{n}</span>
+      <p className="mt-1.5 text-[0.72rem] font-medium leading-snug text-slate-200">{title}</p>
     </motion.div>
   );
 }
@@ -277,8 +355,9 @@ function ProgressReadout({
   );
 
   return (
-    <span className="text-[0.7rem] font-semibold uppercase tracking-[0.1em]">
-      {stageLabel} <motion.span>{current}</motion.span> {ofLabel} {String(steps).padStart(2, '0')}
+    <span className="whitespace-nowrap text-[0.72rem] font-bold uppercase tracking-[0.1em]">
+      {stageLabel} <motion.span className="tabular-nums">{current}</motion.span> {ofLabel}{' '}
+      {String(steps).padStart(2, '0')}
     </span>
   );
 }

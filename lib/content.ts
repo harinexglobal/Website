@@ -611,7 +611,7 @@ const en = {
     locations: [
       {
         id: 'taipei',
-        city: 'Taoyuan',
+        city: 'Taipei',
         country: 'Taiwan',
         role: 'Headquarters & legal entity',
         type: 'hq',
@@ -873,7 +873,7 @@ const en = {
     infoHeading: 'Offices & representatives',
     offices: [
       {
-        city: 'Taoyuan City, Taiwan',
+        city: 'Taipei, Taiwan',
         role: 'Headquarters & legal entity',
         detail: '3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004',
       },
@@ -1515,7 +1515,7 @@ const zh: Dict = {
     locations: [
       {
         id: 'taipei',
-        city: '桃園',
+        city: '台北',
         country: '台灣',
         role: '總部與法人登記地',
         type: 'hq',
@@ -1770,7 +1770,7 @@ const zh: Dict = {
     infoHeading: '據點與代表',
     offices: [
       {
-        city: '台灣 桃園市',
+        city: '台灣 台北',
         role: '總部與法人登記地',
         detail: '333004 桃園市龜山區文化七路10號3樓',
       },
@@ -1856,7 +1856,7 @@ export const CONTACT = {
   /* wa.me requires the number with no '+', spaces or dashes. */
   whatsapp: '886974025045',
   whatsappUrl: 'https://wa.me/886974025045',
-  taipei: 'Taoyuan City, Taiwan',
+  taipei: 'Taipei, Taiwan',
   india: 'Chennai, India',
   linkedin: '#',
 } as const;

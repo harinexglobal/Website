@@ -132,7 +132,7 @@ const en: ChatPack = {
       id: 'offices',
       keywords: ['office', 'offices', 'located', 'location', 'where are you', 'address', 'based', 'taiwan', 'india', 'korea', 'usa', 'america', 'branch'],
       answer:
-        'Our head office is in Taoyuan City, Taiwan, at 3F, No. 10, Wenhua 7th Rd., Guishan District. We have a branch office in Bengaluru, India, and business development partners in South Korea, the United States, Germany, Singapore and Australia.',
+        'Our head office is in Taipei, Taiwan. The registered address is 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004 — Guishan sits inside the Taipei metropolitan area, about 30 minutes from Taipei Main Station. We have a branch office in Bengaluru, India, and business development partners in South Korea, the United States, Germany, Singapore and Australia.',
       link: { href: '/markets', label: 'Global markets' },
       followUps: ['Who is on the team?', 'Ask us directly'],
     },
@@ -303,7 +303,7 @@ const zh: ChatPack = {
       id: 'offices',
       keywords: ['據點', '辦公室', '地址', '在哪', '位置', '分公司', '台灣', '印度', '韓國', '美國'],
       answer:
-        '總部位於台灣桃園市龜山區文化七路 10 號 3 樓。印度班加羅爾設有分公司，並在南韓、美國、德國、新加坡與澳洲派駐業務開發夥伴。',
+        '總部位於台灣台北都會區，登記地址為桃園市龜山區文化七路 10 號 3 樓（龜山區屬大台北都會區，距台北車站約 30 分鐘）。印度班加羅爾設有分公司，並在南韓、美國、德國、新加坡與澳洲派駐業務開發夥伴。',
       link: { href: '/markets', label: '全球市場' },
       followUps: ['團隊有哪些人？', '直接詢問我們'],
     },

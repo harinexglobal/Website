@@ -122,12 +122,32 @@ const config: Config = {
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
         },
+        /* Corridor: a light runs the deck continuously, so the bridge is alive
+           even when the reader is not scrolling. */
+        'beam-sweep': {
+          '0%': { transform: 'translateX(-120%)', opacity: '0' },
+          '12%': { opacity: '1' },
+          '88%': { opacity: '1' },
+          '100%': { transform: 'translateX(820%)', opacity: '0' },
+        },
+        'halo-pulse': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.55' },
+          '50%': { transform: 'scale(1.9)', opacity: '0' },
+        },
+        'spark-rise': {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '0' },
+          '25%': { opacity: '1' },
+          '100%': { transform: 'translateY(-26px) scale(0.4)', opacity: '0' },
+        },
       },
       animation: {
         marquee: 'marquee 40s linear infinite',
         'pulse-node': 'pulse-node 3s ease-in-out infinite',
         'dash-flow': 'dash-flow 24s linear infinite',
         shimmer: 'shimmer 2.5s infinite',
+        'beam-sweep': 'beam-sweep 4.5s cubic-bezier(0.4,0,0.2,1) infinite',
+        'halo-pulse': 'halo-pulse 2.4s ease-out infinite',
+        'spark-rise': 'spark-rise 2.8s ease-out infinite',
       },
     },
   },

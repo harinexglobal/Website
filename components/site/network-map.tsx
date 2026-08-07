@@ -23,7 +23,7 @@ import { WORLD_PATH, WORLD_VIEWBOX, projectLonLat } from '@/lib/world-map';
 
 /** Real coordinates, keyed by location id. */
 const COORDS: Record<string, { lon: number; lat: number }> = {
-  taipei: { lon: 121.3, lat: 24.99 }, // Taoyuan
+  taipei: { lon: 121.3, lat: 24.99 }, // Guishan, labelled Taipei
   bengaluru: { lon: 77.59, lat: 12.97 },
   michigan: { lon: -85.6, lat: 44.31 },
   seoul: { lon: 126.98, lat: 37.57 },
@@ -240,7 +240,7 @@ export function NetworkMap() {
           strokeWidth="4"
           strokeOpacity="0.7"
         >
-          {hubLoc ? label(hubLoc.city, hubLoc.country) : 'Taoyuan, Taiwan'}
+          {hubLoc ? label(hubLoc.city, hubLoc.country) : 'Taipei, Taiwan'}
         </text>
         <text
           x={hub.x - 14}
