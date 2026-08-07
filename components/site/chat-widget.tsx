@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, MessageSquare, RotateCcw, Send, Sparkles, X } from 'lucide-react';
+import { ArrowRight, RotateCcw, Send, X } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { chatPacks, matchIntent } from '@/lib/chatbot';
 import { ROUTES } from '@/lib/content';
@@ -189,18 +190,16 @@ export function ChatWidget() {
           <X className="relative h-5 w-5" />
         ) : (
           <>
-            <span className="relative flex h-5 w-5 items-center justify-center">
-              <MessageSquare className="h-5 w-5" />
-              <motion.span
-                aria-hidden="true"
-                className="absolute -right-1.5 -top-1.5"
-                animate={reduce ? undefined : { rotate: [0, 14, -10, 0], scale: [1, 1.18, 1] }}
-                transition={
-                  reduce ? undefined : { duration: 2.6, repeat: Infinity, ease: 'easeInOut', delay: 2 }
-                }
-              >
-                <Sparkles className="h-3 w-3 text-emerald-400" />
-              </motion.span>
+            {/* Avatar sits on a white disc: the artwork is line-drawn in gold
+                and red, which disappears against the navy button. */}
+            <span className="relative flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-white/40">
+              <Image
+                src="/brand/chat-avatar.png"
+                alt=""
+                width={192}
+                height={192}
+                className="h-full w-full object-contain p-0.5"
+              />
             </span>
             <span className="relative hidden text-sm sm:inline">{pack.ui.launcher}</span>
           </>
@@ -226,11 +225,17 @@ export function ChatWidget() {
             <div className="surface-navy on-navy relative flex items-start justify-between gap-3 p-4">
               <div className="relative flex items-center gap-2.5">
                 <motion.span
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400"
-                  animate={reduce ? undefined : { scale: [1, 1.07, 1] }}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-white/30"
+                  animate={reduce ? undefined : { scale: [1, 1.05, 1] }}
                   transition={reduce ? undefined : { duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
                 >
-                  <Sparkles className="h-4 w-4" />
+                  <Image
+                    src="/brand/chat-avatar.png"
+                    alt=""
+                    width={192}
+                    height={192}
+                    className="h-full w-full object-contain p-0.5"
+                  />
                 </motion.span>
                 <span>
                   <span className="block font-display text-sm font-bold text-white">
