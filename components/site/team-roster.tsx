@@ -117,36 +117,44 @@ function PersonCard({
       <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-card-lg">
         <span className={cn('absolute inset-x-0 top-0 z-10 h-0.5', bar)} aria-hidden="true" />
 
-        {/* Square, matching the source ratio exactly, so nothing is cropped
-            here. Size comes from the column width — see the grid above. */}
-        {person.photo ? (
-          <span className="relative block aspect-square w-full overflow-hidden bg-slate-100">
-            <Image
-              src={person.photo}
-              alt={person.name}
-              width={800}
-              height={800}
-              sizes="(min-width: 1280px) 23vw, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-            />
+        {/* Circular portrait on a gradient ring.
+            These are passport photos on flat white backgrounds — full-bleed
+            square crops made every card look like an ID badge, and the seam
+            where the photo's white met the card's white was the ugly part. A
+            disc throws away the corners, which is exactly where that white sat,
+            and the ring supplies the edge the photo never had. */}
+        <div className="flex justify-center px-5 pt-8">
+          <span className="relative block h-32 w-32 shrink-0 rounded-full bg-bridge-grad p-[3px] shadow-[0_10px_28px_-10px_rgba(10,25,47,0.45)] transition-transform duration-500 group-hover:scale-[1.04]">
             <span
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white/80 to-transparent"
+              className="absolute -inset-1 rounded-full bg-bridge-grad opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-60"
             />
+            <span className="relative block h-full w-full overflow-hidden rounded-full bg-white p-[3px]">
+              {person.photo ? (
+                <Image
+                  src={person.photo}
+                  alt={person.name}
+                  width={800}
+                  height={800}
+                  sizes="128px"
+                  className="h-full w-full rounded-full object-cover"
+                />
+              ) : (
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    'flex h-full w-full items-center justify-center rounded-full font-display text-3xl font-extrabold',
+                    ring,
+                  )}
+                >
+                  {initials(person.name)}
+                </span>
+              )}
+            </span>
           </span>
-        ) : (
-          <span
-            aria-hidden="true"
-            className={cn(
-              'flex aspect-square w-full items-center justify-center font-display text-4xl font-extrabold',
-              ring,
-            )}
-          >
-            {initials(person.name)}
-          </span>
-        )}
+        </div>
 
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col p-5 text-center">
 
           <h3 className="font-display text-lg font-bold leading-tight tracking-tight text-navy-800">
             {person.name}
@@ -155,8 +163,8 @@ function PersonCard({
 
           <p className="mt-2.5 text-sm font-semibold text-emerald-700">{person.role}</p>
 
-          <p className="mt-2 flex items-start gap-2 text-[0.85rem] text-slate-600">
-            <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" strokeWidth={1.75} />
+          <p className="mt-2 flex items-center justify-center gap-1.5 text-[0.85rem] text-slate-600">
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-slate-400" strokeWidth={1.75} />
             {person.location}
           </p>
 
@@ -166,7 +174,7 @@ function PersonCard({
               <li>
                 <a
                   href={`mailto:${person.email}`}
-                  className="flex items-center gap-2 text-[0.82rem] text-slate-600 transition-colors hover:text-emerald-700"
+                  className="flex items-center justify-center gap-2 text-[0.82rem] text-slate-600 transition-colors hover:text-emerald-700"
                 >
                   <Mail className="h-3.5 w-3.5 shrink-0 text-slate-400" strokeWidth={1.75} />
                   {person.email}
@@ -177,7 +185,7 @@ function PersonCard({
               <li>
                 <a
                   href={`tel:${person.phoneHref}`}
-                  className="flex items-center gap-2 text-[0.82rem] text-slate-600 transition-colors hover:text-emerald-700"
+                  className="flex items-center justify-center gap-2 text-[0.82rem] text-slate-600 transition-colors hover:text-emerald-700"
                 >
                   <Phone className="h-3.5 w-3.5 shrink-0 text-slate-400" strokeWidth={1.75} />
                   {person.phone}
@@ -193,7 +201,7 @@ function PersonCard({
             <p className="mb-2.5 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-400">
               {t.common.focusAreas}
             </p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap justify-center gap-1.5">
               {person.focus.map((f) => (
                 <span key={f} className="pill text-[0.7rem]">
                   {f}

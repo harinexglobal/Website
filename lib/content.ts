@@ -466,6 +466,19 @@ const en = {
         focus: ['Taiwan operations', 'Supplier qualification', 'Factory & safety audits', 'Advanced materials', 'Green technology'],
       },
       {
+        id: 'andy-kao',
+        name: 'Andy Kao',
+        role: 'Managing Partner — IT Service, Taiwan',
+        location: 'Hsinchu, Taiwan',
+        photo: '/brand/team/andy-kao.webp',
+        focus: [
+          'IT service delivery',
+          'Server & directory infrastructure',
+          'Virtualisation',
+          'Containerisation',
+        ],
+      },
+      {
         id: 'ganesh-kumar',
         name: 'Dr. D. Ganesh Kumar',
         nameLocal: '甘納緒 博士',
@@ -1395,6 +1408,14 @@ const zh: Dict = {
         location: '台灣，高雄',
         photo: '/brand/team/morris-ma.webp',
         focus: ['台灣營運', '供應商資格認定', '工廠與工安稽核', '先進材料', '綠色科技'],
+      },
+      {
+        id: 'andy-kao',
+        name: 'Andy Kao',
+        role: '管理合夥人 — 台灣資訊服務',
+        location: '台灣，新竹',
+        photo: '/brand/team/andy-kao.webp',
+        focus: ['資訊服務交付', '伺服器與目錄架構', '虛擬化', '容器化'],
       },
       {
         id: 'ganesh-kumar',
