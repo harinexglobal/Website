@@ -156,14 +156,24 @@ function PersonCard({
 
         <div className="flex flex-1 flex-col p-5 text-center">
 
-          <h3 className="font-display text-lg font-bold leading-tight tracking-tight text-navy-800">
+          {/* Each row below reserves its space whether or not it has content,
+              so name, role and location sit at the same height on every card in
+              a row. Only some people have a local-script name and only some
+              roles wrap to two lines — left to size themselves, those two
+              differences knocked every following line out of alignment with the
+              card beside it. */}
+          <h3 className="min-h-[2.8rem] font-display text-lg font-bold leading-tight tracking-tight text-navy-800">
             {person.name}
           </h3>
-          {person.nameLocal && <p className="mt-0.5 text-sm text-slate-500">{person.nameLocal}</p>}
+          <p className="min-h-[1.25rem] text-sm leading-tight text-slate-500">
+            {person.nameLocal ?? ' '}
+          </p>
 
-          <p className="mt-2.5 text-sm font-semibold text-emerald-700">{person.role}</p>
+          <p className="mt-2.5 min-h-[2.5rem] text-sm font-semibold leading-tight text-emerald-700">
+            {person.role}
+          </p>
 
-          <p className="mt-2 flex items-center justify-center gap-1.5 text-[0.85rem] text-slate-600">
+          <p className="mt-2 flex min-h-[1.25rem] items-center justify-center gap-1.5 text-[0.85rem] text-slate-600">
             <MapPin className="h-3.5 w-3.5 shrink-0 text-slate-400" strokeWidth={1.75} />
             {person.location}
           </p>
@@ -195,9 +205,13 @@ function PersonCard({
           </ul>
         )}
 
-          {/* mt-auto pins the focus block to the bottom, so cards in a row
-              line up regardless of how long a role or location runs. */}
-          <div className="mt-auto border-t border-slate-100 pt-4">
+          {/* Top-aligned, not bottom-pinned. Pinning was there to absorb roles
+              and locations of different lengths; those are fixed heights now, so
+              pinning only pushed this rule out of line whenever two cards had a
+              different number of focus pills. Aligning the rule matters more
+              than levelling the last row of pills — the rule is a drawn line
+              across the row, the pills are not. */}
+          <div className="mt-5 border-t border-slate-100 pt-4">
             <p className="mb-2.5 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-400">
               {t.common.focusAreas}
             </p>

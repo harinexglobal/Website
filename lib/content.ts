@@ -499,16 +499,13 @@ const en = {
         role: 'Managing Director — India Branch',
         location: 'Bengaluru, Karnataka, India',
         photo: '/brand/team/viney-g.webp',
-        email: '', // TODO: India branch address pending — see README
-        phone: '+91 99642 76103',
-        phoneHref: '+919964276103',
         focus: ['India market entry', 'Manufacturing partners', 'Supplier qualification', 'Site visits'],
       },
       {
         id: 'lenin-nachimuthu',
         name: 'Lenin Nachimuthu',
         role: 'Project Management Lead — India Branch',
-        location: 'Vellore, India',
+        location: 'Vellore, Tamil Nadu, India',
         photo: '/brand/team/lenin-nachimuthu.webp',
         focus: [
           'Sample validation gates',
@@ -574,7 +571,7 @@ const en = {
         id: 'manas-chakraborty',
         name: 'Dr. Manas Chakraborty',
         role: 'Business Development Partner — Australia',
-        location: 'Australia',
+        location: 'Perth, Australia',
         photo: '/brand/team/manas-chakraborty.webp',
         focus: [
           'Australia market entry',
@@ -1432,16 +1429,13 @@ const zh: Dict = {
         role: '印度分公司 總經理',
         location: '印度 卡納塔卡邦 班加羅爾',
         photo: '/brand/team/viney-g.webp',
-        email: '', // TODO: India branch address pending — see README
-        phone: '+91 99642 76103',
-        phoneHref: '+919964276103',
         focus: ['印度市場進入', '製造夥伴', '供應商資格認定', '實地訪廠'],
       },
       {
         id: 'lenin-nachimuthu',
         name: 'Lenin Nachimuthu',
         role: '專案管理主管 — 印度分公司',
-        location: '印度，維洛爾',
+        location: '印度 坦米爾納杜邦 維洛爾',
         photo: '/brand/team/lenin-nachimuthu.webp',
         focus: ['樣品驗證關卡', '供應商風險緩解計畫', '法人設立進度追蹤', 'SLA 整合時程'],
       },
@@ -1501,7 +1495,7 @@ const zh: Dict = {
         id: 'manas-chakraborty',
         name: 'Dr. Manas Chakraborty',
         role: '業務開發合夥人 — 澳洲',
-        location: '澳洲',
+        location: '澳洲，伯斯',
         photo: '/brand/team/manas-chakraborty.webp',
         focus: ['澳洲市場進入', '生命科學合作', '製藥開發', '技術發掘'],
       },
