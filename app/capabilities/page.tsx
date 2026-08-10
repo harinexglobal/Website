@@ -4,7 +4,7 @@ import { CapabilitiesContent } from '@/components/pages/capabilities-content';
 export const metadata: Metadata = {
   title: 'Capabilities — Technology Transfer, Sourcing, Translation & Regulatory',
   description:
-    'Seven practices covering technology transfer, cross-border advisory, strategic supplier sourcing, technical translation, digital solutions, regulatory coordination and trade missions.',
+    'Eight practices covering technology transfer, cross-border advisory and delegations, strategic supplier sourcing, technical translation, digital solutions, regulatory coordination, project management and industrial automation.',
   alternates: { canonical: '/capabilities' },
 };
 

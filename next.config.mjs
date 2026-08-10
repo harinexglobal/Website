@@ -20,7 +20,17 @@ const nextConfig = {
    * and any accumulated ranking transfers rather than 404ing.
    */
   async redirects() {
-    return [{ source: '/why-taiwan-india', destination: '/markets', permanent: true }];
+    return [
+      { source: '/why-taiwan-india', destination: '/markets', permanent: true },
+      /* Trade missions were folded into business advisory — same practice, two
+         cards. The old URL was published in the sitemap, so it redirects rather
+         than 404s. */
+      {
+        source: '/capabilities/trade-mission',
+        destination: '/capabilities/business-advisory',
+        permanent: true,
+      },
+    ];
   },
 
   async headers() {
