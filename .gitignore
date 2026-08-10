@@ -35,3 +35,10 @@ website content.docx
 
 # Local Netlify folder
 .netlify
+
+# Throwaway face-framing previews (scripts/face-grid-preview.mjs)
+.tmp-face/
+
+# Full-resolution headshot sources. Same rule as /Team/ — only the cropped
+# 800px webp in public/brand/team belongs in a public repo.
+Images/Team members/
