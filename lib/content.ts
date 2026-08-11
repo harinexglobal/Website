@@ -1904,7 +1904,7 @@ export const dictionaries: Record<Lang, Dict> = {
    Mobile and WhatsApp are the same line.
 -------------------------------------------------------------------*/
 export const CONTACT = {
-  email: 'harinexglobal@gmail.com',
+  email: 'harinex.india@gmail.com',
   phone: '+886 974 025 045',
   phoneHref: '+886974025045',
   /* wa.me requires the number with no '+', spaces or dashes. */

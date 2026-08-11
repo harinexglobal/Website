@@ -85,11 +85,16 @@ To change a heading, find it in `en` and change the matching key in `zh`.
 Email, phone and office locations are in the `CONTACT` constant at the bottom of
 `lib/content.ts`.
 
-Current values, confirmed by the company on 2026-08-03:
+Current values. The address changed on 2026-08-10: `harinexglobal@gmail.com` was
+suspended by Google and started bouncing with "the address couldn't be found or is
+unable to receive email", while it was the published contact point in seven places
+across the site, the legal pages and the structured data. It was swapped for the
+working account rather than left advertising a dead mailbox. Change it back, or to
+company mail, in `CONTACT.email` — everything else follows from there.
 
 | Field | Value |
 |---|---|
-| Email | `harinexglobal@gmail.com` |
+| Email | `harinex.india@gmail.com` |
 | Mobile | `+886 974 025 045` |
 | WhatsApp | same number — `https://wa.me/886974025045` |
 | Head office | 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.) |
@@ -164,7 +169,7 @@ lost, whether the cause is missing configuration or a provider outage.
    URL-encoding the `@` in the address as `%40`:
 
    ```
-   SMTP_URL=smtps://harinexglobal%40gmail.com:abcdefghijklmnop@smtp.gmail.com:465
+   SMTP_URL=smtps://harinex.india%40gmail.com:abcdefghijklmnop@smtp.gmail.com:465
    ```
 
 In Netlify that goes in **Site configuration → Environment variables**. Nothing else is
@@ -307,6 +312,6 @@ made these two calls. Both are one-line reversals:
 - **The canonical URL defaults to `harinexglobal.com`**, matching the new spelling.
   This is still unverified — it came from the design mockup. Set `NEXT_PUBLIC_SITE_URL`
   to whatever domain is actually registered. (The contact *email* is now settled:
-  `harinexglobal@gmail.com`, confirmed by the company.)
+  `harinex.india@gmail.com`, confirmed by the company.)
 - The Chinese registered name **瀚瑞國際股份有限公司 is unchanged** — the Latin
   spelling does not affect it.
