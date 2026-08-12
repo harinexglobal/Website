@@ -40,6 +40,8 @@ const en = {
     contactUs: 'Contact Us',
     deliverables: 'Deliverables',
     focusAreas: 'Focus areas',
+    play: 'Play',
+    pause: 'Pause',
     langLabel: 'Language',
   },
 
@@ -1025,6 +1027,8 @@ const zh: Dict = {
     contactUs: '聯絡我們',
     deliverables: '交付項目',
     focusAreas: '專業領域',
+    play: '播放',
+    pause: '暫停',
     langLabel: '語言',
   },
 

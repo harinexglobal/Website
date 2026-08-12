@@ -72,16 +72,16 @@ export function BridgeCorridor() {
           />
 
           {/* ── Desktop apparatus ───────────────────────────────────────── */}
-          <div className="hidden items-stretch gap-6 lg:flex">
+          <div className="hidden items-stretch gap-6 lg:flex lg:h-[30rem] xl:h-[34rem]">
             {/* Origin */}
             <motion.div
               style={reduce ? undefined : { opacity: originDim }}
-              className="relative w-64 shrink-0 overflow-hidden rounded-2xl border border-saffron-500/30 bg-saffron-500/[0.07]"
+              className="relative flex w-64 shrink-0 flex-col overflow-hidden rounded-2xl border border-saffron-500/30 bg-saffron-500/[0.07]"
             >
               {/* Photograph as the card head, matching the Technology Bridge —
                   the two sections describe the same corridor, so they should not
                   look like they come from different sites. */}
-              <div className="relative h-40">
+              <div className="relative flex-1">
                 <Image
                   src={`/brand/markets/${hub.id}.webp`}
                   alt=""
@@ -92,7 +92,7 @@ export function BridgeCorridor() {
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-navy-950/10"
+                  className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/25 to-transparent"
                 />
                 <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-navy-950/70 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-saffron-300 ring-1 ring-saffron-400/40 backdrop-blur-sm">
                   <Building2 className="h-3 w-3" strokeWidth={2.5} />
@@ -118,9 +118,9 @@ export function BridgeCorridor() {
             </motion.div>
 
             {/* Corridor */}
-            <div className="relative flex flex-1 flex-col justify-center">
+            <div className="relative flex flex-1 flex-col justify-center gap-8">
               {/* Stage markers */}
-              <div className="mb-6 grid grid-cols-6 gap-2">
+              <div className="grid grid-cols-6 gap-2.5">
                 {steps.map((s, i) => (
                   <StageChip
                     key={s.n}
@@ -223,7 +223,7 @@ export function BridgeCorridor() {
             {/* Destination */}
             <motion.div
               style={reduce ? undefined : { opacity: destLift }}
-              className="relative w-72 shrink-0 overflow-hidden rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-4"
+              className="relative flex w-72 shrink-0 flex-col overflow-hidden rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-4"
             >
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/25 text-emerald-200 ring-1 ring-emerald-400/50">
@@ -248,9 +248,9 @@ export function BridgeCorridor() {
               {/* Photo tiles rather than text pills. Six country names in a
                   bordered box is a list; six photographs is the point being
                   made — that there is somewhere real at the other end. */}
-              <div className="mt-4 grid grid-cols-2 gap-2">
+              <div className="mt-4 grid flex-1 grid-cols-2 gap-2">
                 {markets.map((m) => (
-                  <div key={m.id} className="relative h-16 overflow-hidden rounded-lg">
+                  <div key={m.id} className="relative overflow-hidden rounded-lg">
                     <Image
                       src={`/brand/markets/${m.id}.webp`}
                       alt=""
@@ -261,7 +261,7 @@ export function BridgeCorridor() {
                     />
                     <span
                       aria-hidden="true"
-                      className="absolute inset-0 bg-gradient-to-t from-navy-950/90 to-navy-950/25"
+                      className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent"
                     />
                     <span className="absolute inset-x-0 bottom-0 truncate px-2 pb-1.5 text-[0.7rem] font-semibold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
                       {m.country}
@@ -359,12 +359,13 @@ function StageChip({
           : { opacity, y, scale, borderColor: border, boxShadow: glow, backgroundColor: bg }
       }
       className={cn(
-        'rounded-xl border border-white/10 bg-white/[0.04] p-3',
+        'flex min-h-[7.5rem] flex-col rounded-xl border border-white/10 bg-white/[0.04] p-4',
         reduce && 'opacity-100',
       )}
     >
-      <span className="font-display text-xs font-extrabold text-emerald-300">{n}</span>
-      <p className="mt-1.5 text-[0.72rem] font-medium leading-snug text-slate-200">{title}</p>
+      <span className="font-display text-lg font-extrabold leading-none text-emerald-300">{n}</span>
+      <span aria-hidden="true" className="mt-2 block h-0.5 w-6 rounded-full bg-emerald-400/60" />
+      <p className="mt-auto text-[0.78rem] font-semibold leading-snug text-white">{title}</p>
     </motion.div>
   );
 }
