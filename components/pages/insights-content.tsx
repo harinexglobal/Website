@@ -19,6 +19,8 @@ export function InsightsContent() {
         eyebrow={t.insights.eyebrow}
         title={t.insights.heading}
         lead={t.insights.lead}
+        image="insights"
+        imagePosition="center 40%"
       />
 
       <InsightsGrid showHeading={false} />

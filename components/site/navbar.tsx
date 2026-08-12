@@ -77,23 +77,6 @@ export function Navbar() {
           than in the main bar — with six nav links plus a dropdown there was
           not enough room, and everything wrapped onto two lines. Collapses on
           scroll so the header stays compact. */}
-      <div
-        className={cn(
-          'hidden overflow-hidden bg-navy-800 transition-all duration-300 md:block',
-          scrolled ? 'h-0 opacity-0' : 'h-9 opacity-100',
-        )}
-      >
-        <div className="container flex h-9 items-center justify-between gap-6">
-          <p className="truncate text-2xs font-medium uppercase tracking-[0.16em] text-slate-400">
-            {t.site.tagline}
-          </p>
-          <div className="flex shrink-0 items-center gap-3">
-            <SocialLinks variant="dark" />
-            <LanguageSwitcher lang={lang} setLang={setLang} tone="dark" />
-          </div>
-        </div>
-      </div>
-
       <div className="container">
         <div className={cn('flex items-center justify-between gap-6 transition-all', scrolled ? 'h-16' : 'h-[4.5rem]')}>
           {/* Logo */}
@@ -188,12 +171,18 @@ export function Navbar() {
             )}
           </nav>
 
-          {/* Right cluster. Social + language live in the utility strip above
-              on md and up; below that they are in the mobile drawer. */}
+          {/* Right cluster. Social and language sit here now. The site ran two
+              stacked bars — a navy utility strip above a white header — which is
+              two horizontal rules of chrome before a visitor reaches anything
+              they came for. One bar. */}
           <div className="flex shrink-0 items-center gap-2">
-            <div className="md:hidden">
-              <LanguageSwitcher lang={lang} setLang={setLang} />
+            <div className="hidden xl:block">
+              <SocialLinks size="sm" />
             </div>
+
+            <span aria-hidden="true" className="hidden h-5 w-px bg-slate-200 xl:block" />
+
+            <LanguageSwitcher lang={lang} setLang={setLang} />
 
             <ButtonLink
               href={ROUTES.contact}

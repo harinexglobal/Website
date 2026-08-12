@@ -8,5 +8,6 @@ export const BLUR: Record<string, string> = {
   "bridge": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoQAAkAA8BgJQBOgCP/hU99v0AA/mzXRSpJf6077M7OD6DFuTOADKQ3eiISGa/yGbuksu8VzH0uVSAA",
   "india-growth": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAgAA8BgJYgCdAD0n17luaAA/vOqjybNlkf3b/dug/vG2Vej5cRVy8Y4xKEBfE31xcaCA+He1injM6WrWZJ3mRE5sAAA",
   "capabilities": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAkAA8BgJZQCdAEK0cR5AKAA/u46Fmcpau6zyy0eX/kfl0vb8L1CHU4RaoC773lnlPq4KkZnDxBG8kxi9QVfXac2hJg278btxsQFRcAAAA==",
+  "insights": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoQAAkABUB8JbACdAD0NSAzQAD8j6f2y+fGFGWdTTY0PdwsCMyRCMs227gXUCBnNIYLp5J5zJZGYpxoI1qyqUAA",
   "industries": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAkAA8BgJQBOgBuRBmVsYAD4tYqWTuCvOD6lX4U4VpSNFixXO9TOgFLj0RDjKnrB0ecfBPwfE7HaOXEMhT3BxGGdYAAA"
 };
