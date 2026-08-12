@@ -55,6 +55,7 @@ export function Navbar() {
   const links = [
     { href: ROUTES.about, label: t.nav.about },
     { href: ROUTES.team, label: t.nav.team },
+    { href: ROUTES.howWeHelp, label: t.nav.howWeHelp },
     { href: ROUTES.capabilities, label: t.nav.capabilities, hasMenu: true },
     { href: ROUTES.industries, label: t.nav.industries },
     { href: ROUTES.bridge, label: t.nav.bridge },
@@ -185,7 +186,7 @@ export function Navbar() {
             <LanguageSwitcher lang={lang} setLang={setLang} />
 
             <ButtonLink
-              href={ROUTES.contact}
+              href={ROUTES.letsConnect}
               size="sm"
               className="hidden whitespace-nowrap sm:inline-flex"
             >

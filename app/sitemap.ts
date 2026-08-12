@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/industries',
     '/markets',
     '/markets/collaborators',
+    '/how-we-help',
+    '/lets-connect',
     '/insights',
     '/contact',
   ];
