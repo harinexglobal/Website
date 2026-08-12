@@ -19,7 +19,7 @@ const WIDTH = 900;
 // Antarctica is a projection artefact at the bottom of every equirectangular
 // map and adds nothing here — clipping the far south also lets the useful
 // latitudes fill more of the frame.
-const LAT_TOP = 84;
+const LAT_TOP = 72;
 const LAT_BOTTOM = -56;
 
 // Derived, never hand-set. Equirectangular is only undistorted when degrees
