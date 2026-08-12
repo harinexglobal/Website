@@ -28,7 +28,7 @@ const en = {
   },
 
   common: {
-    requestConsultation: 'Request Consultation',
+    requestConsultation: "Let's Connect",
     getInTouch: 'Get in Touch',
     exploreCapabilities: 'Explore Capabilities',
     scheduleScouting: 'Schedule Technology Scouting',
@@ -63,7 +63,7 @@ const en = {
     titleLines: ['Connecting Innovation', 'and Trusted Partnerships', 'Across the Globe'],
     subtitle:
       'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management.',
-    primaryCta: 'Book a Free Consultation',
+    primaryCta: 'Start a Conversation',
     secondaryCta: 'Explore Our Services',
     /* Hero flow connector: Taiwan -> Global */
     flowVia: 'Taiwan',
@@ -980,7 +980,7 @@ const en = {
   cta: {
     heading: 'Have a technology, a supplier need, or a market to enter?',
     body: 'A first conversation costs nothing and usually clarifies more than a month of email.',
-    primary: 'Request Consultation',
+    primary: 'Start a Conversation',
     secondary: 'Email us directly',
   },
 } as const satisfies Record<string, unknown>;
@@ -1015,7 +1015,7 @@ const zh: Dict = {
   },
 
   common: {
-    requestConsultation: '預約諮詢',
+    requestConsultation: '與我們聯繫',
     getInTouch: '與我們聯繫',
     exploreCapabilities: '瀏覽服務能力',
     scheduleScouting: '預約技術媒合',
@@ -1050,7 +1050,7 @@ const zh: Dict = {
     titleLines: ['連結全球創新', '與值得信賴的', '夥伴關係'],
     subtitle:
       '瀚瑞國際協助企業透過技術移轉、商務顧問、供應商採購、技術翻譯、數位解決方案與國際專案管理，在全球市場建立連結、展開合作並持續成長。',
-    primaryCta: '預約免費諮詢',
+    primaryCta: '開始洽談',
     secondaryCta: '瀏覽服務項目',
     flowVia: '台灣',
     flowTo: '全球',
@@ -1907,7 +1907,7 @@ const zh: Dict = {
   cta: {
     heading: '有技術、有供應商需求，或有想進入的市場？',
     body: '第一次對話不需任何費用，而且通常比一個月的往返郵件更能釐清方向。',
-    primary: '預約諮詢',
+    primary: '開始洽談',
     secondary: '直接寫信給我們',
   },
 };
