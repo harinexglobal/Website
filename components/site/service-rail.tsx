@@ -31,22 +31,22 @@ import { cn } from '@/lib/utils';
 /** Share of the rail the hovered panel should occupy. */
 const HOVER_SHARE = 0.3;
 
-/** Rotating backdrops behind the resting strip. */
-const BACKDROPS = ['services-1', 'services-2', 'services-3', 'services-4'] as const;
+/** How long each photograph holds before the next fades in. */
 const ROTATE_MS = 5000;
 
 export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = {}) {
   const { t } = useLang();
   const reduce = useReducedMotion();
   const [frame, setFrame] = useState(0);
+  const count = t.capabilities.items.length;
 
   /* One backdrop every five seconds. Held still under reduced-motion, where a
      cross-fade on a loop is exactly the kind of thing the preference is for. */
   useEffect(() => {
     if (reduce) return;
-    const id = window.setInterval(() => setFrame((i) => (i + 1) % BACKDROPS.length), ROTATE_MS);
+    const id = window.setInterval(() => setFrame((i) => (i + 1) % count), ROTATE_MS);
     return () => window.clearInterval(id);
-  }, [reduce]);
+  }, [reduce, count]);
 
   const panels = t.capabilities.items;
   if (panels.length === 0) return null;
@@ -76,20 +76,23 @@ export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = 
             className="rail relative grid grid-cols-1 overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-none"
             style={{ '--rail-grow': grow } as React.CSSProperties}
           >
-            {/* One photograph across the whole strip. The panels sit over it, so
-                at rest the row is a single scene rather than eight tiles. */}
-            {/* All frames are mounted and cross-faded by opacity rather than
-                swapped by src. Swapping the source would show a blank frame on
-                every rotation until the next file decodes; stacked, the outgoing
-                image is still painted underneath while the incoming one arrives.
+            {/* One photograph across the whole strip, cycling every five seconds
+                through the very images the panels reveal. So the backdrop is
+                always some practice's own photograph — the strip previews its
+                own contents rather than sitting on unrelated stock.
 
-                Eager, not lazy: this is the resting state of the whole strip, so
-                a late arrival renders the section as eight empty navy columns —
+                All frames stay mounted and cross-fade by opacity rather than
+                swapping src: swapping would blank the strip on every rotation
+                until the next file decoded, whereas stacked the outgoing image
+                is still painted while the incoming one arrives.
+
+                Eager, not lazy — this is the resting state of the whole section,
+                and a late arrival renders it as eight empty navy columns,
                 indistinguishable from broken. */}
-            {BACKDROPS.map((name, i) => (
+            {panels.map((c, i) => (
               <Image
-                key={name}
-                src={`/brand/${name}.webp`}
+                key={`bg-${c.id}`}
+                src={`/brand/capabilities/${c.id}.webp`}
                 alt=""
                 fill
                 sizes="100vw"

@@ -108,11 +108,40 @@ export function NetworkMap() {
           <g id="arrowShape">
             <path d="M-5,-4 L6,0 L-5,4 Z" fill="#CFF6E2" />
           </g>
+
+          {/* The projection is cut at 84°N and 56°S, which slices straight
+              through Greenland, northern Siberia and Antarctica and leaves a
+              hard horizontal edge where land simply stops. Fading the top and
+              bottom bands turns that cut into the map running out of frame,
+              which is what it should have looked like all along. */}
+          <linearGradient id="edgeFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#000" />
+            <stop offset="0.1" stopColor="#fff" />
+            <stop offset="0.88" stopColor="#fff" />
+            <stop offset="1" stopColor="#000" />
+          </linearGradient>
+          <mask id="landMask">
+            <rect
+              x="0"
+              y="0"
+              width={WORLD_VIEWBOX.width}
+              height={WORLD_VIEWBOX.height}
+              fill="url(#edgeFade)"
+            />
+          </mask>
         </defs>
 
         {/* Land. Low contrast on purpose — it orients the eye, the routes are
             the subject. */}
-        <path d={WORLD_PATH} fill="#EDEAE0" fillOpacity="0.09" stroke="#EDEAE0" strokeOpacity="0.16" strokeWidth="0.5" />
+        <path
+          d={WORLD_PATH}
+          fill="#EDEAE0"
+          fillOpacity="0.09"
+          stroke="#EDEAE0"
+          strokeOpacity="0.16"
+          strokeWidth="0.5"
+          mask="url(#landMask)"
+        />
 
         {/* Routes */}
         {markets.map((m) => (
