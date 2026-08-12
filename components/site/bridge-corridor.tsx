@@ -9,6 +9,7 @@ import {
   useTransform,
   type MotionValue,
 } from 'framer-motion';
+import Image from 'next/image';
 import { Building2, Globe, PackageCheck } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -75,25 +76,36 @@ export function BridgeCorridor() {
             {/* Origin */}
             <motion.div
               style={reduce ? undefined : { opacity: originDim }}
-              className="relative w-64 shrink-0 overflow-hidden rounded-2xl border border-saffron-500/30 bg-saffron-500/[0.07] p-6"
+              className="relative w-64 shrink-0 overflow-hidden rounded-2xl border border-saffron-500/30 bg-saffron-500/[0.07]"
             >
-              <span className="inline-flex items-center rounded-full bg-saffron-500/15 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-saffron-300">
-                {t.about.bridgeOriginTag}
-              </span>
-              <span className="relative mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-saffron-500/25 text-saffron-200 ring-1 ring-saffron-400/50 shadow-[0_0_24px_-4px_rgba(232,130,30,0.8)]">
-                {!reduce && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 animate-halo-pulse rounded-xl bg-saffron-400/40"
-                  />
-                )}
-                <Building2 className="relative h-5 w-5" strokeWidth={2} />
-              </span>
-              <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-white">
-                {hub.country}
-              </h3>
-              <p className="mt-1 text-sm text-slate-400">{hub.city}</p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
+              {/* Photograph as the card head, matching the Technology Bridge —
+                  the two sections describe the same corridor, so they should not
+                  look like they come from different sites. */}
+              <div className="relative h-40">
+                <Image
+                  src={`/brand/markets/${hub.id}.webp`}
+                  alt=""
+                  width={720}
+                  height={432}
+                  sizes="16rem"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-navy-950/10"
+                />
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-navy-950/70 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-saffron-300 ring-1 ring-saffron-400/40 backdrop-blur-sm">
+                  <Building2 className="h-3 w-3" strokeWidth={2.5} />
+                  {t.about.bridgeOriginTag}
+                </span>
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <h3 className="font-display text-xl font-bold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                    {hub.country}
+                  </h3>
+                  <p className="text-xs text-slate-300">{hub.city}</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-1.5 p-4">
                 {hub.focus.slice(0, 3).map((f) => (
                   <span
                     key={f}
@@ -211,31 +223,50 @@ export function BridgeCorridor() {
             {/* Destination */}
             <motion.div
               style={reduce ? undefined : { opacity: destLift }}
-              className="relative w-72 shrink-0 overflow-hidden rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-6"
+              className="relative w-72 shrink-0 overflow-hidden rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-4"
             >
-              <span className="inline-flex items-center rounded-full bg-emerald-500/15 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-emerald-300">
-                {t.about.bridgeDestTag}
-              </span>
-              <span className="relative mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/25 text-emerald-200 ring-1 ring-emerald-400/50 shadow-[0_0_24px_-4px_rgba(16,185,129,0.8)]">
-                {!reduce && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 animate-halo-pulse rounded-xl bg-emerald-400/40"
-                  />
-                )}
-                <Globe className="relative h-5 w-5" strokeWidth={2} />
-              </span>
-              <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-white">
-                {t.about.corridorMarketsLabel}
-              </h3>
-              <div className="mt-4 grid grid-cols-2 gap-1.5">
+              <div className="flex items-center gap-2.5">
+                <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/25 text-emerald-200 ring-1 ring-emerald-400/50">
+                  {!reduce && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 animate-halo-pulse rounded-lg bg-emerald-400/40"
+                    />
+                  )}
+                  <Globe className="relative h-4 w-4" strokeWidth={2} />
+                </span>
+                <div>
+                  <p className="text-2xs font-semibold uppercase tracking-[0.14em] text-emerald-300">
+                    {t.about.bridgeDestTag}
+                  </p>
+                  <h3 className="font-display text-base font-bold tracking-tight text-white">
+                    {t.about.corridorMarketsLabel}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Photo tiles rather than text pills. Six country names in a
+                  bordered box is a list; six photographs is the point being
+                  made — that there is somewhere real at the other end. */}
+              <div className="mt-4 grid grid-cols-2 gap-2">
                 {markets.map((m) => (
-                  <span
-                    key={m.id}
-                    className="truncate rounded-lg border border-white/10 bg-white/5 px-2 py-1.5 text-[0.75rem] font-medium text-slate-300"
-                  >
-                    {m.country}
-                  </span>
+                  <div key={m.id} className="relative h-16 overflow-hidden rounded-lg">
+                    <Image
+                      src={`/brand/markets/${m.id}.webp`}
+                      alt=""
+                      width={720}
+                      height={432}
+                      sizes="8rem"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-t from-navy-950/90 to-navy-950/25"
+                    />
+                    <span className="absolute inset-x-0 bottom-0 truncate px-2 pb-1.5 text-[0.7rem] font-semibold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+                      {m.country}
+                    </span>
+                  </div>
                 ))}
               </div>
             </motion.div>
