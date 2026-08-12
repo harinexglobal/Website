@@ -161,6 +161,7 @@ const en = {
     items: [
       {
         id: 'technology-transfer',
+        short: 'Technology Transfer',
         icon: 'atom',
         title: 'Technology Transfer & Commercialisation',
         summary:
@@ -179,6 +180,7 @@ const en = {
       },
       {
         id: 'business-advisory',
+        short: 'Business Advisory',
         icon: 'handshake',
         title: 'Business Advisory, Matchmaking & Delegations',
         summary:
@@ -198,6 +200,7 @@ const en = {
       },
       {
         id: 'supplier-sourcing',
+        short: 'Supplier Sourcing',
         icon: 'factory',
         title: 'Strategic Supplier Sourcing',
         summary:
@@ -216,6 +219,7 @@ const en = {
       },
       {
         id: 'technical-translation',
+        short: 'Technical Translation',
         icon: 'languages',
         title: 'Technical Translation & Localisation',
         summary:
@@ -235,6 +239,7 @@ const en = {
       },
       {
         id: 'digital-solutions',
+        short: 'Digital Solutions',
         icon: 'monitor',
         title: 'Website & AI Digital Solutions',
         summary:
@@ -253,6 +258,7 @@ const en = {
       },
       {
         id: 'regulatory',
+        short: 'Regulatory Coordination',
         icon: 'shield-check',
         title: 'Regulatory Coordination',
         summary:
@@ -271,6 +277,7 @@ const en = {
       },
       {
         id: 'project-management',
+        short: 'Project Management',
         icon: 'clipboard',
         title: 'International Project Management',
         summary:
@@ -289,6 +296,7 @@ const en = {
       },
       {
         id: 'industrial-automation',
+        short: 'Industrial Automation',
         icon: 'cpu',
         title: 'Industrial Automation & Control Systems',
         summary:
@@ -1136,6 +1144,7 @@ const zh: Dict = {
     items: [
       {
         id: 'technology-transfer',
+        short: '技術移轉',
         icon: 'atom',
         title: '技術移轉與商品化',
         summary: '將已驗證的技術，從實驗室推進到具授權基礎的規模化工業生產。',
@@ -1153,6 +1162,7 @@ const zh: Dict = {
       },
       {
         id: 'business-advisory',
+        short: '商務顧問',
         icon: 'handshake',
         title: '商務顧問、媒合與商務團',
         summary: '找到對的交易對象、安排雙方見面，並把後續架構談定。',
@@ -1171,6 +1181,7 @@ const zh: Dict = {
       },
       {
         id: 'supplier-sourcing',
+        short: '供應商採購',
         icon: 'factory',
         title: '策略性供應商採購',
         summary: '橫跨我們各市場、且經實地驗證的合格製造夥伴。',
@@ -1188,6 +1199,7 @@ const zh: Dict = {
       },
       {
         id: 'technical-translation',
+        short: '技術翻譯',
         icon: 'languages',
         title: '技術翻譯與在地化',
         summary: '繁體中文 ⇄ 英文，專為「誤譯即等同法規事件」的文件而設。',
@@ -1206,6 +1218,7 @@ const zh: Dict = {
       },
       {
         id: 'digital-solutions',
+        short: '數位解決方案',
         icon: 'monitor',
         title: '網站與 AI 數位解決方案',
         summary: '讓跨境營運能被客戶清楚理解的數位層。',
@@ -1223,6 +1236,7 @@ const zh: Dict = {
       },
       {
         id: 'regulatory',
+        short: '法規協調',
         icon: 'shield-check',
         title: '法規協調',
         summary: '為受管制產業提供文件、送件準備與法規協調支援。',
@@ -1240,6 +1254,7 @@ const zh: Dict = {
       },
       {
         id: 'project-management',
+        short: '專案管理',
         icon: 'clipboard',
         title: '國際專案管理',
         summary: '橫跨多國、多語言與多時區的專案，由單一窗口全權負責。',
@@ -1257,6 +1272,7 @@ const zh: Dict = {
       },
       {
         id: 'industrial-automation',
+        short: '工業自動化',
         icon: 'cpu',
         title: '工業自動化與控制系統',
         summary:

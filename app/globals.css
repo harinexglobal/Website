@@ -190,3 +190,45 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Service rail — expanding capability panels on the home page.
+
+   Flex-basis rather than width, so the panels always fill the row exactly
+   and no sub-pixel gap opens up between them mid-transition. The panels are
+   deliberately seamless: no gaps, no rounded corners, so the row reads as one
+   continuous strip of imagery rather than six cards.
+
+   :focus-within sits alongside :hover throughout, so tabbing through the rail
+   expands panels exactly as pointing at them does. The whole panel is a link,
+   so keyboard users get there without any JS.
+
+   The global reduced-motion block above already flattens these transitions.
+   ------------------------------------------------------------------ */
+@media (min-width: 1024px) {
+  .rail {
+    display: flex;
+    height: clamp(30rem, 46vw, 38rem);
+  }
+
+  .rail-panel {
+    position: relative;
+    /* Longhands, not the `flex` shorthand: written as `flex: 1 1 0` the
+       unitless zero is read as a third flex factor rather than a basis, the
+       declaration is dropped as invalid, and every panel silently collapses to
+       zero width. Spelling the three out removes the ambiguity. */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    min-width: 0;
+    transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* 2.15 against five siblings at 1 puts the hovered panel at 2.15/7.15 ≈ 30%
+     of the rail, and the others at 14% each. The siblings need no rule of their
+     own — they give up room automatically as this one takes it. */
+  .rail-panel:hover,
+  .rail-panel:focus-within {
+    flex-grow: 2.15;
+  }
+}
