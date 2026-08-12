@@ -208,7 +208,7 @@
 @media (min-width: 1024px) {
   .rail {
     display: flex;
-    height: clamp(30rem, 46vw, 38rem);
+    height: clamp(17rem, 24vw, 21rem);
   }
 
   .rail-panel {
@@ -224,11 +224,13 @@
     transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* 2.15 against five siblings at 1 puts the hovered panel at 2.15/7.15 ≈ 30%
-     of the rail, and the others at 14% each. The siblings need no rule of their
-     own — they give up room automatically as this one takes it. */
+  /* --rail-grow comes from the component, solved for the panel count so the
+     hovered share stays ~30% whether there are six panels or eight:
+     grow = share x (n - 1) / (1 - share). Hardcoding it would silently drift
+     the moment a capability is added. The siblings need no rule of their own —
+     they give up room automatically as this one takes it. */
   .rail-panel:hover,
   .rail-panel:focus-within {
-    flex-grow: 2.15;
+    flex-grow: var(--rail-grow, 2.15);
   }
 }

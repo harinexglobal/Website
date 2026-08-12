@@ -31,6 +31,13 @@ const IMAGES = [
   { id: 'regulatory', src: 'Regulatory Coordination and Documentation,.jpg' },
   { id: 'digital-solutions', src: 'Website & AI Digital Solutions.png' },
   { id: 'project-management', src: 'International Project Management.png' },
+
+  /* No photograph was supplied for industrial automation. Images/4.png is a
+     control-room HMI — live throughput graphs, a protocol A/B comparison, a
+     fibre interface module — which is what SCADA and DCS work actually looks
+     like, and the only image in the project that depicts a control system
+     rather than a boardroom or a globe. */
+  { id: 'industrial-automation', src: '../4.png' },
 ];
 
 for (const { id, src } of IMAGES) {

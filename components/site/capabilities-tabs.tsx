@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
@@ -117,8 +118,31 @@ export function CapabilitiesTabs({ showHeading = true }: { showHeading?: boolean
                 animate={{ opacity: 1, y: 0 }}
                 exit={reduce ? undefined : { opacity: 0, y: -8 }}
                 transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-card sm:p-8"
+                className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card"
               >
+                {/* Photograph rides the left edge on wide screens and becomes a
+                    banner on narrow ones. It is the same file the home page rail
+                    uses, keyed by capability id, so the two can never show
+                    different pictures for the same practice. Decorative: the
+                    heading beside it already names the capability, so alt is
+                    empty rather than a restatement. */}
+                <div className="flex flex-col md:flex-row">
+                  <div className="relative h-44 w-full shrink-0 md:h-auto md:w-56 lg:w-64">
+                    <Image
+                      src={`/brand/capabilities/${current.id}.webp`}
+                      alt=""
+                      width={900}
+                      height={1125}
+                      sizes="(min-width: 1024px) 16rem, (min-width: 768px) 14rem, 100vw"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-t from-navy-950/45 to-transparent md:bg-gradient-to-r"
+                    />
+                  </div>
+
+                  <div className="min-w-0 flex-1 p-6 sm:p-8">
                 <div className="flex items-start gap-4">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-800 text-emerald-400">
                     <ContentIcon name={current.icon} className="h-6 w-6" />
@@ -159,6 +183,8 @@ export function CapabilitiesTabs({ showHeading = true }: { showHeading?: boolean
                     {t.common.learnMore}
                     <ArrowRight className="h-3.5 w-3.5" />
                   </ButtonLink>
+                </div>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

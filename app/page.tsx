@@ -17,12 +17,13 @@ export default function HomePage() {
       <CinematicHero />
       <StatsBar />
       <AboutIntro variant="home" />
+      {/* What we do, before how we are organised to do it. The rail replaces the
+          tab interface rather than joining it: both list the same practices, and
+          the detailed version belongs on /capabilities where someone has already
+          chosen to go deeper. */}
+      <ServiceRail />
       <TechnologyBridge />
       <WhyUsGrid />
-      {/* The rail replaces the tab interface here rather than joining it: both
-          list the same practices, and the detailed version belongs on
-          /capabilities where someone has already chosen to go deeper. */}
-      <ServiceRail />
       <Engagements />
       <GlobalNetwork />
       <IndustriesGrid />

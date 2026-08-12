@@ -52,7 +52,7 @@ const en = {
     team: 'Our Team',
     insights: 'Insights',
     contact: 'Contact',
-    capabilitiesIntro: 'Seven practices, delivered end to end across both markets.',
+    capabilitiesIntro: 'Eight practices, delivered end to end across every market we operate in.',
   },
 
   hero: {
@@ -1037,7 +1037,7 @@ const zh: Dict = {
     team: '團隊成員',
     insights: '洞察觀點',
     contact: '聯絡我們',
-    capabilitiesIntro: '七大專業服務，於兩地市場完整交付。',
+    capabilitiesIntro: '八大專業服務，於我們營運的每一個市場完整交付。',
   },
 
   hero: {
