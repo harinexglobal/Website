@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowRight, CheckCircle2, Mail, X } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
@@ -27,6 +28,9 @@ export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'success'>('idle');
   const [delivered, setDelivered] = useState(true);
   const [serverError, setServerError] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const {
     register,
@@ -228,9 +232,17 @@ export function ContactForm() {
         </div>
       </form>
 
-      {/* Success modal */}
-      <AnimatePresence>
-        {status === 'success' && (
+      {/* Success modal, rendered into <body>.
+          It has to be: the form sits inside a Reveal, whose motion transform
+          makes it the containing block for any position:fixed descendant — so
+          `fixed inset-0` resolved against that wrapper rather than the viewport
+          and the confirmation appeared somewhere off-screen. Submitting looked
+          like nothing happened. A portal escapes every containing block on the
+          way up, which no amount of z-index can do. */}
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {status === 'success' && (
           <motion.div
             className="fixed inset-0 z-[60] flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
@@ -295,7 +307,9 @@ export function ContactForm() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+          </AnimatePresence>,
+          document.body,
+        )}
     </>
   );
 }
