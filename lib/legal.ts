@@ -30,7 +30,7 @@ const en = {
         h: 'Who we are',
         p: [
           'HariNex Global Co., Ltd. (瀚瑞國際股份有限公司) is the data controller for personal data collected through this website. Our registered office is at 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.)',
-          'You can reach us at harinexglobal@gmail.com for any question about this policy or about data we hold.',
+          'You can reach us at hello@harinexglobal.com for any question about this policy or about data we hold.',
         ],
       },
       {
@@ -94,7 +94,7 @@ const en = {
           'Article 3 of the Personal Data Protection Act gives you five rights in respect of your personal data, and those rights may not be waived or restricted in advance by contract. You may: enquire about and review your data; request a copy; request correction or supplementation; request that we cease collecting, processing or using it; and request deletion.',
           'Where we use your data for marketing, you may ask us to stop at any time and we will do so without charge.',
           'If you are in a jurisdiction that confers additional rights — for example the EU or the United Kingdom — you may also have the right to object to processing, to restrict it, to data portability, and to lodge a complaint with your local supervisory authority.',
-          'To exercise any of these, write to harinexglobal@gmail.com. We will respond within the period required by applicable law, and will not charge you except where the law permits a fee for producing copies.',
+          'To exercise any of these, write to hello@harinexglobal.com. We will respond within the period required by applicable law, and will not charge you except where the law permits a fee for producing copies.',
         ],
       },
       {
@@ -275,7 +275,7 @@ const zh: LegalDict = {
         h: '我們是誰',
         p: [
           '瀚瑞國際股份有限公司（HariNex Global Co., Ltd.）為透過本網站所蒐集個人資料之管理者，登記營業處所為333004 台灣 桃園市龜山區文化七路10號3樓。',
-          '如對本政策或我們所持有的資料有任何疑問，可透過 harinexglobal@gmail.com 與我們聯繫。',
+          '如對本政策或我們所持有的資料有任何疑問，可透過 hello@harinexglobal.com 與我們聯繫。',
         ],
       },
       {
@@ -339,7 +339,7 @@ const zh: LegalDict = {
           '個人資料保護法第 3 條賦予您就個人資料享有五項權利，且該等權利不得預先以契約拋棄或限制。您得：查詢或請求閱覽；請求製給複製本；請求補充或更正；請求停止蒐集、處理或利用；以及請求刪除。',
           '本公司如將您的個人資料用於行銷，您得隨時表示拒絕接受，本公司將免費停止利用。',
           '若您所在法域另賦予其他權利（例如歐盟或英國），您可能另享有反對處理、限制處理、資料可攜，以及向當地監管機關申訴之權利。',
-          '欲行使上述任一權利，請來信 harinexglobal@gmail.com。我們將於適用法律所定期間內回覆；除法律允許就製給複製本收取必要成本外，不另收費。',
+          '欲行使上述任一權利，請來信 hello@harinexglobal.com。我們將於適用法律所定期間內回覆；除法律允許就製給複製本收取必要成本外，不另收費。',
         ],
       },
       {
