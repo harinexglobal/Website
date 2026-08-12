@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { AboutIntro, WhyUsGrid } from '@/components/site/about-intro';
-import { AboutVideo } from '@/components/site/about-video';
 import { TechnologyBridge } from '@/components/site/technology-bridge';
 import { GlobalNetwork } from '@/components/site/global-network';
 import { ProcessTimeline } from '@/components/site/process-timeline';
@@ -24,10 +23,10 @@ export function AboutContent() {
         title={t.about.heading}
         lead={t.about.lead}
         image="about"
+        video="about"
         imagePosition="center 35%"
       />
       <AboutIntro />
-      <AboutVideo />
       <TechnologyBridge />
       <WhyUsGrid />
       <GlobalNetwork />

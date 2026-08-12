@@ -142,6 +142,13 @@ export function NetworkMap() {
             <stop stopColor="#E8821E" stopOpacity="0.14" />
             <stop offset="1" stopColor="#E8821E" stopOpacity="0" />
           </radialGradient>
+          <filter id="routeGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
           <radialGradient id="hubBloom">
             <stop stopColor="#FFFFFF" stopOpacity="0.85" />
             <stop offset="0.25" stopColor="#6EE7B7" stopOpacity="0.45" />
@@ -174,15 +181,47 @@ export function NetworkMap() {
         {/* Routes */}
         {markets.map((m) => (
           <g key={`route-${m.id}`}>
+            {/* Blurred underlay, then the crisp line on top. One stroke with a
+                filter would blur the line itself; two gives it a halo. */}
             <path
               d={m.path}
               fill="none"
               stroke="url(#routeGrad)"
-              strokeOpacity={m.core ? 0.85 : 0.4}
-              strokeWidth={m.core ? 2 : 1.2}
+              strokeOpacity={m.core ? 0.5 : 0.28}
+              strokeWidth={m.core ? 5 : 3.5}
+              strokeLinecap="round"
+              filter="url(#routeGlow)"
+            />
+            <path
+              d={m.path}
+              fill="none"
+              stroke="url(#routeGrad)"
+              strokeOpacity={m.core ? 0.95 : 0.6}
+              strokeWidth={m.core ? 1.6 : 1}
               strokeDasharray={m.core ? undefined : '5 6'}
               strokeLinecap="round"
             />
+
+            {/* A light running the arc. The arrowheads say direction; this says
+                the corridor is live. */}
+            {!reduce && (
+              <circle r="2.4" fill="#FFFFFF" opacity="0.9">
+                <animateMotion
+                  dur={`${m.dur * 1.6}s`}
+                  begin={`${m.delay * 1.3}s`}
+                  repeatCount="indefinite"
+                  path={m.path}
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0;0.9;0.9;0"
+                  keyTimes="0;0.15;0.8;1"
+                  dur={`${m.dur * 1.6}s`}
+                  begin={`${m.delay * 1.3}s`}
+                  repeatCount="indefinite"
+                />
+              </circle>
+            )}
 
             {!reduce && (
               <>

@@ -1,8 +1,9 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Pause, Play } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLang } from '@/components/providers/language-provider';
 import { BLUR } from '@/lib/blur';
@@ -19,6 +20,7 @@ export function PageHero({
   lead,
   crumb,
   image,
+  video,
   imagePosition = 'center',
 }: {
   eyebrow: string;
@@ -26,10 +28,26 @@ export function PageHero({
   lead?: string;
   crumb: string;
   image?: keyof typeof BLUR;
+  /** Filename under /brand, without extension. Plays behind the scrim. */
+  video?: string;
   imagePosition?: string;
 }) {
   const { t } = useLang();
   const reduce = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(!reduce);
+
+  const toggle = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      void v.play();
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
+  };
 
   const rise = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 18 },
@@ -39,7 +57,49 @@ export function PageHero({
 
   return (
     <section className="surface-navy on-navy relative overflow-hidden">
-      {image && (
+      {/* Film behind the type. The same scrim the photograph gets, because the
+          requirement is identical — the headline has to clear WCAG AA over
+          whatever frame happens to be showing, and a film gives you no say in
+          which frame that is. */}
+      {video && (
+        <>
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay={!reduce}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={image ? `/brand/${image}.webp` : undefined}
+          >
+            <source src={`/brand/${video}.mp4`} type="video/mp4" />
+          </video>
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-800/85 to-navy-800/65"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-navy-900/30" aria-hidden="true" />
+
+          {/* A loop cannot be left uncontrollable — WCAG 2.2.2 applies to
+              anything moving past five seconds. */}
+          <button
+            type="button"
+            onClick={toggle}
+            aria-pressed={playing}
+            className="absolute bottom-4 right-4 z-10 inline-flex items-center gap-2 rounded-full bg-navy-950/70 px-3 py-1.5 text-2xs font-semibold uppercase tracking-[0.12em] text-white ring-1 ring-white/25 backdrop-blur-sm transition-colors hover:bg-navy-950/90"
+          >
+            {playing ? (
+              <Pause className="h-3 w-3" strokeWidth={2.5} aria-hidden="true" />
+            ) : (
+              <Play className="h-3 w-3" strokeWidth={2.5} aria-hidden="true" />
+            )}
+            {playing ? t.common.pause : t.common.play}
+          </button>
+        </>
+      )}
+
+      {!video && image && (
         <>
           <Image
             src={`/brand/${image}.webp`}
