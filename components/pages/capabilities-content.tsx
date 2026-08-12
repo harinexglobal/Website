@@ -3,7 +3,7 @@
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { ServiceRail } from '@/components/site/service-rail';
-import { CapabilitiesTabs } from '@/components/site/capabilities-tabs';
+import { CapabilityCards } from '@/components/site/capability-cards';
 import { TranslationModule } from '@/components/site/translation-module';
 import { ProcessTimeline } from '@/components/site/process-timeline';
 import { Faq } from '@/components/site/faq';
@@ -25,7 +25,7 @@ export function CapabilitiesContent() {
         lead={t.capabilities.lead}
       />
       <ServiceRail showHeading={false} />
-      <CapabilitiesTabs showHeading={false} />
+      <CapabilityCards showHeading={false} />
       <TranslationModule />
       <ProcessTimeline />
       <Faq />

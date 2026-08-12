@@ -208,7 +208,7 @@
 @media (min-width: 1024px) {
   .rail {
     display: flex;
-    height: clamp(17rem, 24vw, 21rem);
+    height: clamp(30rem, 46vw, 38rem);
   }
 
   .rail-panel {
