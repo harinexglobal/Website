@@ -11,21 +11,19 @@ import { cn } from '@/lib/utils';
 /**
  * The service rail: every capability as a panel that expands under the pointer.
  *
+ * At rest the whole strip is one continuous photograph behind translucent
+ * columns, so it reads as a single scene rather than eight tiles. Pointing at a
+ * panel widens it, lifts its scrim, and fades that practice's own photograph in
+ * over the shared one — the strip only becomes eight separate pictures when
+ * somebody asks it to.
+ *
  * Driven by `capabilities.items`, so a panel's title, photograph and link can
- * never drift from the practice it represents — the failure mode with a
- * hand-written strip like this is a panel that outlives the service it sells.
- *
- * Titles sit above the photographs rather than over them. Overlaid, a title's
- * legibility depended on whatever happened to be behind it in eight different
- * images; lifted onto the section's own navy, white text is simply always
- * readable, and the scrims are then free to be lighter so the photography shows.
- *
- * Contained rather than full-bleed, so the same component sits correctly in both
- * places it is used — the home page and the capabilities hero.
+ * never drift from the practice it represents.
  *
  * The expansion is pure CSS (see .rail in globals.css) — flex-grow on hover and
  * focus-within, no state, no JS, and it keeps working for keyboard users and
- * with scripting unavailable.
+ * with scripting unavailable. Titles sit over a scrim heavy enough to hold
+ * contrast whatever the photography is doing beneath.
  */
 
 /** Share of the rail the hovered panel should occupy. */
@@ -59,43 +57,50 @@ export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = 
 
         <Reveal>
           <div
-            className="rail grid grid-cols-1 overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-none"
+            className="rail relative grid grid-cols-1 overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-none"
             style={{ '--rail-grow': grow } as React.CSSProperties}
           >
+            {/* One photograph across the whole strip. The panels sit over it, so
+                at rest the row is a single scene rather than eight tiles. */}
+            <Image
+              src="/brand/services-backdrop.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              className="pointer-events-none absolute inset-0 -z-10 object-cover"
+            />
+
             {panels.map((c) => (
               <Link
                 key={c.id}
                 href={`${ROUTES.capabilities}/${c.id}`}
-                className="rail-panel group relative flex flex-col border-b border-r border-white/10 bg-navy-900/60 focus:outline-none"
+                className="rail-panel group relative flex min-h-[8.5rem] flex-col items-center overflow-hidden border-b border-r border-white/20 px-3 py-7 text-center focus:outline-none sm:min-h-[10rem]"
               >
-                {/* Title block, on the section's own navy — legible regardless of
-                    what the photograph below happens to contain. */}
-                <div className="relative z-10 px-4 pb-4 pt-5 sm:px-5">
-                  <h3 className="font-display text-base font-bold leading-tight tracking-tight text-white transition-colors duration-300 group-hover:text-emerald-300 group-focus-visible:text-emerald-300 lg:min-h-[2.6rem]">
-                    {c.short}
-                  </h3>
-                  <span
-                    aria-hidden="true"
-                    className="mt-2.5 block h-0.5 w-8 bg-bridge-grad transition-all duration-500 group-hover:w-16 group-focus-visible:w-16"
-                  />
-                </div>
+                {/* This practice's own photograph, hidden until asked for. */}
+                <Image
+                  src={`/brand/capabilities/${c.id}.webp`}
+                  alt=""
+                  width={900}
+                  height={1125}
+                  sizes="(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"
+                  className="absolute inset-0 -z-10 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100"
+                />
 
-                {/* Photograph takes whatever height the title leaves. */}
-                <div className="relative min-h-[8rem] flex-1 overflow-hidden">
-                  <Image
-                    src={`/brand/capabilities/${c.id}.webp`}
-                    alt=""
-                    width={900}
-                    height={1125}
-                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-focus-visible:scale-105"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-navy-950/45 transition-colors duration-500 group-hover:bg-navy-950/15 group-focus-visible:bg-navy-950/15"
-                  />
+                {/* Scrim: heavy at rest so titles hold contrast over the shared
+                    photograph, lifting on hover to let the panel's own show. */}
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 bg-navy-950/70 transition-colors duration-500 group-hover:bg-navy-950/35 group-focus-visible:bg-navy-950/35"
+                />
 
-                </div>
+                <h3 className="font-display text-sm font-bold leading-snug tracking-tight text-white [text-shadow:0_2px_6px_rgba(0,0,0,0.75)] sm:text-[0.95rem]">
+                  {c.short}
+                </h3>
+
+                <span
+                  aria-hidden="true"
+                  className="mt-3 block h-0.5 w-8 bg-bridge-grad opacity-70 transition-all duration-500 group-hover:w-16 group-hover:opacity-100 group-focus-visible:w-16"
+                />
               </Link>
             ))}
           </div>

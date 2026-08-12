@@ -234,3 +234,48 @@
     flex-grow: var(--rail-grow, 2.15);
   }
 }
+
+/* ------------------------------------------------------------------
+   Technology Bridge — light sweep across a market photograph.
+
+   Fires when the destination changes, so the swap reads as a deliberate
+   transition rather than the image simply popping. Keyed on the React element
+   so it restarts on every change without a forced reflow.
+
+   Purely decorative: the global reduced-motion block flattens it, and nothing
+   about the content depends on it running.
+   ------------------------------------------------------------------ */
+@keyframes bridge-sweep {
+  from {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  to {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+.bridge-sweep {
+  animation: bridge-sweep 0.85s cubic-bezier(0.4, 0, 0.2, 1) 1;
+}
+
+/* The energy pulse riding the connector between origin and destination. */
+@keyframes bridge-pulse {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.bridge-pulse {
+  animation: bridge-pulse 2.6s linear infinite;
+}

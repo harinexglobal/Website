@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 import { Building2, MapPin } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { ContentIcon } from '@/components/ui/icon';
@@ -95,20 +96,34 @@ export function TechnologyBridge() {
                   {t.about.bridgeOriginTag}
                 </span>
 
-                <span className="mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-saffron-300 ring-1 ring-saffron-400/25">
-                  <Building2 className="h-5 w-5" strokeWidth={1.75} />
-                </span>
+                <div className="relative mt-5 h-52 overflow-hidden rounded-xl">
+                  <Image
+                    src={`/brand/markets/${hub.id}.webp`}
+                    alt=""
+                    width={720}
+                    height={432}
+                    sizes="(min-width: 1024px) 22vw, 100vw"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent"
+                  />
+                  <span className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center rounded-lg bg-navy-950/70 text-saffron-300 ring-1 ring-saffron-400/40 backdrop-blur-sm">
+                    <Building2 className="h-4 w-4" strokeWidth={2} />
+                  </span>
+                </div>
 
                 <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-white">
                   {hub.country}
                 </h3>
-                <p className="mt-1 text-sm text-slate-400">{hub.city}</p>
+                <p className="mt-1 text-xs text-slate-400">{hub.city}</p>
 
-                <p className="copy-invert mt-4">{t.about.bridgeOriginRole}</p>
+                <p className="mt-3 text-[0.82rem] leading-relaxed text-slate-300">{t.about.bridgeOriginRole}</p>
 
                 <ul className="mt-6 space-y-2 border-t border-white/10 pt-5">
                   {hub.focus.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[0.85rem] text-slate-300">
+                    <li key={f} className="flex items-start gap-2.5 text-[0.76rem] text-slate-300">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-saffron-400" />
                       {f}
                     </li>
@@ -146,6 +161,12 @@ export function TechnologyBridge() {
                 className={reduce ? undefined : 'animate-dash-flow'}
               />
             </svg>
+
+            {/* A single bright pulse running origin to destination — the one
+                thing that says which way the corridor flows. */}
+            {!reduce && (
+              <span className="bridge-pulse absolute left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-white shadow-[0_0_12px_3px_rgba(16,185,129,0.85)]" />
+            )}
           </div>
 
           {/* Destination — one market, presented properly */}
@@ -178,6 +199,31 @@ export function TechnologyBridge() {
                   </span>
                 </div>
 
+                {/* The photograph carries a light sweep across it on every
+                    change. Keyed on the market id like the panel itself, so the
+                    animation restarts naturally on each swap — no forced reflow,
+                    no imperative class toggling. */}
+                <div className="relative mt-5 h-52 overflow-hidden rounded-xl sm:h-64">
+                  <Image
+                    src={`/brand/markets/${current.id}.webp`}
+                    alt=""
+                    width={720}
+                    height={432}
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-navy-950/10 to-transparent"
+                  />
+                  {!reduce && (
+                    <span
+                      aria-hidden="true"
+                      className="bridge-sweep absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/35 to-transparent"
+                    />
+                  )}
+                </div>
+
                 <div className="mt-5 flex items-start gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-emerald-300 ring-1 ring-emerald-400/25">
                     <ContentIcon
@@ -189,7 +235,7 @@ export function TechnologyBridge() {
                     <h3 className="font-display text-2xl font-bold tracking-tight text-white">
                       {current.country}
                     </h3>
-                    <p className="mt-1 flex items-center gap-1.5 text-sm text-slate-400">
+                    <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-400">
                       <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
                       {current.city === current.country ? current.role : current.city}
                     </p>
@@ -198,7 +244,7 @@ export function TechnologyBridge() {
 
                 <div className="mt-6 border-t border-white/10 pt-5">
                   <p className="eyebrow mb-2.5 text-slate-500">{t.about.bridgeRoleLabel}</p>
-                  <p className="copy-invert">{current.detail}</p>
+                  <p className="text-[0.82rem] leading-relaxed text-slate-300">{current.detail}</p>
                 </div>
 
                 <div className="mt-5">
@@ -207,7 +253,7 @@ export function TechnologyBridge() {
                     {current.focus.map((f) => (
                       <span
                         key={f}
-                        className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-[0.8rem] font-medium text-slate-300"
+                        className="rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-[0.72rem] font-medium text-slate-300"
                       >
                         {f}
                       </span>
