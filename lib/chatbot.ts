@@ -207,7 +207,7 @@ const en: ChatPack = {
       id: 'contact',
       keywords: ['contact', 'email', 'phone', 'call', 'reach you', 'whatsapp', 'speak to', 'talk to', 'get in touch'],
       answer:
-        'Email harinex.india@gmail.com, or call and WhatsApp +886 974 025 045. You can also send an enquiry through the contact form and we aim to reply to qualified enquiries within two working days.',
+        'Email harinexglobal@gmail.com, or call and WhatsApp +886 974 025 045. You can also send an enquiry through the contact form and we aim to reply to qualified enquiries within two working days.',
       link: { href: '/contact', label: 'Contact page' },
       followUps: ['Where are your offices?', 'How do you charge?'],
     },
@@ -378,7 +378,7 @@ const zh: ChatPack = {
       id: 'contact',
       keywords: ['聯絡', '電子郵件', '電話', 'email', 'whatsapp', '怎麼聯繫', '找誰'],
       answer:
-        '電子郵件 harinex.india@gmail.com，電話與 WhatsApp 皆為 +886 974 025 045。您也可以透過聯絡表單送出諮詢，我們力求於兩個工作天內回覆有效諮詢。',
+        '電子郵件 harinexglobal@gmail.com，電話與 WhatsApp 皆為 +886 974 025 045。您也可以透過聯絡表單送出諮詢，我們力求於兩個工作天內回覆有效諮詢。',
       link: { href: '/contact', label: '聯絡我們' },
       followUps: ['據點在哪裡？', '如何收費？'],
     },
