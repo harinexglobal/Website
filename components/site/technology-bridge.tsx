@@ -85,43 +85,48 @@ export function TechnologyBridge() {
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
           {/* Origin — persistent, saffron, never competes for selection */}
           <div className="lg:col-span-4">
-            <div className="relative h-full overflow-hidden rounded-2xl border border-saffron-500/25 bg-saffron-500/[0.07] p-6 sm:p-7">
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-saffron-500/20 blur-3xl"
-              />
+            {/* Photograph is the card, not an inset inside it: full-bleed to the
+                edges, with the country name sitting on it. Inset inside padding
+                the image read as a thumbnail, and the card ran out of content
+                before it ran out of height — the dead space at the foot was the
+                real reason this looked flat. */}
+            <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-saffron-500/25 bg-saffron-500/[0.07]">
+              <div className="relative h-72 shrink-0 sm:h-80">
+                <Image
+                  src={`/brand/markets/${hub.id}.webp`}
+                  alt=""
+                  width={720}
+                  height={432}
+                  sizes="(min-width: 1024px) 34vw, 100vw"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/10"
+                />
 
-              <div className="relative">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-saffron-500/15 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-saffron-300">
+                <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-navy-950/70 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-saffron-300 ring-1 ring-saffron-400/40 backdrop-blur-sm">
+                  <Building2 className="h-3 w-3" strokeWidth={2.5} />
                   {t.about.bridgeOriginTag}
                 </span>
 
-                <div className="relative mt-5 h-52 overflow-hidden rounded-xl">
-                  <Image
-                    src={`/brand/markets/${hub.id}.webp`}
-                    alt=""
-                    width={720}
-                    height={432}
-                    sizes="(min-width: 1024px) 22vw, 100vw"
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent"
-                  />
-                  <span className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center rounded-lg bg-navy-950/70 text-saffron-300 ring-1 ring-saffron-400/40 backdrop-blur-sm">
-                    <Building2 className="h-4 w-4" strokeWidth={2} />
-                  </span>
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <h3 className="font-display text-3xl font-bold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                    {hub.country}
+                  </h3>
+                  <p className="mt-1 text-xs text-slate-300">{hub.city}</p>
                 </div>
+              </div>
 
-                <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-white">
-                  {hub.country}
-                </h3>
-                <p className="mt-1 text-xs text-slate-400">{hub.city}</p>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <p className="text-[0.82rem] leading-relaxed text-slate-300">
+                  {t.about.bridgeOriginRole}
+                </p>
 
-                <p className="mt-3 text-[0.82rem] leading-relaxed text-slate-300">{t.about.bridgeOriginRole}</p>
-
-                <ul className="mt-6 space-y-2 border-t border-white/10 pt-5">
+                {/* mt-auto: the focus list falls to the foot, so the card fills
+                    whatever height the destination panel sets rather than
+                    trailing off into empty space. */}
+                <ul className="mt-auto space-y-2 border-t border-white/10 pt-5">
                   {hub.focus.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-[0.76rem] text-slate-300">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-saffron-400" />
@@ -175,7 +180,7 @@ export function TechnologyBridge() {
               role="tabpanel"
               id={`tb-panel-${current.id}`}
               aria-labelledby={`tb-tab-${current.id}`}
-              className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8"
+              className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
             >
               <div
                 aria-hidden="true"
@@ -188,13 +193,13 @@ export function TechnologyBridge() {
                 initial={reduce ? false : { opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="relative"
+                className="relative flex h-full flex-col"
               >
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-emerald-300">
+                <div className="absolute left-5 top-5 z-10 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-950/70 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-emerald-300 ring-1 ring-emerald-400/40 backdrop-blur-sm">
                     {t.about.bridgeDestTag}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-300">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-950/70 px-2.5 py-1 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-200 ring-1 ring-white/25 backdrop-blur-sm">
                     {current.core ? t.network.coreLabel : t.network.repLabel}
                   </span>
                 </div>
@@ -203,7 +208,7 @@ export function TechnologyBridge() {
                     change. Keyed on the market id like the panel itself, so the
                     animation restarts naturally on each swap — no forced reflow,
                     no imperative class toggling. */}
-                <div className="relative mt-5 h-52 overflow-hidden rounded-xl sm:h-64">
+                <div className="relative h-72 shrink-0 sm:h-80">
                   <Image
                     src={`/brand/markets/${current.id}.webp`}
                     alt=""
@@ -214,7 +219,7 @@ export function TechnologyBridge() {
                   />
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-navy-950/10 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/10"
                   />
                   {!reduce && (
                     <span
@@ -222,27 +227,25 @@ export function TechnologyBridge() {
                       className="bridge-sweep absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/35 to-transparent"
                     />
                   )}
-                </div>
 
-                <div className="mt-5 flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-emerald-300 ring-1 ring-emerald-400/25">
-                    <ContentIcon
-                      name={current.core ? 'factory' : 'handshake'}
-                      className="h-5 w-5"
-                    />
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="font-display text-2xl font-bold tracking-tight text-white">
-                      {current.country}
-                    </h3>
-                    <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-400">
-                      <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
-                      {current.city === current.country ? current.role : current.city}
-                    </p>
+                  <div className="absolute inset-x-0 bottom-0 flex items-end gap-3 p-5 sm:p-6">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-950/70 text-emerald-300 ring-1 ring-emerald-400/40 backdrop-blur-sm">
+                      <ContentIcon name={current.core ? 'factory' : 'handshake'} className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="font-display text-3xl font-bold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                        {current.country}
+                      </h3>
+                      <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-300">
+                        <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                        {current.city === current.country ? current.role : current.city}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="mt-6 border-t border-white/10 pt-5">
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="border-t border-white/10 pt-5 first:border-t-0 first:pt-0">
                   <p className="eyebrow mb-2.5 text-slate-500">{t.about.bridgeRoleLabel}</p>
                   <p className="text-[0.82rem] leading-relaxed text-slate-300">{current.detail}</p>
                 </div>
@@ -259,6 +262,7 @@ export function TechnologyBridge() {
                       </span>
                     ))}
                   </div>
+                </div>
                 </div>
               </motion.div>
             </div>

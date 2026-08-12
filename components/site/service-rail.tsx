@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLang } from '@/components/providers/language-provider';
@@ -29,8 +31,22 @@ import { cn } from '@/lib/utils';
 /** Share of the rail the hovered panel should occupy. */
 const HOVER_SHARE = 0.3;
 
+/** Rotating backdrops behind the resting strip. */
+const BACKDROPS = ['services-1', 'services-2', 'services-3', 'services-4'] as const;
+const ROTATE_MS = 5000;
+
 export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = {}) {
   const { t } = useLang();
+  const reduce = useReducedMotion();
+  const [frame, setFrame] = useState(0);
+
+  /* One backdrop every five seconds. Held still under reduced-motion, where a
+     cross-fade on a loop is exactly the kind of thing the preference is for. */
+  useEffect(() => {
+    if (reduce) return;
+    const id = window.setInterval(() => setFrame((i) => (i + 1) % BACKDROPS.length), ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, [reduce]);
 
   const panels = t.capabilities.items;
   if (panels.length === 0) return null;
@@ -62,17 +78,28 @@ export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = 
           >
             {/* One photograph across the whole strip. The panels sit over it, so
                 at rest the row is a single scene rather than eight tiles. */}
-            <Image
-              src="/brand/services-backdrop.webp"
-              alt=""
-              fill
-              sizes="100vw"
-              /* Eager, not lazy. This is the resting state of the whole strip —
-                 if it arrives late the section renders as eight empty navy
-                 columns, which is exactly what it looks like when broken. */
-              loading="eager"
-              className="pointer-events-none absolute inset-0 object-cover"
-            />
+            {/* All frames are mounted and cross-faded by opacity rather than
+                swapped by src. Swapping the source would show a blank frame on
+                every rotation until the next file decodes; stacked, the outgoing
+                image is still painted underneath while the incoming one arrives.
+
+                Eager, not lazy: this is the resting state of the whole strip, so
+                a late arrival renders the section as eight empty navy columns —
+                indistinguishable from broken. */}
+            {BACKDROPS.map((name, i) => (
+              <Image
+                key={name}
+                src={`/brand/${name}.webp`}
+                alt=""
+                fill
+                sizes="100vw"
+                loading="eager"
+                className={cn(
+                  'pointer-events-none absolute inset-0 object-cover transition-opacity duration-1000 ease-in-out',
+                  i === frame ? 'opacity-100' : 'opacity-0',
+                )}
+              />
+            ))}
 
             {panels.map((c) => (
               <Link
