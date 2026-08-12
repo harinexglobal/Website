@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
-import { PageHero } from '@/components/site/page-hero';
 import { AboutIntro, WhyUsGrid } from '@/components/site/about-intro';
 import { TechnologyBridge } from '@/components/site/technology-bridge';
 import { GlobalNetwork } from '@/components/site/global-network';
@@ -17,16 +16,11 @@ export function AboutContent() {
 
   return (
     <>
-      <PageHero
-        crumb={t.nav.about}
-        eyebrow={t.about.eyebrow}
-        title={t.about.heading}
-        lead={t.about.lead}
-        image="about"
-        video="about"
-        imagePosition="center 35%"
-      />
-      <AboutIntro />
+      {/* No page hero. It carried the same eyebrow, heading and lead as the
+          section below it, so the page opened by saying everything twice — and
+          a still photograph directly above a film of the same subject made the
+          repetition louder. The film section is the hero now. */}
+      <AboutIntro video="about" crumb={t.nav.about} />
       <TechnologyBridge />
       <WhyUsGrid />
       <GlobalNetwork />
