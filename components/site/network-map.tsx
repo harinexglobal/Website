@@ -129,7 +129,35 @@ export function NetworkMap() {
               fill="url(#edgeFade)"
             />
           </mask>
+
+          {/* Ambient light. The reference leans on a coloured bloom behind the
+              continents rather than on the continents themselves — it is what
+              stops a flat grey landmass reading as a diagram. Brand emerald and
+              saffron rather than the reference's purple. */}
+          <radialGradient id="ambientA">
+            <stop stopColor="#10B981" stopOpacity="0.20" />
+            <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="ambientB">
+            <stop stopColor="#E8821E" stopOpacity="0.14" />
+            <stop offset="1" stopColor="#E8821E" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="hubBloom">
+            <stop stopColor="#FFFFFF" stopOpacity="0.85" />
+            <stop offset="0.25" stopColor="#6EE7B7" stopOpacity="0.45" />
+            <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+          </radialGradient>
         </defs>
+
+        {/* Bloom behind everything, hub-centred so the eye starts at Taiwan. */}
+        <ellipse cx={hub.x} cy={hub.y} rx="300" ry="200" fill="url(#ambientA)" />
+        <ellipse
+          cx={WORLD_VIEWBOX.width * 0.22}
+          cy={WORLD_VIEWBOX.height * 0.42}
+          rx="240"
+          ry="160"
+          fill="url(#ambientB)"
+        />
 
         {/* Land. Low contrast on purpose — it orients the eye, the routes are
             the subject. */}
@@ -203,7 +231,9 @@ export function NetworkMap() {
           </g>
         ))}
 
-        {/* Market nodes */}
+        {/* Market nodes — a pin over a dark label chip, as in the reference.
+            The chip is what makes a label readable over coastline; a stroked
+            text outline only ever half works. */}
         {markets.map((m) => (
           <g key={`node-${m.id}`}>
             <circle cx={m.p.x} cy={m.p.y} r="5" fill={m.core ? '#10B981' : '#E8821E'} />
@@ -235,22 +265,46 @@ export function NetworkMap() {
                 />
               )}
             </circle>
-            <text
-              x={m.p.x + m.lab.dx}
-              y={m.p.y + m.lab.dy}
-              textAnchor={m.lab.anchor}
-              style={{ fontSize: 12, fontWeight: 600, paintOrder: 'stroke' }}
-              stroke="#0A192F"
-              strokeWidth="3.5"
-              strokeOpacity="0.65"
-              className="fill-white"
-            >
-              {label(m.city, m.country)}
-            </text>
+            {(() => {
+              const text = label(m.city, m.country);
+              /* SVG cannot measure text, so the chip is sized from the string.
+                 6.1px per character at 11px semibold is close enough that the
+                 padding absorbs the error. */
+              const w = text.length * 6.1 + 18;
+              const x = m.p.x + m.lab.dx;
+              const y = m.p.y + m.lab.dy;
+              const rx = m.lab.anchor === 'end' ? x - w : m.lab.anchor === 'middle' ? x - w / 2 : x;
+              return (
+                <g>
+                  <rect
+                    x={rx}
+                    y={y - 11}
+                    width={w}
+                    height={17}
+                    rx="4"
+                    fill="#04101F"
+                    fillOpacity="0.82"
+                    stroke="#FFFFFF"
+                    strokeOpacity="0.14"
+                    strokeWidth="0.6"
+                  />
+                  <text
+                    x={rx + w / 2}
+                    y={y + 1}
+                    textAnchor="middle"
+                    style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.04em' }}
+                    className="fill-white"
+                  >
+                    {text}
+                  </text>
+                </g>
+              );
+            })()}
           </g>
         ))}
 
         {/* Hub — drawn last so it sits above every route */}
+        <circle cx={hub.x} cy={hub.y} r="70" fill="url(#hubBloom)" />
         <circle cx={hub.x} cy={hub.y} r="40" fill="url(#hubGlow)" />
         <circle cx={hub.x} cy={hub.y} r="10" fill="none" stroke="#10B981" strokeOpacity="0.55" strokeWidth="1.5">
           {!reduce && <animate attributeName="r" values="10;20;10" dur="3.2s" repeatCount="indefinite" />}
