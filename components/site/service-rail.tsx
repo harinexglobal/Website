@@ -67,7 +67,11 @@ export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = 
               alt=""
               fill
               sizes="100vw"
-              className="pointer-events-none absolute inset-0 -z-10 object-cover"
+              /* Eager, not lazy. This is the resting state of the whole strip —
+                 if it arrives late the section renders as eight empty navy
+                 columns, which is exactly what it looks like when broken. */
+              loading="eager"
+              className="pointer-events-none absolute inset-0 object-cover"
             />
 
             {panels.map((c) => (
@@ -83,23 +87,23 @@ export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = 
                   width={900}
                   height={1125}
                   sizes="(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"
-                  className="absolute inset-0 -z-10 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100"
+                  className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100"
                 />
 
                 {/* Scrim: heavy at rest so titles hold contrast over the shared
                     photograph, lifting on hover to let the panel's own show. */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 -z-10 bg-navy-950/70 transition-colors duration-500 group-hover:bg-navy-950/35 group-focus-visible:bg-navy-950/35"
+                  className="absolute inset-0 bg-navy-950/70 transition-colors duration-500 group-hover:bg-navy-950/35 group-focus-visible:bg-navy-950/35"
                 />
 
-                <h3 className="font-display text-sm font-bold leading-snug tracking-tight text-white [text-shadow:0_2px_6px_rgba(0,0,0,0.75)] sm:text-[0.95rem]">
+                <h3 className="relative font-display text-sm font-bold leading-snug tracking-tight text-white [text-shadow:0_2px_6px_rgba(0,0,0,0.75)] sm:text-[0.95rem]">
                   {c.short}
                 </h3>
 
                 <span
                   aria-hidden="true"
-                  className="mt-3 block h-0.5 w-8 bg-bridge-grad opacity-70 transition-all duration-500 group-hover:w-16 group-hover:opacity-100 group-focus-visible:w-16"
+                  className="relative mt-3 block h-0.5 w-8 bg-bridge-grad opacity-70 transition-all duration-500 group-hover:w-16 group-hover:opacity-100 group-focus-visible:w-16"
                 />
               </Link>
             ))}
