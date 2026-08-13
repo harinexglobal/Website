@@ -23,7 +23,10 @@ export function IndustriesGrid({ showHeading = true }: { showHeading?: boolean }
         <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {t.industries.items.map((ind) => (
             <RevealItem key={ind.id}>
-              <article className="card-base card-hover group h-full">
+              {/* id is the anchor the What We Do menu jumps to. scroll-mt
+                  clears the fixed header, which would otherwise cover the
+                  card being jumped to. */}
+              <article id={ind.id} className="card-base card-hover group h-full scroll-mt-28">
                 {/* accent bar */}
                 <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 rounded-t-xl bg-bridge-grad transition-transform duration-500 group-hover:scale-x-100" />
 

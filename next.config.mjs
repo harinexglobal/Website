@@ -46,12 +46,9 @@ const nextConfig = {
         destination: '/where-we-work/collaborators',
         permanent: true,
       },
-
-      /* Contact and How We Help are not renames — they were merged. Contact is
-         now the form on Let's Connect, and How We Help is a section of What We
-         Do rather than a page. */
+      /* Contact is not a rename — it was merged. The form now lives on
+         Let's Connect with the enquiry type as a selector. */
       { source: '/contact', destination: '/lets-connect', permanent: true },
-      { source: '/how-we-help', destination: '/what-we-do', permanent: true },
     ];
   },
 

@@ -31,9 +31,11 @@ export function GlobalNetwork() {
             const isHq = loc.type === 'hq';
             return (
               <RevealItem key={loc.id}>
+                {/* id is the anchor the Where We Work menu jumps to. */}
                 <article
+                  id={loc.id}
                   className={cn(
-                    'group relative h-full overflow-hidden rounded-xl border p-6 transition-colors',
+                    'group relative h-full scroll-mt-28 overflow-hidden rounded-xl border p-6 transition-colors',
                     isHq
                       ? 'border-emerald-400/35 bg-emerald-400/[0.07]'
                       : 'border-white/10 bg-white/[0.04] hover:border-white/25 hover:bg-white/[0.07]',

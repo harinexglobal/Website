@@ -3,53 +3,56 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
+import { PageHero } from '@/components/site/page-hero';
+import { ProcessTimeline } from '@/components/site/process-timeline';
+import { CtaBand } from '@/components/site/cta-band';
 import { ContentIcon } from '@/components/ui/icon';
 import { Reveal } from '@/components/ui/reveal';
 import { ROUTES } from '@/lib/content';
 
 /**
- * How an engagement usually starts — three journeys into the same practices.
+ * How We Help — the route in, not a ninth service.
  *
- * This was a page of its own until the architecture brief cut the site to five
- * sections. It was never a ninth service, only a second way into the eight, so
- * it belongs inside What We Do rather than beside it. Folding it in also fixes
- * the failure mode it always had as a standalone page: two pages describing the
- * same work in different words, drifting apart with every edit.
+ * The risk with a page like this is that it becomes a second capabilities page
+ * written in different words, and the two drift apart. So each journey names the
+ * practices that actually do the work and links straight to them: the page is
+ * navigation, and the capabilities pages stay the single source of what the firm
+ * does.
  *
- * Each journey names the practices that do the work and links to them, so this
- * stays navigation and the practice pages remain the single source of truth.
+ * Ordered by how engagements actually arrive rather than by importance.
  */
-export function HelpJourneys() {
+export function HowWeHelpContent() {
   const { t } = useLang();
 
   const practice = (id: string) => t.capabilities.items.find((c) => c.id === id);
 
   return (
-    <section className="section bg-slate-50">
-      <div className="container">
-        <Reveal>
-          <p className="eyebrow text-saffron-600">{t.howWeHelp.eyebrow}</p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-navy-800 sm:text-4xl">
-            {t.howWeHelp.heading}
-          </h2>
-          <p className="copy mt-4 max-w-2xl">{t.howWeHelp.lead}</p>
-        </Reveal>
+    <>
+      <PageHero
+        crumb={t.howWeHelp.eyebrow}
+        eyebrow={t.howWeHelp.eyebrow}
+        title={t.howWeHelp.heading}
+        lead={t.howWeHelp.lead}
+        image="bridge"
+        imagePosition="center 40%"
+      />
 
-        <div className="mt-10 space-y-6">
+      <section className="section bg-white">
+        <div className="container space-y-6">
           {t.howWeHelp.items.map((item, i) => (
             <Reveal key={item.id} delay={i * 0.08} as="article">
               <div className="grid gap-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card lg:grid-cols-12">
                 <div className="relative bg-navy-800 p-6 sm:p-8 lg:col-span-4">
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-0 top-0 h-0.5 bg-bridge-grad lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-0.5"
+                    className="absolute inset-x-0 top-0 h-0.5 bg-bridge-grad lg:inset-y-0 lg:right-0 lg:left-auto lg:h-auto lg:w-0.5"
                   />
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-emerald-300 ring-1 ring-emerald-400/25">
                     <ContentIcon name={item.icon} className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-2xl font-bold tracking-tight text-white">
+                  <h2 className="mt-5 font-display text-2xl font-bold tracking-tight text-white">
                     {item.title}
-                  </h3>
+                  </h2>
                   <p className="mt-4 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t.howWeHelp.problemLabel}
                   </p>
@@ -86,7 +89,10 @@ export function HelpJourneys() {
             </Reveal>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      <ProcessTimeline />
+      <CtaBand />
+    </>
   );
 }

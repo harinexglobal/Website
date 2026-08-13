@@ -11,6 +11,7 @@ import { ButtonLink } from '@/components/ui/button';
 import { ContentIcon } from '@/components/ui/icon';
 import { SocialLinks } from '@/components/ui/social-links';
 import { ROUTES } from '@/lib/content';
+import { insightsDictionaries } from '@/lib/insights';
 import { cn } from '@/lib/utils';
 
 /**
@@ -37,6 +38,9 @@ type MenuColumn = { heading: string; items: MenuItem[]; wide?: boolean };
 
 export function Navbar() {
   const { t, lang, setLang } = useLang();
+  /* Articles are keyed by full slug here, not by the short ids in the
+     content dictionary. Linking to the latter produced six 404s. */
+  const articles = insightsDictionaries[lang].articles;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -118,6 +122,13 @@ export function Navbar() {
               icon: i.icon,
             })),
           },
+          {
+            heading: n.overviewLabel,
+            items: [
+              { href: ROUTES.whatWeDo, label: n.allPractices, icon: 'layers' },
+              { href: ROUTES.howWeHelp, label: n.howWeHelp, icon: 'route' },
+            ],
+          },
         ] as MenuColumn[],
       },
       {
@@ -153,7 +164,7 @@ export function Navbar() {
           {
             heading: n.topicsLabel,
             wide: true,
-            items: t.insights.items.map((a) => ({
+            items: articles.map((a) => ({
               href: `${ROUTES.insights}/${a.id}`,
               label: a.title,
             })),
@@ -181,7 +192,7 @@ export function Navbar() {
         ] as MenuColumn[],
       },
     ];
-  }, [t]);
+  }, [t, articles]);
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   const open = sections.find((s) => s.id === openId) ?? null;

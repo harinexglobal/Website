@@ -77,6 +77,8 @@ const en = {
     approach: 'Our Approach',
     whyHarinex: 'Why HariNex',
     industries: 'Industries',
+    howWeHelp: 'How We Help',
+    allPractices: 'All practices',
     collaborators: 'Collaborators',
     allInsights: 'All insights',
   },
@@ -1133,6 +1135,8 @@ const zh: Dict = {
     approach: '服務方式',
     whyHarinex: '選擇瀚瑞的理由',
     industries: '產業領域',
+    howWeHelp: '合作方式',
+    allPractices: '全部服務',
     collaborators: '合作機構',
     allInsights: '全部文章',
   },
@@ -2112,6 +2116,7 @@ export const ROUTES = {
   team: '/who-we-are/team',
 
   whatWeDo: '/what-we-do',
+  howWeHelp: '/how-we-help',
   industries: '/what-we-do/industries',
 
   whereWeWork: '/where-we-work',

@@ -4,7 +4,6 @@ import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { ServiceRail } from '@/components/site/service-rail';
 import { CapabilityCards } from '@/components/site/capability-cards';
-import { HelpJourneys } from '@/components/site/help-journeys';
 import { TranslationModule } from '@/components/site/translation-module';
 import { ProcessTimeline } from '@/components/site/process-timeline';
 import { Faq } from '@/components/site/faq';
@@ -27,7 +26,6 @@ export function CapabilitiesContent() {
       />
       <ServiceRail showHeading={false} />
       <CapabilityCards showHeading={false} />
-      <HelpJourneys />
       <TranslationModule />
       <ProcessTimeline />
       <Faq />

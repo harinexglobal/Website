@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/who-we-are/team',
     '/what-we-do',
     '/what-we-do/industries',
+    '/how-we-help',
     '/where-we-work',
     '/where-we-work/collaborators',
     '/insights',
