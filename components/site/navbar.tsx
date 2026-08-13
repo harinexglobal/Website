@@ -271,7 +271,7 @@ export function Navbar() {
                 size="sm"
                 className="hidden whitespace-nowrap sm:inline-flex"
               >
-                {t.hero.primaryCta}
+                {t.common.requestConsultation}
               </ButtonLink>
 
               <button
@@ -442,7 +442,7 @@ export function Navbar() {
               })}
 
               <ButtonLink href={ROUTES.letsConnect} size="lg" className="mt-6 w-full">
-                {t.hero.primaryCta}
+                {t.common.requestConsultation}
               </ButtonLink>
 
               <SocialLinks size="md" className="mt-6 justify-center pb-4" />
