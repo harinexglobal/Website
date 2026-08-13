@@ -129,7 +129,7 @@ company mail, in `CONTACT.email` — everything else follows from there.
 
 | Field | Value |
 |---|---|
-| Email | `harinex.india@gmail.com` |
+| Email | `hello@harinexglobal.com` |
 | Mobile | `+886 974 025 045` |
 | WhatsApp | same number — `https://wa.me/886974025045` |
 | Head office | 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004, Taiwan (R.O.C.) |
@@ -177,11 +177,11 @@ clone does not need to run them.
 |---|---|
 | `logo-mark.png` | navbar, footer |
 | `hero.webp` | home hero |
-| `about.webp` | About page hero |
-| `capabilities.webp` | Capabilities page hero |
+| `about.webp` | Who We Are page hero |
+| `capabilities.webp` | What We Do page hero |
 | `industries.webp` | Industries page hero |
-| `bridge.webp` | Why Taiwan & India hero, Industries banner |
-| `india-growth.webp` | home + bridge page banners |
+| `bridge.webp` | Where We Work hero, Industries banner |
+| `india-growth.webp` | home + Where We Work banners |
 
 ---
 
@@ -359,11 +359,12 @@ These are deliberate and need a decision from the business, not a code change:
 
 1. **Insight articles** are titles and excerpts only; each card shows
    "Article coming soon". Article bodies need writing.
-3. **LinkedIn URL** in `CONTACT.linkedin` is `#` — set the real profile.
-4. ~~Privacy Policy / Terms / Disclaimer~~ — done, see above. Still needs a lawyer's
-   them. They need real content before launch, particularly for a firm handling
-   client technical documents.
-5. **Chennai office** is described as "opening soon" — update when it is real.
+2. **LinkedIn URL** in `CONTACT.linkedin` is `#` — set the real profile.
+3. **Privacy Policy / Terms / Disclaimer** are written and live, but have not been
+   reviewed by a qualified Taiwanese lawyer. They make binding statements about
+   data handling and jurisdiction for a firm that receives client technical
+   documents, so a review is a real obligation rather than a formality.
+4. **Chennai office** is described as "opening soon" — update when it is real.
 6. **The logo artwork still spells the old name.** `Images/logo.png` (and the
    `public/brand/logo-full.png` generated from it) contain a raster wordmark reading
    "HariNext Global". The site is unaffected — the navbar and footer use
@@ -383,6 +384,6 @@ made these two calls. Both are one-line reversals:
 - **The canonical URL defaults to `harinexglobal.com`**, matching the new spelling.
   This is still unverified — it came from the design mockup. Set `NEXT_PUBLIC_SITE_URL`
   to whatever domain is actually registered. (The contact *email* is now settled:
-  `harinex.india@gmail.com`, confirmed by the company.)
+  `hello@harinexglobal.com` on Zoho Mail, live since 2026-08-13.)
 - The Chinese registered name **瀚瑞國際股份有限公司 is unchanged** — the Latin
   spelling does not affect it.
