@@ -67,7 +67,6 @@ const en = {
 
     overviewLabel: 'Overview',
     practicesLabel: 'Practices',
-    sectorsLabel: 'Sectors',
     marketsLabel: 'Markets',
     topicsLabel: 'Topics',
     enquiriesLabel: 'Enquiries',
@@ -79,6 +78,7 @@ const en = {
     industries: 'Industries',
     howWeHelp: 'How We Help',
     allPractices: 'All practices',
+    sectorsWeWorkIn: 'Sectors we work in',
     collaborators: 'Collaborators',
     allInsights: 'All insights',
   },
@@ -1131,7 +1131,6 @@ const zh: Dict = {
 
     overviewLabel: '總覽',
     practicesLabel: '專業服務',
-    sectorsLabel: '產業領域',
     marketsLabel: '市場據點',
     topicsLabel: '主題',
     enquiriesLabel: '洽詢類型',
@@ -1143,6 +1142,7 @@ const zh: Dict = {
     industries: '產業領域',
     howWeHelp: '合作方式',
     allPractices: '全部服務',
+    sectorsWeWorkIn: '我們服務的產業',
     collaborators: '合作機構',
     allInsights: '全部文章',
   },

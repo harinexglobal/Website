@@ -120,18 +120,15 @@ export function Navbar() {
               icon: c.icon,
             })),
           },
-          {
-            heading: n.sectorsLabel,
-            items: t.industries.items.map((i) => ({
-              href: `${ROUTES.industries}#${i.id}`,
-              label: i.title,
-              icon: i.icon,
-            })),
-          },
+          /* The seven sectors used to be listed here beside the eight
+             practices. Fifteen links in one panel is a menu people scan
+             rather than read, and it wrapped onto a third row. Sectors is
+             one link to its own page, which lists them properly. */
           {
             heading: n.overviewLabel,
             items: [
               { href: ROUTES.whatWeDo, label: n.allPractices, icon: 'layers' },
+              { href: ROUTES.industries, label: n.sectorsWeWorkIn, icon: 'factory' },
               { href: ROUTES.howWeHelp, label: n.howWeHelp, icon: 'route' },
             ],
           },
