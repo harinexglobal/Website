@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Info, Wrench } from 'lucide-react';
+import { ArrowRight, Info } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { PageHero } from '@/components/site/page-hero';
 import { CtaBand } from '@/components/site/cta-band';
@@ -80,61 +80,7 @@ export function CollaboratorsContent() {
             ))}
           </div>
 
-          {/* Delivery partners are kept apart from the client engagements above.
-              Both are "organisations we work with", but one is work we were
-              hired to do and the other is capability we do not have — filing a
-              subcontractor among the clients would read as a client, which is
-              the one thing this page must not get wrong. */}
-          <Reveal delay={0.2} className="mt-16">
-            <h2 className="font-display text-2xl font-bold tracking-tight text-navy-800">
-              {t.collaborators.partnersHeading}
-            </h2>
-            <p className="copy mt-3 max-w-2xl">{t.collaborators.partnersLead}</p>
-          </Reveal>
-
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            {t.collaborators.partners.map((p, i) => (
-              <Reveal key={p.id} delay={0.25 + i * 0.1} as="article">
-                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 transition-all duration-300 hover:border-slate-300 hover:bg-white hover:shadow-card sm:p-8">
-                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-0.5 bg-saffron-500" />
-
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-saffron-500/10 px-3 py-1.5 text-xs font-semibold text-saffron-700">
-                      <Wrench className="h-3 w-3" aria-hidden="true" />
-                      {t.collaborators.partnersHeading}
-                    </span>
-                    <span className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600">
-                      {p.country}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-5 font-display text-xl font-bold leading-snug tracking-tight text-navy-800">
-                    {p.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-slate-500">{p.sector}</p>
-
-                  <p className="mt-5 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-                    {t.collaborators.partnersProvidesLabel}
-                  </p>
-                  <ul className="mt-2.5 space-y-1.5">
-                    {p.provides.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-[0.88rem] text-slate-700">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-saffron-500" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="mt-5 text-2xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-                    {t.collaborators.partnersModelLabel}
-                  </p>
-                  <p className="copy mt-2 flex-1">{p.model}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={0.3}>
+          <Reveal delay={0.25}>
             <p className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-5 text-[0.88rem] leading-relaxed text-slate-600">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" strokeWidth={1.75} />
               {t.collaborators.note}

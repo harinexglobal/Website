@@ -305,7 +305,7 @@ const en = {
         summary:
           'Commissioning the control system once the equipment lands — SCADA, DCS and PLC engineering, delivered with our automation partner in India.',
         description:
-          'Sourcing a machine and running it are two different problems, and cross-border equipment projects usually stall on the second. This practice covers the control system: configuring, programming and commissioning it so imported plant works on the floor it was bought for. The engineering is performed by RAA Tech Engineering Pvt Ltd, our automation partner in India. We scope the requirement, carry the technical brief across languages, and either introduce them to the client directly or coordinate their delivery alongside the sourcing and regulatory work. Their engineers are theirs, and we say so rather than presenting them as ours.',
+          'Sourcing a machine and running it are two different problems, and cross-border equipment projects usually stall on the second. This practice covers the control system: configuring, programming and commissioning it so imported plant works on the floor it was bought for. The engineering is performed by our automation partner in India rather than in-house. We scope the requirement, carry the technical brief across languages, and either introduce them to the client directly or coordinate their delivery alongside the sourcing and regulatory work. Their engineers are theirs, and we say so rather than presenting them as ours.',
         deliverables: [
           'SCADA & DCS configuration and commissioning',
           'PLC programming and commissioning',
@@ -750,26 +750,6 @@ const en = {
     workLabel: 'Engagement',
     statusLabel: 'In progress',
     note: 'We do not list outcomes until there are outcomes to list, and we do not name an organisation without asking first.',
-    partnersHeading: 'Delivery partners',
-    partnersLead:
-      'Engineering capability we do not hold in-house. Named here because the work is theirs rather than ours: where a project needs it we either introduce the client directly, or hold the relationship and coordinate their delivery alongside our own.',
-    partnersProvidesLabel: 'Provides',
-    partnersModelLabel: 'How we work together',
-    partners: [
-      {
-        id: 'raa-tech',
-        name: 'RAA Tech Engineering Pvt Ltd',
-        country: 'India',
-        sector: 'Industrial automation & control systems',
-        provides: [
-          'SCADA & DCS configuration and commissioning',
-          'PLC programming and commissioning',
-          'Industrial networking & protocol integration',
-        ],
-        model:
-          'Closes the gap between sourcing equipment and running it. Where a client buys a control system abroad and needs it commissioned in India, RAA Tech performs the engineering; depending on the project we either introduce them to the client directly or coordinate their work alongside our sourcing, translation and regulatory support.',
-      },
-    ],
     items: [
       {
         id: 'algafit-nutrition',
@@ -1354,7 +1334,7 @@ const zh: Dict = {
         summary:
           '設備到廠之後的控制系統整合 — SCADA、DCS 與 PLC 工程，由本公司於印度的自動化夥伴執行。',
         description:
-          '採購設備與讓設備順利運轉是兩個不同的問題，跨境設備專案通常卡在後者。本項服務涵蓋控制系統：完成組態、程式撰寫與試車，讓進口設備能在目標廠區實際運作。工程作業由本公司印度自動化夥伴 RAA Tech Engineering Pvt Ltd 執行。本公司負責釐清需求、跨語言傳遞技術規格，並視專案需要直接為客戶引薦，或協調其交付並搭配採購與法規作業。對方的工程團隊屬於對方，本公司據實說明，不會將其呈現為本公司人員。',
+          '採購設備與讓設備順利運轉是兩個不同的問題，跨境設備專案通常卡在後者。本項服務涵蓋控制系統：完成組態、程式撰寫與試車，讓進口設備能在目標廠區實際運作。工程作業由本公司印度自動化夥伴執行，而非由本公司自行承作。本公司負責釐清需求、跨語言傳遞技術規格，並視專案需要直接為客戶引薦，或協調其交付並搭配採購與法規作業。對方的工程團隊屬於對方，本公司據實說明，不會將其呈現為本公司人員。',
         deliverables: [
           'SCADA 與 DCS 組態及試車',
           'PLC 程式撰寫及試車',
@@ -1762,22 +1742,6 @@ const zh: Dict = {
     workLabel: '委任內容',
     statusLabel: '進行中',
     note: '在尚未產生成果之前，我們不會列出成果；未事先徵詢同意，我們也不會具名任何一家企業。',
-    partnersHeading: '交付夥伴',
-    partnersLead:
-      '本公司不自行具備的工程能力。之所以在此具名，是因為該項工作由對方執行而非本公司：視專案需要，我們或直接為客戶引薦，或由本公司維繫客戶關係並協調其交付。',
-    partnersProvidesLabel: '提供項目',
-    partnersModelLabel: '合作方式',
-    partners: [
-      {
-        id: 'raa-tech',
-        name: 'RAA Tech Engineering Pvt Ltd',
-        country: '印度',
-        sector: '工業自動化與控制系統',
-        provides: ['SCADA 與 DCS 組態及試車', 'PLC 程式撰寫及試車', '工業網路與通訊協定整合'],
-        model:
-          '銜接「採購設備」與「設備上線」之間的落差。當客戶於海外採購控制系統並需在印度完成試車時，工程作業由 RAA Tech 執行；視專案需要，我們或直接為客戶引薦，或由本公司協調其作業，並搭配本公司的採購、翻譯與法規支援。',
-      },
-    ],
     items: [
       {
         id: 'algafit-nutrition',
