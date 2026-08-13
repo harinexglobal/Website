@@ -81,6 +81,10 @@ const en = {
     sectorsWeWorkIn: 'Sectors we work in',
     collaborators: 'Collaborators',
     allInsights: 'All insights',
+    search: 'Search',
+    searchPlaceholder: 'Search practices, sectors, markets and insights',
+    searchEmpty: 'Nothing matched that. Try a different word.',
+    searchHint: 'Press Esc to close'
   },
 
   hero: {
@@ -1159,6 +1163,10 @@ const zh: Dict = {
     sectorsWeWorkIn: '我們服務的產業',
     collaborators: '合作機構',
     allInsights: '全部文章',
+    search: '搜尋',
+    searchPlaceholder: '搜尋服務、產業、市場與洞察文章',
+    searchEmpty: '找不到相符的內容，請換個關鍵字。',
+    searchHint: '按 Esc 關閉'
   },
 
   hero: {

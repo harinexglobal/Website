@@ -10,6 +10,7 @@ import { useLang } from '@/components/providers/language-provider';
 import { ButtonLink } from '@/components/ui/button';
 import { ContentIcon } from '@/components/ui/icon';
 import { SocialLinks } from '@/components/ui/social-links';
+import { SiteSearch } from '@/components/site/site-search';
 import { ROUTES } from '@/lib/content';
 import { insightsDictionaries } from '@/lib/insights';
 import { cn } from '@/lib/utils';
@@ -245,6 +246,8 @@ export function Navbar() {
             </nav>
 
             <div className="flex shrink-0 items-center gap-2">
+              <SiteSearch />
+
               <div className="hidden xl:block">
                 <SocialLinks size="sm" />
               </div>
