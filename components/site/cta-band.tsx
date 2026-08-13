@@ -1,8 +1,9 @@
 'use client';
 
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { ButtonLink } from '@/components/ui/button';
+import { EmailButton } from '@/components/ui/email-button';
 import { Reveal } from '@/components/ui/reveal';
 import { CONTACT, ROUTES } from '@/lib/content';
 
@@ -25,10 +26,7 @@ export function CtaBand() {
               {t.cta.primary}
               <ArrowRight className="h-4 w-4" />
             </ButtonLink>
-            <ButtonLink href={`mailto:${CONTACT.email}`} variant="ghostLight" size="lg">
-              <Mail className="h-4 w-4" />
-              {t.cta.secondary}
-            </ButtonLink>
+            <EmailButton email={CONTACT.email} copiedLabel={t.cta.copied} />
           </div>
         </Reveal>
       </div>

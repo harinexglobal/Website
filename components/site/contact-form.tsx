@@ -298,8 +298,7 @@ export function ContactForm({ enquiry }: { enquiry?: InquiryInput['enquiry'] } =
               {!delivered && (
                 <div className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-3.5">
                   <p className="text-xs leading-relaxed text-amber-900">
-                    Email delivery is not yet configured on this deployment. To be certain your
-                    inquiry reaches us, please also send it directly.
+                    {t.contact.form.undeliveredNote}
                   </p>
                   <ButtonLink
                     href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Project inquiry — HariNex Global')}`}

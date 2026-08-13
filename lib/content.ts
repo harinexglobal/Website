@@ -906,6 +906,11 @@ const en = {
       successBody:
         'Thank you — your inquiry has been prepared. We aim to respond to every qualified inquiry within two working days.',
       successClose: 'Close',
+      /* Shown only when the API reports delivered:false. It used to say
+         delivery was "not yet configured", which stopped being true once
+         SMTP was wired up — a message that is false is worse than none. */
+      undeliveredNote:
+        'We could not confirm your message reached our inbox just now. Your details are safe, but please also send them directly so nothing is lost:',
       optional: 'optional',
       required: 'required',
     },
@@ -1058,6 +1063,7 @@ const en = {
     body: 'A first conversation costs nothing and usually clarifies more than a month of email.',
     primary: "Let's Connect",
     secondary: 'Email us directly',
+    copied: 'Address copied',
   },
 } as const satisfies Record<string, unknown>;
 
@@ -1911,6 +1917,8 @@ const zh: Dict = {
       successTitle: '已收到您的諮詢',
       successBody: '感謝您，您的諮詢內容已備妥。我們力求於兩個工作天內回覆每一則有效諮詢。',
       successClose: '關閉',
+      undeliveredNote:
+        '我們目前無法確認您的訊息已送達本公司信箱。您填寫的內容並未遺失，但仍請您直接來信，以免遺漏：',
       optional: '選填',
       required: '必填',
     },
@@ -2060,6 +2068,7 @@ const zh: Dict = {
     body: '第一次對話不需任何費用，而且通常比一個月的往返郵件更能釐清方向。',
     primary: '與我們聯繫',
     secondary: '直接寫信給我們',
+    copied: '地址已複製',
   },
 };
 
