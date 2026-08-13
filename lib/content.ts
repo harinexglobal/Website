@@ -976,8 +976,16 @@ const en = {
 
   footer: {
     blurb: 'Connecting Taiwan with the world through technology, innovation and trusted partnerships.',
-    capabilitiesHeading: 'Capabilities',
-    companyHeading: 'Company',
+    /* The footer opens with an invitation rather than a sitemap. The
+       four links under it are the things people actually come to do. */
+    connectHeading: "Let's connect",
+    getInTouch: 'Get in touch',
+    viewLocations: 'View our locations',
+    learnAbout: 'Learn about HariNex',
+    meetTeam: 'Meet the team',
+    followUs: 'Follow us',
+    capabilitiesHeading: 'What we do',
+    companyHeading: 'Who we are',
     contactHeading: 'Contact',
     legalHeading: 'Legal',
     privacy: 'Privacy Policy',
@@ -1981,8 +1989,14 @@ const zh: Dict = {
 
   footer: {
     blurb: '以技術、創新與值得信賴的夥伴關係，連結台灣與世界。',
-    capabilitiesHeading: '服務能力',
-    companyHeading: '公司',
+    connectHeading: '與我們聯繫',
+    getInTouch: '聯絡我們',
+    viewLocations: '查看據點',
+    learnAbout: '認識瀚瑞國際',
+    meetTeam: '認識團隊',
+    followUs: '追蹤我們',
+    capabilitiesHeading: '服務範疇',
+    companyHeading: '關於我們',
     contactHeading: '聯絡方式',
     legalHeading: '法律資訊',
     privacy: '隱私權政策',
