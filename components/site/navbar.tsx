@@ -15,13 +15,19 @@ import { insightsDictionaries } from '@/lib/insights';
 import { cn } from '@/lib/utils';
 
 /**
- * Primary navigation — five sections, each with a mega menu.
+ * Primary navigation — four sections, each with a mega menu.
  *
  * The site previously carried seven flat links (About, Our Team, How We Help,
  * Capabilities, Industries, Global Markets, Insights). That is the shape the
  * architecture brief singled out as reading like a traditional consultancy
  * rather than a global business, so everything now hangs off five headings:
- * Who We Are, What We Do, Where We Work, Insights, Let's Connect.
+ * Who We Are, What We Do, Where We Work, Insights.
+ *
+ * Let's Connect is the fifth section of the architecture brief but it is not
+ * a nav item: the button to its right already says "Let's Connect", and the
+ * two sat adjacent in the bar saying the same word twice. The button is the
+ * route to it, and the three enquiry pathways are on the page itself, so
+ * nothing is lost by not repeating them in a menu.
  *
  * The panel is anchored to the header rather than to the link that opened it.
  * A menu carrying eight practices beside seven sectors will not fit under its
@@ -172,22 +178,6 @@ export function Navbar() {
           {
             heading: n.overviewLabel,
             items: [{ href: ROUTES.insights, label: n.allInsights, icon: 'book' }],
-          },
-        ] as MenuColumn[],
-      },
-      {
-        id: 'lets-connect',
-        href: ROUTES.letsConnect,
-        label: n.letsConnect,
-        intro: n.letsConnectIntro,
-        columns: [
-          {
-            heading: n.enquiriesLabel,
-            items: t.letsConnect.items.map((e) => ({
-              href: `${ROUTES.letsConnect}?enquiry=${e.id}`,
-              label: e.title,
-              icon: e.icon,
-            })),
           },
         ] as MenuColumn[],
       },
