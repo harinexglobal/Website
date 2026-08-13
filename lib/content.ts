@@ -2139,10 +2139,14 @@ export const SOCIAL = [
   },
   { id: 'x', label: 'X', href: 'https://x.com/HariNexGlobal' },
   { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/harinexglobal/' },
-  // Public company page. The admin dashboard URL supplied
-  // (/company/143089961/admin/dashboard/) is not usable here — it sends anyone
-  // who is not an administrator of the page to a login wall.
-  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/143089961/' },
+  // Public company page, vanity slug rather than the numeric id (/company/143089961/)
+  // — same destination, but readable to anyone who hovers the link.
+  //
+  // Two URLs the page owner sees must not be used here. The admin dashboard
+  // (/admin/dashboard/) sends non-administrators to a login wall, and
+  // ?viewAsMember=true forces LinkedIn's own preview mode, which is a tool for
+  // the owner rather than a link for visitors.
+  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/harinex-global/' },
 ] as const;
 
 export const ROUTES = {
