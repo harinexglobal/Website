@@ -21,11 +21,16 @@ export function InsightDetail({ slug }: { slug: string }) {
 
   return (
     <>
+      {/* Each article has its own photograph in public/brand/insights,
+          generated alongside the cards on the index but never used here —
+          the detail pages opened on plain navy. */}
       <PageHero
         crumb={article.title}
         eyebrow={article.category}
         title={article.title}
         lead={article.excerpt}
+        image={`insights/${article.id}`}
+        imagePosition="center 40%"
       />
 
       <section className="section">
