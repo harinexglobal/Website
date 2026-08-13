@@ -44,9 +44,17 @@ const REGION_LABEL: Record<string, string> = {
   other: 'Other',
 };
 
+/* Prefixed into the subject so the enquiry type is visible in the inbox list
+   without opening the message. */
+const ENQUIRY_LABEL: Record<string, string> = {
+  business: 'Business enquiry',
+  partner: 'Partner enquiry',
+  investor: 'Investor enquiry',
+};
+
 function subjectFor(p: Payload): string {
   return p.kind === 'full'
-    ? `Website inquiry — ${p.company} (${p.name})`
+    ? `${ENQUIRY_LABEL[p.enquiry ?? ''] ?? 'Website inquiry'} — ${p.company} (${p.name})`
     : `Website inquiry — ${p.name}${p.source ? ` (${p.source})` : ''}`;
 }
 
@@ -58,6 +66,7 @@ function rowsFor(p: Payload): [string, string][] {
 
   if (p.kind === 'full') {
     if (p.phone) rows.push(['Phone', p.phone]);
+    if (p.enquiry) rows.push(['Enquiry type', ENQUIRY_LABEL[p.enquiry] ?? p.enquiry]);
     rows.push(['Company', p.company]);
     rows.push(['Region', REGION_LABEL[p.region] ?? p.region]);
     rows.push(['Services', p.services.join(', ')]);

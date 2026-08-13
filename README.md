@@ -37,24 +37,57 @@ npm run typecheck  # tsc --noEmit
 
 ---
 
+## Information architecture
+
+Five sections. Everything else is a child of one of them.
+
+| Section | Route | Contains |
+|---|---|---|
+| Who We Are | `/who-we-are` | About, Our Team, Our Approach, Why HariNex |
+| What We Do | `/what-we-do` | 8 practices, Industries, how engagements start |
+| Where We Work | `/where-we-work` | 7 markets, Collaborators |
+| Insights | `/insights` | 6 articles |
+| Let's Connect | `/lets-connect` | Business / Partner / Investor enquiry + form |
+
+This replaced a flat bar of seven links, which read as a traditional consultancy
+rather than a global business. Two pages were **merged rather than renamed**, and
+that distinction matters if you go looking for them:
+
+- **Contact** is now the form on Let's Connect. The three enquiry types are a
+  selector on that one form, not three pages — the selection is submitted with
+  the enquiry and prefixes the mail subject, so the recipient can see which
+  conversation it is without opening the message.
+- **How We Help** is a section of What We Do (`components/site/help-journeys.tsx`).
+  It was never a ninth service, only a second route into the eight, and as its
+  own page it drifted out of step with the practice pages it described.
+
+Every old URL redirects permanently — see `next.config.mjs`. Add a route and it
+must be added to `app/sitemap.ts` too; they are kept in the same order so an
+omission is visible.
+
+**The navigation must not lie.** Every entry in the mega menu points at a page or
+an anchor that exists. There is no topic filter on Insights, so the menu lists
+the articles themselves rather than categories that would filter to nothing.
+
+---
+
 ## Project layout
 
 ```
 app/
   layout.tsx            root layout, fonts, metadata, providers
   page.tsx              home
-  about/                About Us
-  capabilities/         Capabilities (7 practices)
-  industries/           Industry verticals
-  why-taiwan-india/     The bilateral case
-  insights/             Case studies & insights + careers
-  contact/              Project inquiry
-  api/inquiry/route.ts  form endpoint (validates; delivery not yet wired)
+  who-we-are/           About Us + team/
+  what-we-do/           8 practices + [slug]/ + industries/
+  where-we-work/        7 markets + collaborators/
+  insights/             articles + [slug]/
+  lets-connect/         enquiry selection + contact form
+  api/inquiry/route.ts  form endpoint (validates, then delivers via lib/mail.ts)
   sitemap.ts robots.ts not-found.tsx
 
 components/
   providers/            LanguageProvider (EN / 繁體中文)
-  site/                 page sections (Navbar, Hero, CapabilitiesTabs, …)
+  site/                 page sections (Navbar, Hero, ServiceRail, …)
   pages/                per-route client compositions
   ui/                   Button, field primitives, Reveal, SectionHeading, icons
 
@@ -62,6 +95,8 @@ lib/
   content.ts            EVERY string on the site, in both languages
   blur.ts               generated blur placeholders
   inquiry-schema.ts     Zod schema shared by client + server
+  chatbot.ts            assistant knowledge base (hardcodes routes — update on a move)
+  mail.ts               SMTP / Resend delivery
   utils.ts              cn() helper
 
 scripts/                one-off asset preparation (see below)

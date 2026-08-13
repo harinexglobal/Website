@@ -47,7 +47,7 @@ export function Footer() {
               {t.capabilities.items.map((c) => (
                 <li key={c.id}>
                   <Link
-                    href={`${ROUTES.capabilities}#${c.id}`}
+                    href={`${ROUTES.whatWeDo}#${c.id}`}
                     className="text-sm text-slate-400 transition-colors hover:text-emerald-400"
                   >
                     {c.title}
@@ -64,12 +64,12 @@ export function Footer() {
             </h2>
             <ul className="space-y-2.5">
               {[
-                { href: ROUTES.about, label: t.nav.about },
+                { href: ROUTES.whoWeAre, label: t.nav.whoWeAre },
                 { href: ROUTES.team, label: t.nav.team },
                 { href: ROUTES.industries, label: t.nav.industries },
-                { href: ROUTES.bridge, label: t.nav.bridge },
+                { href: ROUTES.whereWeWork, label: t.nav.whereWeWork },
                 { href: ROUTES.insights, label: t.nav.insights },
-                { href: ROUTES.contact, label: t.nav.contact },
+                { href: ROUTES.letsConnect, label: t.nav.letsConnect },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-sm text-slate-400 transition-colors hover:text-emerald-400">

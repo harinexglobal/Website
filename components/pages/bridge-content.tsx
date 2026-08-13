@@ -14,7 +14,7 @@ export function BridgeContent() {
   return (
     <>
       <PageHero
-        crumb={t.nav.bridge}
+        crumb={t.nav.whereWeWork}
         eyebrow={t.bridge.eyebrow}
         title={t.bridge.heading}
         lead={t.bridge.lead}

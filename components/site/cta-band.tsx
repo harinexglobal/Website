@@ -21,7 +21,7 @@ export function CtaBand() {
           </div>
 
           <div className="flex shrink-0 flex-wrap gap-3">
-            <ButtonLink href={ROUTES.contact} size="lg">
+            <ButtonLink href={ROUTES.letsConnect} size="lg">
               {t.cta.primary}
               <ArrowRight className="h-4 w-4" />
             </ButtonLink>

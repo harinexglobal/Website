@@ -47,15 +47,38 @@ const en = {
 
   nav: {
     home: 'Home',
-    about: 'About Us',
-    capabilities: 'Capabilities',
-    industries: 'Industries',
-    bridge: 'Global Markets',
-    team: 'Our Team',
+
+    /* Five sections. The site previously carried seven flat links, which is
+       the shape the architecture brief specifically called out as reading
+       like a traditional consultancy rather than a global business. Every
+       other page is now reached through one of these five. */
+    whoWeAre: 'Who We Are',
+    whatWeDo: 'What We Do',
+    whereWeWork: 'Where We Work',
     insights: 'Insights',
-    howWeHelp: 'How We Help',
-    contact: 'Contact',
-    capabilitiesIntro: 'Eight practices, delivered end to end across every market we operate in.',
+    letsConnect: "Let's Connect",
+
+    /* One line under each menu heading — the question that section answers. */
+    whoWeAreIntro: 'Who HariNex Global is, and why a counterparty should trust us.',
+    whatWeDoIntro: 'Eight practices, delivered end to end across every market we operate in.',
+    whereWeWorkIntro: 'One firm, seven markets, run from Taiwan.',
+    insightsIntro: 'What we have learned about global markets and technology.',
+    letsConnectIntro: 'Three conversations reach us. Tell us which one is yours.',
+
+    overviewLabel: 'Overview',
+    practicesLabel: 'Practices',
+    sectorsLabel: 'Sectors',
+    marketsLabel: 'Markets',
+    topicsLabel: 'Topics',
+    enquiriesLabel: 'Enquiries',
+
+    aboutUs: 'About Us',
+    team: 'Our Team',
+    approach: 'Our Approach',
+    whyHarinex: 'Why HariNex',
+    industries: 'Industries',
+    collaborators: 'Collaborators',
+    allInsights: 'All insights',
   },
 
   hero: {
@@ -1085,15 +1108,33 @@ const zh: Dict = {
 
   nav: {
     home: '首頁',
-    about: '關於我們',
-    capabilities: '服務能力',
-    industries: '產業領域',
-    bridge: '全球市場',
-    team: '團隊成員',
+
+    whoWeAre: '關於我們',
+    whatWeDo: '服務範疇',
+    whereWeWork: '全球布局',
     insights: '洞察觀點',
-    howWeHelp: '合作方式',
-    contact: '聯絡我們',
-    capabilitiesIntro: '八大專業服務，於我們營運的每一個市場完整交付。',
+    letsConnect: '與我們聯繫',
+
+    whoWeAreIntro: '瀚瑞國際是什麼樣的公司，以及為何值得往來對象信賴。',
+    whatWeDoIntro: '八大專業服務，於所有營運市場提供端到端交付。',
+    whereWeWorkIntro: '一家公司，七個市場，以台灣為總部。',
+    insightsIntro: '我們對全球市場與技術的觀察與心得。',
+    letsConnectIntro: '我們收到的洽談分為三類，請告訴我們屬於哪一類。',
+
+    overviewLabel: '總覽',
+    practicesLabel: '專業服務',
+    sectorsLabel: '產業領域',
+    marketsLabel: '市場據點',
+    topicsLabel: '主題',
+    enquiriesLabel: '洽詢類型',
+
+    aboutUs: '關於我們',
+    team: '團隊成員',
+    approach: '服務方式',
+    whyHarinex: '選擇瀚瑞的理由',
+    industries: '產業領域',
+    collaborators: '合作機構',
+    allInsights: '全部文章',
   },
 
   hero: {
@@ -2063,14 +2104,20 @@ export const SOCIAL = [
 
 export const ROUTES = {
   home: '/',
-  about: '/about',
-  capabilities: '/capabilities',
-  industries: '/industries',
-  bridge: '/markets',
-  collaborators: '/markets/collaborators',
-  team: '/about/team',
+
+  /* Five sections. Everything else is a child of one of them — the
+     architecture brief asked for a grouped structure a visitor can
+     navigate, not a flat list of every page the site owns. */
+  whoWeAre: '/who-we-are',
+  team: '/who-we-are/team',
+
+  whatWeDo: '/what-we-do',
+  industries: '/what-we-do/industries',
+
+  whereWeWork: '/where-we-work',
+  collaborators: '/where-we-work/collaborators',
+
   insights: '/insights',
-  howWeHelp: '/how-we-help',
+
   letsConnect: '/lets-connect',
-  contact: '/contact',
 } as const;

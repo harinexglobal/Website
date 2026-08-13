@@ -40,7 +40,7 @@ export function CapabilityCards({ showHeading = true }: { showHeading?: boolean 
           {t.capabilities.items.map((c) => (
             <RevealItem key={c.id}>
               <Link
-                href={`${ROUTES.capabilities}/${c.id}`}
+                href={`${ROUTES.whatWeDo}/${c.id}`}
                 className="group flex h-full flex-col overflow-hidden border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500 hover:shadow-card-lg"
               >
                 <div className="relative h-48 w-full overflow-hidden bg-slate-100">

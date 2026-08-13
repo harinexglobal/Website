@@ -23,7 +23,12 @@ const errorKeyMap = {
   brief: 'brief',
 } as const;
 
-export function ContactForm() {
+/**
+ * `enquiry` comes from the selector above the form on Let's Connect. It is
+ * carried in the payload rather than only in the UI so the enquiry type
+ * reaches the inbox — routing the recipient cannot see is decoration.
+ */
+export function ContactForm({ enquiry }: { enquiry?: InquiryInput['enquiry'] } = {}) {
   const { t } = useLang();
   const [status, setStatus] = useState<'idle' | 'success'>('idle');
   const [delivered, setDelivered] = useState(true);
@@ -37,6 +42,7 @@ export function ContactForm() {
     handleSubmit,
     control,
     reset,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<InquiryInput>({
     resolver: zodResolver(inquirySchema),
@@ -49,8 +55,14 @@ export function ContactForm() {
       services: [],
       brief: '',
       website: '',
+      enquiry,
     },
   });
+
+  /* The selector can change after mount, so defaultValues alone is not enough. */
+  useEffect(() => {
+    setValue('enquiry', enquiry);
+  }, [enquiry, setValue]);
 
   /** Maps a Zod message key to the localised sentence. */
   const msg = (key?: string) =>

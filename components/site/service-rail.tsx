@@ -107,7 +107,7 @@ export function ServiceRail({ showHeading = true }: { showHeading?: boolean } = 
             {panels.map((c) => (
               <Link
                 key={c.id}
-                href={`${ROUTES.capabilities}/${c.id}`}
+                href={`${ROUTES.whatWeDo}/${c.id}`}
                 className="rail-panel group relative flex min-h-[8.5rem] flex-col items-center overflow-hidden border-b border-r border-white/20 px-3 py-7 text-center focus:outline-none sm:min-h-[10rem]"
               >
                 {/* This practice's own photograph, hidden until asked for. */}

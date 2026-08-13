@@ -79,7 +79,7 @@ export function ChatWidget() {
     push({
       role: 'bot',
       text: pack.ui.fallback,
-      link: { href: ROUTES.contact, label: pack.ui.contactCta },
+      link: { href: ROUTES.letsConnect, label: pack.ui.contactCta },
       chips: pack.starters.slice(0, 3),
     });
 

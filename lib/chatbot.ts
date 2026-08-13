@@ -85,7 +85,7 @@ const en: ChatPack = {
       ],
       answer:
         'We work across eight practices: technology transfer and commercialisation; business advisory and cross-border matchmaking; strategic supplier sourcing; technical translation and localisation; website and AI digital solutions; regulatory coordination; trade mission and delegation support; and international project management. Each can be taken on its own or combined.',
-      link: { href: '/capabilities', label: 'See all capabilities' },
+      link: { href: '/what-we-do', label: 'See all capabilities' },
       followUps: ['Tell me about technology transfer', 'Do you do supplier sourcing?', 'How do you charge?'],
     },
     {
@@ -93,7 +93,7 @@ const en: ChatPack = {
       keywords: ['technology transfer', 'licence', 'license', 'licensing', 'commercialis', 'commercializ', 'ip transfer', 'know-how'],
       answer:
         'We scout, evaluate and structure the transfer of commercially viable technology between markets — including non-bisphenol textile chemistry, biotech intellectual property, pilot-plant scale-up and joint development agreements. Technical due diligence is done by chemists, so a technology is judged on its data rather than its pitch deck.',
-      link: { href: '/capabilities/technology-transfer', label: 'Technology transfer' },
+      link: { href: '/what-we-do/technology-transfer', label: 'Technology transfer' },
       followUps: ['Who owns the IP?', 'How long does a transfer take?', 'Do you sign an NDA?'],
     },
     {
@@ -101,7 +101,7 @@ const en: ChatPack = {
       keywords: ['sourcing', 'supplier', 'manufacturer', 'factory', 'vendor', 'audit', 'find a supplier'],
       answer:
         'We identify candidate factories, evaluate them against your technical specification, visit sites in person, assess quality systems and support negotiation. We are paid for the evaluation rather than for placing a particular supplier, so there is no incentive to pass a factory that should not pass.',
-      link: { href: '/capabilities/supplier-sourcing', label: 'Supplier sourcing' },
+      link: { href: '/what-we-do/supplier-sourcing', label: 'Supplier sourcing' },
       followUps: ['What if a supplier fails your evaluation?', 'How quickly can you arrange a factory visit?'],
     },
     {
@@ -109,7 +109,7 @@ const en: ChatPack = {
       keywords: ['translat', 'localis', 'localiz', 'chinese', 'language', 'interpret', 'patent translation', 'document'],
       answer:
         'Traditional Chinese to and from English, for documents where a mistranslation is a compliance event — patents, SOPs and GMP records, clinical protocols, safety data sheets and contracts. It is handled by people with laboratory and regulatory backgrounds, and we agree a terminology glossary with you before work starts.',
-      link: { href: '/capabilities/technical-translation', label: 'Technical translation' },
+      link: { href: '/what-we-do/technical-translation', label: 'Technical translation' },
       followUps: ['Can you do certified translations?', 'How do you charge?'],
     },
     {
@@ -117,7 +117,7 @@ const en: ChatPack = {
       keywords: ['regulat', 'tfda', 'cdsco', 'iso 13485', 'reach', 'zdhc', 'compliance', 'submission', 'cmc', 'registration'],
       answer:
         'We coordinate documentation and compliance support across TFDA, CDSCO, ISO 13485, REACH and ZDHC, including CMC sections and technical files. To be clear: those references describe areas we work in, not certifications HariNex holds, and regulatory outcomes are decided by the authority rather than by us.',
-      link: { href: '/capabilities/regulatory', label: 'Regulatory coordination' },
+      link: { href: '/what-we-do/regulatory', label: 'Regulatory coordination' },
       followUps: ['Can you do certified translations?', 'Are you a law firm?'],
     },
     {
@@ -125,7 +125,7 @@ const en: ChatPack = {
       keywords: ['industry', 'industries', 'sector', 'vertical', 'pharma', 'biotech', 'semiconductor', 'electronics', 'chemical', 'medical device', 'textile', 'my industry'],
       answer:
         'Seven verticals: non-bisphenol (BPA/BPS-free) technology; specialty and advanced materials; biotech, life sciences and pharmaceuticals; medical devices and cleanroom automation; electronics and semiconductor materials; sustainable technologies and renewable energy; and research institutes and universities.',
-      link: { href: '/industries', label: 'See industries' },
+      link: { href: '/what-we-do/industries', label: 'See industries' },
       followUps: ['What services do you offer?', 'Where are your offices?'],
     },
     {
@@ -133,7 +133,7 @@ const en: ChatPack = {
       keywords: ['office', 'offices', 'located', 'location', 'where are you', 'address', 'based', 'taiwan', 'india', 'korea', 'usa', 'america', 'branch'],
       answer:
         'Our head office is in Taipei, Taiwan. The registered address is 3F, No. 10, Wenhua 7th Rd., Guishan Dist., Taoyuan City 333004 — Guishan sits inside the Taipei metropolitan area, about 30 minutes from Taipei Main Station. We have a branch office in Bengaluru, India, and business development partners in South Korea, the United States, Germany, Singapore and Australia.',
-      link: { href: '/markets', label: 'Global markets' },
+      link: { href: '/where-we-work', label: 'Global markets' },
       followUps: ['Who is on the team?', 'Ask us directly'],
     },
     {
@@ -141,7 +141,7 @@ const en: ChatPack = {
       keywords: ['team', 'who works', 'people', 'staff', 'founder', 'director', 'leadership', 'partner', 'advisor', 'adviser'],
       answer:
         'Leadership sits in Taiwan and India — Chia-Ling Shih as Founder and Chairman, Dr. Sivarasan Ganesan as Group CEO and Managing Partner, Dr. D. Ganesh Kumar as Chief Advisor, Morris S.S. Ma on Taiwan operations, and the India branch managing director and project management lead. The global team represents South Korea, North America, Germany, Singapore and Australia, plus a technical specialist in materials and polymers.',
-      link: { href: '/about/team', label: 'Meet the team' },
+      link: { href: '/who-we-are/team', label: 'Meet the team' },
       followUps: ['Where are your offices?', 'What services do you offer?'],
     },
     {
@@ -163,7 +163,7 @@ const en: ChatPack = {
       keywords: ['!charge', '!cost', '!price', '!pricing', '!fee', '!fees', 'rate', '!how much', 'budget', '!quote'],
       answer:
         'Advisory work is quoted as a fixed fee against a defined scope. Sourcing and transfer projects are milestone-based. Ongoing support is a monthly retainer. Every engagement is quoted in writing before it starts, and scope changes are quoted separately rather than appearing on an invoice. We do not publish a rate card, because a five-page brochure site and a multi-currency store have nothing in common.',
-      link: { href: '/contact', label: 'Request a quote' },
+      link: { href: '/lets-connect', label: 'Request a quote' },
       followUps: ['What services do you offer?', 'Ask us directly'],
     },
     {
@@ -200,7 +200,7 @@ const en: ChatPack = {
       keywords: ['outside', 'other countries', 'europe', 'japan', 'vietnam', 'elsewhere', 'only taiwan', 'other market'],
       answer:
         'Seven markets: Taiwan, India, South Korea, the United States, Germany, Singapore and Australia. Each has a partner who lives there, and every engagement runs to the same model from the Taiwan head office. Ask about anywhere else and we will tell you honestly whether we can help.',
-      link: { href: '/markets', label: 'Global markets' },
+      link: { href: '/where-we-work', label: 'Global markets' },
       followUps: ['Where are your offices?', 'Ask us directly'],
     },
     {
@@ -208,7 +208,7 @@ const en: ChatPack = {
       keywords: ['contact', 'email', 'phone', 'call', 'reach you', 'whatsapp', 'speak to', 'talk to', 'get in touch'],
       answer:
         'Email hello@harinexglobal.com, or call and WhatsApp +886 974 025 045. You can also send an enquiry through the contact form and we aim to reply to qualified enquiries within two working days.',
-      link: { href: '/contact', label: 'Contact page' },
+      link: { href: '/lets-connect', label: 'Contact page' },
       followUps: ['Where are your offices?', 'How do you charge?'],
     },
     {
@@ -223,7 +223,7 @@ const en: ChatPack = {
       keywords: ['thank', 'thanks', 'cheers', 'appreciate'],
       answer:
         'You are welcome. If you would like a person to pick this up, the contact form reaches us directly.',
-      link: { href: '/contact', label: 'Contact us' },
+      link: { href: '/lets-connect', label: 'Contact us' },
     },
   ],
 };
@@ -256,7 +256,7 @@ const zh: ChatPack = {
       keywords: ['服務', '業務', '能做什麼', '提供什麼', '項目', '能力'],
       answer:
         '我們提供八大服務：技術移轉與商品化、商務顧問與跨境媒合、策略性供應商採購、技術翻譯與在地化、網站與 AI 數位解決方案、法規協調、商務考察團支援，以及國際專案管理。每一項均可單獨委託，也可整合運用。',
-      link: { href: '/capabilities', label: '查看所有服務' },
+      link: { href: '/what-we-do', label: '查看所有服務' },
       followUps: ['技術移轉是什麼？', '你們做供應商採購嗎？', '如何收費？'],
     },
     {
@@ -264,7 +264,7 @@ const zh: ChatPack = {
       keywords: ['技術移轉', '授權', '技轉', '商品化', '技術轉移'],
       answer:
         '我們負責發掘、評估並建構跨市場的技術移轉，包括不含雙酚的紡織化學品、生技智財、試量產放大與共同開發協議。技術實地查核由化學專業人員執行，因此技術是依據數據被評估，而非依據簡報。',
-      link: { href: '/capabilities/technology-transfer', label: '技術移轉' },
+      link: { href: '/what-we-do/technology-transfer', label: '技術移轉' },
       followUps: ['智慧財產權歸誰？', '會簽保密協議嗎？'],
     },
     {
@@ -272,7 +272,7 @@ const zh: ChatPack = {
       keywords: ['採購', '供應商', '製造商', '工廠', '訪廠', '稽核', '找工廠'],
       answer:
         '我們負責篩選候選工廠、依貴公司技術規格進行評估、實地訪廠、評估品質系統並支援談判。我們的報酬來自評估工作本身，而非促成特定供應商，因此沒有讓不合格工廠過關的誘因。',
-      link: { href: '/capabilities/supplier-sourcing', label: '供應商採購' },
+      link: { href: '/what-we-do/supplier-sourcing', label: '供應商採購' },
       followUps: ['供應商沒通過怎麼辦？', '安排訪廠要多久？'],
     },
     {
@@ -280,7 +280,7 @@ const zh: ChatPack = {
       keywords: ['翻譯', '在地化', '中文', '語言', '口譯', '專利翻譯', '文件'],
       answer:
         '提供繁體中文與英文互譯，專為誤譯即等同法規事件的文件而設——專利、SOP 與 GMP 紀錄、臨床試驗計畫書、安全資料表與契約。由具實驗室與法規背景的人員處理，並於作業前與貴公司確認術語對照表。',
-      link: { href: '/capabilities/technical-translation', label: '技術翻譯' },
+      link: { href: '/what-we-do/technical-translation', label: '技術翻譯' },
       followUps: ['可以做認證翻譯嗎？', '如何收費？'],
     },
     {
@@ -288,7 +288,7 @@ const zh: ChatPack = {
       keywords: ['法規', 'tfda', 'cdsco', 'iso', 'reach', 'zdhc', '合規', '送件', 'cmc', '登記', '查驗登記'],
       answer:
         '我們就 TFDA、CDSCO、ISO 13485、REACH 與 ZDHC 提供文件與合規協調支援，包括 CMC 章節與技術文件。須說明的是：上述指涉係描述我們提供支援的領域，而非本公司持有之認證；法規結果由主管機關認定，非由本公司決定。',
-      link: { href: '/capabilities/regulatory', label: '法規協調' },
+      link: { href: '/what-we-do/regulatory', label: '法規協調' },
       followUps: ['可以做認證翻譯嗎？', '你們是律師事務所嗎？'],
     },
     {
@@ -296,7 +296,7 @@ const zh: ChatPack = {
       keywords: ['產業', '領域', '行業', '製藥', '生技', '半導體', '電子', '化學', '醫材', '紡織'],
       answer:
         '七大產業領域：無雙酚（BPA/BPS-Free）技術、特用化學與先進材料、生技與生命科學及製藥、醫療器材與無塵室自動化、電子與半導體材料、永續科技與再生能源，以及研究機構與大學。',
-      link: { href: '/industries', label: '查看產業領域' },
+      link: { href: '/what-we-do/industries', label: '查看產業領域' },
       followUps: ['你們提供哪些服務？', '據點在哪裡？'],
     },
     {
@@ -304,7 +304,7 @@ const zh: ChatPack = {
       keywords: ['據點', '辦公室', '地址', '在哪', '位置', '分公司', '台灣', '印度', '韓國', '美國'],
       answer:
         '總部位於台灣台北都會區，登記地址為桃園市龜山區文化七路 10 號 3 樓（龜山區屬大台北都會區，距台北車站約 30 分鐘）。印度班加羅爾設有分公司，並在南韓、美國、德國、新加坡與澳洲派駐業務開發夥伴。',
-      link: { href: '/markets', label: '全球市場' },
+      link: { href: '/where-we-work', label: '全球市場' },
       followUps: ['團隊有哪些人？', '直接詢問我們'],
     },
     {
@@ -312,7 +312,7 @@ const zh: ChatPack = {
       keywords: ['團隊', '成員', '人員', '創辦人', '總經理', '負責人', '顧問', '合夥人'],
       answer:
         '經營團隊分布於台灣與印度——施佳玲擔任創辦人暨董事長、Dr. Sivarasan Ganesan 擔任集團執行長暨管理合夥人、甘納緒博士擔任首席顧問、馬士軒負責台灣營運，另有印度分公司總經理與專案管理主管。全球團隊代表南韓、北美、德國、新加坡與澳洲，另有材料與高分子領域的技術專家。',
-      link: { href: '/about/team', label: '認識團隊' },
+      link: { href: '/who-we-are/team', label: '認識團隊' },
       followUps: ['據點在哪裡？', '你們提供哪些服務？'],
     },
     {
@@ -334,7 +334,7 @@ const zh: ChatPack = {
       keywords: ['!收費', '!費用', '!價格', '!報價', '!多少錢', '預算', '!計費'],
       answer:
         '顧問工作依明確範疇報價，採固定費用；採購與技術移轉專案採里程碑計費；持續性支援為月費制。每一項委任都會在開始前提供書面報價，範疇變動亦另行報價，不會直接出現在帳單上。我們不公布價目表，因為五頁式形象網站與多幣別電商並無可比性。',
-      link: { href: '/contact', label: '索取報價' },
+      link: { href: '/lets-connect', label: '索取報價' },
       followUps: ['你們提供哪些服務？', '直接詢問我們'],
     },
     {
@@ -371,7 +371,7 @@ const zh: ChatPack = {
       keywords: ['其他國家', '歐洲', '日本', '越南', '別的市場', '只有台灣'],
       answer:
         '共七個市場：台灣、印度、南韓、美國、德國、新加坡與澳洲。每個市場都有常駐當地的夥伴，所有委任皆由台灣總部依同一套模式執行。若是其他地區，請直接詢問，我們會據實告知能否協助。',
-      link: { href: '/markets', label: '全球市場' },
+      link: { href: '/where-we-work', label: '全球市場' },
       followUps: ['據點在哪裡？', '直接詢問我們'],
     },
     {
@@ -379,7 +379,7 @@ const zh: ChatPack = {
       keywords: ['聯絡', '電子郵件', '電話', 'email', 'whatsapp', '怎麼聯繫', '找誰'],
       answer:
         '電子郵件 hello@harinexglobal.com，電話與 WhatsApp 皆為 +886 974 025 045。您也可以透過聯絡表單送出諮詢，我們力求於兩個工作天內回覆有效諮詢。',
-      link: { href: '/contact', label: '聯絡我們' },
+      link: { href: '/lets-connect', label: '聯絡我們' },
       followUps: ['據點在哪裡？', '如何收費？'],
     },
     {
@@ -393,7 +393,7 @@ const zh: ChatPack = {
       id: 'thanks',
       keywords: ['謝謝', '感謝', '多謝'],
       answer: '不客氣。若希望由專人接手處理，聯絡表單會直接送達我們。',
-      link: { href: '/contact', label: '聯絡我們' },
+      link: { href: '/lets-connect', label: '聯絡我們' },
     },
   ],
 };

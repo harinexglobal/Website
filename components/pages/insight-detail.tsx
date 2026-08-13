@@ -125,7 +125,7 @@ export function InsightDetail({ slug }: { slug: string }) {
                     <h2 className="h-card">{dict.meta.ctaHeading}</h2>
                     <p className="mt-2 text-sm leading-relaxed text-slate-300">{dict.meta.ctaBody}</p>
                     <Link
-                      href={ROUTES.contact}
+                      href={ROUTES.letsConnect}
                       className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
                     >
                       {t.common.requestConsultation}

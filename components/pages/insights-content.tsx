@@ -48,7 +48,7 @@ export function InsightsContent() {
                 ))}
               </ul>
 
-              <ButtonLink href={ROUTES.contact} variant="navy" className="mt-8">
+              <ButtonLink href={ROUTES.letsConnect} variant="navy" className="mt-8">
                 {t.careers.cta}
               </ButtonLink>
             </div>

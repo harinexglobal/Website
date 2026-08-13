@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Capabilities — Technology Transfer, Sourcing, Translation & Regulatory',
   description:
     'Eight practices covering technology transfer, cross-border advisory and delegations, strategic supplier sourcing, technical translation, digital solutions, regulatory coordination, project management and industrial automation.',
-  alternates: { canonical: '/capabilities' },
+  alternates: { canonical: '/what-we-do' },
 };
 
 export default function CapabilitiesPage() {

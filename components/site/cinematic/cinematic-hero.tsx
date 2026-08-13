@@ -189,12 +189,12 @@ export function CinematicHero() {
               data-cine="line"
               className="pointer-events-auto mt-8 flex flex-wrap items-center justify-center gap-3 opacity-0"
             >
-              <ButtonLink href={ROUTES.contact} size="lg">
+              <ButtonLink href={ROUTES.letsConnect} size="lg">
                 <CalendarCheck className="h-4 w-4" />
                 {t.hero.primaryCta}
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>
-              <ButtonLink href={ROUTES.capabilities} size="lg" variant="ghostLight">
+              <ButtonLink href={ROUTES.whatWeDo} size="lg" variant="ghostLight">
                 {t.hero.secondaryCta}
               </ButtonLink>
             </div>

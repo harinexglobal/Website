@@ -136,7 +136,7 @@ export function AboutIntro({
             </Reveal>
 
             <Reveal delay={0.16} className="mt-8">
-              <ButtonLink href={ROUTES.about} variant={video ? 'ghostLight' : 'outline'}>
+              <ButtonLink href={ROUTES.whoWeAre} variant={video ? 'ghostLight' : 'outline'}>
                 {t.common.learnMore}
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>

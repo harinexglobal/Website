@@ -5,20 +5,20 @@ import { insightsDictionaries } from '@/lib/insights';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinexglobal.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  /* The five sections and their children. Kept in the same order as the
+     navigation so a route added to one and forgotten in the other is obvious. */
   const routes = [
     '',
-    '/about',
-    '/about/team',
-    '/capabilities',
-    '/industries',
-    '/markets',
-    '/markets/collaborators',
-    '/how-we-help',
-    '/lets-connect',
+    '/who-we-are',
+    '/who-we-are/team',
+    '/what-we-do',
+    '/what-we-do/industries',
+    '/where-we-work',
+    '/where-we-work/collaborators',
     '/insights',
-    '/contact',
+    '/lets-connect',
   ];
-  const capabilityRoutes = dictionaries.en.capabilities.items.map((c) => `/capabilities/${c.id}`);
+  const capabilityRoutes = dictionaries.en.capabilities.items.map((c) => `/what-we-do/${c.id}`);
   const insightRoutes = insightsDictionaries.en.articles.map((a) => `/insights/${a.id}`);
   const legalRoutes = ['/privacy', '/terms', '/disclaimer'];
   const now = new Date();
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const priority = (route: string) => {
     if (route === '') return 1;
     if (legalRoutes.includes(route)) return 0.3;
-    if (route.startsWith('/capabilities/')) return 0.7;
+    if (route.startsWith('/what-we-do/')) return 0.7;
     return 0.8;
   };
 

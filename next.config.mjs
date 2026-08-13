@@ -15,21 +15,43 @@ const nextConfig = {
    * every page.
    */
   /**
-   * /why-taiwan-india was renamed to /markets when the firm's positioning widened
-   * beyond the bilateral corridor. Permanent redirect so the old URL keeps working
-   * and any accumulated ranking transfers rather than 404ing.
+   * The site was regrouped into five sections — Who We Are, What We Do, Where
+   * We Work, Insights, Let's Connect — so every top-level URL moved. These are
+   * permanent redirects rather than deletions: the old paths were published in
+   * a sitemap and shared in email, and a 404 is a worse answer than a hop.
+   *
+   * The two entries at the top predate the regrouping and still need to land,
+   * so they are chained to the new locations rather than the old ones.
+   *
+   * `/capabilities/trade-mission` must precede `/capabilities/:slug`, or the
+   * wildcard would swallow it and send it to a practice that no longer exists.
    */
   async redirects() {
     return [
-      { source: '/why-taiwan-india', destination: '/markets', permanent: true },
-      /* Trade missions were folded into business advisory — same practice, two
-         cards. The old URL was published in the sitemap, so it redirects rather
-         than 404s. */
+      { source: '/why-taiwan-india', destination: '/where-we-work', permanent: true },
       {
         source: '/capabilities/trade-mission',
-        destination: '/capabilities/business-advisory',
+        destination: '/what-we-do/business-advisory',
         permanent: true,
       },
+
+      { source: '/about', destination: '/who-we-are', permanent: true },
+      { source: '/about/team', destination: '/who-we-are/team', permanent: true },
+      { source: '/capabilities', destination: '/what-we-do', permanent: true },
+      { source: '/capabilities/:slug', destination: '/what-we-do/:slug', permanent: true },
+      { source: '/industries', destination: '/what-we-do/industries', permanent: true },
+      { source: '/markets', destination: '/where-we-work', permanent: true },
+      {
+        source: '/markets/collaborators',
+        destination: '/where-we-work/collaborators',
+        permanent: true,
+      },
+
+      /* Contact and How We Help are not renames — they were merged. Contact is
+         now the form on Let's Connect, and How We Help is a section of What We
+         Do rather than a page. */
+      { source: '/contact', destination: '/lets-connect', permanent: true },
+      { source: '/how-we-help', destination: '/what-we-do', permanent: true },
     ];
   },
 

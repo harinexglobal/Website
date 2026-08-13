@@ -35,7 +35,7 @@ export function CapabilityDetail({ slug }: { slug: string }) {
         <div className="container">
           <Reveal>
             <Link
-              href={ROUTES.capabilities}
+              href={ROUTES.whatWeDo}
               className="mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-emerald-700"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -92,7 +92,7 @@ export function CapabilityDetail({ slug }: { slug: string }) {
                     {related.map((r) => (
                       <li key={r.id}>
                         <Link
-                          href={`${ROUTES.capabilities}/${r.id}`}
+                          href={`${ROUTES.whatWeDo}/${r.id}`}
                           className="group flex items-center gap-3 rounded-lg p-2.5 transition-colors hover:bg-slate-50"
                         >
                           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-100 text-navy-700 transition-colors group-hover:bg-emerald-500/10 group-hover:text-emerald-700">

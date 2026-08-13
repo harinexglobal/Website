@@ -15,6 +15,9 @@ export const inquirySchema = z.object({
   region: z.enum(['taiwan', 'india', 'other'], { message: 'region' }),
   services: z.array(z.string()).min(1, 'service'),
   brief: z.string().trim().min(20, 'brief').max(4000),
+  /* Which of the three conversations this is. Optional so an enquiry that
+     skips the selector still validates rather than being rejected. */
+  enquiry: z.enum(['business', 'partner', 'investor']).optional(),
   /* Honeypot — real users never fill this. */
   website: z.string().max(0).optional(),
 });
@@ -35,6 +38,9 @@ export const quickInquirySchema = z.object({
 });
 
 export type QuickInquiryInput = z.infer<typeof quickInquirySchema>;
+
+export const ENQUIRY_VALUES = ['business', 'partner', 'investor'] as const;
+export type EnquiryKind = (typeof ENQUIRY_VALUES)[number];
 
 export const REGION_VALUES = ['taiwan', 'india', 'other'] as const;
 export const SERVICE_VALUES = [

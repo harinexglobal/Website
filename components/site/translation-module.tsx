@@ -45,7 +45,7 @@ export function TranslationModule() {
               </ul>
             </div>
 
-            <ButtonLink href={`${ROUTES.capabilities}#technical-translation`} variant="ghostLight" className="mt-8">
+            <ButtonLink href={`${ROUTES.whatWeDo}#technical-translation`} variant="ghostLight" className="mt-8">
               {t.common.learnMore}
             </ButtonLink>
           </div>

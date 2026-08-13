@@ -20,19 +20,25 @@ export function AboutContent() {
           section below it, so the page opened by saying everything twice — and
           a still photograph directly above a film of the same subject made the
           repetition louder. The film section is the hero now. */}
-      <AboutIntro video="about" crumb={t.nav.about} />
+      <AboutIntro video="about" crumb={t.nav.whoWeAre} />
       <TechnologyBridge />
-      <WhyUsGrid />
+      {/* Anchor targets for the Who We Are menu. scroll-mt clears the fixed
+          header, which would otherwise sit over the heading being jumped to. */}
+      <div id="why-us" className="scroll-mt-24">
+        <WhyUsGrid />
+      </div>
       <GlobalNetwork />
       <TeamTeaser />
-      <ProcessTimeline />
+      <div id="approach" className="scroll-mt-24">
+        <ProcessTimeline />
+      </div>
       <CtaBand />
     </>
   );
 }
 
 /**
- * The roster itself lives only on /about/team. This is a pointer to it, so the
+ * The roster itself lives only on /who-we-are/team. This is a pointer to it, so the
  * two pages never drift apart.
  */
 function TeamTeaser() {

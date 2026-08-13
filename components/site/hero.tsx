@@ -115,11 +115,11 @@ export function Hero() {
 
             {/* CTAs */}
             <motion.div className="mt-9 flex flex-wrap items-center gap-3" {...rise(0.52)}>
-              <ButtonLink href={ROUTES.capabilities} size="lg">
+              <ButtonLink href={ROUTES.whatWeDo} size="lg">
                 {t.hero.primaryCta}
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>
-              <ButtonLink href={`${ROUTES.contact}#inquiry`} variant="ghostLight" size="lg">
+              <ButtonLink href={`${ROUTES.letsConnect}#inquiry`} variant="ghostLight" size="lg">
                 <CalendarCheck className="h-4 w-4" />
                 {t.hero.secondaryCta}
               </ButtonLink>
