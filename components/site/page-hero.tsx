@@ -25,7 +25,15 @@ export function PageHero({
   title: string;
   lead?: string;
   crumb: string;
-  image?: keyof typeof BLUR;
+  /* Path under /brand, without the .webp — e.g. 'about', or a nested
+     'capabilities/supplier-sourcing'. A blur placeholder is used when
+     lib/blur.ts has an entry for it and skipped when it does not, rather
+     than passing placeholder="blur" with no blurDataURL, which throws.
+     The nested capability heroes have no entries: blur.ts is regenerated
+     wholesale by scripts/prepare-images.mjs, so anything added from another
+     script would be wiped on its next run. The hero carries a heavy navy
+     scrim over the photograph, so the blur-up is barely perceptible here. */
+  image?: string;
   imagePosition?: string;
 }) {
   const { t } = useLang();
@@ -46,7 +54,7 @@ export function PageHero({
             alt=""
             fill
             priority
-            placeholder="blur"
+            placeholder={BLUR[image] ? 'blur' : 'empty'}
             blurDataURL={BLUR[image]}
             sizes="100vw"
             className="object-cover"

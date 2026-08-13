@@ -22,13 +22,16 @@ export function CapabilityDetail({ slug }: { slug: string }) {
 
   return (
     <>
+      {/* Each practice has its own photograph in public/brand/capabilities.
+          All eight pages previously shared the generic capabilities hero, so
+          the page looked identical whichever practice you opened. */}
       <PageHero
         crumb={cap.title}
         eyebrow={t.capabilities.eyebrow}
         title={cap.title}
         lead={cap.summary}
-        image="capabilities"
-        imagePosition="center 30%"
+        image={`capabilities/${cap.id}`}
+        imagePosition="center 35%"
       />
 
       <section className="section">
