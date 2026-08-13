@@ -357,15 +357,11 @@ India office opened — the privacy policy needs updating to match.
 
 These are deliberate and need a decision from the business, not a code change:
 
-1. **Insight articles** are titles and excerpts only; each card shows
-   "Article coming soon". Article bodies need writing.
-2. **LinkedIn URL** in `CONTACT.linkedin` is `#` — set the real profile.
-3. **Privacy Policy / Terms / Disclaimer** are written and live, but have not been
+1. **Privacy Policy / Terms / Disclaimer** are written and live, but have not been
    reviewed by a qualified Taiwanese lawyer. They make binding statements about
    data handling and jurisdiction for a firm that receives client technical
    documents, so a review is a real obligation rather than a formality.
-4. **Chennai office** is described as "opening soon" — update when it is real.
-6. **The logo artwork still spells the old name.** `Images/logo.png` (and the
+2. **The logo artwork still spells the old name.** `Images/logo.png` (and the
    `public/brand/logo-full.png` generated from it) contain a raster wordmark reading
    "HariNext Global". The site is unaffected — the navbar and footer use
    `logo-mark.png`, which is the squirrel symbol only, and render the wordmark as live

@@ -805,7 +805,6 @@ const en = {
     eyebrow: 'Case Studies & Insights',
     heading: 'Perspectives on cross-border technology transfer',
     lead: 'Practical notes on cross-border technology, sourcing and compliance.',
-    comingSoon: 'Article coming soon',
     items: [
       { id: 'taiwan-outward', category: 'Market entry', title: 'Why Taiwanese companies should look outward', excerpt: 'The commercial logic behind exporting capability, and the operational realities that decide whether an entry works.' },
       { id: 'tech-transfer', category: 'Technology transfer', title: 'Technology transfer best practices', excerpt: 'What separates a transfer that reaches production from one that stalls at pilot scale.' },
@@ -1841,7 +1840,6 @@ const zh: Dict = {
     eyebrow: '案例與洞察',
     heading: '跨境技術移轉的觀察與觀點',
     lead: '關於跨境技術、採購與法規合規的實務筆記。',
-    comingSoon: '文章即將上線',
     items: [
       { id: 'taiwan-outward', category: '市場進入', title: '台灣企業為何應該向外布局', excerpt: '輸出自身能力背後的商業邏輯，以及決定市場進入成敗的營運現實。' },
       { id: 'tech-transfer', category: '技術移轉', title: '技術移轉最佳實務', excerpt: '能推進到量產的技術移轉，與停滯在試量產階段者，差別何在。' },
@@ -2125,8 +2123,6 @@ export const CONTACT = {
   whatsapp: '886974025045',
   whatsappUrl: 'https://wa.me/886974025045',
   taipei: 'Taipei, Taiwan',
-  india: 'Chennai, India',
-  linkedin: '#',
 } as const;
 
 /* ------------------------------------------------------------------
