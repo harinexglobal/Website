@@ -934,7 +934,7 @@ const en = {
 
   cookies: {
     title: 'Storage on this site',
-    body: 'We do not use advertising or analytics cookies, and we do not track you across other websites. Two things are kept in your browser, and nothing is sent to us:',
+    body: 'We do not use advertising or tracking cookies, and we do not follow you across other websites. Visitor numbers are counted by a service that sets no cookies and identifies nobody. Two things are kept in your browser, and neither is sent to us:',
     items: [
       'Your language choice (English or 繁體中文), so pages remember it',
       'This acknowledgement, so the notice does not reappear',
@@ -1919,7 +1919,7 @@ const zh: Dict = {
 
   cookies: {
     title: '本網站的瀏覽器儲存',
-    body: '本網站不使用廣告或分析用 Cookie，也不會跨網站追蹤您。僅有兩項資料存放於您的瀏覽器，且不會傳送給我們：',
+    body: '本網站不使用廣告或追蹤用 Cookie，也不會跨網站追蹤您。網站流量由不設置 Cookie、亦不識別個人的服務進行統計。僅有兩項資料存放於您的瀏覽器，兩者皆不會傳送給我們：',
     items: ['您選擇的語言（English 或繁體中文），供頁面之間記憶使用', '本則告知的確認狀態，以免重複顯示'],
     accept: '接受',
     decline: '拒絕',

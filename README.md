@@ -195,6 +195,40 @@ listener is not worth the afternoon it costs, as this repo's history records.
 
 ---
 
+## Analytics
+
+Cloudflare Web Analytics, chosen because it sets **no cookies** and writes nothing to
+the visitor's browser. That matters here: the storage notice promises that only the
+language preference and the acknowledgement are kept, and Google Analytics would make
+that promise false — it writes `_ga` cookies, would need a consent gate before firing,
+and would then only count the visitors who clicked Accept.
+
+Cloudflare's beacon needs no gate, so the figures cover everyone. It runs whatever the
+visitor chooses in the notice, and `components/site/cookie-notice.tsx` records why.
+
+1. In the Cloudflare dashboard: **Analytics & Logs → Web Analytics → Add a site**.
+   The domain does not have to use Cloudflare DNS — this works on Netlify hosting.
+2. Copy the token out of the snippet Cloudflare shows.
+3. Set it in Netlify under **Site configuration → Environment variables**:
+
+   ```
+   NEXT_PUBLIC_CF_BEACON_TOKEN=0123456789abcdef0123456789abcdef
+   ```
+
+4. **Trigger a deploy.** `NEXT_PUBLIC_` values are inlined at build time, so saving the
+   variable alone changes nothing — the same trap that cost an afternoon on `SMTP_URL`.
+
+Unset, `components/site/analytics.tsx` renders nothing, so local and preview builds
+never pollute production figures. The token is public by design; it identifies the
+site, not a visitor.
+
+Adding any tool that *does* write to the browser means gating it on
+`hasStorageConsent()` and rewriting the storage notice and the Cookies section of the
+privacy policy — both of which currently state, accurately, that nothing of the sort
+happens.
+
+---
+
 ## Deploying
 
 Both are already set up.

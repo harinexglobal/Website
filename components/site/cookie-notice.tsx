@@ -17,8 +17,12 @@ const STORAGE_KEY = 'harinex.storage-consent';
  * because claiming to use cookies we do not use would make the privacy policy
  * inaccurate.
  *
- * If analytics are added later, gate them on `hasStorageConsent()` and add a
- * genuine reject path — the accept/decline plumbing is already here.
+ * Cloudflare Web Analytics runs on every page and is deliberately NOT gated on
+ * this notice: consent under ePrivacy is required for storing or reading data
+ * on the visitor's device, and that product stores nothing. Gating it would
+ * also make the figures useless, since everyone who ignores the banner would go
+ * uncounted. `hasStorageConsent()` stays exported for anything added later that
+ * genuinely does write to the browser — that would need the gate.
  */
 
 type Consent = 'accepted' | 'declined';

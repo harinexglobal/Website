@@ -45,7 +45,8 @@ const en = {
       {
         h: 'Cookies and local storage',
         p: [
-          'This website does not use advertising or tracking cookies, and it does not run third-party analytics.',
+          'This website does not use advertising or tracking cookies, and it does not follow you across other websites.',
+          'We measure how the site is used with Cloudflare Web Analytics. It sets no cookies, stores nothing in your browser and does not fingerprint your device. It records the page requested, the page you arrived from, and general details such as country, browser and device type. Those details are derived from your IP address at the moment of the request; the address is not stored alongside the analytics data and is never visible to us. We rely on our legitimate interest in understanding which pages are useful. If you would prefer not to be counted, most browsers and privacy extensions can block the script, and blocking it does not affect how the site works.',
           'We store one item in your browser’s local storage: your choice of language (English or 繁體中文), saved under the key "harinex.lang". This exists solely so the site remembers your preference between pages. It contains no identifier and is not transmitted to us. You can clear it at any time through your browser settings.',
         ],
       },
@@ -290,7 +291,8 @@ const zh: LegalDict = {
       {
         h: 'Cookie 與本機儲存',
         p: [
-          '本網站不使用廣告或追蹤用 Cookie，亦未安裝第三方分析工具。',
+          '本網站不使用廣告或追蹤用 Cookie，也不會跨網站追蹤您。',
+          '我們使用 Cloudflare Web Analytics 統計網站使用情形。該服務不設置 Cookie、不在您的瀏覽器中存放任何資料，亦不進行裝置指紋辨識。其記錄的內容包括所瀏覽的頁面、來源頁面，以及國家／地區、瀏覽器與裝置類型等概略資訊；這些概略資訊係於請求當下由您的 IP 位址推得，該位址不會與統計資料一併留存，我們亦無從得見。此項處理的依據為我們了解哪些頁面確實有用之正當利益。若您不希望被計入，多數瀏覽器與隱私外掛皆可封鎖該指令碼，且封鎖後不影響本網站的功能。',
           '我們僅在您瀏覽器的本機儲存空間存放一項資料：您選擇的語言（English 或繁體中文），鍵名為「harinex.lang」。其唯一用途是讓網站在頁面之間記住您的偏好；其中不含任何識別碼，也不會傳送給我們。您可隨時透過瀏覽器設定清除。',
         ],
       },

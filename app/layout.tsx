@@ -5,6 +5,7 @@ import { Navbar } from '@/components/site/navbar';
 import { Footer } from '@/components/site/footer';
 import { ChatWidget } from '@/components/site/chat-widget';
 import { CookieNotice } from '@/components/site/cookie-notice';
+import { Analytics } from '@/components/site/analytics';
 import { CONTACT, SOCIAL } from '@/lib/content';
 import './globals.css';
 
@@ -134,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ChatWidget />
           <CookieNotice />
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
