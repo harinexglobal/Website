@@ -206,21 +206,23 @@ and would then only count the visitors who clicked Accept.
 Cloudflare's beacon needs no gate, so the figures cover everyone. It runs whatever the
 visitor chooses in the notice, and `components/site/cookie-notice.tsx` records why.
 
-1. In the Cloudflare dashboard: **Analytics & Logs → Web Analytics → Add a site**.
-   The domain does not have to use Cloudflare DNS — this works on Netlify hosting.
-2. Copy the token out of the snippet Cloudflare shows.
-3. Set it in Netlify under **Site configuration → Environment variables**:
+It is already set up, against the hostname `harinexglobal.com`. There is nothing to
+configure: the site token lives in `components/site/analytics.tsx`, checked in on
+purpose. It is not a secret — it ships in the HTML of every page of every site using
+this product, and it names the site rather than a visitor.
 
-   ```
-   NEXT_PUBLIC_CF_BEACON_TOKEN=0123456789abcdef0123456789abcdef
-   ```
+Keeping it in code rather than in a Netlify variable is deliberate. `NEXT_PUBLIC_`
+values are inlined at **build** time, not read at runtime, so an environment variable
+would need both a dashboard edit and a rebuild to take effect — the exact gap that
+cost an hour on `SMTP_URL`. `NEXT_PUBLIC_CF_BEACON_TOKEN` still overrides it if a
+staging property is ever wanted.
 
-4. **Trigger a deploy.** `NEXT_PUBLIC_` values are inlined at build time, so saving the
-   variable alone changes nothing — the same trap that cost an afternoon on `SMTP_URL`.
+The beacon does not render outside production builds, so `npm run dev` never reaches
+the figures.
 
-Unset, `components/site/analytics.tsx` renders nothing, so local and preview builds
-never pollute production figures. The token is public by design; it identifies the
-site, not a visitor.
+Read the numbers at **Analytics & Logs → Web Analytics** in the Cloudflare dashboard.
+They will stay empty until `harinexglobal.com` actually resolves to this site — the
+hostname on the property is the real domain, not the `.netlify.app` address.
 
 Adding any tool that *does* write to the browser means gating it on
 `hasStorageConsent()` and rewriting the storage notice and the Cookies section of the
