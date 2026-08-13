@@ -13,9 +13,17 @@ import { CONTACT } from '@/lib/content';
  * later is an environment change, not a code change.
  */
 
-type Payload =
-  | ({ kind: 'full' } & InquiryInput)
-  | ({ kind: 'quick' } & QuickInquiryInput);
+/** An optional file the visitor attached. Held in memory only — it is read
+    from the request and handed straight to the mail provider, never written
+    to disk and never opened. */
+export type InquiryAttachment = {
+  filename: string;
+  contentType: string;
+  content: Buffer;
+};
+
+type Payload = ({ attachment?: InquiryAttachment }) &
+  (({ kind: 'full' } & InquiryInput) | ({ kind: 'quick' } & QuickInquiryInput));
 
 export type DeliveryResult = { delivered: boolean; reason?: string };
 
@@ -76,6 +84,10 @@ function rowsFor(p: Payload): [string, string][] {
     rows.push(['Message', p.message]);
   }
 
+  if (p.attachment) {
+    rows.push(['Attachment', p.attachment.filename]);
+  }
+
   rows.push(['Received', new Date().toISOString()]);
   return rows;
 }
@@ -132,6 +144,15 @@ async function sendViaSmtp(p: Payload, url: string): Promise<DeliveryResult> {
     subject: subjectFor(p),
     text: textBody(p),
     html: htmlBody(p),
+    attachments: p.attachment
+      ? [
+          {
+            filename: p.attachment.filename,
+            content: p.attachment.content,
+            contentType: p.attachment.contentType,
+          },
+        ]
+      : undefined,
   });
 
   return { delivered: true };
@@ -148,6 +169,14 @@ async function sendViaResend(p: Payload, key: string): Promise<DeliveryResult> {
       subject: subjectFor(p),
       text: textBody(p),
       html: htmlBody(p),
+      attachments: p.attachment
+        ? [
+            {
+              filename: p.attachment.filename,
+              content: p.attachment.content.toString('base64'),
+            },
+          ]
+        : undefined,
     }),
   });
 

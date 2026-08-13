@@ -1,15 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { AlertCircle, ArrowRight, CheckCircle2, Mail, X } from 'lucide-react';
+import { AlertCircle, ArrowRight, Paperclip, X as XIcon, CheckCircle2, Mail, X } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { Button, ButtonLink } from '@/components/ui/button';
 import { FieldError, FieldLabel, Input, Select, Textarea } from '@/components/ui/field';
 import { CONTACT } from '@/lib/content';
+import {
+  ATTACHMENT_ACCEPT,
+  checkAttachment,
+  formatBytes,
+  type AttachmentRejection,
+} from '@/lib/attachment';
 import { inquirySchema, REGION_VALUES, SERVICE_VALUES, type InquiryInput } from '@/lib/inquiry-schema';
 import { cn } from '@/lib/utils';
 
@@ -34,6 +40,9 @@ export function ContactForm({ enquiry }: { enquiry?: InquiryInput['enquiry'] } =
   const [delivered, setDelivered] = useState(true);
   const [serverError, setServerError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [file, setFile] = useState<File | null>(null);
+  const [fileError, setFileError] = useState<AttachmentRejection | null>(null);
+  const fileInput = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -71,11 +80,19 @@ export function ContactForm({ enquiry }: { enquiry?: InquiryInput['enquiry'] } =
   const onSubmit = async (data: InquiryInput) => {
     setServerError(null);
     try {
-      const res = await fetch('/api/inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      /* multipart rather than JSON: a file cannot travel in a JSON body
+         without base64, which inflates it by a third for no benefit. The
+         Content-Type header is deliberately not set — the browser must add
+         its own multipart boundary. */
+      const form = new FormData();
+      for (const [key, value] of Object.entries(data)) {
+        if (value === undefined || value === null) continue;
+        if (Array.isArray(value)) value.forEach((v) => form.append(key, String(v)));
+        else form.append(key, String(value));
+      }
+      if (file) form.append('attachment', file);
+
+      const res = await fetch('/api/inquiry', { method: 'POST', body: form });
       const json = await res.json();
 
       if (!res.ok || !json.ok) {
@@ -86,6 +103,9 @@ export function ContactForm({ enquiry }: { enquiry?: InquiryInput['enquiry'] } =
       setDelivered(Boolean(json.delivered));
       setStatus('success');
       reset();
+      setFile(null);
+      setFileError(null);
+      if (fileInput.current) fileInput.current.value = '';
     } catch {
       setServerError('Network error. Please email us directly.');
     }
@@ -226,6 +246,80 @@ export function ContactForm({ enquiry }: { enquiry?: InquiryInput['enquiry'] } =
             {...register('brief')}
           />
           <FieldError>{msg(errors.brief?.message)}</FieldError>
+        </div>
+
+        {/* Attachment. Optional, and deliberately quiet — most enquiries do
+            not need one, and a prominent upload box invites a CV. */}
+        <div>
+          <FieldLabel htmlFor="attachment" hint={t.contact.form.optional}>
+            {t.contact.form.attachment}
+          </FieldLabel>
+
+          {file ? (
+            <div className="mt-1.5 flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5">
+              <Paperclip className="h-4 w-4 shrink-0 text-slate-400" strokeWidth={1.75} />
+              <span className="min-w-0 flex-1 truncate text-sm text-navy-800">{file.name}</span>
+              <span className="shrink-0 text-xs text-slate-500">{formatBytes(file.size)}</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setFile(null);
+                  setFileError(null);
+                  if (fileInput.current) fileInput.current.value = '';
+                }}
+                aria-label={t.contact.form.attachmentRemove}
+                className="shrink-0 rounded p-1 text-slate-400 transition-colors hover:text-red-600"
+              >
+                <XIcon className="h-4 w-4" />
+              </button>
+            </div>
+          ) : (
+            <label
+              htmlFor="attachment"
+              className="mt-1.5 inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-navy-800 transition-colors hover:border-emerald-500 hover:text-emerald-700"
+            >
+              <Paperclip className="h-4 w-4" strokeWidth={1.75} />
+              {t.contact.form.attachmentChoose}
+            </label>
+          )}
+
+          <input
+            ref={fileInput}
+            id="attachment"
+            type="file"
+            accept={ATTACHMENT_ACCEPT}
+            className="sr-only"
+            onChange={(e) => {
+              const picked = e.target.files?.[0] ?? null;
+              if (!picked) {
+                setFile(null);
+                setFileError(null);
+                return;
+              }
+              /* Checked here so the visitor gets a sentence rather than a
+                 rejected request. The server checks again — this one is a
+                 courtesy, not a control. */
+              const rejection = checkAttachment(picked);
+              if (rejection) {
+                setFile(null);
+                setFileError(rejection);
+                e.target.value = '';
+                return;
+              }
+              setFile(picked);
+              setFileError(null);
+            }}
+          />
+
+          {fileError ? (
+            <FieldError>
+              {fileError === 'size'
+                ? t.contact.form.attachmentTooBig
+                : t.contact.form.attachmentBadType}
+            </FieldError>
+          ) : (
+            <p className="mt-1.5 text-xs text-slate-500">{t.contact.form.attachmentHint}</p>
+          )}
         </div>
 
         {serverError && (
