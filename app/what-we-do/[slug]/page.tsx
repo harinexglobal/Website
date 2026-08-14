@@ -30,7 +30,7 @@ export async function generateMetadata({
     title: cap.title,
     description: `${cap.summary} ${cap.description}`.slice(0, 200),
     keywords: cap.tags,
-    alternates: { canonical: `/capabilities/${cap.id}` },
+    alternates: { canonical: `/what-we-do/${cap.id}` },
     openGraph: {
       title: `${cap.title} | HariNex Global`,
       description: cap.summary,
