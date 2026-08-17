@@ -11,9 +11,11 @@
  * and the wordmark is drawn as type, in the same colours the site renders it:
  * forest green with the "Nex" in saffron, matching the navbar and footer.
  *
- * No tagline. The old one was wrong and any replacement would be another thing
- * to keep in step with the positioning — a lockup with no strapline cannot go
- * stale.
+ * The taglines are taken from Images/logo 1.png, which carries the correct
+ * company name and the real strapline. That file cannot be used directly: it
+ * has a dark glowing gradient baked in, bleeding into the letterforms, so the
+ * background cannot be knocked out without halos. It is a presentation mockup,
+ * not a production asset — fine on a dark slide, unusable on white paper.
  *
  * This is a functional replacement, not a designed logo. It is strictly better
  * than one spelling the company's name wrong, and it should be replaced by
@@ -33,7 +35,7 @@ const SAFFRON = '#E8821E';
 
 const W = 1200;
 const MARK_H = 520;
-const TYPE_H = 300;
+const TYPE_H = 430;
 const GAP = 60;
 const H = MARK_H + GAP + TYPE_H;
 
@@ -48,11 +50,24 @@ const markMeta = await sharp(mark).metadata();
 const wordmark = Buffer.from(`
 <svg width="${W}" height="${TYPE_H}" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .w { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-         font-weight: 800; font-size: 168px; letter-spacing: -4px; }
+    .w  { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+          font-weight: 800; font-size: 168px; letter-spacing: -4px; }
+    .t1 { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+          font-weight: 700; font-size: 52px; letter-spacing: 11px; }
+    .t2 { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+          font-weight: 500; font-size: 29px; letter-spacing: 3.5px; }
   </style>
   <text x="${W / 2}" y="200" class="w" text-anchor="middle" fill="${FOREST}"
     >Hari<tspan fill="${SAFFRON}">Nex</tspan><tspan dx="34">Global</tspan></text>
+
+  <!-- No rules either side of the strapline. Their x positions have to be
+       measured against the rendered text, and SVG cannot measure text — with
+       fixed coordinates they struck straight through it as soon as the font
+       substituted to something wider. -->
+  <text x="${W / 2}" y="300" class="t1" text-anchor="middle" fill="${FOREST}"
+    >CONNECTING BUSINESS</text>
+  <text x="${W / 2}" y="366" class="t2" text-anchor="middle" fill="${FOREST}"
+    >BRIDGING OPPORTUNITIES. BUILDING PARTNERSHIPS.</text>
 </svg>`);
 
 await sharp({
