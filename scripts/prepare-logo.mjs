@@ -41,17 +41,24 @@ async function knockOutWhite(input) {
 async function main() {
   await mkdir(OUT, { recursive: true });
 
-  // 1. Full lockup, transparent + trimmed
+  // 1. Knock out the white and trim. This buffer is the source for the mark
+  //    below — it is NOT written out as logo-full.png any more.
+  //
+  //    Images/logo.png reads "HariNext Global" over "CONNECTING TAIWAN &
+  //    INDIA": the pre-rename name and the bilateral positioning the firm has
+  //    moved away from. Writing it out would put the wrong company name back
+  //    into public/brand every time this script ran, which is exactly what it
+  //    used to do. The squirrel is unaffected, so the mark is still taken from
+  //    here; the lockup is composed by scripts/prepare-logo-full.mjs, which
+  //    draws the wordmark as type in the site's own colours.
+  //
+  //    When a designer redraws the artwork, drop it in as Images/logo.png,
+  //    restore the write below, and delete prepare-logo-full.mjs.
   const knocked = await knockOutWhite(SRC);
   const trimmedBuf = await knocked.trim({ threshold: 1 }).toBuffer();
 
-  await sharp(trimmedBuf)
-    .resize({ width: 900, withoutEnlargement: true })
-    .png({ compressionLevel: 9 })
-    .toFile(path.join(OUT, 'logo-full.png'));
-
   const meta = await sharp(trimmedBuf).metadata();
-  console.log(`logo-full: ${meta.width}x${meta.height}`);
+  console.log(`source lockup: ${meta.width}x${meta.height} (not written — stale wordmark)`);
 
   // 2. Mark only — the squirrel sits in the upper ~68% of the lockup.
   // extract and trim must be separate passes: sharp applies trim before

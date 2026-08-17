@@ -165,8 +165,11 @@ Source artwork lives in `Images/`. Optimised web versions are generated into
 `public/brand/` by two scripts:
 
 ```bash
-node scripts/prepare-logo.mjs     # knocks the white background out of logo.png,
-                                  # emits logo-full.png + logo-mark.png
+node scripts/prepare-logo.mjs      # knocks the white background out of logo.png,
+                                   # emits logo-mark.png (the squirrel only)
+node scripts/prepare-logo-full.mjs # composes logo-full.png: mark + wordmark as
+                                   # type, because Images/logo.png still reads
+                                   # "HariNext Global"
 node scripts/prepare-images.mjs   # photographs -> WebP + writes lib/blur.ts
 ```
 
@@ -361,13 +364,6 @@ These are deliberate and need a decision from the business, not a code change:
    reviewed by a qualified Taiwanese lawyer. They make binding statements about
    data handling and jurisdiction for a firm that receives client technical
    documents, so a review is a real obligation rather than a formality.
-2. **The logo artwork still spells the old name.** `Images/logo.png` (and the
-   `public/brand/logo-full.png` generated from it) contain a raster wordmark reading
-   "HariNext Global". The site is unaffected — the navbar and footer use
-   `logo-mark.png`, which is the squirrel symbol only, and render the wordmark as live
-   text — but `logo-full.png` is stale and should not be used until the logo is
-   redrawn. Once you have a new logo file, drop it in as `Images/logo.png` and re-run
-   `node scripts/prepare-logo.mjs`.
 
 ## Naming decisions taken without confirmation
 
