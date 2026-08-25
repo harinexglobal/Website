@@ -548,12 +548,32 @@ const en = {
         ],
       },
       {
+        id: 'hans-uwe-dahms',
+        name: 'Prof. Hans-Uwe Dahms',
+        role: 'Chief Advisor — Environmental & Life Sciences',
+        location: 'Kaohsiung, Taiwan',
+        photo: '/brand/team/hans-uwe-dahms.webp',
+        focus: [
+          'Environmental & public health',
+          'Ecotoxicology',
+          'Antibiotic resistance',
+          'Food safety',
+          'Biomarkers & monitoring',
+        ],
+      },
+      {
         id: 'viney-g',
         name: 'Vinay G',
         role: 'Managing Director — India Branch',
         location: 'Bengaluru, Karnataka, India',
         photo: '/brand/team/viney-g.webp',
-        focus: ['India market entry', 'Manufacturing partners', 'Supplier qualification', 'Site visits'],
+        focus: [
+          'Life sciences & biotechnology',
+          'Laboratory & diagnostic supply',
+          'Academic & hospital markets',
+          'India market entry',
+          'Supplier qualification',
+        ],
       },
       {
         id: 'lenin-nachimuthu',
@@ -955,6 +975,9 @@ const en = {
         city: 'Bengaluru, India',
         role: 'India Branch Office',
         detail: 'No 6, 3rd Floor, 5th Main, 1st Cross, Tata Nagar, Bengaluru 560092, Karnataka',
+        /* Only this office has a mailbox of its own; the field is optional so
+           the others render without one rather than showing a blank line. */
+        email: 'india.business@harinexglobal.com',
       },
       {
         city: 'Michigan, United States',
@@ -1612,12 +1635,32 @@ const zh: Dict = {
         focus: ['技術商品化', '業務開發', '技術移轉', '法規策略', '國際合作'],
       },
       {
+        id: 'hans-uwe-dahms',
+        name: 'Prof. Hans-Uwe Dahms',
+        role: '首席顧問 — 環境與生命科學',
+        location: '台灣，高雄',
+        photo: '/brand/team/hans-uwe-dahms.webp',
+        focus: [
+          '環境與公共衛生',
+          '生態毒理學',
+          '抗生素抗藥性',
+          '食品安全',
+          '生物標記與監測',
+        ],
+      },
+      {
         id: 'viney-g',
         name: 'Vinay G',
         role: '印度分公司 總經理',
         location: '印度 卡納塔卡邦 班加羅爾',
         photo: '/brand/team/viney-g.webp',
-        focus: ['印度市場進入', '製造夥伴', '供應商資格認定', '實地訪廠'],
+        focus: [
+          '生命科學與生物技術',
+          '實驗室與診斷用品供應',
+          '學術機構與醫院市場',
+          '印度市場進入',
+          '供應商資格認定',
+        ],
       },
       {
         id: 'lenin-nachimuthu',
@@ -1988,6 +2031,7 @@ const zh: Dict = {
         city: '印度 班加羅爾',
         role: '印度分公司',
         detail: 'No 6, 3rd Floor, 5th Main, 1st Cross, Tata Nagar, Bengaluru 560092, Karnataka',
+        email: 'india.business@harinexglobal.com',
       },
       {
         city: '美國 密西根州',

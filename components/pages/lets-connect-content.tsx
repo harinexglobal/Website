@@ -130,6 +130,14 @@ function LetsConnect() {
                           <p className="font-semibold text-navy-800">{o.city}</p>
                           <p className="text-sm text-emerald-700">{o.role}</p>
                           <p className="mt-0.5 text-[0.82rem] leading-relaxed text-slate-500">{o.detail}</p>
+                          {'email' in o && o.email && (
+                            <a
+                              href={`mailto:${o.email}`}
+                              className="mt-1 inline-block break-all text-[0.82rem] font-medium text-emerald-700 underline-offset-4 hover:underline"
+                            >
+                              {o.email}
+                            </a>
+                          )}
                         </div>
                       </li>
                     ))}

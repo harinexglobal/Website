@@ -63,6 +63,11 @@ const PHOTOS = [
   { src: 'Images/Team members/Morris S.S. Ma.png', name: 'morris-ma', crop: { left: 213, top: 115, size: 1317 } },
   { src: 'Images/Team members/Dr. Kanagaraj Naveen.png', name: 'kanagaraj-naveen', crop: { left: 162, top: 178, size: 1458 } },
   { src: 'Images/Team members/Dr. Ganesh Kumar.png', name: 'ganesh-kumar', crop: { left: 226, top: 144, size: 1241 } },
+  /* 1254x1254 studio portrait. Head spans y 60-690, so a 1167px square puts
+     the head at 54% — this one reaches the standard. Pinned to top: 0 because
+     the hair starts 60px down; the eye line lands a little above 38% as a
+     result, which is the better trade against cropping into the hair. */
+  { src: 'Team/photos/Prof. Hans-Uwe Dahms.png', name: 'hans-uwe-dahms', crop: { left: 77, top: 0, size: 1167 } },
 ];
 
 for (const p of PHOTOS) {

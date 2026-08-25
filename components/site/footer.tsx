@@ -151,9 +151,18 @@ export function Footer() {
               {t.contact.offices.map((o) => (
                 <li key={o.city} className="flex items-start gap-2.5 text-sm text-slate-400">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.75} />
-                  <span>
+                  <span className="min-w-0">
                     {o.city}
                     <span className="block text-xs text-slate-500">{o.role}</span>
+                    {/* Only the India branch has its own mailbox. */}
+                    {'email' in o && o.email && (
+                      <a
+                        href={`mailto:${o.email}`}
+                        className="mt-0.5 block break-all text-xs text-slate-400 transition-colors hover:text-emerald-400"
+                      >
+                        {o.email}
+                      </a>
+                    )}
                   </span>
                 </li>
               ))}
