@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CapabilityDetail } from '@/components/pages/capability-detail';
 import { dictionaries } from '@/lib/content';
+import { breadcrumbSchema, jsonLd, serviceSchema } from '@/lib/schema';
 
 /**
  * One statically generated page per capability. Metadata is built from the
@@ -41,7 +42,24 @@ export async function generateMetadata({
 
 export default async function CapabilityPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (!caps.some((c) => c.id === slug)) notFound();
+  const cap = caps.find((c) => c.id === slug);
+  if (!cap) notFound();
 
-  return <CapabilityDetail slug={slug} />;
+  /* Service says what this page offers; BreadcrumbList says where it sits.
+     The mega menu is client-rendered on hover, so the hierarchy appears
+     nowhere in the HTML a crawler receives — this is the only place it does. */
+  return (
+    <>
+      <script {...jsonLd(serviceSchema(slug))} />
+      <script
+        {...jsonLd(
+          breadcrumbSchema([
+            { name: 'What We Do', path: '/what-we-do' },
+            { name: cap.title, path: `/what-we-do/${cap.id}` },
+          ]),
+        )}
+      />
+      <CapabilityDetail slug={slug} />
+    </>
+  );
 }

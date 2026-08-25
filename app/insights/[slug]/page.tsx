@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { InsightDetail } from '@/components/pages/insight-detail';
 import { insightsDictionaries } from '@/lib/insights';
+import { breadcrumbSchema } from '@/lib/schema';
 
 const articles = insightsDictionaries.en.articles;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://harinexglobal.com';
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.id }));
@@ -48,6 +50,11 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
     articleSection: article.category,
     author: { '@type': 'Organization', name: 'HariNex Global Co., Ltd.' },
     publisher: { '@type': 'Organization', name: 'HariNex Global Co., Ltd.' },
+    /* Both added because the article now has its own hero photograph and a
+       canonical of its own — an Article without mainEntityOfPage leaves the
+       crawler to guess which URL the markup describes. */
+    mainEntityOfPage: `${SITE_URL}/insights/${article.id}`,
+    image: `${SITE_URL}/brand/insights/${article.id}.webp`,
   };
 
   return (
@@ -55,6 +62,17 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'Insights', path: '/insights' },
+              { name: article.title, path: `/insights/${article.id}` },
+            ]),
+          ),
+        }}
       />
       <InsightDetail slug={slug} />
     </>
