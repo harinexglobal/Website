@@ -1038,7 +1038,7 @@ const en = {
     disclaimer: 'Disclaimer',
     rights: 'All rights reserved.',
     disclaimerBody:
-      'HariNex Global provides advisory, coordination and localisation services. We are not a law firm, and we do not provide legal, tax, investment or accounting advice. Regulatory submissions are coordinated with appropriately qualified professionals.',
+      'We are not a law firm, and we do not provide legal, tax, investment or accounting advice. The advisory, coordination and localisation services described on this site are delivered on that basis, and regulatory submissions are coordinated with appropriately qualified professionals.',
   },
 
   howWeHelp: {
@@ -2087,7 +2087,7 @@ const zh: Dict = {
     disclaimer: '免責聲明',
     rights: '版權所有。',
     disclaimerBody:
-      '瀚瑞國際提供顧問、協調與在地化服務。本公司並非律師事務所，亦不提供法律、稅務、投資或會計意見。法規送件均與具備適當資格之專業人士協同辦理。',
+      '本公司並非律師事務所，亦不提供法律、稅務、投資或會計意見。本網站所述之顧問、協調與在地化服務均依此前提提供。法規送件均與具備適當資格之專業人士協同辦理。',
   },
 
   howWeHelp: {
