@@ -520,6 +520,19 @@ const en = {
         ],
       },
       {
+        id: 'thangaraji-vasudevan',
+        name: 'Dr. Thangaraji Vasudevan',
+        role: 'Managing Partner & Research Lead — Electronics',
+        location: 'Taipei, Taiwan',
+        photo: '/brand/team/thangaraji-vasudevan.webp',
+        focus: [
+          'Perovskite semiconductors',
+          'OLED & LED devices',
+          'Optoelectronic materials',
+          'Electronics R&D',
+        ],
+      },
+      {
         id: 'ganesh-kumar',
         name: 'Dr. D. Ganesh Kumar',
         nameLocal: '甘納緒 博士',
@@ -536,7 +549,7 @@ const en = {
       },
       {
         id: 'viney-g',
-        name: 'Viney G',
+        name: 'Vinay G',
         role: 'Managing Director — India Branch',
         location: 'Bengaluru, Karnataka, India',
         photo: '/brand/team/viney-g.webp',
@@ -1582,6 +1595,14 @@ const zh: Dict = {
         focus: ['資訊服務交付', '伺服器與目錄架構', '虛擬化', '容器化'],
       },
       {
+        id: 'thangaraji-vasudevan',
+        name: 'Dr. Thangaraji Vasudevan',
+        role: '管理合夥人 — 電子研發主持人',
+        location: '台灣，台北',
+        photo: '/brand/team/thangaraji-vasudevan.webp',
+        focus: ['鈣鈐矿半導體', 'OLED 與 LED 元件', '光電材料', '電子研發'],
+      },
+      {
         id: 'ganesh-kumar',
         name: '甘納緒 博士',
         nameLocal: 'Dr. D. Ganesh Kumar',
@@ -1592,7 +1613,7 @@ const zh: Dict = {
       },
       {
         id: 'viney-g',
-        name: 'Viney G',
+        name: 'Vinay G',
         role: '印度分公司 總經理',
         location: '印度 卡納塔卡邦 班加羅爾',
         photo: '/brand/team/viney-g.webp',

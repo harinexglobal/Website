@@ -50,6 +50,11 @@ const PHOTOS = [
   { src: 'Team/photos/Dr. ARIRAMAN MATHIVATHANAN.png', name: 'ariraman-mathivathanan', crop: { left: 0, top: 0, size: 800 } },
   { src: 'Team/photos/Purusothaman Manogaran.png', name: 'purusothaman-manogaran', crop: { left: 0, top: 0, size: 355 } },
   { src: 'Team/photos/Dr. MUTHU KUMAR THANGAVEL.png', name: 'muthu-kumar-thangavel', crop: { left: 0, top: 0, size: 800 } },
+  /* Same constraint. Source is 1023x1537 with the head spanning y 55-930, so
+     the widest square the frame allows is its own width — the head reads far
+     tighter than 54% and the eye line sits near the middle rather than at
+     38%. Framed as close as the source permits. */
+  { src: 'Team/photos/Dr. Thangaraji Vasudevan.png', name: 'thangaraji-vasudevan', crop: { left: 0, top: 0, size: 1023 } },
 
   /* Restyled studio portraits, 2026-08-10. The generator stamps a sparkle mark
      into the bottom-right corner of every one; each box below stops well above
