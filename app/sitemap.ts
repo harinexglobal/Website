@@ -20,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/lets-connect',
   ];
   const capabilityRoutes = dictionaries.en.capabilities.items.map((c) => `/what-we-do/${c.id}`);
+  /* Only the markets that actually have a corridor page. */
+  const marketRoutes = dictionaries.en.marketPages.items.map((m) => `/where-we-work/${m.id}`);
   const insightRoutes = insightsDictionaries.en.articles.map((a) => `/insights/${a.id}`);
   const legalRoutes = ['/privacy', '/terms', '/disclaimer'];
   const now = new Date();
@@ -31,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return 0.8;
   };
 
-  return [...routes, ...capabilityRoutes, ...insightRoutes, ...legalRoutes].map((route) => ({
+  return [...routes, ...capabilityRoutes, ...marketRoutes, ...insightRoutes, ...legalRoutes].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: now,
     changeFrequency: route === '' ? 'weekly' : legalRoutes.includes(route) ? 'yearly' : 'monthly',

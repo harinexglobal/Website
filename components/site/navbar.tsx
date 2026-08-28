@@ -144,11 +144,17 @@ export function Navbar() {
           {
             heading: n.marketsLabel,
             wide: true,
-            items: t.network.locations.map((m) => ({
-              href: `${ROUTES.whereWeWork}#${m.id}`,
-              label: `${m.city}, ${m.country}`,
-              pin: true,
-            })),
+            /* A market with a corridor page links to it; the rest jump to
+               their card on the overview. Both destinations exist, which is
+               the only rule this menu has. */
+            items: t.network.locations.map((m) => {
+              const corridor = t.marketPages.items.find((c) => c.market === m.country);
+              return {
+                href: corridor ? ROUTES.market(corridor.id) : `${ROUTES.whereWeWork}#${m.id}`,
+                label: `${m.city}, ${m.country}`,
+                pin: true,
+              };
+            }),
           },
           {
             heading: n.overviewLabel,

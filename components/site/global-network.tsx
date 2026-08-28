@@ -1,15 +1,23 @@
 'use client';
 
-import { Building2, MapPin } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Building2, MapPin } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { NetworkMap } from '@/components/site/network-map';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/reveal';
 import { SectionHeading } from '@/components/ui/section-heading';
+import { ROUTES } from '@/lib/content';
 import { cn } from '@/lib/utils';
 
 /** Headquarters plus the business development representatives. */
 export function GlobalNetwork() {
   const { t } = useLang();
+
+  /* Matched on country rather than location id: the corridor pages are
+     keyed by market, and a market could gain a second office without the
+     link breaking. */
+  const corridor = (country: string) =>
+    t.marketPages.items.find((m) => m.market === country)?.id ?? null;
 
   return (
     <section className="surface-navy on-navy section" id="network">
@@ -85,6 +93,20 @@ export function GlobalNetwork() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Only the three markets with a corridor page get a link.
+                      The other four have a representative and little more to
+                      say, and a link to a page that says nothing is worse than
+                      no link. */}
+                  {corridor(loc.country) && (
+                    <Link
+                      href={ROUTES.market(corridor(loc.country)!)}
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300 transition-colors hover:text-emerald-200"
+                    >
+                      {t.marketPages.eyebrow}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  )}
                 </article>
               </RevealItem>
             );
