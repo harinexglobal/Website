@@ -1,0 +1,75 @@
+# Posts approved items from social/queue.json. Approved ones only.
+#
+# The gate lives in scripts/publish-social.mjs: a post needs status
+# "approved" — which only a person writes — and a scheduled time that has
+# passed. This workflow just gives that script a clock and the credentials.
+#
+# Secrets are set in GitHub (Settings → Secrets and variables → Actions). They
+# are write-only in that UI: nobody can read them back afterwards, including
+# whoever wrote this file. A platform whose secret is absent is skipped and
+# named in the log, never guessed at.
+name: Social publish
+
+on:
+  schedule:
+    # Every hour on the half hour. Posts are scheduled at :30 Taipei time, and
+    # an hourly check is close enough for a company feed while keeping the run
+    # count low.
+    - cron: '30 * * * *'
+  workflow_dispatch:
+    inputs:
+      live:
+        description: 'Actually post (unchecked = dry run)'
+        type: boolean
+        default: false
+
+# The job commits postedAt back, so it needs write access to the repo.
+permissions:
+  contents: write
+
+concurrency:
+  # Two overlapping runs could send the same post twice — the second would
+  # start before the first had written postedAt back.
+  group: social-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Publish approved posts
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ORG_URN: ${{ secrets.LINKEDIN_ORG_URN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_TOKEN: ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          INSTAGRAM_BUSINESS_ID: ${{ secrets.INSTAGRAM_BUSINESS_ID }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          # A manual run is a dry run unless the box was ticked. The scheduled
+          # run is live — that is the whole point of approving something.
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.live }}" = "true" ]; then
+            node scripts/publish-social.mjs --live
+          else
+            node scripts/publish-social.mjs
+          fi
+
+      - name: Record what was posted
+        run: |
+          # postedAt is what stops the next run sending the same post again, so
+          # it has to go back into the repository.
+          if [ -n "$(git status --porcelain social/queue.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add social/queue.json
+            git commit -m "Social: record posted items [skip ci]"
+            git push
+          else
+            echo "No queue changes to record."
+          fi

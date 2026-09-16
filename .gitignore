@@ -42,3 +42,16 @@ website content.docx
 # Full-resolution headshot sources. Same rule as /Team/ — only the cropped
 # 800px webp in public/brand/team belongs in a public repo.
 Images/Team members/
+
+# Social posting drafts — held back while this repository is public.
+#
+# The queue is not secret in the sense of containing a credential; it holds no
+# token and never will. It is simply the marketing calendar, and a public repo
+# would publish every unapproved draft and the posting schedule with it.
+#
+# The scheduled workflow reads social/queue.json from the repository, so the
+# automation stays inactive until these are committed. Make the repository
+# private (Settings -> General -> Danger Zone -> Change visibility), then
+# remove these two lines and commit the queue to switch it on.
+social/queue.json
+social/CALENDAR.md
