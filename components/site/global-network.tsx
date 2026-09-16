@@ -103,7 +103,7 @@ export function GlobalNetwork() {
                       href={ROUTES.market(corridor(loc.country)!)}
                       className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300 transition-colors hover:text-emerald-200"
                     >
-                      {t.marketPages.eyebrow}
+                      {t.marketPages.linkLabel.replace('{market}', loc.country)}
                       <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </Link>
                   )}

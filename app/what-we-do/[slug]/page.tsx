@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { CapabilityDetail } from '@/components/pages/capability-detail';
 import { dictionaries } from '@/lib/content';
 import { breadcrumbSchema, jsonLd, serviceSchema } from '@/lib/schema';
+import { metaDescription } from '@/lib/seo';
 
 /**
  * One statically generated page per capability. Metadata is built from the
@@ -29,7 +30,7 @@ export async function generateMetadata({
 
   return {
     title: cap.title,
-    description: `${cap.summary} ${cap.description}`.slice(0, 200),
+    description: metaDescription(`${cap.summary} ${cap.description}`),
     keywords: cap.tags,
     alternates: { canonical: `/what-we-do/${cap.id}` },
     openGraph: {

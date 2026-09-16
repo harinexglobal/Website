@@ -9,6 +9,7 @@ import { GlobalNetwork } from '@/components/site/global-network';
 import { IndustriesGrid } from '@/components/site/industries-grid';
 import { TranslationModule } from '@/components/site/translation-module';
 import { HomeBanner } from '@/components/site/home-banner';
+import { InsightsGrid } from '@/components/site/insights-grid';
 import { ProcessTimeline } from '@/components/site/process-timeline';
 import { CtaBand } from '@/components/site/cta-band';
 
@@ -43,6 +44,12 @@ export default function HomePage() {
       <TranslationModule />
       <HomeBanner />
       <ProcessTimeline />
+      {/* The homepage linked to every practice and every corridor, and to no
+          article at all — /insights was reachable only from the nav, which is
+          client-rendered on hover and therefore absent from the HTML a crawler
+          receives. Three cards give the articles a real internal link from the
+          strongest page on the site. */}
+      <InsightsGrid limit={3} />
       <CtaBand />
     </>
   );

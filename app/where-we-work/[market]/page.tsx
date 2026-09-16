@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { MarketContent } from '@/components/pages/market-content';
 import { dictionaries } from '@/lib/content';
 import { breadcrumbSchema, jsonLd } from '@/lib/schema';
+import { metaDescription } from '@/lib/seo';
 
 /**
  * One statically generated corridor page per market that has one.
@@ -32,7 +33,7 @@ export async function generateMetadata({
 
   return {
     title: m.title,
-    description: `${m.lead} ${m.intro[0]}`.slice(0, 200),
+    description: metaDescription(`${m.lead} ${m.intro[0]}`),
     alternates: { canonical: `/where-we-work/${m.id}` },
     openGraph: {
       title: `${m.title} | HariNex Global`,

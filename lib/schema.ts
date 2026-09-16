@@ -34,6 +34,36 @@ function areaServed() {
   }));
 }
 
+/** The Organization node the root layout emits, addressable so other nodes can
+ *  point at it instead of restating the company. */
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+
+/**
+ * WebSite, emitted once on every page beside Organization.
+ *
+ * Organization says who the company is; WebSite says what this domain is and
+ * who publishes it. Without it the site had no node tying the two together, and
+ * a crawler had to infer that harinexglobal.com is the official site of HariNex
+ * Global Co., Ltd. rather than being told.
+ *
+ * No `potentialAction` / SearchAction. The site search is a client-side command
+ * palette with no results URL — declaring a search endpoint that does not exist
+ * is exactly the kind of markup that earns a manual action.
+ */
+export function websiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: 'HariNex Global',
+    alternateName: '瀚瑞國際',
+    url: SITE_URL,
+    publisher: { '@id': ORGANIZATION_ID },
+    /* Both languages ship in the same HTML and swap via the toggle. */
+    inLanguage: ['en', 'zh-Hant'],
+  };
+}
+
 /**
  * Service, for a single practice page.
  *

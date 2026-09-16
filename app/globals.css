@@ -160,9 +160,14 @@
 }
 
 @media (max-width: 640px) {
-  /* Two long words need more of the narrow viewport to read as a wordmark. */
+  /* Smaller here, not larger. The viewBox is sliced to cover, so on a portrait
+     phone only about 46 of its 100 horizontal units are ever on screen — at
+     19px "HariNex" is some 58 units wide and loses a letter off each end.
+     That was survivable while the reveal scaled the glyphs away within a
+     screen of scrolling; below 768px the hero is now static, so the wordmark
+     has to read at rest. 10px keeps both words inside the visible window. */
   .cine-type {
-    font-size: 19px;
+    font-size: 10px;
   }
 }
 

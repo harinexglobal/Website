@@ -7,6 +7,7 @@ import { ChatWidget } from '@/components/site/chat-widget';
 import { CookieNotice } from '@/components/site/cookie-notice';
 import { Analytics } from '@/components/site/analytics';
 import { CONTACT, SOCIAL } from '@/lib/content';
+import { ORGANIZATION_ID, jsonLd, websiteSchema } from '@/lib/schema';
 import './globals.css';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     template: '%s | HariNex Global',
   },
   description:
-    'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management. Headquartered in Taiwan, with representatives in India, South Korea and the United States.',
+    'HariNex Global helps businesses connect, collaborate and grow internationally through technology transfer, business advisory, supplier sourcing, technical translation, digital solutions and international project management. Headquartered in Taiwan, with a branch office in India and partners in South Korea, the United States, Germany, Singapore and Australia.',
   keywords: [
     'international technology transfer',
     'international business advisory',
@@ -102,6 +103,7 @@ function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
     name: 'HariNex Global Co., Ltd.',
     alternateName: '瀚瑞國際股份有限公司',
     url: SITE_URL,
@@ -138,6 +140,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+        />
+        <script {...jsonLd(websiteSchema())} />
+        {/* Advertises /feed.xml to feed readers and to the social schedulers
+            that poll a site for new articles. Written as an element rather
+            than metadata.alternates.types because every page sets its own
+            `alternates` for its canonical, and a page's alternates object
+            replaces the layout's wholesale — the feed link silently vanished
+            from all thirty pages. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="HariNex Global — Insights"
+          href="/feed.xml"
         />
         <LanguageProvider>
           <a

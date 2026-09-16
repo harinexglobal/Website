@@ -198,6 +198,8 @@ export function ChatWidget() {
                 alt=""
                 width={192}
                 height={192}
+
+              sizes="28px"
                 className="h-full w-full object-contain p-0.5"
               />
             </span>
@@ -234,6 +236,8 @@ export function ChatWidget() {
                     alt=""
                     width={192}
                     height={192}
+
+                  sizes="36px"
                     className="h-full w-full object-contain p-0.5"
                   />
                 </motion.span>

@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { useLang } from '@/components/providers/language-provider';
 import { ButtonLink } from '@/components/ui/button';
 import { ROUTES } from '@/lib/content';
+import { cn } from '@/lib/utils';
 import { MaterialsCanvas } from './materials-canvas';
 
 /**
@@ -32,12 +33,45 @@ export function CinematicHero() {
   const root = useRef<HTMLDivElement>(null);
   const { t } = useLang();
 
+  /**
+   * How much of the hero to run.
+   *
+   *   'cinematic' — the full scroll-driven reveal, the animated canvas and the
+   *                 1.6 MB film. Desktop only.
+   *   'mobile'    — no choreography and no canvas animation. The film plays as a
+   *                 plain background loop behind the wordmark, using a 174 KB
+   *                 cut instead of the full one.
+   *   'still'     — one poster frame, nothing moving and nothing to download
+   *                 beyond it. For reduced-motion and data-saver.
+   *
+   * The scroll choreography and the canvas were the bulk of the main-thread
+   * work PageSpeed measured on mobile, and `preload="none"` never held the film
+   * back because `autoPlay` makes the browser fetch it regardless — so a phone
+   * paid for all three before the page had finished painting.
+   *
+   * Starts 'still' so the server HTML and the first client render reference no
+   * video at all; the real mode is chosen once, on mount, when the viewport and
+   * the visitor's preferences are actually knowable.
+   */
+  const [mode, setMode] = useState<'cinematic' | 'mobile' | 'still'>('still');
+
+  useEffect(() => {
+    const wideEnough = window.matchMedia('(min-width: 768px)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+
+    if (reduce || connection?.saveData === true) return; // stays 'still'
+    setMode(wideEnough ? 'cinematic' : 'mobile');
+  }, []);
+
   useEffect(() => {
     const el = root.current;
     if (!el) return;
 
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return; // static composition below is already the reduced state
+    /* Only the cinematic mode is choreographed. 'mobile' and 'still' render the
+       static composition below, which is already their finished state — so
+       there is nothing to animate and no ScrollTrigger to keep alive. */
+    if (mode !== 'cinematic') return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +108,7 @@ export function CinematicHero() {
     }, el);
 
     return () => ctx.revert();
-  }, []);
+  }, [mode]);
 
   return (
     <div ref={root}>
@@ -84,25 +118,61 @@ export function CinematicHero() {
       >
         <h1 className="sr-only">HariNex Global — {t.hero.title}</h1>
 
-        {/* 1. What shows through the letterforms in Act 1 */}
-        <div data-cine="scene" className="absolute inset-0" aria-hidden="true">
-          <MaterialsCanvas className="h-full w-full" />
-        </div>
+        {/* 1. What shows through the letterforms in Act 1.
+               Cinematic only: in the other two modes the film layer below sits
+               behind the glyphs instead, so the canvas would be painting a
+               scene nobody can see — at a cost PageSpeed measured in seconds of
+               main-thread time. */}
+        {mode === 'cinematic' && (
+          <div data-cine="scene" className="absolute inset-0" aria-hidden="true">
+            <MaterialsCanvas className="h-full w-full" />
+          </div>
+        )}
 
         {/* 2. The film, revealed as the glyphs open */}
-        <div data-cine="film" className="absolute inset-0 opacity-0" aria-hidden="true">
-          <video
-            className="h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            poster="/brand/hero-poster.webp"
-          >
-            <source src="/brand/hero.webm" type="video/webm" />
-            <source src="/brand/hero.mp4" type="video/mp4" />
-          </video>
+        <div
+          data-cine="film"
+          className={cn('absolute inset-0', mode === 'cinematic' && 'opacity-0')}
+          aria-hidden="true"
+        >
+          {mode === 'still' ? (
+            /* The poster alone, 32 KB against the full film's 1.6 MB. Plain
+               <img> rather than next/image: it is a fixed full-bleed decorative
+               frame, so there is nothing for the optimiser to size down. */
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src="/brand/hero-poster.webp"
+              alt=""
+              className="h-full w-full object-cover"
+              decoding="async"
+            />
+          ) : (
+            /* Keyed by mode so switching cut actually reloads the element —
+               React reuses a <video> whose <source> children changed, and the
+               browser keeps playing whatever it already fetched. */
+            <video
+              key={mode}
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/brand/hero-poster.webp"
+            >
+              {mode === 'mobile' ? (
+                <>
+                  <source src="/brand/hero-mobile.webm" type="video/webm" />
+                  <source src="/brand/hero-mobile.mp4" type="video/mp4" />
+                </>
+              ) : (
+                <>
+                  <source src="/brand/hero.webm" type="video/webm" />
+                  <source src="/brand/hero.mp4" type="video/mp4" />
+                </>
+              )}
+            </video>
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/70" />
         </div>
 

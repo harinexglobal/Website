@@ -18,6 +18,9 @@ const OUT = path.resolve('public/brand/insights');
 mkdirSync(OUT, { recursive: true });
 
 const IMAGES = [
+  /* A magnifying glass over an old map: the article is about examining
+     candidate firms and picking the right kind, not about trade itself. */
+  { id: 'choosing-a-cross-border-partner', src: 'trade.jpeg' },
   { id: 'why-taiwanese-companies-should-look-outward', src: 'why taiwan.png' },
   { id: 'technology-transfer-best-practices', src: 'market entry.png' },
   { id: 'supplier-qualification-checklist', src: 'sourcing.jpg' },

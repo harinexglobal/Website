@@ -27,6 +27,82 @@ const en = {
 
   articles: [
     /* ------------------------------------------------------------------ */
+    /* Names other firms, visibly and on purpose: people searching for them
+       with a cross-border task should find an honest answer to "is this the
+       right kind of firm for my job?". Every statement about another firm
+       describes what it is publicly known for — never its fees, quality or
+       what it "cannot" do, which the firm cannot substantiate. */
+    {
+      id: 'choosing-a-cross-border-partner',
+      category: 'Market entry',
+      title: 'McKinsey, Fraunhofer or a specialist? Choosing a cross-border partner',
+      excerpt:
+        'Global consultancies, research organisations, life-sciences data firms and sourcing houses each do a different job well. How to tell which one a Taiwan, India or Korea project actually needs.',
+      minutes: 6,
+      date: '2026-09-14',
+      intro:
+        'Search for help with a cross-border project and the same names come up: McKinsey & Company, Boston Consulting Group, Roland Berger, Fraunhofer, IQVIA, Deloitte. They are the right answer to many questions. They are not the right answer to every question, and the real cost of hiring the wrong kind of partner is rarely the fee. It is the months spent on work that did not match the problem. This is a plain guide to what each kind of firm is known for, and where a corridor specialist fits.',
+      sections: [
+        {
+          h: 'Global management consultancies',
+          p: [
+            'McKinsey & Company, Boston Consulting Group (BCG), Roland Berger, Booz Allen Hamilton, PA Consulting, Deloitte, Capgemini and Nomura Research Institute are best known for work with large organisations and public bodies: group strategy, transformation programmes, operating models across many countries, major acquisitions, and technology change at enterprise scale.',
+            'If the question is whether to enter a region at all, how to reorganise a business around it, or how to integrate an acquisition, this is the category to call. The breadth of their industry teams and research is hard to match.',
+            'A different kind of question is the single transaction that has to be carried through on the ground: one technology moving from a laboratory in Taiwan to a plant in India, or one supplier that has to be qualified in person, on the factory floor, in Traditional Chinese.',
+          ],
+        },
+        {
+          h: 'Research and innovation organisations',
+          p: [
+            'Fraunhofer, Germany\'s applied research organisation, develops and licenses technology and carries out contract research through its institutes. Technopolis Group advises on and evaluates research and innovation policy, much of it for governments and public funders. Hong Kong Science and Technology Parks Corporation (HKSTP) runs science parks and incubation programmes for technology start-ups.',
+            'They are the right partner when you need research done, a technology developed, or an innovation programme designed or evaluated.',
+            'What a company or university often still needs alongside them is the commercial middle of a transfer: finding a counterparty in another country, verifying that it can actually run the process, and managing the handover between two organisations that do not share a language.',
+          ],
+        },
+        {
+          h: 'Life-sciences data and market research firms',
+          p: [
+            'IQVIA is known for clinical research services and healthcare data and analytics. Frost & Sullivan is known for market research and growth consulting. Use firms like these when the question is about the market: its size and shape, the competitive landscape, clinical trial operations or real-world evidence.',
+            'Once the decision is made, a biotech or medical device company often needs something narrower: its SOPs, batch records or regulatory dossier rendered accurately between English and Traditional Chinese, a submission coordinated with qualified local professionals, or a supplier of a pharmaceutical input qualified in person.',
+          ],
+        },
+        {
+          h: 'Asia cross-border advisory and sourcing houses',
+          p: [
+            'YCP Group is an Asia-focused management consulting and investment group. Li & Fung is known for supply chain management and sourcing, largely of consumer goods, at global scale.',
+            'Both are built for breadth: many markets, many product lines, established networks. That is valuable when the programme is large. It is a different proposition from one engineered component, one cleanroom tool or one specialty chemical that has to be sourced and verified between two specific countries.',
+          ],
+        },
+        {
+          h: 'Where a corridor specialist fits',
+          p: [
+            'HariNex Global is deliberately narrow. It works across seven markets (Taiwan, India, the United States, South Korea, Germany, Singapore and Australia) on three kinds of job: moving a technology between organisations or countries, qualifying a supplier or partner, and entering a market.',
+            'Every market has a named representative who lives there and can visit a facility in person, and India has a registered branch office in Bengaluru. Technical documentation is handled in English and Traditional Chinese by people who understand the process it describes.',
+            'That makes it a good fit for companies, research institutions and project teams with a specific cross-border task, and the wrong fit for group-wide strategy or transformation, where the firms above are the better call.',
+          ],
+        },
+        {
+          h: 'Five questions to ask any partner',
+          p: [
+            'Who will visit the site, and do they speak the language of the people running it?',
+            'Who will read the technical documents, and do they understand the process those documents describe?',
+            'Is the person who scopes the work the person who does it?',
+            'When the report is delivered, who carries the transaction through to a signed agreement or a first shipment?',
+            'What will they not do? A partner who can name its limits, as we do in saying that HariNex Global is not a law firm, is easier to trust with the rest.',
+          ],
+        },
+        {
+          h: 'A note on the names in this article',
+          p: [
+            'The companies named here are trademarks of their respective owners and are mentioned only to describe kinds of provider. HariNex Global is not affiliated with, endorsed by or a partner of any of them, and nothing here is a statement about their fees or the quality of their work.',
+          ],
+        },
+      ],
+      takeaway:
+        'Global consultancies, research organisations, data firms and sourcing houses each solve a different part of cross-border work well. Match the partner to the part of the problem you actually have: strategy to strategists, research to researchers, and a single cross-border transaction to someone who will be on the ground for it.',
+    },
+
+    /* ------------------------------------------------------------------ */
     {
       id: 'why-taiwanese-companies-should-look-outward',
       category: 'Market entry',
@@ -402,6 +478,75 @@ const zh: InsightsDict = {
   },
 
   articles: [
+    {
+      id: 'choosing-a-cross-border-partner',
+      category: '市場進入',
+      title: '麥肯錫、弗勞恩霍夫，還是專業顧問？如何選擇跨境合作夥伴',
+      excerpt:
+        '全球管理顧問、研究機構、生命科學數據公司與採購集團，各自擅長不同的工作。本文說明台灣、印度或韓國的跨境專案，實際需要哪一類夥伴。',
+      minutes: 6,
+      date: '2026-09-14',
+      intro:
+        '搜尋跨境專案的協助時，出現的往往是同一批名字：麥肯錫（McKinsey & Company）、波士頓顧問公司（BCG）、羅蘭貝格（Roland Berger）、弗勞恩霍夫（Fraunhofer）、IQVIA、德勤（Deloitte）。它們是許多問題的正確答案，但不是所有問題的答案。選錯夥伴真正的代價很少是費用，而是花了好幾個月做與問題不相符的工作。本文簡要說明各類公司以什麼見長，以及專注特定市場走廊的專業顧問適合在哪裡發揮。',
+      sections: [
+        {
+          h: '全球管理顧問公司',
+          p: [
+            '麥肯錫、波士頓顧問公司（BCG）、羅蘭貝格、博思艾倫（Booz Allen Hamilton）、PA Consulting、德勤、凱捷（Capgemini）與野村總合研究所（NRI），最為人所知的是服務大型企業與公部門：集團策略、轉型計畫、跨多國的營運模式、重大併購，以及企業規模的技術變革。',
+            '如果您的問題是「是否要進入某個區域」、「如何圍繞它重整事業」或「如何整合一項併購」，就該找這一類公司。它們在產業團隊與研究上的廣度難以匹敵。',
+            '另一類問題，則是必須在現場一路推進的單一交易：一項技術從台灣的實驗室移轉到印度的工廠，或是一家供應商必須親自到廠、以繁體中文完成資格審查。',
+          ],
+        },
+        {
+          h: '研究與創新機構',
+          p: [
+            '弗勞恩霍夫是德國的應用研究機構，透過旗下研究所開發並授權技術、承接委託研究。Technopolis Group 為研究與創新政策提供諮詢與評估，客戶多為政府與公共資助單位。香港科技園公司（HKSTP）營運科學園區，並為科技新創提供培育計畫。',
+            '當您需要進行研究、開發技術，或設計、評估創新計畫時，它們是正確的夥伴。',
+            '企業或大學在與它們合作的同時，往往仍需要技術移轉中段的商業工作：在另一個國家找到合作對象、確認對方真的有能力運行該製程，並管理兩個語言不同的組織之間的交接。',
+          ],
+        },
+        {
+          h: '生命科學數據與市場研究公司',
+          p: [
+            'IQVIA 以臨床研究服務及醫療數據與分析著稱，Frost & Sullivan 則以市場研究與成長諮詢著稱。當問題與市場本身有關，例如市場規模與結構、競爭態勢、臨床試驗運作或真實世界證據時，就適合找這類公司。',
+            '決策一旦做成，生技或醫療器材公司需要的往往更為具體：將 SOP、批次紀錄或法規文件在英文與繁體中文之間準確轉譯、與當地合格專業人士協調送件，或親自審查某項醫藥原料的供應商。',
+          ],
+        },
+        {
+          h: '亞洲跨境顧問與採購集團',
+          p: [
+            'YCP Group 是專注亞洲的管理顧問與投資集團。利豐（Li & Fung）則以全球規模的供應鏈管理與採購著稱，主要為消費品。',
+            '兩者都為廣度而生：多個市場、多條產品線、成熟的網絡。當計畫規模龐大時，這非常有價值；但若只是一個工程零組件、一台無塵室設備或一種特用化學品，需要在兩個特定國家之間完成採購與驗證，那是另一回事。',
+          ],
+        },
+        {
+          h: '專業走廊顧問適合的位置',
+          p: [
+            '瀚瑞國際（HariNex Global）刻意保持專注。我們在七個市場（台灣、印度、美國、韓國、德國、新加坡與澳洲）處理三類工作：在組織或國家之間移轉技術、審查供應商或合作夥伴，以及進入新市場。',
+            '每個市場都有一位常駐當地、可親自到廠訪視的具名代表，印度並設有登記於班加羅爾的分公司。技術文件以英文與繁體中文處理，負責的人理解文件所描述的製程。',
+            '因此，對於有明確跨境任務的企業、研究機構與專案團隊，我們是合適的選擇；而集團層級的策略或轉型，則由上述公司處理更為合適。',
+          ],
+        },
+        {
+          h: '選擇任何夥伴前應問的五個問題',
+          p: [
+            '誰會到現場訪視？他們是否會說現場操作人員的語言？',
+            '誰會閱讀技術文件？他們是否理解文件所描述的製程？',
+            '負責界定工作範圍的人，是否就是實際執行的人？',
+            '報告交付之後，誰負責把交易推進到簽約或第一批出貨？',
+            '他們不做什麼？能說清楚自身界限的夥伴，例如我們明言瀚瑞國際並非律師事務所，其餘的承諾也更值得信任。',
+          ],
+        },
+        {
+          h: '關於本文提及的公司名稱',
+          p: [
+            '本文提及的公司名稱均為其各自所有者的商標，僅用於說明服務提供者的類型。瀚瑞國際與上述任何公司均無隸屬、背書或合作關係，本文亦不對其收費或工作品質作任何評論。',
+          ],
+        },
+      ],
+      takeaway:
+        '全球顧問公司、研究機構、數據公司與採購集團，各自擅長跨境工作的不同環節。請依您實際面對的問題選擇夥伴：策略交給策略顧問，研究交給研究機構，而單一的跨境交易，交給會親自在現場推進的人。',
+    },
     {
       id: 'why-taiwanese-companies-should-look-outward',
       category: '市場進入',

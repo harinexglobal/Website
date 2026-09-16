@@ -210,12 +210,17 @@ export function Navbar() {
             )}
           >
             <Link href={ROUTES.home} className="flex shrink-0 items-center gap-2.5" aria-label={t.site.name}>
+              {/* sizes matters more here than anywhere else on the site: without
+                  it Next ships the 828px variant (115 KB) for a mark that renders
+                  40px tall, and `priority` puts that download in front of the
+                  LCP. 48px covers the 2x and 3x variants of the largest state. */}
               <Image
                 src="/brand/logo-mark.png"
                 alt=""
                 width={400}
                 height={374}
                 priority
+                sizes="48px"
                 className={cn('w-auto transition-all', scrolled ? 'h-8' : 'h-10')}
               />
               <span className="font-display text-lg font-extrabold leading-none tracking-tight text-forest-600">

@@ -135,6 +135,7 @@ export function MarketContent({ slug }: { slug: string }) {
                       alt=""
                       width={200}
                       height={200}
+                      sizes="64px"
                       className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-slate-100"
                     />
                     <div className="min-w-0">

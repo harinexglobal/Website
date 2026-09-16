@@ -24,7 +24,7 @@ const en = {
     tagline: 'Technology • Advisory • Global Commerce',
     shortTagline: 'Connecting Innovation & Trusted Partnerships Worldwide',
     description:
-      'International technology transfer, corporate trade advisory and specialised technical localisation. Headquartered in Taiwan, with representatives in India, South Korea and the United States.',
+      'International technology transfer, corporate trade advisory and specialised technical localisation. Headquartered in Taiwan, operating across seven markets.',
   },
 
   common: {
@@ -420,6 +420,9 @@ const en = {
       { title: 'Technical catalogues', body: 'Product specifications, manuals and localised marketing material.' },
     ],
     qualityHeading: 'How we protect accuracy',
+    /* Anchor text for the link out of the homepage module. "Learn more" told
+       neither a reader nor a crawler what sat on the other side. */
+    ctaLabel: 'The technical translation practice',
     quality: [
       'Subject-matter translator with a science or regulatory background',
       'Terminology glossary agreed with you before work starts',
@@ -1114,6 +1117,10 @@ const en = {
   /* Corridor pages — see scripts/add-market-pages.mjs for why only three. */
   marketPages: {
     eyebrow: 'Corridor',
+    /* The link on the network card used to read just "Corridor", which is the
+       same anchor text on three different cards pointing at three different
+       pages. {market} is substituted with the country at render time. */
+    linkLabel: 'The {market} corridor',
     directionsHeading: 'Which way the work goes',
     practicesHeading: 'The practices this corridor draws on',
     peopleHeading: 'Who is on the ground',
@@ -1225,7 +1232,7 @@ const zh: Dict = {
     tagline: '技術移轉 • 商務顧問 • 全球貿易',
     shortTagline: '連結全球創新與值得信賴的夥伴關係',
     description:
-      '提供國際技術移轉、企業貿易顧問與專業技術在地化服務。總部設於台灣，並在印度、南韓與美國派駐代表。',
+      '提供國際技術移轉、企業貿易顧問與專業技術在地化服務。總部設於台灣，業務涵蓋七個市場。',
   },
 
   common: {
@@ -1607,6 +1614,7 @@ const zh: Dict = {
       { title: '技術型錄', body: '產品規格、操作手冊與在地化行銷素材。' },
     ],
     qualityHeading: '我們如何確保準確性',
+    ctaLabel: '技術翻譯服務專頁',
     quality: [
       '由具科學或法規背景的專業譯者執行',
       '開始作業前與貴公司確認術語對照表',
@@ -2241,6 +2249,7 @@ const zh: Dict = {
 
   marketPages: {
     eyebrow: '跨境廊道',
+    linkLabel: '{market}跨境廊道',
     directionsHeading: '工作的方向',
     practicesHeading: '本廊道涉及的專業服務',
     peopleHeading: '當地負責人',

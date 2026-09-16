@@ -68,7 +68,7 @@ const en = {
       {
         h: 'International transfers',
         p: [
-          'We are based in Taiwan and work with colleagues and representatives in India, South Korea and the United States. Our hosting provider operates a global content delivery network, so data may be processed in countries outside your own.',
+          'We are based in Taiwan and work with colleagues and representatives in India, South Korea, the United States, Germany, Singapore and Australia. Our hosting provider operates a global content delivery network, so data may be processed in countries outside your own.',
           'Cross-border transfer of personal data by a non-public agency is permitted under Article 21 of the Personal Data Protection Act unless the competent authority has imposed a restriction on the relevant category of transfer. We monitor for any such restriction and will comply with it if one applies to us.',
           'Where personal data is transferred internationally, we take reasonable steps to ensure it remains protected to a standard consistent with this policy.',
         ],
@@ -314,7 +314,7 @@ const zh: LegalDict = {
       {
         h: '國際傳輸',
         p: [
-          '我們設立於台灣，並在印度、南韓與美國設有同仁及代表。我們的主機供應商採用全球內容傳遞網路，因此資料可能於您所在國家以外的地區處理。',
+          '我們設立於台灣，並在印度、南韓、美國、德國、新加坡與澳洲設有同仁及代表。我們的主機供應商採用全球內容傳遞網路，因此資料可能於您所在國家以外的地區處理。',
           '依個人資料保護法第 21 條，非公務機關為國際傳輸個人資料，除中央目的事業主管機關就特定類型之傳輸另有限制外，得予進行。本公司持續注意是否有相關限制，若有適用於本公司者，將依限制辦理。',
           '個人資料涉及跨國傳輸時，我們會採取合理措施，確保其保護程度與本政策一致。',
         ],

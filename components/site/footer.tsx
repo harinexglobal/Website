@@ -180,6 +180,7 @@ export function Footer() {
                   alt=""
                   width={400}
                   height={374}
+                  sizes="32px"
                   className="h-7 w-auto"
                 />
               </span>

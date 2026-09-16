@@ -45,8 +45,11 @@ export function TranslationModule() {
               </ul>
             </div>
 
-            <ButtonLink href={`${ROUTES.whatWeDo}#technical-translation`} variant="ghostLight" className="mt-8">
-              {t.common.learnMore}
+            {/* Was /what-we-do#technical-translation — an anchor no element on
+                that page carries, so the link dropped the reader at the top of a
+                different page. The practice has a page of its own. */}
+            <ButtonLink href={`${ROUTES.whatWeDo}/technical-translation`} variant="ghostLight" className="mt-8">
+              {t.translation.ctaLabel}
             </ButtonLink>
           </div>
 
