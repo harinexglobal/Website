@@ -127,6 +127,32 @@ function readCorridors() {
   return out;
 }
 
+/**
+ * Hand-written posts from social/original.json.
+ *
+ * The other three sources reshare a page: here is a thing we published, go and
+ * read it. These stand on their own — an observation that is worth something to
+ * someone who never clicks — which is what actually earns reach on LinkedIn and
+ * what a company feed made only of link cards never does.
+ *
+ * Written by hand and edited by hand. The generator only schedules them; it
+ * does not compose or rewrite the copy, so an edit made here survives every
+ * regeneration.
+ */
+function readOriginals() {
+  const file = path.resolve('social/original.json');
+  if (!existsSync(file)) return [];
+  return JSON.parse(readFileSync(file, 'utf8')).map((o) => ({
+    kind: 'original',
+    id: o.id,
+    category: o.theme,
+    title: o.theme,
+    authored: o,
+    url: `${SITE}${o.link}`,
+    image: o.image,
+  }));
+}
+
 const unescape_ = (s) => s.replace(/\\'/g, "'").replace(/\\n/g, ' ').replace(/\s+/g, ' ').trim();
 
 /* ------------------------------------------------------------------ */
@@ -157,6 +183,7 @@ function hashtags(item) {
     article: ['#TechnologyTransfer', '#CrossBorderTrade'],
     practice: ['#TechnologyTransfer', '#Manufacturing'],
     corridor: ['#MarketEntry', '#SupplyChain'],
+    original: ['#TechnologyTransfer', '#CrossBorderTrade'],
   }[item.kind];
   const place = /india/i.test(item.id)
     ? '#India'
@@ -170,6 +197,30 @@ function hashtags(item) {
 
 function compose(item) {
   const ht = hashtags(item);
+
+  /* Authored posts are used verbatim. The only thing added is the link and the
+     tags, appended rather than woven in, so nothing rewrites a sentence
+     somebody chose. */
+  if (item.authored) {
+    const a = item.authored;
+    return {
+      linkedin: `${a.linkedin}
+
+${tagged(item.url, 'linkedin')}
+
+${ht}`,
+      x: `${a.x}
+${tagged(item.url, 'x')}`,
+      facebook: `${a.linkedin}
+
+${tagged(item.url, 'facebook')}`,
+      instagram: `${a.linkedin}
+
+More via the link in our bio.
+
+${ht}`,
+    };
+  }
 
   return {
     /* LinkedIn: the audience that actually buys this. Room to make the point
@@ -240,7 +291,10 @@ if (!articles.length) throw new Error('no articles parsed from lib/insights.ts')
 if (!practices.length) throw new Error('no capabilities parsed from lib/content.ts');
 if (!corridors.length) throw new Error('no corridors parsed from lib/content.ts');
 
-const items = interleave([articles, practices, corridors]);
+const originals = readOriginals();
+
+/* Originals first in each cycle: they carry the most and reshare the least. */
+const items = interleave([originals, articles, practices, corridors]);
 const wanted = WEEKS * SLOTS.length;
 const slots = nextSlots(wanted, START);
 
@@ -336,7 +390,9 @@ queue.forEach((q, i) => {
     q.posts.linkedin,
     '```',
     '',
-    `**X** (${q.posts.x.split('\n')[0].length + 23} chars incl. link)`,
+    /* X counts any link as 23 characters whatever its real length, so this is
+       everything but the final line, plus the link's fixed cost. */
+    `**X** (${q.posts.x.split('\n').slice(0, -1).join('\n').length + 24} of 280)`,
     '',
     '```',
     q.posts.x,
@@ -363,4 +419,4 @@ writeFileSync(path.join(OUT, 'CALENDAR.md'), md.join('\n'));
 
 console.log(`social/queue.json    ${queue.length} drafts`);
 console.log(`social/CALENDAR.md   ${WEEKS} weeks, first slot ${queue[0].scheduled}`);
-console.log(`sources: ${articles.length} articles, ${practices.length} practices, ${corridors.length} corridors`);
+console.log(`sources: ${originals.length} original, ${articles.length} articles, ${practices.length} practices, ${corridors.length} corridors`);
